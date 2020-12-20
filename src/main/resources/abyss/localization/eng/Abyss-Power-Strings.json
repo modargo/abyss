@@ -1,0 +1,38 @@
+{
+  "Abyss:ThoughtStealer": {
+    "NAME": "Thought Stealer",
+    "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, all enemies gain #b{2} #yStrength and heal #b{3}."]
+  },
+  "Abyss:Berserker": {
+    "NAME": "Berserker",
+    "DESCRIPTIONS": ["Once per combat, this enemy gains #b{0} #yStrength if it is the only enemy left at the end of the round."]
+  },
+  "Abyss:Resummon": {
+    "NAME": "Resummon",
+    "DESCRIPTIONS": ["#pVoid #pHerald will resummon #pVoid #pSpawn one turn after it dies, with the same amount of #yStrength as #pVoid #pHerald."]
+  },
+  "Abyss:Abysstouched": {
+    "NAME": "Abysstouched",
+    "DESCRIPTIONS": ["Take {0}% more damage from attacks. At the end of your turn, take #b{0} damage."]
+  },
+  "Abyss:Evolving": {
+    "NAME": "Evolving",
+    "DESCRIPTIONS": ["Evolves at the end of each turn."]
+  },
+  "Abyss:FrailPulse": {
+    "NAME": "Frail Pulse",
+    "DESCRIPTIONS": ["At the end of each round, apply #b{0} #yFrail."]
+  },
+  "Abyss:DazedPulse": {
+    "NAME": "Dazed Pulse",
+    "DESCRIPTIONS": ["At the end of each round, shuffle {0} #yDazed into your deck."]
+  },
+  "Abyss:AbysstouchedPulse": {
+    "NAME": "Abysstouched Pulse",
+    "DESCRIPTIONS": ["At the end of each round, apply #b{0} #yAbysstouched."]
+  },
+  "Abyss:SlimyBody": {
+    "NAME": "Slimy Body",
+    "DESCRIPTIONS": ["When this enemy takes attack damage, add a #ySlimed status to your discard pile."]
+  }
+}

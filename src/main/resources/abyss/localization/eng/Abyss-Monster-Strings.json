@@ -1,0 +1,60 @@
+{
+  "Abyss:SquirmingHorror": {
+    "MOVES": [
+      "Tentacle Wrap",
+      "Embrace"
+    ],
+    "NAME": "Squirming Horror"
+  },
+  "Abyss:ViciousHatchling": {
+    "MOVES": [
+      "Just Hatched",
+      "Nibble",
+      "Corrosive Acid",
+      "Headbutt"
+    ],
+    "NAME": "Vicious Hatchling"
+  },
+  "Abyss:VoidHerald": {
+    "MOVES": [
+      "Duress",
+      "Onslaught",
+      "Corrupting Touch"
+    ],
+    "NAME": "Void Herald",
+    "DIALOG": ["I merely herald the master's coming.", "I serve the master far better than you!"]
+  },
+  "Abyss:VoidSpawn": {
+    "MOVES": [
+      "Clobber",
+      "Beaked Maw",
+      "Tentacle Barrage"
+    ],
+    "NAME": "Void Spawn"
+  },
+  "Abyss:DeepTyrant": {
+    "MOVES": [
+      "Blast",
+      "Terrifying Gaze",
+      "Thrash",
+      "Body Slam",
+      "Call the Abyss"
+    ],
+    "NAME": "Deep Tyrant"
+  },
+  "Abyss:MaddeningManifestation": {
+    "MOVES": [
+      "Grasp the Abyss",
+      "Madness"
+    ],
+    "NAME": "Maddening Manifestation"
+  },
+  "Abyss:Behemoth": {
+    "MOVES": [
+      "Bide",
+      "Evolve",
+      "Claw Swipe"
+    ],
+    "NAME": "Behemoth"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Abyss:BehemothsWisdom": {
+    "NAME": "Behemoth's Wisdom",
+    "FLAVOR": "Don't fight elder behemoths.",
+    "DESCRIPTIONS": ["At the start of each combat, exhaust up to {0} cards then draw that many."]
+  },
+  "Abyss:BehemothsCourage": {
+    "NAME": "Behemoth's Courage",
+    "FLAVOR": "It's easy to be courageous when you have skin of iron.",
+    "DESCRIPTIONS": ["At the start of each combat, gain {0} #yMetallicize and {1} #yBlur."]
+  }
+}

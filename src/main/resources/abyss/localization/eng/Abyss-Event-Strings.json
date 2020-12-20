@@ -1,0 +1,71 @@
+{
+  "Abyss:AbyssalSphere": {
+    "NAME": "Abyssal Sphere",
+    "DESCRIPTIONS": [
+      "Jutting from the chaotic terrain around you, a bony sphere surrounds a mysterious glowing object within. NL While you are curious what lies inside, you notice some horrors keeping an eye on it.",
+      "As soon as you strike the sphere, the horrors spring to life around you!",
+      "No need to be greedy."
+    ],
+    "OPTIONS": [
+      "[Open Sphere] #rFight. #gReward: #gRare #gRelic.",
+      "[Leave]",
+      "[Fight]"
+    ]
+  },
+  "Abyss:CorruptedStone": {
+    "NAME": "Corrupted Stone",
+    "DESCRIPTIONS": [
+      "Navigating through the Abyss, amidst the dark and ominous terrain, you find a #bglowing #bstone @floating@ and ~spinning~ in the air.",
+      "You observe the stone. It's slow, subtle spin is mesmerizing. You shake yourself away after staring at the stone for who knows how long?",
+      "Approaching carefully, you ~touch~ the #bstone. #r@Sensation@ and #p@sorrow@ flow through you, following by flashing images and sounds.",
+      "#p~CORRUPTION.~ NL NL The #yseals are broken, the #bchains that once bound you shattered on the rocks. You are @free.@ NL NL You taste the air, stretching out your tentacles, drinking in the sensation of #gwarm #glife, ripe for the #gharvest, so different from the #bprison #brealm. NL NL Gathering your strength, you propel your bulk towards the sense of life..."
+    ],
+    "OPTIONS": [
+      "[Observe] #gAdd #ga #gColorless #gcard #gto #gyour #gdeck.",
+      "[Touch] #gAdd #ga #gpowerful #gcard #gto #gyour #gdeck. #rLose #r{0} #rMax #rHP.",
+      "[Bypass]",
+      "[Continue]",
+      "[Leave]"
+    ]
+  },
+  "Abyss:ElderBehemoth": {
+    "NAME": "Elder Behemoth",
+    "DESCRIPTIONS": [
+      "Navigating a quiet area of the Abyss, you #b@startle@ as you find yourself face to face with a #rbehemoth far larger than any you've seen before. Astonishingly, it #gcamouflaged itself perfectly until you were right in front of it. NL NL Thankfully, rather than being aggressive, it almost seems like it's waiting for something. Perhaps if you give it an offering, it will let you pass?",
+      "You decide to offer the behemoth something...",
+      "You offer the behemoth only your #gappreciation. It brings its head close to you... then #glicks you. NL NL However, it also grazes you with its massive #ytusks. You've lost a bit of #rblood, but you feel #ghale #gand #ghearty.",
+      "You offer the behemoth a #yshiny #yrelic. The behemoth crunches down on the #yrelic, seeming like it enjoys the meal. NL NL After it finishes, it leaves behind some of its #bshed #bteeth, which turn out to be very useful material for upgrading your equipment.",
+      "You offer the behemoth some of your power. It gives the offering a questioning look, but accepts it and lets you pass.",
+      "You offer the behemoth some of your power. It accepts the offering with fierce vigor and gives you some of its power in return."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Appreciative] #gHeal #g{0} #gHP. #rLose #r{1} #rMax #rHP.",
+      "[Golden] #gUpgrade #g{0} #grandom #gcards. #rLose {1}",
+      "[Locked] Requires {0}.",
+      "[Vampiric] #gGain #g{0} #gMax #gHP. #rLose {1}.",
+      "[Ghostly] #gGain #g{0} #gMax #gHP #gand {1}. #rLose {2}.",
+      "[Gilded] #gGain #g{0} #ggold. #rLose #r{1}.",
+      "[Elemental] #gGain #g{0} #gMax #gHP #gand {1}. #rLose {2}.",
+      "[Magical] #rLose {0}.",
+      "[Exceptional] #gGain {0}. #rLose {1}.",
+      "[Useful] #rLose {0}.",
+      "[Leave]"
+    ]
+  },
+  "Abyss:HungryVoid": {
+    "NAME": "Hungry Void",
+    "DESCRIPTIONS": [
+      "Ahead you spot a place of even deeper darkness, and feel a #pmysterious #pforce pulling you towards it. NL NL Off balance, you take an involuntary step towards it and feel and hear something crunch beneath your feet. Looking down, the floor here is littered with broken crystals. NL NL The #pforce is getting hard to resist. You have to act fast.",
+      "TODO shield result",
+      "TODO accept result",
+      "TODO drag result"
+    ],
+    "OPTIONS": [
+      "[Shield Yourself] #gAdd #g{0} {1} #gto #gyour #gdeck. #rLose #r{2} #rHP.",
+      "[Accept the Pull] #gHeal #g{0} #gHP. #rBecome #rCursed #r- #rTODO.",
+      "[Drag Yourself Away] #rLose #r{0} #rGold.",
+      "[Leave]"
+    ]
+  }
+}
