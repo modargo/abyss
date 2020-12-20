@@ -22,7 +22,7 @@
       "Corrupting Touch"
     ],
     "NAME": "Void Herald",
-    "DIALOG": ["I merely herald the master's coming.", "I serve the master far better than you!"]
+    "DIALOG": ["I merely herald my liege's unveiling.", "I serve the great one far better than you!"]
   },
   "Abyss:VoidSpawn": {
     "MOVES": [

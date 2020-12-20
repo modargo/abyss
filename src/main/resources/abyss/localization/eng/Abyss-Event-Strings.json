@@ -57,13 +57,13 @@
     "NAME": "Hungry Void",
     "DESCRIPTIONS": [
       "Ahead you spot a place of even deeper darkness, and feel a #pmysterious #pforce pulling you towards it. NL NL Off balance, you take an involuntary step towards it and feel and hear something crunch beneath your feet. Looking down, the floor here is littered with broken crystals. NL NL The #pforce is getting hard to resist. You have to act fast.",
-      "TODO shield result",
-      "TODO accept result",
-      "TODO drag result"
+      "Grasping for something to defend yourself with, you grab a handful of #bbroken #bcrystals from the floor, holding them out in front of you as a crude shield. The pull lessens somewhat, allowing you to escape. NL NL The crystals seem #yenergized, while you feel #pdrained.",
+      "With how strong the pull is, you decide the best way out is through. You rush towards the source of the pull, building momentum, and leap past the #pdarkness in your mad dash to the other side. NL NL You came close enough to be touched by the power of this dark place, and you feel #ginvigorated but #rtwisted.",
+      "You stand your ground and, step by laborious step, fight again the pull. The pull seems to grow stronger with each step you take, as does the sense that the #pdarkness #rhungers for you. NL NL A bit of your #ygold is sucked away and lost forever, but you're able to escape."
     ],
     "OPTIONS": [
       "[Shield Yourself] #gAdd #g{0} {1} #gto #gyour #gdeck. #rLose #r{2} #rHP.",
-      "[Accept the Pull] #gHeal #g{0} #gHP. #rBecome #rCursed #r- #rTODO.",
+      "[Accept the Pull] #gHeal #g{0} #gHP. #rBecome #rCursed #r- #rTwisted.",
       "[Drag Yourself Away] #rLose #r{0} #rGold.",
       "[Leave]"
     ]

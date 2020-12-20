@@ -1,5 +1,7 @@
 package abyss;
 
+import abyss.cards.BrokenCrystal;
+import abyss.cards.Twisted;
 import abyss.events.AbyssalSphere;
 import abyss.events.CorruptedStone;
 import abyss.events.ElderBehemoth;
@@ -139,6 +141,10 @@ public class Abyss implements
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addCard(new BrokenCrystal());
+
+        //Curses
+        BaseMod.addCard(new Twisted());
     }
 
     @Override

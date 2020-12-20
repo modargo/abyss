@@ -2,5 +2,9 @@
   "Abyss:BrokenCrystal": {
     "NAME": "Broken Crystal",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaust a card in your discard pile."
+  },
+  "Abyss:Twisted": {
+    "NAME": "Twisted",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, gain 2 Constricted."
   }
 }

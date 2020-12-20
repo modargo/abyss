@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BrokenCrystal extends CustomCard {
-    public static final String ID = "Menagerie:BrokenCrystal";
+    public static final String ID = "Abyss:BrokenCrystal";
     public static final String IMG = Abyss.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
