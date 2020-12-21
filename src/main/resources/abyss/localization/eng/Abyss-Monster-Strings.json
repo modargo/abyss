@@ -63,5 +63,14 @@
       "Unhinged Jaw"
     ],
     "NAME": "Gluttonous Abomination"
+  },
+  "Abyss:BoundAbyssal": {
+    "MOVES": [
+      "Observe",
+      "Glare",
+      "Contemplate",
+      "Scrutinize"
+    ],
+    "NAME": "Bound Abyssal"
   }
 }

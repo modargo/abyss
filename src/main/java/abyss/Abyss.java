@@ -7,6 +7,7 @@ import abyss.monsters.bosses.DeepTyrant;
 import abyss.monsters.bosses.VoidHerald;
 import abyss.monsters.bosses.VoidSpawn;
 import abyss.monsters.elites.Behemoth;
+import abyss.monsters.normals.BoundAbyssal;
 import abyss.monsters.normals.GluttonousAbomination;
 import abyss.monsters.normals.SquirmingHorror;
 import abyss.monsters.normals.ViciousHatchling;
@@ -95,6 +96,7 @@ public class Abyss implements
                         new ViciousHatchling(150.0F, 20.0F, false)
                 }));
         BaseMod.addMonster(GluttonousAbomination.ID, (BaseMod.GetMonster)GluttonousAbomination::new);
+        BaseMod.addMonster(BoundAbyssal.ID, () -> new BoundAbyssal(0, 100.0F));
 
         //Elites
         BaseMod.addMonster(Behemoth.ID, (BaseMod.GetMonster)Behemoth::new);

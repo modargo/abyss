@@ -90,7 +90,7 @@ public class GluttonousAbomination extends CustomMonster {
                 break;
             case UNHINGED_JAW_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
