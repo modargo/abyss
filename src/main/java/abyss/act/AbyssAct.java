@@ -1,6 +1,7 @@
 package abyss.act;
 
 import abyss.monsters.elites.Behemoth;
+import abyss.monsters.normals.GluttonousAbomination;
 import abyss.monsters.normals.SquirmingHorror;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
@@ -95,6 +96,7 @@ public class AbyssAct extends CustomDungeon {
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(Encounters.VICIOUS_HATCHLINGS_HARD, 1.0F));
+        monsters.add(new MonsterInfo(GluttonousAbomination.ID, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);

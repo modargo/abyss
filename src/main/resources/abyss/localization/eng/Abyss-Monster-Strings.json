@@ -56,5 +56,12 @@
       "Claw Swipe"
     ],
     "NAME": "Behemoth"
+  },
+  "Abyss:GluttonousAbomination": {
+    "MOVES": [
+      "Grasping Claws",
+      "Unhinged Jaw"
+    ],
+    "NAME": "Gluttonous Abomination"
   }
 }

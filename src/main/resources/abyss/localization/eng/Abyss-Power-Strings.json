@@ -34,5 +34,9 @@
   "Abyss:SlimyBody": {
     "NAME": "Slimy Body",
     "DESCRIPTIONS": ["When this enemy takes attack damage, add a #ySlimed status to your discard pile."]
+  },
+  "Abyss:Gluttony": {
+    "NAME": "Gluttony",
+    "DESCRIPTIONS": ["Gains #b1 Strength for every {0} Max HP you have (rounded up)."]
   }
 }
