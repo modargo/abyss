@@ -67,5 +67,19 @@
       "[Drag Yourself Away] #rLose #r{0} #rGold.",
       "[Leave]"
     ]
+  },
+  "Abyss:Humming": {
+    "NAME": "Humming",
+    "DESCRIPTIONS": [
+      "Deep in the Abyss, you continue onwards, you hear a faint #y~humming~ at the edge of your hearing. Curious, you follow the sound to its source, and find an area that is almost... #gpeaceful. The sense of #rhunger #rand #rdesolation that you've felt since entering this place fades away, leaving you with a sense of calm and stability. NL NL Following the sound to its source, you find a small building with a #bcrystal inside, floating above an intricate mechanism. The craftsmanship of the #bcrystal is masterful.",
+      "Touching the #bcrystal, a jolt of energy runs through you. You can feel your mind become more focused.",
+      "Basking in the energy of the #bcrystal, you let it seep into you. You carry a bit of of the #bcrystal's energy with you know, against the horrors of the Abyss.",
+      "You decide to leave the crystal alone. It's probably doing something important."
+    ],
+    "OPTIONS": [
+      "[Purify] #gRemove #ga #gcard #gfrom #gyour #gdeck.",
+      "[Energize] #gGain {0}.",
+      "[Leave]"
+    ]
   }
 }

@@ -2,10 +2,7 @@ package abyss;
 
 import abyss.cards.BrokenCrystal;
 import abyss.cards.Twisted;
-import abyss.events.AbyssalSphere;
-import abyss.events.CorruptedStone;
-import abyss.events.ElderBehemoth;
-import abyss.events.HungryVoid;
+import abyss.events.*;
 import abyss.monsters.bosses.DeepTyrant;
 import abyss.monsters.bosses.VoidHerald;
 import abyss.monsters.bosses.VoidSpawn;
@@ -125,6 +122,7 @@ public class Abyss implements
         BaseMod.addEvent(CorruptedStone.ID, CorruptedStone.class, AbyssAct.ID);
         BaseMod.addEvent(ElderBehemoth.ID, ElderBehemoth.class, AbyssAct.ID);
         BaseMod.addEvent(HungryVoid.ID, HungryVoid.class, AbyssAct.ID);
+        BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);
 
         // TODO: Consider moving this logic to Elementarium
         if (Loader.isModLoaded(ElementariumModId)) {

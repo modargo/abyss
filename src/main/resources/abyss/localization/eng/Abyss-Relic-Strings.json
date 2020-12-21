@@ -8,5 +8,10 @@
     "NAME": "Behemoth's Courage",
     "FLAVOR": "It's easy to be courageous when you have skin of iron.",
     "DESCRIPTIONS": ["At the start of each combat, gain {0} #yMetallicize and {1} #yBlur."]
+  },
+  "Abyss:CrystalEnergy": {
+    "NAME": "Crystal Energy",
+    "FLAVOR": "It's easy to be courageous when you have skin of iron.",
+    "DESCRIPTIONS": ["When you take more than {0} damage in a turn, heal {1} HP."]
   }
 }
