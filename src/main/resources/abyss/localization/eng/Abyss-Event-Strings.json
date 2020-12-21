@@ -81,5 +81,19 @@
       "[Energize] #gGain {0}.",
       "[Leave]"
     ]
+  },
+  "Abyss:SpawningGrounds": {
+    "NAME": "SpawningGrounds",
+    "DESCRIPTIONS": [
+      "You've wandered into a tunnel complex full of eggs, large and small and all sizes in between. The room is shadowy in the faint light, but you can see #ymany-limbed #ycreatures scuttling around the chamber, and the ground is covered with #psludge. NL NL You're about to turn back to find a safer path when you see a #yglimmer as something within catches the faint light. Disturbing the eggs will invite retaliation, but perhaps there's treasure within?",
+      "Making your way to where you saw the #yglimmer, you move quickly but step carefully to not disturb the eggs. The source turns out to be a collection of useful equipment... #rswords, #gdaggers, #bclaws, #pstaves. As you grab some of it to take with you, the pile @clatters@ to the ground! NL NL You rush for the exit, but suffer several #rbites from the creatures on the way out.",
+      "You turn back to look for a safer path."
+    ],
+    "OPTIONS": [
+      "[Enter] #gUpgrade #ga #gcard. #rTake #r{0} #rdamage.",
+      "[Turn Back]",
+      "[Leave]",
+      "Select a Card to Upgrade."
+    ]
   }
 }

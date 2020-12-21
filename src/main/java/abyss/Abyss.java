@@ -26,6 +26,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
@@ -122,7 +123,8 @@ public class Abyss implements
         BaseMod.addEvent(CorruptedStone.ID, CorruptedStone.class, AbyssAct.ID);
         BaseMod.addEvent(ElderBehemoth.ID, ElderBehemoth.class, AbyssAct.ID);
         BaseMod.addEvent(HungryVoid.ID, HungryVoid.class, AbyssAct.ID);
-        BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);
+        BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);;
+        BaseMod.addEvent(SpawningGrounds.ID, SpawningGrounds.class, AbyssAct.ID);
 
         // TODO: Consider moving this logic to Elementarium
         if (Loader.isModLoaded(ElementariumModId)) {
