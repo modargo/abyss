@@ -101,7 +101,7 @@ public class ElderBehemoth extends AbstractImageEvent {
 
         // Trim down the options if there's too many
         if (cardOptions.containsKey(CardCostType.Apparition) && cardOptions.containsKey(CardCostType.Blade)) {
-            if (AbstractDungeon.eventRng.randomBoolean()) {
+            if (AbstractDungeon.miscRng.randomBoolean()) {
                 cardOptionsList.remove(CardCostType.Apparition);
                 cardOptions.remove(CardCostType.Apparition);
             }
@@ -121,7 +121,7 @@ public class ElderBehemoth extends AbstractImageEvent {
             biteGildedSpellOptions.add(CardCostType.Spell);
         }
         if (biteGildedSpellOptions.size() > 1) {
-            Collections.shuffle(biteGildedSpellOptions, AbstractDungeon.eventRng.random);
+            Collections.shuffle(biteGildedSpellOptions, AbstractDungeon.miscRng.random);
             // Remove all but the first option
             for (int i = 1; i < biteGildedSpellOptions.size(); i++) {
                 cardOptionsList.remove(biteGildedSpellOptions.get(i));

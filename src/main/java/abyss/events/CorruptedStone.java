@@ -123,7 +123,7 @@ public class CorruptedStone extends AbstractImageEvent {
         rewardCards.add(CardLibrary.getAnyColorCard(AbstractCard.CardRarity.RARE));
 
         List<AbstractCard> powerfulCards = Arrays.asList(new Apparition(), new Apotheosis());
-        rewardCards.add(powerfulCards.get(AbstractDungeon.eventRng.random(powerfulCards.size() - 1)));
+        rewardCards.add(powerfulCards.get(AbstractDungeon.miscRng.random(powerfulCards.size() - 1)));
 
         if (Loader.isModLoaded(Abyss.ElementariumModId)) {
             List<String> bladeCardIds = Arrays.asList(
@@ -133,7 +133,7 @@ public class CorruptedStone extends AbstractImageEvent {
                     "Elementarium:IceblessedBlade",
                     "Elementarium:VoidblessedBlade"
             );
-            String bladeCardId = bladeCardIds.get(AbstractDungeon.eventRng.random(bladeCardIds.size() - 1));
+            String bladeCardId = bladeCardIds.get(AbstractDungeon.miscRng.random(bladeCardIds.size() - 1));
             rewardCards.add(CardLibrary.getCard(bladeCardId).makeCopy());
         }
 
@@ -144,7 +144,7 @@ public class CorruptedStone extends AbstractImageEvent {
                     "Menagerie:WallOfBlossoms"
                     //TODO Add more
             );
-            String spellCardId = spellCardIds.get(AbstractDungeon.eventRng.random(spellCardIds.size() - 1));
+            String spellCardId = spellCardIds.get(AbstractDungeon.miscRng.random(spellCardIds.size() - 1));
             rewardCards.add(CardLibrary.getCard(spellCardId).makeCopy());
         }
 

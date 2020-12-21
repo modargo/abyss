@@ -97,6 +97,7 @@ public class AbyssAct extends CustomDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(Encounters.VICIOUS_HATCHLINGS_HARD, 1.0F));
         monsters.add(new MonsterInfo(GluttonousAbomination.ID, 1.0F));
+        monsters.add(new MonsterInfo(Encounters.CROAKING_TRIO, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateFirstStrongEnemy(monsters, this.generateExclusions());
         this.populateMonsterList(monsters, count, false);

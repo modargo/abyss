@@ -72,5 +72,29 @@
       "Scrutinize"
     ],
     "NAME": "Bound Abyssal"
+  },
+  "Abyss:CroakingBrute": {
+    "MOVES": [
+      "Lacerate",
+      "Bull Rush"
+    ],
+    "NAME": "Croaking Brute",
+    "DIALOG": ["*CROAK*"]
+  },
+  "Abyss:CroakingPelter": {
+    "MOVES": [
+      "Lacerate",
+      "Rock Toss"
+    ],
+    "NAME": "Croaking Pelter",
+    "DIALOG": ["cRoAK"]
+  },
+  "Abyss:CroakingSeer": {
+    "MOVES": [
+      "Lacerate",
+      "Protective Ward"
+    ],
+    "NAME": "Croaking Seer",
+    "DIALOG": ["*croak*"]
   }
 }

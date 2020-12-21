@@ -38,5 +38,9 @@
   "Abyss:Gluttony": {
     "NAME": "Gluttony",
     "DESCRIPTIONS": ["Gains #b1 Strength for every {0} Max HP you have (rounded up)."]
+  },
+  "Abyss:Wary": {
+    "NAME": "Wary",
+    "DESCRIPTIONS": ["Whenever you play an Attack, gains {0} Strength."]
   }
 }

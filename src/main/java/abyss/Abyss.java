@@ -7,10 +7,7 @@ import abyss.monsters.bosses.DeepTyrant;
 import abyss.monsters.bosses.VoidHerald;
 import abyss.monsters.bosses.VoidSpawn;
 import abyss.monsters.elites.Behemoth;
-import abyss.monsters.normals.BoundAbyssal;
-import abyss.monsters.normals.GluttonousAbomination;
-import abyss.monsters.normals.SquirmingHorror;
-import abyss.monsters.normals.ViciousHatchling;
+import abyss.monsters.normals.*;
 import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import actlikeit.dungeons.CustomDungeon;
@@ -28,17 +25,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
-import com.megacrit.cardcrawl.cards.curses.Pain;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -97,6 +90,12 @@ public class Abyss implements
                 }));
         BaseMod.addMonster(GluttonousAbomination.ID, (BaseMod.GetMonster)GluttonousAbomination::new);
         BaseMod.addMonster(BoundAbyssal.ID, () -> new BoundAbyssal(0, 100.0F));
+        BaseMod.addMonster(Encounters.CROAKING_TRIO, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new CroakingBrute(-450.0F, 0.0F),
+                        new CroakingPelter(-450.0F, 0.0F),
+                        new CroakingSeer(-450.0F, 0.0F)
+                }));
 
         //Elites
         BaseMod.addMonster(Behemoth.ID, (BaseMod.GetMonster)Behemoth::new);
