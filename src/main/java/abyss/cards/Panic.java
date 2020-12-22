@@ -24,12 +24,14 @@ public class Panic extends CustomCard {
 
     public Panic() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        this.baseMagicNumber = DEXTERITY_LOSS;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.dontTriggerOnUseCard) {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, -DEXTERITY_LOSS), -DEXTERITY_LOSS));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, -this.magicNumber), -this.magicNumber));
         }
     }
 

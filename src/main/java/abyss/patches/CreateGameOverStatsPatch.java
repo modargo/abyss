@@ -16,9 +16,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class CreateGameOverStatsPatch {
-    private static String EliteScoreStringKey = "Exordium Elites Killed";
+    private static String EliteScoreStringKey = "Beyond Elites Killed";
     private static String EliteName = CardCrawlGame.languagePack.getScoreString(EliteScoreStringKey).NAME;
-    private static int ActNum = 1;
+    private static int ActNum = 3;
     private static String ActID = Exordium.ID;
 
     public static void RemoveScoreEntries(ArrayList<GameOverStat> stats) {
