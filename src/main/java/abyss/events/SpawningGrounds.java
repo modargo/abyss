@@ -3,6 +3,7 @@ package abyss.events;
 import abyss.Abyss;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -30,6 +31,8 @@ public class SpawningGrounds extends AbstractImageEvent {
     public SpawningGrounds() {
         super(NAME, DESCRIPTIONS[0], IMG);
 
+        this.damage = AbstractDungeon.ascensionLevel >= 15 ? A15_DAMAGE : DAMAGE;
+
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.damage));
         imageEventText.setDialogOption(OPTIONS[1]);
     }
@@ -55,6 +58,7 @@ public class SpawningGrounds extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0: // Enter
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, this.damage));
                         if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getUpgradableCards()).size() > 0) {
                             AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getUpgradableCards(), 1, OPTIONS[3], true, false, false, false);
                         }
