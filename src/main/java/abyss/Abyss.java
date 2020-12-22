@@ -1,12 +1,12 @@
 package abyss;
 
-import abyss.cards.BrokenCrystal;
-import abyss.cards.Twisted;
+import abyss.cards.*;
 import abyss.events.*;
 import abyss.monsters.bosses.DeepTyrant;
 import abyss.monsters.bosses.VoidHerald;
 import abyss.monsters.bosses.VoidSpawn;
 import abyss.monsters.elites.Behemoth;
+import abyss.monsters.elites.GnawingCorruption;
 import abyss.monsters.normals.*;
 import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
@@ -99,6 +99,7 @@ public class Abyss implements
 
         //Elites
         BaseMod.addMonster(Behemoth.ID, (BaseMod.GetMonster)Behemoth::new);
+        BaseMod.addMonster(GnawingCorruption.ID, (BaseMod.GetMonster)GnawingCorruption::new);
 
         //Bosses
         BaseMod.addMonster(Encounters.VOID_HERALD_AND_VOID_SPAWN, () -> new MonsterGroup(
@@ -146,7 +147,11 @@ public class Abyss implements
     public void receiveEditCards() {
         BaseMod.addCard(new BrokenCrystal());
 
-        //Curses
+        //Curses and statuses
+        BaseMod.addCard(new Drained());
+        BaseMod.addCard(new Fumbling());
+        BaseMod.addCard(new Necrosis());
+        BaseMod.addCard(new Panic());
         BaseMod.addCard(new Twisted());
     }
 

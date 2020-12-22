@@ -1,6 +1,7 @@
 package abyss.monsters.normals;
 
 import abyss.Abyss;
+import abyss.cards.Necrosis;
 import abyss.cards.Twisted;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -44,8 +45,6 @@ public class BoundAbyssal extends CustomMonster {
     private static final int A2_SCRUTINIZE_DAMAGE = 8;
     private static final int SCRUTINIZE_VULNERABLE = 2;
     private static final int A17_SCRUTINIZE_VULNERABLE = 3;
-    private static final int SCRUTINIZE_CURSES = 2;
-    private static final int A17_SCRUTINIZE_CURSES = 3;
     private static final int HP_MIN = 45;
     private static final int HP_MAX = 45;
     private static final int A7_HP_MIN = 50;
@@ -62,7 +61,6 @@ public class BoundAbyssal extends CustomMonster {
     private int contemplateBuffer;
     private int scrutinizeDamage;
     private int scrutinizeVulnerable;
-    private int scrutinizeCurses;
     private int startingBuffer;
     private int startingArtifact;
 
@@ -100,7 +98,6 @@ public class BoundAbyssal extends CustomMonster {
             this.contemplateBuffer = A17_CONTEMPLATE_BUFFER;
             this.contemplateArtifact = A17_CONTEMPLATE_ARTIFACT;
             this.scrutinizeVulnerable = A17_SCRUTINIZE_VULNERABLE;
-            this.scrutinizeCurses = A17_SCRUTINIZE_CURSES;
             this.startingBuffer = A17_STARTING_BUFFER;
             this.startingArtifact = A17_STARTING_ARTIFACT;
         } else {
@@ -108,7 +105,6 @@ public class BoundAbyssal extends CustomMonster {
             this.contemplateBuffer = CONTEMPLATE_BUFFER;
             this.contemplateArtifact = CONTEMPLATE_ARTIFACT;
             this.scrutinizeVulnerable = SCRUTINIZE_VULNERABLE;
-            this.scrutinizeCurses = SCRUTINIZE_CURSES;
             this.startingBuffer = STARTING_BUFFER;
             this.startingArtifact = STARTING_ARTIFACT;
         }
@@ -147,7 +143,10 @@ public class BoundAbyssal extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new VulnerablePower(AbstractDungeon.player, this.scrutinizeVulnerable, true), this.scrutinizeVulnerable));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Twisted(), this.scrutinizeCurses, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Twisted(), 1, true, true));
+                if (AbstractDungeon.ascensionLevel >= 17) {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Necrosis(), 1, true, true));
+                }
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));

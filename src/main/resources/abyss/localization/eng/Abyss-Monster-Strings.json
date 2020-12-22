@@ -96,5 +96,15 @@
     ],
     "NAME": "Croaking Seer",
     "DIALOG": ["*croak*"]
+  },
+  "Abyss:GnawingCorruption": {
+    "MOVES": [
+      "Gnawing Corruption",
+      "Tentacle Sweep",
+      "Open Left Eye",
+      "Open Right Eye",
+      "Open All Eyes"
+    ],
+    "NAME": "Gnawing Corruption"
   }
 }

@@ -1,6 +1,7 @@
 package abyss.act;
 
 import abyss.monsters.elites.Behemoth;
+import abyss.monsters.elites.GnawingCorruption;
 import abyss.monsters.normals.GluttonousAbomination;
 import abyss.monsters.normals.SquirmingHorror;
 import actlikeit.dungeons.CustomDungeon;
@@ -107,6 +108,7 @@ public class AbyssAct extends CustomDungeon {
     protected void generateElites(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(Behemoth.ID, 1.0F));
+        monsters.add(new MonsterInfo(GnawingCorruption.ID, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, true);
     }
