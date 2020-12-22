@@ -7,6 +7,7 @@ import abyss.monsters.bosses.VoidHerald;
 import abyss.monsters.bosses.VoidSpawn;
 import abyss.monsters.elites.Behemoth;
 import abyss.monsters.elites.GnawingCorruption;
+import abyss.monsters.elites.PrimevalQueen;
 import abyss.monsters.normals.*;
 import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
@@ -100,6 +101,7 @@ public class Abyss implements
         //Elites
         BaseMod.addMonster(Behemoth.ID, (BaseMod.GetMonster)Behemoth::new);
         BaseMod.addMonster(GnawingCorruption.ID, (BaseMod.GetMonster)GnawingCorruption::new);
+        BaseMod.addMonster(PrimevalQueen.ID, () -> new PrimevalQueen(300.0F, 0.0F));
 
         //Bosses
         BaseMod.addMonster(Encounters.VOID_HERALD_AND_VOID_SPAWN, () -> new MonsterGroup(

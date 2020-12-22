@@ -1,6 +1,7 @@
 package abyss.monsters.bosses;
 
 import abyss.Abyss;
+import abyss.monsters.MonsterUtil;
 import abyss.powers.ResummonPower;
 import abyss.powers.TemporaryHexPower;
 import abyss.powers.ThoughtStealerPower;
@@ -145,8 +146,8 @@ public class VoidHerald extends CustomMonster
     protected void getMove(final int num) {
         byte move;
         boolean lastTwoNotDuress = !this.lastMove(DURESS_DEBUFF) && !this.lastMoveBefore(DURESS_DEBUFF);
-        boolean lastThreeNotDuress = lastTwoNotDuress && !this.lastMoveX(DURESS_DEBUFF, 3);
-        boolean lastFourNotDuress = lastThreeNotDuress && !this.lastMoveX(DURESS_DEBUFF, 4);
+        boolean lastThreeNotDuress = lastTwoNotDuress && !MonsterUtil.lastMoveX(this, DURESS_DEBUFF, 3);
+        boolean lastFourNotDuress = lastThreeNotDuress && !MonsterUtil.lastMoveX(this, DURESS_DEBUFF, 4);
         if (!this.firstMove && lastFourNotDuress) {
                 move = DURESS_DEBUFF;
         }
@@ -180,10 +181,6 @@ public class VoidHerald extends CustomMonster
             CardCrawlGame.screenShake.rumble(4.0F);
             this.onBossVictoryLogic();
         }
-    }
-
-    private boolean lastMoveX(byte move, int movesAgo) {
-        return this.moveHistory.size() >= movesAgo && this.moveHistory.get(this.moveHistory.size() - movesAgo) == move;
     }
 
     private boolean hasCardWithTag(String tagName) {

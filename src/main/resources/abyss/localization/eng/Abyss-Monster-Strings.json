@@ -106,5 +106,22 @@
       "Open All Eyes"
     ],
     "NAME": "Gnawing Corruption"
+  },
+  "Abyss:PrimevalQueen": {
+    "MOVES": [
+      "Scythe",
+      "Strengthen Carapace",
+      "Call Protector"
+    ],
+    "NAME": "Primeval Queen"
+  },
+  "Abyss:RoyalProtector": {
+    "MOVES": [
+      "Carapace",
+      "Burning Spit",
+      "Acid Explosion",
+      "For the Queen"
+    ],
+    "NAME": "Royal Protector"
   }
 }
