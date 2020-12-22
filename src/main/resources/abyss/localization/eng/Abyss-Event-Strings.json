@@ -79,7 +79,8 @@
     "OPTIONS": [
       "[Purify] #gRemove #ga #gcard #gfrom #gyour #gdeck.",
       "[Energize] #gGain {0}.",
-      "[Leave]"
+      "[Leave]",
+      "Choose a Card to Remove"
     ]
   },
   "Abyss:SpawningGrounds": {
