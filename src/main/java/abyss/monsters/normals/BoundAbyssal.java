@@ -142,7 +142,7 @@ public class BoundAbyssal extends CustomMonster {
             case SCRUTINIZE_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new VulnerablePower(AbstractDungeon.player, this.scrutinizeVulnerable, true), this.scrutinizeVulnerable));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.scrutinizeVulnerable, true), this.scrutinizeVulnerable));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Twisted(), 1, true, true));
                 if (AbstractDungeon.ascensionLevel >= 17) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Necrosis(), 1, true, true));
@@ -156,10 +156,10 @@ public class BoundAbyssal extends CustomMonster {
     protected void getMove(final int num) {
         if (this.firstMove || this.lastMove(CONTEMPLATE_ATTACK) || this.lastMove(SCRUTINIZE_ATTACK)) {
             if (num < 50) {
-                this.setMove(OBSERVE_ATTACK, Intent.ATTACK, this.observeDamage);
+                this.setMove(MOVES[0], OBSERVE_ATTACK, Intent.ATTACK, this.observeDamage);
             }
             else {
-                this.setMove(GLARE_ATTACK, Intent.ATTACK, this.glareDamage, GLARE_HITS, true);
+                this.setMove(MOVES[1], GLARE_ATTACK, Intent.ATTACK, this.glareDamage, GLARE_HITS, true);
             }
         }
         else {
@@ -168,10 +168,10 @@ public class BoundAbyssal extends CustomMonster {
             int currentBuffer = power != null ? power.amount : 0;
             int contemplatePercent = 30 + (this.startingBuffer - currentBuffer) * 3;
             if (num < contemplatePercent) {
-                this.setMove(CONTEMPLATE_ATTACK, Intent.ATTACK_BUFF, this.contemplateDamage);
+                this.setMove(MOVES[2], CONTEMPLATE_ATTACK, Intent.ATTACK_BUFF, this.contemplateDamage);
             }
             else {
-                this.setMove(SCRUTINIZE_ATTACK, Intent.ATTACK_DEBUFF, this.scrutinizeDamage);
+                this.setMove(MOVES[3], SCRUTINIZE_ATTACK, Intent.ATTACK_DEBUFF, this.scrutinizeDamage);
             }
         }
     }

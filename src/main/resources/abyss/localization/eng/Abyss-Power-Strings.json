@@ -42,5 +42,9 @@
   "Abyss:Wary": {
     "NAME": "Wary",
     "DESCRIPTIONS": ["Whenever you play an Attack, gains {0} Strength."]
+  },
+  "Abyss:PrimevalCall": {
+    "NAME": "Primeval Call",
+    "DESCRIPTIONS": ["Summons a Royal Protector each turn."]
   }
 }

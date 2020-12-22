@@ -51,7 +51,7 @@ public class RoyalProtector extends CustomMonster {
     }
 
     public RoyalProtector(final float x, final float y) {
-        super(RoyalProtector.NAME, ID, HP_MAX, -5.0F, 0, 145.0f, 145.0f, IMG, x, y);
+        super(RoyalProtector.NAME, ID, HP_MAX, -5.0F, 0, 135.0f, 135.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 8) {
             this.setHp(A8_HP_MIN, A8_HP_MAX);

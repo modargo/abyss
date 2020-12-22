@@ -30,7 +30,7 @@ public class PrimevalCallPower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        ((PrimevalQueen)this.owner).summonRoyalProtectors(1, false);
+        ((PrimevalQueen)this.owner).summonRoyalProtectors(1, false, true);
     }
 
     @Override

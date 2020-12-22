@@ -23,7 +23,7 @@ public class Fumbling extends CustomCard {
     }
 
     @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+    public void triggerOnOtherCardPlayed(AbstractCard c) {
         this.addToBot(new MakeTempCardInDiscardAction(new Wound(), 1));
     }
 

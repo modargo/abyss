@@ -15,9 +15,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class SummonRoyalProtectorAction extends AbstractGameAction {
     private AbstractMonster m;
+    private boolean endOfTurn;
 
-    public SummonRoyalProtectorAction(float x, float y, boolean firstTurn, AbstractMonster[] minions, int slot) {
+    public SummonRoyalProtectorAction(float x, float y, boolean firstTurn, boolean endOfTurn, AbstractMonster[] minions, int slot) {
         this.actionType = ActionType.SPECIAL;
+        this.endOfTurn = endOfTurn;
         if (Settings.FAST_MODE) {
             this.startDuration = Settings.ACTION_DUR_FAST;
         } else {
@@ -70,6 +72,9 @@ public class SummonRoyalProtectorAction extends AbstractGameAction {
             this.m.animX = 0.0F;
             this.m.showHealthBar();
             this.m.usePreBattleAction();
+            if (this.endOfTurn) {
+                this.m.rollMove();
+            }
         } else {
             this.m.animX = Interpolation.fade.apply(0.0F, 1200.0F * Settings.scale, this.duration);
         }

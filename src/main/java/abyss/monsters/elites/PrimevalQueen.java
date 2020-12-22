@@ -23,6 +23,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class PrimevalQueen extends CustomMonster
 {
@@ -88,7 +89,7 @@ public class PrimevalQueen extends CustomMonster
     @Override
     public void usePreBattleAction() {
         this.addToBot(new ApplyPowerAction(this, this, new PrimevalCallPower(this)));
-        this.summonRoyalProtectors(startingSummons, true);
+        this.summonRoyalProtectors(startingSummons, true, false);
     }
 
     @Override
@@ -106,7 +107,7 @@ public class PrimevalQueen extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, this.strengthenCarapaceStrength), this.strengthenCarapaceStrength));
                 break;
             case CALL_PROTECTOR_MOVE:
-                this.summonRoyalProtectors(1, false);
+                this.summonRoyalProtectors(1, false, false);
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -126,21 +127,22 @@ public class PrimevalQueen extends CustomMonster
         moveOptions.add(STRENGTHEN_CARAPACE_BUFF);
         moveOptions.add(CALL_PROTECTOR_MOVE);
 
+        Consumer<Byte> remove = m -> moveOptions.remove((Object)m);
         if (this.firstMove || (!this.lastMove(SCYTHE_ATTACK) && !this.lastMoveBefore(SCYTHE_ATTACK) && !MonsterUtil.lastMoveX(this, SCYTHE_ATTACK, 3))) {
-            moveOptions.remove(STRENGTHEN_CARAPACE_BUFF);
-            moveOptions.remove(CALL_PROTECTOR_MOVE);
+            remove.accept(STRENGTHEN_CARAPACE_BUFF);
+            remove.accept(CALL_PROTECTOR_MOVE);
         }
         if (minionCount > 3) {
-            moveOptions.remove(CALL_PROTECTOR_MOVE);
+            remove.accept(CALL_PROTECTOR_MOVE);
         }
         if (this.lastMove(SCYTHE_ATTACK) && this.lastMoveBefore(SCYTHE_ATTACK)) {
-            moveOptions.remove(SCYTHE_ATTACK);
+            remove.accept(SCYTHE_ATTACK);
         }
         if (this.lastMove(STRENGTHEN_CARAPACE_BUFF)){
-            moveOptions.remove(STRENGTHEN_CARAPACE_BUFF);
+            remove.accept(STRENGTHEN_CARAPACE_BUFF);
         }
         if (this.lastMove(CALL_PROTECTOR_MOVE) && this.lastMoveBefore(CALL_PROTECTOR_MOVE)) {
-            moveOptions.remove(CALL_PROTECTOR_MOVE);
+            remove.accept(CALL_PROTECTOR_MOVE);
         }
 
         byte move;
@@ -167,11 +169,11 @@ public class PrimevalQueen extends CustomMonster
         }
     }
 
-    public void summonRoyalProtectors(int numberToSummon, boolean firstTurn) {
+    public void summonRoyalProtectors(int numberToSummon, boolean firstTurn, boolean endOfTurn) {
         for (int i = 0; i < numberToSummon; i++) {
             int slot = this.getFirstFreeMinionSlot();
             float xPosition = this.slotToXPosition(slot);
-            AbstractDungeon.actionManager.addToBottom(new SummonRoyalProtectorAction(xPosition, 0.0F, firstTurn, this.activeMinions, slot));
+            AbstractDungeon.actionManager.addToBottom(new SummonRoyalProtectorAction(xPosition, 0.0F, firstTurn, endOfTurn, this.activeMinions, slot));
         }
     }
 

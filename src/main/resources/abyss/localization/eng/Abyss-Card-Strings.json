@@ -5,7 +5,7 @@
   },
   "Abyss:Drained": {
     "NAME": "Drained",
-    "DESCRIPTION": "Unplayable. NL While in hand, whenever you exhaust a card, you take !M! damage."
+    "DESCRIPTION": "Unplayable. NL While in hand, whenever a card is Exhausted, you take !M! damage."
   },
   "Abyss:Fumbling": {
     "NAME": "Fumbling",

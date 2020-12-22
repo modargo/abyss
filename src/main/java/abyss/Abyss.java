@@ -11,6 +11,7 @@ import abyss.monsters.elites.PrimevalQueen;
 import abyss.monsters.normals.*;
 import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
+import abyss.relics.CrystalEnergy;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
 import basemod.ModPanel;
@@ -94,14 +95,14 @@ public class Abyss implements
         BaseMod.addMonster(Encounters.CROAKING_TRIO, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new CroakingBrute(-450.0F, 0.0F),
-                        new CroakingPelter(-450.0F, 0.0F),
-                        new CroakingSeer(-450.0F, 0.0F)
+                        new CroakingPelter(-150.0F, 0.0F),
+                        new CroakingSeer(150.0F, 0.0F)
                 }));
 
         //Elites
         BaseMod.addMonster(Behemoth.ID, (BaseMod.GetMonster)Behemoth::new);
         BaseMod.addMonster(GnawingCorruption.ID, (BaseMod.GetMonster)GnawingCorruption::new);
-        BaseMod.addMonster(PrimevalQueen.ID, () -> new PrimevalQueen(300.0F, 0.0F));
+        BaseMod.addMonster(PrimevalQueen.ID, () -> new PrimevalQueen(250.0F, 0.0F));
 
         //Bosses
         BaseMod.addMonster(Encounters.VOID_HERALD_AND_VOID_SPAWN, () -> new MonsterGroup(
@@ -161,6 +162,7 @@ public class Abyss implements
     public void receiveEditRelics() {
         BaseMod.addRelic(new BehemothsCourage(), RelicType.SHARED);
         BaseMod.addRelic(new BehemothsWisdom(), RelicType.SHARED);
+        BaseMod.addRelic(new CrystalEnergy(), RelicType.SHARED);
     }
 
     private static String makeLocPath(Settings.GameLanguage language, String filename)
