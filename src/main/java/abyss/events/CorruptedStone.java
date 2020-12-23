@@ -90,9 +90,9 @@ public class CorruptedStone extends AbstractImageEvent {
         }
     }
 
-    private void showColorlessCardReward(int numCards) {
+    private void showColorlessCardReward(int numRewards) {
         AbstractDungeon.getCurrRoom().rewards.clear();
-        for(int i = 0; i < numCards; ++i) {
+        for(int i = 0; i < numRewards; ++i) {
             RewardItem reward = new RewardItem(AbstractCard.CardColor.COLORLESS);
             AbstractDungeon.getCurrRoom().addCardReward(reward);
         }
@@ -101,9 +101,9 @@ public class CorruptedStone extends AbstractImageEvent {
         AbstractDungeon.combatRewardScreen.open();
     }
 
-    private void showSpecialCardReward(int numCards) {
+    private void showSpecialCardReward(int numRewards) {
         AbstractDungeon.getCurrRoom().rewards.clear();
-        for(int i = 0; i < numCards; ++i) {
+        for(int i = 0; i < numRewards; ++i) {
             RewardItem reward = new RewardItem();
             reward.cards = this.getSpecialCardReward();
             AbstractDungeon.getCurrRoom().addCardReward(reward);
