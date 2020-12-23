@@ -1,12 +1,18 @@
 package abyss.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class CardUtil {
     public static AbstractCard upgradeRandomCard() {
@@ -26,5 +32,30 @@ public class CardUtil {
             return card;
         }
         return null;
+    }
+
+    public static AbstractCard getOtherColorCard(AbstractCard.CardRarity rarity, List<AbstractCard.CardColor> excludedColors) {
+        CardGroup anyCard = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        Iterator var2 = CardLibrary.cards.entrySet().iterator();
+
+        while(true) {
+            Map.Entry c;
+            do {
+                do {
+                    do {
+                        do {
+                            if (!var2.hasNext()) {
+                                anyCard.shuffle(AbstractDungeon.cardRng);
+                                return anyCard.getRandomCard(true, rarity).makeCopy();
+                            }
+
+                            c = (Map.Entry)var2.next();
+                        } while(((AbstractCard)c.getValue()).rarity != rarity || excludedColors.contains(((AbstractCard)c.getValue()).color));
+                    } while(((AbstractCard)c.getValue()).type == AbstractCard.CardType.CURSE);
+                } while(((AbstractCard)c.getValue()).type == AbstractCard.CardType.STATUS);
+            } while(UnlockTracker.isCardLocked((String)c.getKey()) && !Settings.treatEverythingAsUnlocked());
+
+            anyCard.addToBottom((AbstractCard)c.getValue());
+        }
     }
 }
