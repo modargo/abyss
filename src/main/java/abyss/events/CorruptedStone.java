@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
 import com.megacrit.cardcrawl.cards.colorless.Apparition;
+import com.megacrit.cardcrawl.cards.colorless.MasterOfStrategy;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
@@ -118,7 +119,7 @@ public class CorruptedStone extends AbstractImageEvent {
         rewardCards.add(AbstractDungeon.getCard(AbstractCard.CardRarity.RARE));
         rewardCards.add(CardLibrary.getAnyColorCard(AbstractCard.CardRarity.RARE));
 
-        List<AbstractCard> powerfulCards = Arrays.asList(new Apparition(), new Apotheosis());
+        List<AbstractCard> powerfulCards = Arrays.asList(new Apparition(), new Apotheosis(), new MasterOfStrategy());
         rewardCards.add(powerfulCards.get(AbstractDungeon.miscRng.random(powerfulCards.size() - 1)));
 
         if (Loader.isModLoaded(Abyss.ElementariumModId)) {
