@@ -12,6 +12,7 @@ import abyss.monsters.normals.*;
 import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import abyss.relics.CrystalEnergy;
+import abyss.relics.HuntersRespect;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
 import basemod.ModPanel;
@@ -132,6 +133,7 @@ public class Abyss implements
         BaseMod.addEvent(HungryVoid.ID, HungryVoid.class, AbyssAct.ID);
         BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);;
         BaseMod.addEvent(SpawningGrounds.ID, SpawningGrounds.class, AbyssAct.ID);
+        BaseMod.addEvent(BigGameHunter.ID, BigGameHunter.class, AbyssAct.ID);
 
         // TODO: Consider moving this logic to Elementarium
         if (Loader.isModLoaded(ElementariumModId)) {
@@ -163,6 +165,7 @@ public class Abyss implements
         BaseMod.addRelic(new BehemothsCourage(), RelicType.SHARED);
         BaseMod.addRelic(new BehemothsWisdom(), RelicType.SHARED);
         BaseMod.addRelic(new CrystalEnergy(), RelicType.SHARED);
+        BaseMod.addRelic(new HuntersRespect(), RelicType.SHARED);
     }
 
     private static String makeLocPath(Settings.GameLanguage language, String filename)

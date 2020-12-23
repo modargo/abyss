@@ -96,5 +96,22 @@
       "[Leave]",
       "Select a Card to Upgrade."
     ]
+  },
+  "Abyss:BigGameHunter": {
+    "NAME": "Big Game Hunter",
+    "DESCRIPTIONS": [
+      "Navigating the desolate abyss, you come across a strangely dressed figure setting up camp. It's covered in so much gear and carrying so many weapons that you can't tell what the creature itself looks like under all of it. As you approach, the figure turns and greets you. NL NL \"Ho there, friend!\" he shouts at you. \"You must be here to hunt exotic game, the same reason I am! The #yhorrors and #yprimordials of this place make beings of craft and magic pale by comparison. Let me tell you about all the #g@exhilirating@ things I've seen!\" NL NL The figure regales you with tales of its exploits.",
+      "Finally, after a story about hunting #ydiabolic #yabyssals, the figure switches topics. \"If you're this deep in, I don't have that much more to offer you. You already have my respect. So let me teach you one final trick... but be warned, it'll take a bit of #r~blood~ to make it work.\"",
+      "\"Always a #gpleasure to meet a fellow #bhunter!\" The figure wishes you luck in your hunting as you leave."
+    ],
+    "OPTIONS": [
+      "[Listen]",
+      "[Learn] #gGain {0}. #rLose #r{1} #rMax #rHP.",
+      "[Trade] #gGain {0}. #rLose {1}.",
+      "[Locked] Requires Hunter's Knife.",
+      "[Trade] #gGain {0} #gand #g{1} #gMax #gHP. #rLose {2}.",
+      "[Locked] Requires one of the hunter's relics.",
+      "[Leave]"
+    ]
   }
 }

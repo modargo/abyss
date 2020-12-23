@@ -13,5 +13,10 @@
     "NAME": "Crystal Energy",
     "FLAVOR": "It's easy to be courageous when you have skin of iron.",
     "DESCRIPTIONS": ["When you take more than {0} damage in a turn, heal {1} HP."]
+  },
+  "Abyss:HuntersRespect": {
+    "NAME": "Hunter's Respect",
+    "FLAVOR": "From one big game hunter to another.",
+    "DESCRIPTIONS": ["At the start of your second turn, draw 1 additional card."]
   }
 }
