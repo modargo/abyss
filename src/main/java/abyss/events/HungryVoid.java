@@ -53,6 +53,7 @@ public class HungryVoid extends AbstractImageEvent {
             this.healAmount = (int)((float)AbstractDungeon.player.maxHealth * HEAL_PERCENT);
             this.goldLoss = GOLD_LOSS;
         }
+        this.goldLoss = Math.min(this.goldLoss, AbstractDungeon.player.gold);
         this.cardReward = new BrokenCrystal();
         this.curse = new Twisted();
 

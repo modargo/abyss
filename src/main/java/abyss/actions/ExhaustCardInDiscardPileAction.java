@@ -69,6 +69,6 @@ public class ExhaustCardInDiscardPileAction extends AbstractGameAction {
     }
 
     static {
-        TEXT = CardCrawlGame.languagePack.getUIString("Menagerie:ExhaustCardInDiscardPileAction").TEXT;
+        TEXT = CardCrawlGame.languagePack.getUIString("Abyss:ExhaustCardInDiscardPileAction").TEXT;
     }
 }

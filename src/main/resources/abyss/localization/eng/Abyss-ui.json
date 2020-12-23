@@ -9,5 +9,12 @@
   },
   "Abyss:BehemothsWisdomAction": {
     "TEXT": ["Exhaust and replace (Behemoth's Wisdom)"]
+  },
+  "Abyss:ExhaustCardInDiscardPileAction": {
+    "TEXT": [
+      "Choose a Card to Exhaust.",
+      "Choose ",
+      " Cards to Exhaust."
+    ]
   }
 }

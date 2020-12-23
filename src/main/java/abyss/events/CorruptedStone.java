@@ -137,9 +137,9 @@ public class CorruptedStone extends AbstractImageEvent {
             List<String> spellCardIds = Arrays.asList(
                     "Menagerie:CrumblingSanctuary",
                     "Menagerie:MirarisWake",
-                    "Menagerie:WallOfBlossoms"
-                    //TODO Add more
+                    "Menagerie:QuirionDryad"
             );
+
             String spellCardId = spellCardIds.get(AbstractDungeon.miscRng.random(spellCardIds.size() - 1));
             rewardCards.add(CardLibrary.getCard(spellCardId).makeCopy());
         }
