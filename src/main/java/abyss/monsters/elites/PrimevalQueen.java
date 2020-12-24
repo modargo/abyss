@@ -7,7 +7,6 @@ import abyss.powers.PrimevalCallPower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +14,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -45,8 +43,8 @@ public class PrimevalQueen extends CustomMonster
     private static final int STARTING_SUMMONS = 1;
     private static final int A18_STARTING_SUMMONS = 2;
     private static final int HP_MIN = 180;
-    private static final int HP_MAX = 190;
-    private static final int A8_HP_MIN = 190;
+    private static final int HP_MAX = 180;
+    private static final int A8_HP_MIN = 200;
     private static final int A8_HP_MAX = 200;
     private int scytheDamage;
     private int strengthenCarapaceBlock;
