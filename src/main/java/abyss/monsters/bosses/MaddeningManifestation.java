@@ -82,10 +82,10 @@ public class MaddeningManifestation extends CustomMonster {
     @Override
     protected void getMove(final int num) {
         if (!this.lastMove(GRASP_THE_ABYSS_ATTACK) || !this.lastMoveBefore(GRASP_THE_ABYSS_ATTACK)) {
-            this.setMove(GRASP_THE_ABYSS_ATTACK, Intent.ATTACK, this.graspTheAbyssDamage);
+            this.setMove(MOVES[0], GRASP_THE_ABYSS_ATTACK, Intent.ATTACK, this.graspTheAbyssDamage);
         }
         else {
-            this.setMove(MADNESS_BUFF, Intent.BUFF);
+            this.setMove(MOVES[1], MADNESS_BUFF, Intent.BUFF);
         }
     }
 

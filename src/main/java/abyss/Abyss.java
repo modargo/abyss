@@ -1,5 +1,7 @@
 package abyss;
 
+import abyss.act.AbyssAct;
+import abyss.act.Encounters;
 import abyss.cards.*;
 import abyss.events.*;
 import abyss.monsters.bosses.DeepTyrant;
@@ -13,6 +15,7 @@ import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import abyss.relics.CrystalEnergy;
 import abyss.relics.HuntersRespect;
+import abyss.util.TextureLoader;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
 import basemod.ModPanel;
@@ -21,15 +24,10 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import abyss.act.AbyssAct;
-import abyss.act.Encounters;
-import abyss.util.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -47,14 +45,10 @@ public class Abyss implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber {
-    private static final float X1 = -350.0F;
-    private static final float X2 = 0.0F;
-    private static final float X2_ALT = 100.0F;
+    public static final Logger logger = LogManager.getLogger(Abyss.class.getName());
 
     public static final String ElementariumModId = "Elementarium";
     public static final String MenagerieModId = "Menagerie";
-
-    public static final Logger logger = LogManager.getLogger(Abyss.class.getName());
 
     public Abyss() {
         BaseMod.subscribe(this);
@@ -131,7 +125,7 @@ public class Abyss implements
         BaseMod.addEvent(CorruptedStone.ID, CorruptedStone.class, AbyssAct.ID);
         BaseMod.addEvent(ElderBehemoth.ID, ElderBehemoth.class, AbyssAct.ID);
         BaseMod.addEvent(HungryVoid.ID, HungryVoid.class, AbyssAct.ID);
-        BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);;
+        BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);
         BaseMod.addEvent(SpawningGrounds.ID, SpawningGrounds.class, AbyssAct.ID);
         BaseMod.addEvent(BigGameHunter.ID, BigGameHunter.class, AbyssAct.ID);
     }

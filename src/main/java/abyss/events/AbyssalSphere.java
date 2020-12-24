@@ -91,12 +91,9 @@ public class AbyssalSphere extends AbstractEvent {
         INTRO_MSG = DESCRIPTIONS[0];
     }
 
-    private static enum CurScreen {
+    private enum CurScreen {
         INTRO,
         PRE_COMBAT,
-        END;
-
-        private CurScreen() {
-        }
+        END
     }
 }

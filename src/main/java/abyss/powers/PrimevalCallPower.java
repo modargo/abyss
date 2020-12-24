@@ -2,15 +2,10 @@ package abyss.powers;
 
 import abyss.Abyss;
 import abyss.monsters.elites.PrimevalQueen;
-import abyss.monsters.elites.RoyalProtector;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FrailPower;
 
 import java.text.MessageFormat;
 
