@@ -58,7 +58,7 @@ public class ThoughtStealerPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], INITIAL_SAFE_DRAW);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], INITIAL_SAFE_DRAW, TRIGGER_THRESHOLD, STRENGTH_GAIN, HEAL);
     }
 
     static {
