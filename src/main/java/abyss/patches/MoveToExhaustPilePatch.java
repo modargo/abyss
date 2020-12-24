@@ -18,10 +18,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class MoveToExhaustPilePatch {
     @SpirePostfixPatch
     public static void CheckDrained(CardGroup __instance, AbstractCard c) {
-        for (AbstractCard card : AbstractDungeon.player.hand.group) {
-            if (card.cardID.equals(Drained.ID)) {
-                //TODO Consider a visual effect
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, Drained.DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.NONE));
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            for (AbstractCard card : AbstractDungeon.player.hand.group) {
+                if (card.cardID.equals(Drained.ID)) {
+                    //TODO Consider a visual effect
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, Drained.DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.NONE));
+                }
             }
         }
     }

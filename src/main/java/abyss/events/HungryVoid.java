@@ -2,7 +2,7 @@ package abyss.events;
 
 import abyss.Abyss;
 import abyss.cards.BrokenCrystal;
-import abyss.cards.Twisted;
+import abyss.cards.Tormented;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -55,7 +55,7 @@ public class HungryVoid extends AbstractImageEvent {
         }
         this.goldLoss = Math.min(this.goldLoss, AbstractDungeon.player.gold);
         this.cardReward = new BrokenCrystal();
-        this.curse = new Twisted();
+        this.curse = new Tormented();
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], CARD_REWARD_AMOUNT, this.cardReward.name, this.healthLoss), this.cardReward);
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.healAmount), this.curse);

@@ -154,10 +154,10 @@ public class Abyss implements
 
         //Curses and statuses
         BaseMod.addCard(new Drained());
-        BaseMod.addCard(new Fumbling());
-        BaseMod.addCard(new Necrosis());
+        BaseMod.addCard(new Staggered());
+        BaseMod.addCard(new Withering());
         BaseMod.addCard(new Panic());
-        BaseMod.addCard(new Twisted());
+        BaseMod.addCard(new Tormented());
     }
 
     @Override

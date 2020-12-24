@@ -1,8 +1,8 @@
 package abyss.monsters.normals;
 
 import abyss.Abyss;
-import abyss.cards.Necrosis;
-import abyss.cards.Twisted;
+import abyss.cards.Withering;
+import abyss.cards.Tormented;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -143,9 +143,9 @@ public class BoundAbyssal extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.scrutinizeVulnerable, true), this.scrutinizeVulnerable));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Twisted(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Tormented(), 1, true, true));
                 if (AbstractDungeon.ascensionLevel >= 17) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Necrosis(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Withering(), 1, true, true));
                 }
                 break;
         }

@@ -10,15 +10,15 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Fumbling extends CustomCard {
-    public static final String ID = "Abyss:Fumbling";
+public class Staggered extends CustomCard {
+    public static final String ID = "Abyss:Staggered";
     public static final String IMG = Abyss.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = -2;
 
-    public Fumbling() {
+    public Staggered() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.SPECIAL, CardTarget.NONE);
     }
 
@@ -35,6 +35,6 @@ public class Fumbling extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Fumbling();
+        return new Staggered();
     }
 }
