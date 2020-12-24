@@ -13,7 +13,11 @@
   },
   "Abyss:Abysstouched": {
     "NAME": "Abysstouched",
-    "DESCRIPTIONS": ["Take {0}% more damage from attacks. At the end of your turn, take #b{0} damage."]
+    "DESCRIPTIONS": ["Take #b{0}% more damage from attacks. At the end of your turn, take #b{0} damage."]
+  },
+  "Abyss:DelayedAbysstouched": {
+    "NAME": "Abysstouched",
+    "DESCRIPTIONS": ["Take #b{0}% more damage from attacks. At the end of your turn, take #b{0} damage."]
   },
   "Abyss:Evolving": {
     "NAME": "Evolving",
@@ -25,7 +29,7 @@
   },
   "Abyss:DazedPulse": {
     "NAME": "Dazed Pulse",
-    "DESCRIPTIONS": ["At the end of each round, shuffle {0} #yDazed into your deck."]
+    "DESCRIPTIONS": ["At the end of each round, shuffle #b{0} #yDazed into your deck."]
   },
   "Abyss:AbysstouchedPulse": {
     "NAME": "Abysstouched Pulse",
@@ -37,11 +41,11 @@
   },
   "Abyss:Gluttony": {
     "NAME": "Gluttony",
-    "DESCRIPTIONS": ["Gains #b1 Strength for every {0} Max HP you have (rounded up)."]
+    "DESCRIPTIONS": ["Gains #b1 Strength for every #b{0} Max HP you have (rounded up)."]
   },
   "Abyss:Wary": {
     "NAME": "Wary",
-    "DESCRIPTIONS": ["Whenever you play an Attack, gains {0} Strength."]
+    "DESCRIPTIONS": ["Whenever you play an Attack, gains #b{0} Strength."]
   },
   "Abyss:PrimevalCall": {
     "NAME": "Primeval Call",

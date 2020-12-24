@@ -24,7 +24,9 @@ public class Staggered extends CustomCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        this.addToBot(new MakeTempCardInDiscardAction(new Wound(), 1));
+        if (c.type == CardType.ATTACK) {
+            this.addToBot(new MakeTempCardInDiscardAction(new Wound(), 1));
+        }
     }
 
     @Override

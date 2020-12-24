@@ -25,6 +25,7 @@ public class TemporaryHexPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        this.type = PowerType.DEBUFF;
         this.isTurnBased = true;
         if (AbstractDungeon.actionManager.turnHasEnded && isSourceMonster) {
             this.justApplied = true;

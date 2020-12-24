@@ -21,13 +21,9 @@ public class AbysstouchedPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
+        this.type = PowerType.DEBUFF;
         this.updateDescription();
         Abyss.LoadPowerImage(this);
-    }
-
-    @Override
-    public void playApplyPowerSfx() {
-        CardCrawlGame.sound.play("POWER_POISON", 0.05F);
     }
 
     @Override

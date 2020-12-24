@@ -20,13 +20,12 @@ import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.localization.*;
@@ -36,6 +35,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.nio.charset.StandardCharsets;
+
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
@@ -44,7 +45,8 @@ public class Abyss implements
         PostInitializeSubscriber,
         EditCardsSubscriber,
         EditRelicsSubscriber,
-        EditStringsSubscriber {
+        EditStringsSubscriber,
+        EditKeywordsSubscriber {
     public static final Logger logger = LogManager.getLogger(Abyss.class.getName());
 
     public static final String ElementariumModId = "Elementarium";
@@ -180,6 +182,21 @@ public class Abyss implements
         }
     }
 
+
+    @Override
+    public void receiveEditKeywords() {
+        Gson gson = new Gson();
+        String json = Gdx.files.internal(makeLocPath(Settings.language, "Abyss-Keyword-Strings")).readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                //The modID here must be lowercase
+                BaseMod.addKeyword("abyss", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
+    }
+
     public static String cardImage(String id) {
         return "abyss/images/cards/" + removeModId(id) + ".png";
     }
@@ -218,4 +235,10 @@ public class Abyss implements
         power.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
     }
 
+    private static class Keyword
+    {
+        public String PROPER_NAME;
+        public String[] NAMES;
+        public String DESCRIPTION;
+    }
 }

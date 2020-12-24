@@ -2,6 +2,7 @@ package abyss.monsters.normals;
 
 import abyss.Abyss;
 import abyss.powers.AbysstouchedPower;
+import abyss.powers.DelayedAbysstouchedPower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -96,7 +97,7 @@ public class ViciousHatchling extends CustomMonster {
                 break;
             case CORROSIVE_SPIT_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new AbysstouchedPower(AbstractDungeon.player, this.corrosiveSpitAcid), this.corrosiveSpitAcid));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DelayedAbysstouchedPower(AbstractDungeon.player, this.corrosiveSpitAcid), this.corrosiveSpitAcid));
                 break;
             case HEADBUTT_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));

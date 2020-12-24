@@ -1,6 +1,7 @@
 package abyss.monsters.normals;
 
 import abyss.Abyss;
+import abyss.powers.DelayedAbysstouchedPower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -14,7 +15,6 @@ import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.powers.MalleablePower;
 
 public class SquirmingHorror extends CustomMonster {
@@ -28,19 +28,20 @@ public class SquirmingHorror extends CustomMonster {
     private static final byte EMBRACE_DEBUFF = 2;
     private static final int TENTACLE_WRAP_DAMAGE = 10;
     private static final int A2_TENTACLE_WRAP_DAMAGE = 12;
-    private static final int TENTACLE_WRAP_CONSTRICTED = 3;
-    private static final int A17_TENTACLE_WRAP_CONSTRICTED = 4;
-    private static final int EMBRACE_CONSTRICTED = 8;
-    private static final int A17_EMBRACE_CONSTRICTED = 10;
+    private static final int TENTACLE_WRAP_ABYSSTOUCHED = 2;
+    private static final int A17_TENTACLE_WRAP_ABYSSTOUCHED = 3;
+    private static final int EMBRACE_ABYSSTOUCHED = 5;
+    private static final int A17_EMBRACE_ABYSSTOUCHED = 6;
     private static final int EMBRACE_SLIMES = 1;
     private static final int A17_EMBRACE_SLIMES = 1;
+    private static final int MALLEABLE = 2;
     private static final int HP_MIN = 90;
     private static final int HP_MAX = 94;
     private static final int A7_HP_MIN = 93;
     private static final int A7_HP_MAX = 97;
     private int tentacleWrapDamage;
-    private int tentacleWrapConstricted;
-    private int embraceConstricted;
+    private int tentacleWrapAbysstouched;
+    private int embraceAbysstouched;
     private int embraceSlimes;
 
     public SquirmingHorror() {
@@ -64,19 +65,19 @@ public class SquirmingHorror extends CustomMonster {
         this.damage.add(new DamageInfo(this, this.tentacleWrapDamage));
 
         if (AbstractDungeon.ascensionLevel >= 17) {
-            this.tentacleWrapConstricted = A17_TENTACLE_WRAP_CONSTRICTED;
-            this.embraceConstricted = A17_EMBRACE_CONSTRICTED;
+            this.tentacleWrapAbysstouched = A17_TENTACLE_WRAP_ABYSSTOUCHED;
+            this.embraceAbysstouched = A17_EMBRACE_ABYSSTOUCHED;
             this.embraceSlimes = A17_EMBRACE_SLIMES;
         } else {
-            this.tentacleWrapConstricted = TENTACLE_WRAP_CONSTRICTED;
-            this.embraceConstricted = EMBRACE_CONSTRICTED;
+            this.tentacleWrapAbysstouched = TENTACLE_WRAP_ABYSSTOUCHED;
+            this.embraceAbysstouched = EMBRACE_ABYSSTOUCHED;
             this.embraceSlimes = EMBRACE_SLIMES;
         }
     }
 
     @Override
     public void usePreBattleAction() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MalleablePower(this)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MalleablePower(this, MALLEABLE), MALLEABLE));
     }
 
     @Override
@@ -88,11 +89,11 @@ public class SquirmingHorror extends CustomMonster {
             case TENTACLE_WRAP_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ConstrictedPower(AbstractDungeon.player, this, this.tentacleWrapConstricted), this.tentacleWrapConstricted));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DelayedAbysstouchedPower(AbstractDungeon.player, this.tentacleWrapAbysstouched), this.tentacleWrapAbysstouched));
                 break;
             case EMBRACE_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new ConstrictedPower(AbstractDungeon.player, this, this.embraceConstricted), this.embraceConstricted));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DelayedAbysstouchedPower(AbstractDungeon.player, this.embraceAbysstouched), this.embraceAbysstouched));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Slimed(), this.embraceSlimes));
                 break;
         }
