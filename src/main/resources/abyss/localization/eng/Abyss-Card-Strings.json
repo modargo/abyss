@@ -22,5 +22,9 @@
   "Abyss:Tormented": {
     "NAME": "Tormented",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! abyss:Abysstouched."
+  },
+  "Abyss:HandOfTheAbyss": {
+    "NAME": "Hand of the Abyss",
+    "DESCRIPTION": "Whenever an attack deals unblocked damage, apply !M! abyss:Abysstouched."
   }
 }

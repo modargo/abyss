@@ -2,6 +2,7 @@ package abyss.events;
 
 import abyss.Abyss;
 import abyss.cards.BrokenCrystal;
+import abyss.cards.HandOfTheAbyss;
 import abyss.cards.Tormented;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -54,7 +55,7 @@ public class HungryVoid extends AbstractImageEvent {
             this.goldLoss = GOLD_LOSS;
         }
         this.goldLoss = Math.min(this.goldLoss, AbstractDungeon.player.gold);
-        this.cardReward = new BrokenCrystal();
+        this.cardReward = new HandOfTheAbyss();
         this.curse = new Tormented();
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], CARD_REWARD_AMOUNT, this.cardReward.name, this.healthLoss), this.cardReward);
@@ -67,7 +68,7 @@ public class HungryVoid extends AbstractImageEvent {
         switch (screenNum) {
             case 0:
                 switch (buttonPressed) {
-                    case 0: // Shield
+                    case 0: // Accept
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         List<String> cards = new ArrayList<>();
                         for (int i = 0; i < CARD_REWARD_AMOUNT; i++) {
@@ -76,16 +77,16 @@ public class HungryVoid extends AbstractImageEvent {
                             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F - (350.0F + 350.0F * i) * Settings.xScale, (float)Settings.HEIGHT / 2.0F));
                         }
                         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, this.healthLoss));
-                        logMetric(ID, "Shield", cards, null, null, null, null, null, null, this.healthLoss, 0, 0, 0, 0, 0);
+                        logMetric(ID, "Accept", cards, null, null, null, null, null, null, this.healthLoss, 0, 0, 0, 0, 0);
                         this.screenNum = 1;
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         break;
-                    case 1: // Accept
+                    case 1: // Shield
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         AbstractDungeon.player.heal(this.healAmount);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.curse, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                        logMetricObtainCardAndHeal(ID, "Accept", this.curse, this.healAmount);
+                        logMetricObtainCardAndHeal(ID, "Shield", this.curse, this.healAmount);
                         this.screenNum = 1;
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();

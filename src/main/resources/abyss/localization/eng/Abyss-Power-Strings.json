@@ -13,7 +13,7 @@
   },
   "Abyss:Abysstouched": {
     "NAME": "Abysstouched",
-    "DESCRIPTIONS": ["Take #b{0}% more damage from attacks. At the end of your turn, take #b{0} damage."]
+    "DESCRIPTIONS": ["Take #b{0}% more damage from attacks. At the end of your turn, take #b{0} damage.", "Target takes #b{0}% more damage from attacks. At the beginning of its turn, the target takes #b{0} damage."]
   },
   "Abyss:DelayedAbysstouched": {
     "NAME": "Abysstouched",
@@ -50,5 +50,9 @@
   "Abyss:PrimevalCall": {
     "NAME": "Primeval Call",
     "DESCRIPTIONS": ["Summons a Royal Protector each turn."]
+  },
+  "Abyss:HandOfTheAbyss": {
+    "NAME": "Hand of the Abyss",
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply {0} abyss:Abysstouched."]
   }
 }

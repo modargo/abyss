@@ -5,8 +5,10 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.MessageFormat;
 
@@ -27,10 +29,20 @@ public class AbysstouchedPower extends AbstractPower {
     }
 
     @Override
+    public void atStartOfTurn() {
+        if (!this.owner.isPlayer && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.flashWithoutSound();
+            this.playApplyPowerSfx();
+            this.addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));;
+        }
+    }
+
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.flashWithoutSound();
-        this.playApplyPowerSfx();
-        this.addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));
+        if (this.owner.isPlayer) {
+            this.flashWithoutSound();
+            this.addToBot(new DamageAction(this.owner, new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS)));
+        }
     }
 
     @Override
@@ -43,7 +55,7 @@ public class AbysstouchedPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
+        this.description = MessageFormat.format(this.owner.isPlayer ? DESCRIPTIONS[0] : DESCRIPTIONS[1], this.amount);
     }
 
     static {
