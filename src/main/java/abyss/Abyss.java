@@ -67,7 +67,7 @@ public class Abyss implements
     @Override
     public void receivePostInitialize() {
         Texture badgeTexture = new Texture("abyss/images/AbyssBadge.png");
-        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations.", new ModPanel());
+        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", new ModPanel());
 
         CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
         addMonsters();
@@ -134,18 +134,6 @@ public class Abyss implements
         BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);;
         BaseMod.addEvent(SpawningGrounds.ID, SpawningGrounds.class, AbyssAct.ID);
         BaseMod.addEvent(BigGameHunter.ID, BigGameHunter.class, AbyssAct.ID);
-
-        // TODO: Consider moving this logic to Elementarium
-        if (Loader.isModLoaded(ElementariumModId)) {
-            Class<? extends AbstractEvent> eventClass;
-            try {
-                //noinspection unchecked
-                eventClass = (Class<? extends AbstractEvent>) Class.forName("elementarium.events.ChestOfTheGoldenMirage");
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-            BaseMod.addEvent("Elementarium:ChestOfTheGoldenMirage", eventClass, AbyssAct.ID);
-        }
     }
 
     @Override
@@ -154,10 +142,10 @@ public class Abyss implements
 
         //Curses and statuses
         BaseMod.addCard(new Drained());
-        BaseMod.addCard(new Staggered());
-        BaseMod.addCard(new Withering());
         BaseMod.addCard(new Panic());
+        BaseMod.addCard(new Staggered());
         BaseMod.addCard(new Tormented());
+        BaseMod.addCard(new Withering());
     }
 
     @Override

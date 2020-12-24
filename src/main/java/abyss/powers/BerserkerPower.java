@@ -1,10 +1,7 @@
 package abyss.powers;
 
-import abyss.Abyss;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,7 +24,7 @@ public class BerserkerPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        Abyss.LoadPowerImage(this);
+        this.loadRegion("berserk");
     }
 
     @Override

@@ -140,10 +140,10 @@ public class GnawingCorruption extends CustomMonster
     private List<AbstractCard> getCurses(int amount) {
         AbstractList<AbstractCard> curses = new ArrayList<>();
         curses.add(new Drained());
-        curses.add(new Staggered());
-        curses.add(new Withering());
         curses.add(new Panic());
+        curses.add(new Staggered());
         curses.add(new Tormented());
+        curses.add(new Withering());
         Collections.shuffle(curses, AbstractDungeon.aiRng.random);
         return curses.subList(0, amount);
     }
