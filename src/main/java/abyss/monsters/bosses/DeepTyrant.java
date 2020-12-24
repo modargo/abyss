@@ -6,13 +6,16 @@ import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 public class DeepTyrant extends CustomMonster
 {
@@ -173,7 +176,16 @@ public class DeepTyrant extends CustomMonster
     @Override
     public void die() {
         super.die();
-        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+        boolean allMonstersBasicallyDead = true;
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            allMonstersBasicallyDead = allMonstersBasicallyDead && (m == this || m.id.equals(MaddeningManifestation.ID));
+            if (m.id.equals(MaddeningManifestation.ID) && !m.isDying) {
+                //TODO See if I can change the color of the explosion
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
+                AbstractDungeon.actionManager.addToBottom(new SuicideAction(m));
+            }
+        }
+        if (allMonstersBasicallyDead) {
             this.useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             this.onBossVictoryLogic();
