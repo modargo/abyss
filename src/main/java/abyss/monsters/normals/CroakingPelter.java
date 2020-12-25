@@ -17,6 +17,7 @@ public class CroakingPelter extends AbstractCroaking {
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     public static final String[] MOVES;
+    public static final String[] DIALOG;
     private static final String IMG = Abyss.monsterImage(ID);
     private static final byte ROCK_TOSS_ATTACK = 2;
     private static final int ROCK_TOSS_DAMAGE = 4;
@@ -82,5 +83,6 @@ public class CroakingPelter extends AbstractCroaking {
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
         NAME = CroakingPelter.monsterStrings.NAME;
         MOVES = CroakingPelter.monsterStrings.MOVES;
+        DIALOG = CroakingPelter.monsterStrings.DIALOG;
     }
 }

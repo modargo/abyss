@@ -2,6 +2,7 @@ package abyss.monsters.bosses;
 
 import abyss.Abyss;
 import abyss.monsters.MonsterUtil;
+import abyss.monsters.normals.UnboundAbyssal;
 import abyss.powers.ResummonPower;
 import abyss.powers.TemporaryHexPower;
 import abyss.powers.ThoughtStealerPower;
@@ -29,6 +30,7 @@ public class VoidHerald extends CustomMonster
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     public static final String[] MOVES;
+    public static final String[] DIALOG;
     private static final String IMG = Abyss.monsterImage(ID);
     private boolean firstMove = true;
     private static final byte DURESS_DEBUFF = 1;
@@ -104,7 +106,6 @@ public class VoidHerald extends CustomMonster
     @Override
     public void takeTurn() {
         if (this.firstMove) {
-
             if (this.hasCardWithTag("ELEMENTAL_BLADE")) {
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[1], 0.5F, 2.0F));
             }
@@ -192,5 +193,6 @@ public class VoidHerald extends CustomMonster
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
         NAME = VoidHerald.monsterStrings.NAME;
         MOVES = VoidHerald.monsterStrings.MOVES;
+        DIALOG = VoidHerald.monsterStrings.DIALOG;
     }
 }

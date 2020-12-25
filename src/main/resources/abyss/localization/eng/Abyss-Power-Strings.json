@@ -53,6 +53,10 @@
   },
   "Abyss:HandOfTheAbyss": {
     "NAME": "Hand of the Abyss",
-    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply {0} abyss:Abysstouched."]
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b{0} abyss:Abysstouched."]
+  },
+  "Abyss:BrokenCrystalSeal": {
+    "NAME": "BrokenCrystalSeal",
+    "DESCRIPTIONS": ["Add two Broken Crystals to your deck each turn. NL Fragments of the crystal once used to seal this enemy litter the ground. Use them to weaken it's regeneration!"]
   }
 }

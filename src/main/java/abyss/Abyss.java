@@ -87,14 +87,15 @@ public class Abyss implements
                         new ViciousHatchling(-150.0F, -30.0F, true),
                         new ViciousHatchling(150.0F, 20.0F, false)
                 }));
-        BaseMod.addMonster(GluttonousAbomination.ID, (BaseMod.GetMonster)GluttonousAbomination::new);
-        BaseMod.addMonster(BoundAbyssal.ID, () -> new BoundAbyssal(0, 100.0F));
         BaseMod.addMonster(Encounters.CROAKING_TRIO, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new CroakingBrute(-450.0F, 0.0F),
                         new CroakingPelter(-150.0F, 0.0F),
                         new CroakingSeer(150.0F, 0.0F)
                 }));
+        BaseMod.addMonster(GluttonousAbomination.ID, (BaseMod.GetMonster)GluttonousAbomination::new);
+        BaseMod.addMonster(BoundAbyssal.ID, () -> new BoundAbyssal(0, 100.0F));
+        BaseMod.addMonster(UnboundAbyssal.ID, (BaseMod.GetMonster)UnboundAbyssal::new);
 
         //Elites
         BaseMod.addMonster(Behemoth.ID, (BaseMod.GetMonster)Behemoth::new);
@@ -134,9 +135,10 @@ public class Abyss implements
 
     @Override
     public void receiveEditCards() {
-        BaseMod.addCard(new BrokenCrystal());
+        BaseMod.addCard(new HandOfTheAbyss());
 
         //Curses and statuses
+        BaseMod.addCard(new BrokenCrystal());
         BaseMod.addCard(new Drained());
         BaseMod.addCard(new Panic());
         BaseMod.addCard(new Staggered());

@@ -123,5 +123,14 @@
       "For the Queen"
     ],
     "NAME": "Royal Protector"
+  },
+  "Abyss:UnboundAbyssal": {
+    "MOVES": [
+      "Sludge",
+      "Won't Go Back",
+      "Tendrils"
+    ],
+    "NAME": "Unbound Abyssal",
+    "DIALOG": ["Wont... go... back...!"]
   }
 }

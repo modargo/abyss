@@ -1,7 +1,7 @@
 {
   "Abyss:BrokenCrystal": {
     "NAME": "Broken Crystal",
-    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Exhaust a card in your discard pile."
+    "DESCRIPTION": "When you draw this, randomize its cost and draw a card. NL Reduce regeneration of ALL enemies by !M!. NL Exhaust."
   },
   "Abyss:Drained": {
     "NAME": "Drained",

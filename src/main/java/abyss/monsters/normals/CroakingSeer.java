@@ -18,6 +18,7 @@ public class CroakingSeer extends AbstractCroaking {
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     public static final String[] MOVES;
+    public static final String[] DIALOG;
     private static final String IMG = Abyss.monsterImage(ID);
     private static final byte PROTECTIVE_WARD_BUFF = 2;
     private static final int PROTECTIVE_WARD_BLOCK = 8;
@@ -79,5 +80,6 @@ public class CroakingSeer extends AbstractCroaking {
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
         NAME = CroakingSeer.monsterStrings.NAME;
         MOVES = CroakingSeer.monsterStrings.MOVES;
+        DIALOG = CroakingSeer.monsterStrings.DIALOG;
     }
 }
