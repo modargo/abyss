@@ -1,10 +1,9 @@
-package abyss.powers;
+package abyss.powers.crystals;
 
 import abyss.Abyss;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -13,13 +12,13 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import java.text.MessageFormat;
 
-public class WaryPower extends AbstractPower {
-    public static final String POWER_ID = "Abyss:Wary";
+public class GreenCrystalPower extends AbstractPower {
+    public static final String POWER_ID = "Abyss:GreenCrystal";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
 
-    public WaryPower(AbstractCreature owner, int amount) {
+    public GreenCrystalPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -30,7 +29,7 @@ public class WaryPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == CardType.ATTACK) {
+        if ((card.costForTurn >= 2 && !card.freeToPlayOnce) || (card.cost == -1 && card.energyOnUse >= 2)) {
             this.flash();
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
         }

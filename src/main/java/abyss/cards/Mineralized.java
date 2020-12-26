@@ -2,39 +2,38 @@ package abyss.cards;
 
 import abyss.Abyss;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Drained extends CustomCard {
-    public static final String ID = "Abyss:Drained";
+public class Mineralized extends CustomCard {
+    public static final String ID = "Abyss:Mineralized";
     public static final String IMG = Abyss.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = -2;
-    public static final int DAMAGE = 3;
 
-    //The implementation of Drain's functionality is in the patch
-    public Drained() {
+    public Mineralized() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-        this.baseMagicNumber = DAMAGE;
-        this.magicNumber = this.baseMagicNumber;
+        this.isEthereal = true;
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    }
+    public void use(AbstractPlayer p, AbstractMonster m) {}
 
-    public void onPlayerCardExhausted(AbstractCard c) {
-        //TODO Consider a visual effect
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, Drained.DAMAGE, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.NONE));
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        if (this.isEthereal) {
+            this.addToTop(new MakeTempCardInDiscardAction(new Dazed(), 1));
+            this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        }
     }
 
     @Override
@@ -42,6 +41,6 @@ public class Drained extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Drained();
+        return new Mineralized();
     }
 }

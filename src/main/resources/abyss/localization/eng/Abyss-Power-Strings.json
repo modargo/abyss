@@ -37,7 +37,7 @@
   },
   "Abyss:SlimyBody": {
     "NAME": "Slimy Body",
-    "DESCRIPTIONS": ["When this enemy takes attack damage, add a #ySlimed status to your discard pile."]
+    "DESCRIPTIONS": ["When this enemy takes attack damage, add a #ySlimed to your discard pile."]
   },
   "Abyss:Gluttony": {
     "NAME": "Gluttony",
@@ -45,18 +45,53 @@
   },
   "Abyss:Wary": {
     "NAME": "Wary",
-    "DESCRIPTIONS": ["Whenever you play an Attack, gains #b{0} Strength."]
+    "DESCRIPTIONS": ["Whenever you play an #yAttack, gains #b{0} Strength."]
   },
   "Abyss:PrimevalCall": {
     "NAME": "Primeval Call",
-    "DESCRIPTIONS": ["Summons a Royal Protector each turn."]
+    "DESCRIPTIONS": ["Summons a #pRoyal #pProtector each turn."]
   },
   "Abyss:HandOfTheAbyss": {
     "NAME": "Hand of the Abyss",
     "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b{0} abyss:Abysstouched."]
   },
   "Abyss:BrokenCrystalSeal": {
-    "NAME": "BrokenCrystalSeal",
-    "DESCRIPTIONS": ["Add two Broken Crystals to your deck each turn. NL Fragments of the crystal once used to seal this enemy litter the ground. Use them to weaken it's regeneration!"]
+    "NAME": "Broken Crystal Seal",
+    "DESCRIPTIONS": ["Add #b2 #yBroken #yCrystals to your deck each turn. NL Fragments of the crystal once used to seal this enemy litter the ground. Use them to weaken its regeneration!"]
+  },
+  "Abyss:GoldenCrystal": {
+    "NAME": "Golden Crystal",
+    "DESCRIPTIONS": ["Whenever you play a rare card, gains #b{0} #yStrength."]
+  },
+  "Abyss:BlueCrystal": {
+    "NAME": "Blue Crystal",
+    "DESCRIPTIONS": ["Whenever you play an uncommon card, gains #b{0} #yStrength."]
+  },
+  "Abyss:GreenCrystal": {
+    "NAME": "Green Crystal",
+    "DESCRIPTIONS": ["Whenever you play a card that costs #b2 or more, gains #b{0} #yStrength."]
+  },
+  "Abyss:RedCrystal": {
+    "NAME": "Red Crystal",
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card that isn't a #yStatus, gains #b{0} #yStrength."]
+  },
+  "Abyss:PurpleCrystal": {
+    "NAME": "Purple Crystal",
+    "DESCRIPTIONS": ["Whenever you apply a debuff to this enemy, gains #b{0} #yStrength."]
+  },
+  "Abyss:GrayCrystal": {
+    "NAME": "Gray Crystal",
+    "DESCRIPTIONS": ["Whenever you gain #yStrength, gain #yDexterity, channel an orb, or change stances, gains #b{0} #yStrength."]
+  },
+  "Abyss:CrystalLink": {
+    "NAME": "Crystal Link",
+    "DESCRIPTIONS": ["Whenever a crystal dies, this enemy gains any positive #yStrength it had."]
+  },
+  "Abyss:InactiveCrystal": {
+    "NAME": "Inactive Crystal",
+    "DESCRIPTIONS": ["This enemy is #gInactive. It is invulnerable and will not attack. NL Activates when #b{0} or fewer other crystals are left."]
+  },
+  "Abyss:FixedTextIntangiblePower": {
+    "DESCRIPTIONS": ["Reduce ALL damage taken and HP loss to #b1 for #b{0} turns."]
   }
 }

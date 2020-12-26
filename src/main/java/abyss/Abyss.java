@@ -5,8 +5,10 @@ import abyss.act.Encounters;
 import abyss.cards.*;
 import abyss.events.*;
 import abyss.monsters.bosses.DeepTyrant;
+import abyss.monsters.bosses.TheCrystal;
 import abyss.monsters.bosses.VoidHerald;
 import abyss.monsters.bosses.VoidSpawn;
+import abyss.monsters.bosses.crystals.*;
 import abyss.monsters.elites.Behemoth;
 import abyss.monsters.elites.GnawingCorruption;
 import abyss.monsters.elites.PrimevalQueen;
@@ -15,6 +17,8 @@ import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import abyss.relics.CrystalEnergy;
 import abyss.relics.HuntersRespect;
+import abyss.subscribers.TriggerGrayCrystalPowerPostPowerApplySubscriber;
+import abyss.subscribers.TriggerPurpleCrystalPowerPostPowerApplySubscriber;
 import abyss.util.TextureLoader;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
@@ -68,6 +72,9 @@ public class Abyss implements
         CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
         addMonsters();
         addEvents();
+
+        BaseMod.subscribe(new TriggerGrayCrystalPowerPostPowerApplySubscriber());
+        BaseMod.subscribe(new TriggerPurpleCrystalPowerPostPowerApplySubscriber());
     }
 
     private static void addMonsters() {
@@ -111,6 +118,17 @@ public class Abyss implements
         BaseMod.addBoss(AbyssAct.ID, Encounters.VOID_HERALD_AND_VOID_SPAWN, "abyss/images/map/bosses/Void.png", "abyss/images/map/bosses/VoidOutline.png");
         BaseMod.addMonster(DeepTyrant.ID, () -> new DeepTyrant(150F, -30.0F));
         BaseMod.addBoss(AbyssAct.ID, DeepTyrant.ID, "abyss/images/map/bosses/DeepTyrant.png", "abyss/images/map/bosses/DeepTyrantOutline.png");
+        BaseMod.addMonster(Encounters.CRYSTALS, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new GoldenCrystal(-350.0F, 400.0F),
+                        new BlueCrystal(250.0F, 400.0F),
+                        new GreenCrystal(-450.0F, 200.0F),
+                        new RedCrystal(350.0F, 200.0F),
+                        new PurpleCrystal(-350.0F, 0.0F),
+                        new GrayCrystal(250.0F, 0.0F),
+                        new TheCrystal(-50.0F, 50.0F)
+                }));
+        BaseMod.addBoss(AbyssAct.ID, Encounters.CRYSTALS, "abyss/images/map/bosses/Crystals.png", "abyss/images/map/bosses/CrystalsOutline.png");
 
         //Special fights
         BaseMod.addMonster(Encounters.SQUIRMING_HORRORS, () -> new MonsterGroup(

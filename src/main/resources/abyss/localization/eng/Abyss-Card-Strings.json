@@ -26,5 +26,9 @@
   "Abyss:HandOfTheAbyss": {
     "NAME": "Hand of the Abyss",
     "DESCRIPTION": "Whenever an attack deals unblocked damage, apply !M! abyss:Abysstouched."
+  },
+  "Abyss:Mineralized": {
+    "NAME": "Mineralized",
+    "DESCRIPTION": "Ethereal. NL When this is Exhausted due to Ethereal, add a Dazed to your discard pile."
   }
 }

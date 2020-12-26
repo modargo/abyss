@@ -132,5 +132,39 @@
     ],
     "NAME": "Unbound Abyssal",
     "DIALOG": ["Wont... go... back...!"]
+  },
+  "Abyss:AbstractCrystal": {
+    "MOVES": [
+      "Crystal Shard",
+      "Beam",
+      "Mineralize"
+    ]
+  },
+  "Abyss:GoldenCrystal": {
+    "NAME": "Golden Crystal"
+  },
+  "Abyss:BlueCrystal": {
+    "NAME": "Blue Crystal"
+  },
+  "Abyss:GreenCrystal": {
+    "NAME": "Green Crystal"
+  },
+  "Abyss:RedCrystal": {
+    "NAME": "Red Crystal"
+  },
+  "Abyss:PurpleCrystal": {
+    "NAME": "Purple Crystal"
+  },
+  "Abyss:GrayCrystal": {
+    "NAME": "Gray Crystal"
+  },
+  "Abyss:TheCrystal": {
+    "MOVES": [
+      "Inactive",
+      "Crystal Barrage",
+      "Crystal Spear",
+      "Resonance"
+    ],
+    "NAME": "The Crystal"
   }
 }

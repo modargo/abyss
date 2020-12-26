@@ -1,0 +1,53 @@
+package abyss.powers;
+
+import abyss.Abyss;
+import abyss.cards.BrokenCrystal;
+import abyss.monsters.bosses.TheCrystal;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
+
+import java.text.MessageFormat;
+
+// The implementation of this functional is in AbstractCrystal.die
+public class InactiveCrystalPower extends AbstractPower {
+    public static final String POWER_ID = "Abyss:InactiveCrystal";
+    private static final PowerStrings powerStrings;
+    public static final String NAME;
+    public static final String[] DESCRIPTIONS;
+
+    public InactiveCrystalPower(AbstractCreature owner) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.updateDescription();
+        Abyss.LoadPowerImage(this);
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = MessageFormat.format(DESCRIPTIONS[0], TheCrystal.ACTIVATION_CRYSTAL_COUNT);
+    }
+
+    @Override
+    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        return 0;
+    }
+
+    public void activate() {
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+    }
+
+    static {
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+        NAME = powerStrings.NAME;
+        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    }
+}
