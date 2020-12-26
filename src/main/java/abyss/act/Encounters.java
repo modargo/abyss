@@ -2,7 +2,9 @@ package abyss.act;
 
 public class Encounters {
     public static final String HATCHLINGS = "Abyss:HATCHLINGS";
+    public static final String HUNTERS_AND_DEMOLISHER = "Abyss:HUNTERS_AND_DEMOLISHER";
     public static final String HATCHLINGS_HARD = "Abyss:HATCHLINGS_HARD";
+    public static final String HATCHLING_HUNTER_AND_DEMOLISHER = "Abyss:HATCHLING_HUNTER_AND_DEMOLISHER";
     public static final String CROAKING_TRIO = "Abyss:CROAKING_TRIO";
     public static final String HATCHLING_AND_SQUIRMING_HORROR = "Abyss:HATCHLING_AND_SQUIRMING_HORROR";
     public static final String VOID_HERALD_AND_VOID_SPAWN = "Abyss:VOID_HERALD_AND_VOID_SPAWN";

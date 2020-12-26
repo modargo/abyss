@@ -166,5 +166,22 @@
       "Resonance"
     ],
     "NAME": "The Crystal"
+  },
+  "Abyss:Hunter": {
+    "MOVES": [
+      "Razor Spines",
+      "Skulk",
+      "Empower"
+    ],
+    "NAME": "Hunter"
+  },
+  "Abyss:Demolisher": {
+    "MOVES": [
+      "Head Toxin",
+      "Body Toxin",
+      "Safeguard",
+      "Frenzy"
+    ],
+    "NAME": "Demolisher"
   }
 }

@@ -91,6 +91,7 @@ public class AbyssAct extends CustomDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(SquirmingHorror.ID, 1.0F));
         monsters.add(new MonsterInfo(Encounters.HATCHLINGS, 1.0F));
+        monsters.add(new MonsterInfo(Encounters.HUNTERS_AND_DEMOLISHER, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
     }
@@ -100,6 +101,7 @@ public class AbyssAct extends CustomDungeon {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(Encounters.HATCHLINGS_HARD, 1.0F));
         monsters.add(new MonsterInfo(Encounters.HATCHLING_AND_SQUIRMING_HORROR, 1.0F));
+        monsters.add(new MonsterInfo(Encounters.HATCHLING_HUNTER_AND_DEMOLISHER, 1.0F));
         monsters.add(new MonsterInfo(Encounters.CROAKING_TRIO, 1.0F));
         monsters.add(new MonsterInfo(GluttonousAbomination.ID, 1.0F));
         monsters.add(new MonsterInfo(BoundAbyssal.ID, 1.0F));
@@ -124,12 +126,17 @@ public class AbyssAct extends CustomDungeon {
         ArrayList<String> retVal = new ArrayList<>();
         switch (monsterList.get(monsterList.size() - 1))
         {
+            case SquirmingHorror.ID:
+                retVal.add(Encounters.HATCHLING_AND_SQUIRMING_HORROR);
+                break;
             case Encounters.HATCHLINGS:
                 retVal.add(Encounters.HATCHLINGS_HARD);
                 retVal.add(Encounters.HATCHLING_AND_SQUIRMING_HORROR);
+                //We could also exclude the hatchling/hunter/demolisher fight, but it has enough different enemies that we allow it
+                //retVal.add(Encounters.HATCHLING_HUNTER_AND_DEMOLISHER);
                 break;
-            case SquirmingHorror.ID:
-                retVal.add(Encounters.HATCHLING_AND_SQUIRMING_HORROR);
+            case Encounters.HUNTERS_AND_DEMOLISHER:
+                retVal.add(Encounters.HATCHLING_HUNTER_AND_DEMOLISHER);
                 break;
         }
 
