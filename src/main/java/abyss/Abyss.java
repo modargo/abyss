@@ -94,6 +94,11 @@ public class Abyss implements
                         new Hatchling(-150.0F, -30.0F, true),
                         new Hatchling(150.0F, 20.0F, false)
                 }));
+        BaseMod.addMonster(Encounters.HATCHLING_AND_SQUIRMING_HORROR, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new Hatchling(-200.0F, -30.0F, false),
+                        new SquirmingHorror(0.0F, 0.0F)
+                }));
         BaseMod.addMonster(Encounters.CROAKING_TRIO, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new CroakingBrute(-450.0F, 0.0F),
