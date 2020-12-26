@@ -145,7 +145,7 @@ public class DeepTyrant extends CustomMonster
                 break;
             case CALL_THE_ABYSS_MOVE:
                 for (int i = 0; i < this.callTheAbyssSummons; i++) {
-                    MaddeningManifestation manifestation = new MaddeningManifestation(-325.0F, i * 200.0F);
+                    Manifestation manifestation = new Manifestation(-325.0F, i * 200.0F);
                     AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(manifestation, true));
                 }
                 this.summoned = true;
@@ -178,8 +178,8 @@ public class DeepTyrant extends CustomMonster
         super.die();
         boolean allMonstersBasicallyDead = true;
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            allMonstersBasicallyDead = allMonstersBasicallyDead && (m == this || m.id.equals(MaddeningManifestation.ID));
-            if (m.id.equals(MaddeningManifestation.ID) && !m.isDying) {
+            allMonstersBasicallyDead = allMonstersBasicallyDead && (m == this || m.id.equals(Manifestation.ID));
+            if (m.id.equals(Manifestation.ID) && !m.isDying) {
                 //TODO See if I can change the color of the explosion
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
                 AbstractDungeon.actionManager.addToBottom(new SuicideAction(m));

@@ -179,8 +179,8 @@ public class TheCrystal extends CustomMonster
         super.die();
         boolean allMonstersBasicallyDead = true;
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            allMonstersBasicallyDead = allMonstersBasicallyDead && (m == this || m.id.equals(MaddeningManifestation.ID));
-            if (m.id.equals(MaddeningManifestation.ID) && !m.isDying) {
+            allMonstersBasicallyDead = allMonstersBasicallyDead && (m == this || m.id.equals(Manifestation.ID));
+            if (m.id.equals(Manifestation.ID) && !m.isDying) {
                 //TODO See if I can change the color of the explosion
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
                 AbstractDungeon.actionManager.addToBottom(new SuicideAction(m));

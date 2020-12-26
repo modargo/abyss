@@ -90,7 +90,7 @@ public class AbyssAct extends CustomDungeon {
     protected void generateWeakEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
         monsters.add(new MonsterInfo(SquirmingHorror.ID, 1.0F));
-        monsters.add(new MonsterInfo(Encounters.VICIOUS_HATCHLINGS, 1.0F));
+        monsters.add(new MonsterInfo(Encounters.HATCHLINGS, 1.0F));
         MonsterInfo.normalizeWeights(monsters);
         this.populateMonsterList(monsters, count, false);
     }
@@ -98,7 +98,7 @@ public class AbyssAct extends CustomDungeon {
     @Override
     protected void generateStrongEnemies(int count) {
         ArrayList<MonsterInfo> monsters = new ArrayList<>();
-        monsters.add(new MonsterInfo(Encounters.VICIOUS_HATCHLINGS_HARD, 1.0F));
+        monsters.add(new MonsterInfo(Encounters.HATCHLINGS_HARD, 1.0F));
         monsters.add(new MonsterInfo(Encounters.CROAKING_TRIO, 1.0F));
         monsters.add(new MonsterInfo(GluttonousAbomination.ID, 1.0F));
         monsters.add(new MonsterInfo(BoundAbyssal.ID, 1.0F));
@@ -123,8 +123,8 @@ public class AbyssAct extends CustomDungeon {
         ArrayList<String> retVal = new ArrayList<>();
         switch (monsterList.get(monsterList.size() - 1))
         {
-            case Encounters.VICIOUS_HATCHLINGS:
-                retVal.add(Encounters.VICIOUS_HATCHLINGS_HARD);
+            case Encounters.HATCHLINGS:
+                retVal.add(Encounters.HATCHLINGS_HARD);
                 break;
         }
 

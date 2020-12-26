@@ -6,14 +6,14 @@
     ],
     "NAME": "Squirming Horror"
   },
-  "Abyss:ViciousHatchling": {
+  "Abyss:Hatchling": {
     "MOVES": [
       "Just Hatched",
       "Nibble",
       "Corrosive Acid",
       "Headbutt"
     ],
-    "NAME": "Vicious Hatchling"
+    "NAME": "Hatchling"
   },
   "Abyss:VoidHerald": {
     "MOVES": [
@@ -42,12 +42,12 @@
     ],
     "NAME": "Deep Tyrant"
   },
-  "Abyss:MaddeningManifestation": {
+  "Abyss:Manifestation": {
     "MOVES": [
       "Grasp the Abyss",
       "Madness"
     ],
-    "NAME": "Maddening Manifestation"
+    "NAME": "Manifestation"
   },
   "Abyss:Behemoth": {
     "MOVES": [

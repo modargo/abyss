@@ -1,7 +1,6 @@
 package abyss.monsters.normals;
 
 import abyss.Abyss;
-import abyss.powers.AbysstouchedPower;
 import abyss.powers.DelayedAbysstouchedPower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,8 +15,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 
-public class ViciousHatchling extends CustomMonster {
-    public static final String ID = "Abyss:ViciousHatchling";
+public class Hatchling extends CustomMonster {
+    public static final String ID = "Abyss:Hatchling";
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     public static final String[] MOVES;
@@ -46,12 +45,12 @@ public class ViciousHatchling extends CustomMonster {
     private int headbuttDamage;
     private int headbuttBlock;
 
-    public ViciousHatchling() {
+    public Hatchling() {
         this(0.0f, 0.0f, false);
     }
 
-    public ViciousHatchling(final float x, final float y, boolean justHatched) {
-        super(ViciousHatchling.NAME, ID, HP_MAX, -5.0F, 0, 230.0f, 170.0f, IMG, x, y);
+    public Hatchling(final float x, final float y, boolean justHatched) {
+        super(Hatchling.NAME, ID, HP_MAX, -5.0F, 0, 230.0f, 170.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
         this.justHatched = justHatched;
         //TODO How does this get harder at A17+?
@@ -140,7 +139,7 @@ public class ViciousHatchling extends CustomMonster {
 
     static {
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
-        NAME = ViciousHatchling.monsterStrings.NAME;
-        MOVES = ViciousHatchling.monsterStrings.MOVES;
+        NAME = Hatchling.monsterStrings.NAME;
+        MOVES = Hatchling.monsterStrings.MOVES;
     }
 }

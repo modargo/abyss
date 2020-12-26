@@ -80,19 +80,19 @@ public class Abyss implements
     private static void addMonsters() {
         //Weak encounters
         BaseMod.addMonster(SquirmingHorror.ID, (BaseMod.GetMonster)SquirmingHorror::new);
-        BaseMod.addMonster(Encounters.VICIOUS_HATCHLINGS, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.HATCHLINGS, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new ViciousHatchling(-450.0F, 10.0F, true),
-                        new ViciousHatchling(-150.0F, -30.0F, false),
-                        new ViciousHatchling(150.0F, 20.0F, true)
+                        new Hatchling(-450.0F, 10.0F, true),
+                        new Hatchling(-150.0F, -30.0F, false),
+                        new Hatchling(150.0F, 20.0F, true)
                 }));
 
         //Hard encounters
-        BaseMod.addMonster(Encounters.VICIOUS_HATCHLINGS_HARD, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.HATCHLINGS_HARD, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new ViciousHatchling(-450.0F, 10.0F, false),
-                        new ViciousHatchling(-150.0F, -30.0F, true),
-                        new ViciousHatchling(150.0F, 20.0F, false)
+                        new Hatchling(-450.0F, 10.0F, false),
+                        new Hatchling(-150.0F, -30.0F, true),
+                        new Hatchling(150.0F, 20.0F, false)
                 }));
         BaseMod.addMonster(Encounters.CROAKING_TRIO, () -> new MonsterGroup(
                 new AbstractMonster[] {

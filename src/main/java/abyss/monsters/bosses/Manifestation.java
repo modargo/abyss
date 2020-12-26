@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class MaddeningManifestation extends CustomMonster {
-    public static final String ID = "Abyss:MaddeningManifestation";
+public class Manifestation extends CustomMonster {
+    public static final String ID = "Abyss:Manifestation";
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     public static final String[] MOVES;
@@ -33,12 +33,12 @@ public class MaddeningManifestation extends CustomMonster {
     private int graspTheAbyssDamage;
     private int madnessStrength;
 
-    public MaddeningManifestation() {
+    public Manifestation() {
         this(0.0f, 0.0f);
     }
 
-    public MaddeningManifestation(final float x, final float y) {
-        super(MaddeningManifestation.NAME, ID, HP_MAX, -5.0F, 0, 105.0f, 105.0f, IMG, x, y);
+    public Manifestation(final float x, final float y) {
+        super(Manifestation.NAME, ID, HP_MAX, -5.0F, 0, 105.0f, 105.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP_MIN, A9_HP_MAX);
@@ -91,7 +91,7 @@ public class MaddeningManifestation extends CustomMonster {
 
     static {
         monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
-        NAME = MaddeningManifestation.monsterStrings.NAME;
-        MOVES = MaddeningManifestation.monsterStrings.MOVES;
+        NAME = Manifestation.monsterStrings.NAME;
+        MOVES = Manifestation.monsterStrings.MOVES;
     }
 }
