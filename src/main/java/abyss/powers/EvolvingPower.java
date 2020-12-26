@@ -2,7 +2,7 @@ package abyss.powers;
 
 import abyss.Abyss;
 import abyss.actions.ChooseAction;
-import abyss.actions.IncreaseFlatMaxHpAction;
+import abyss.actions.ChangeMaxHpAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.Burn;
@@ -88,7 +88,7 @@ public class EvolvingPower extends AbstractPower {
                 new Evolution(BufferPower.NAME, 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new BufferPower(m, n), n))),
                 new Evolution(MetallicizePower.NAME, 20, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new MetallicizePower(m, n), n))),
                 //TODO i18n
-                new Evolution("HP gain", 100, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new IncreaseFlatMaxHpAction(m, n, true)))
+                new Evolution("HP gain", 100, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ChangeMaxHpAction(m, n, true)))
         };
         Evolution[] o4 = new Evolution [] {
                 new Evolution(FrailPulsePower.NAME, 1, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new FrailPulsePower(m, n), n))),

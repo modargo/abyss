@@ -183,5 +183,12 @@
       "Frenzy"
     ],
     "NAME": "Demolisher"
+  },
+  "Abyss:EssenceThief": {
+    "MOVES": [
+      "Goo Missile",
+      "Steal Essence"
+    ],
+    "NAME": "Essence Thief"
   }
 }

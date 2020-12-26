@@ -86,7 +86,7 @@ public class Abyss implements
                         new Hatchling(-150.0F, -30.0F, false),
                         new Hatchling(150.0F, 20.0F, true)
                 }));
-        BaseMod.addMonster(Encounters.HUNTERS_AND_DEMOLISHER, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.DEMOLISHER_AND_HUNTERS, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new Hunter(-450.0F, -10.0F, true),
                         new Hunter(-150.0F, 10.0F, false),
@@ -100,16 +100,21 @@ public class Abyss implements
                         new Hatchling(-150.0F, -30.0F, true),
                         new Hatchling(150.0F, 20.0F, false)
                 }));
-        BaseMod.addMonster(Encounters.HATCHLING_HUNTER_AND_DEMOLISHER, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.DEMOLISHER_HUNTER_AND_HATCHLING, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new Hatchling(-450.0F, -10.0F, false),
                         new Hunter(-150.0F, 10.0F, false),
                         new Demolisher(150.0F, 100.0F)
                 }));
-        BaseMod.addMonster(Encounters.HATCHLING_AND_SQUIRMING_HORROR, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.SQUIRMING_HORROR_AND_HATCHLING, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new Hatchling(-200.0F, -30.0F, false),
                         new SquirmingHorror(0.0F, 0.0F)
+                }));
+        BaseMod.addMonster(Encounters.ESSENCE_THIEF_AND_HUNTER, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new Hunter(-300.0F, 0.0F, false),
+                        new EssenceThief(100.0F, 150.0F)
                 }));
         BaseMod.addMonster(Encounters.CROAKING_TRIO, () -> new MonsterGroup(
                 new AbstractMonster[] {
@@ -148,7 +153,7 @@ public class Abyss implements
         BaseMod.addBoss(AbyssAct.ID, Encounters.CRYSTALS, "abyss/images/map/bosses/Crystals.png", "abyss/images/map/bosses/CrystalsOutline.png");
 
         //Special fights
-        BaseMod.addMonster(Encounters.SQUIRMING_HORRORS, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.SQUIRMING_HORRORS_2, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new SquirmingHorror(-250.0F, 0.0F),
                         new SquirmingHorror(150.0F, 0.0F)

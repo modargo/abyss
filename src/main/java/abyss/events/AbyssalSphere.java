@@ -28,7 +28,7 @@ public class AbyssalSphere extends AbstractEvent {
         this.roomEventText.addDialogOption(OPTIONS[1]);
         this.hasDialog = true;
         this.hasFocus = true;
-        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.SQUIRMING_HORRORS);
+        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.SQUIRMING_HORRORS_2);
     }
 
     public void update() {
@@ -36,7 +36,6 @@ public class AbyssalSphere extends AbstractEvent {
         if (!RoomEventDialog.waitForInput) {
             this.buttonEffect(this.roomEventText.getSelectedOption());
         }
-
     }
 
     protected void buttonEffect(int buttonPressed) {

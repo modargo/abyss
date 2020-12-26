@@ -4,11 +4,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 
-public class IncreaseFlatMaxHpAction extends AbstractGameAction {
+public class ChangeMaxHpAction extends AbstractGameAction {
     private boolean showEffect;
-    private int increaseAmount;
 
-    public IncreaseFlatMaxHpAction(AbstractCreature m, int increaseAmount, boolean showEffect) {
+    public ChangeMaxHpAction(AbstractCreature m, int amount, boolean showEffect) {
         if (Settings.FAST_MODE) {
             this.startDuration = Settings.ACTION_DUR_XFAST;
         } else {
@@ -17,13 +16,18 @@ public class IncreaseFlatMaxHpAction extends AbstractGameAction {
 
         this.duration = this.startDuration;
         this.showEffect = showEffect;
-        this.increaseAmount = increaseAmount;
+        this.amount = amount;
         this.target = m;
     }
 
     public void update() {
         if (this.duration == this.startDuration) {
-            this.target.increaseMaxHp(this.increaseAmount, this.showEffect);
+            if (this.amount > 0) {
+                this.target.increaseMaxHp(this.amount, this.showEffect);
+            }
+            else if (this.amount < 0) {
+                this.target.decreaseMaxHealth(-this.amount);
+            }
         }
 
         this.tickDuration();

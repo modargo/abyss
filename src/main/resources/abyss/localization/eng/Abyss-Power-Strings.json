@@ -93,5 +93,9 @@
   },
   "Abyss:FixedTextIntangiblePower": {
     "DESCRIPTIONS": ["Reduce ALL damage taken and HP loss to #b1 for #b{0} turns."]
+  },
+  "Abyss:EssenceThief": {
+    "NAME": "Essence Thief",
+    "DESCRIPTIONS": ["This enemy will start #rpermanently #rreducing #ryour #rMax #rHP if left alive. Kill it quickly!"]
   }
 }
