@@ -2,10 +2,10 @@ package abyss.powers;
 
 import abyss.Abyss;
 import abyss.actions.ChangeMaxHpAction;
+import abyss.actions.CustomTextChooseOneAction;
 import abyss.cards.EvolutionChoice;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -25,7 +25,7 @@ public class EvolvingPower extends AbstractPower {
     public static final String POWER_ID = "Abyss:Evolving";
     private static final Map<String, String> evolutionStrings;
     private static final String[] evolutionNames;
-    private static final String evolutionQuestion;
+    private static final String evolutionText;
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
@@ -59,7 +59,7 @@ public class EvolvingPower extends AbstractPower {
         for (Evolution evolution : evolutionChoice) {
             options.add(new EvolutionChoice(evolution.name, evolution.getDescription(), () -> evolution.apply.accept(this.owner, evolution.amount)));
         }
-        AbstractDungeon.actionManager.addToTop(new ChooseOneAction(options));
+        AbstractDungeon.actionManager.addToTop(new CustomTextChooseOneAction(options, evolutionText));
     }
 
     private List<Evolution> getNextEvolutionChoice() {
@@ -132,7 +132,7 @@ public class EvolvingPower extends AbstractPower {
     static {
         evolutionStrings = CardCrawlGame.languagePack.getUIString(POWER_ID).TEXT_DICT;
         evolutionNames = CardCrawlGame.languagePack.getUIString(POWER_ID).EXTRA_TEXT;
-        evolutionQuestion = CardCrawlGame.languagePack.getUIString(POWER_ID).TEXT[0];
+        evolutionText = CardCrawlGame.languagePack.getUIString(POWER_ID).TEXT[0];
         powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         NAME = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
