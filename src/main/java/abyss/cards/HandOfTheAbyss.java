@@ -27,7 +27,7 @@ public class HandOfTheAbyss extends CustomCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new HandOfTheAbyssPower(p, AMOUNT), AMOUNT));
+        this.addToBot(new ApplyPowerAction(p, p, new HandOfTheAbyssPower(p, this.magicNumber), this.magicNumber));
     }
 
     public void upgrade() {

@@ -53,7 +53,7 @@
   },
   "Abyss:HandOfTheAbyss": {
     "NAME": "Hand of the Abyss",
-    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b{0} abyss:Abysstouched."]
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b{0} #yAbysstouched."]
   },
   "Abyss:BrokenCrystalSeal": {
     "NAME": "Broken Crystal Seal",
