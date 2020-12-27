@@ -13,11 +13,11 @@
   },
   "Abyss:Abysstouched": {
     "NAME": "Abysstouched",
-    "DESCRIPTIONS": ["Take #b{0}% more damage from attacks. At the end of your turn, take #b{0} damage.", "Target takes #b{0}% more damage from attacks. At the beginning of its turn, the target takes #b{0} damage."]
+    "DESCRIPTIONS": ["Take #b{0}% more damage from #yAttacks. At the end of your turn, take #b{0} damage.", "Receive #b{0}% more damage from #yAttacks. At the start of its turn, takes #b{0} damage."]
   },
   "Abyss:DelayedAbysstouched": {
     "NAME": "Abysstouched",
-    "DESCRIPTIONS": ["Take #b{0}% more damage from attacks. At the end of your turn, take #b{0} damage."]
+    "DESCRIPTIONS": ["Take #b{0}% more damage from #yAttacks. At the end of your turn, take #b{0} damage."]
   },
   "Abyss:Evolving": {
     "NAME": "Evolving",
