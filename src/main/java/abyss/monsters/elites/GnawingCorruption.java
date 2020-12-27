@@ -113,6 +113,7 @@ public class GnawingCorruption extends CustomMonster
         }
         switch (this.nextMove) {
             case GNAWING_CORRUPTION_DEBUFF:
+                //TODO sound would really benefit from a curse sound effect
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 for (AbstractCard c : this.getCurses(this.gnawingCorruptionCurses)) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(c, 1));
