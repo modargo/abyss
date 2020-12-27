@@ -3,7 +3,7 @@ package abyss.monsters.bosses.crystals;
 import abyss.cards.Mineralized;
 import abyss.monsters.MonsterUtil;
 import abyss.powers.CrystalLinkPower;
-import abyss.powers.FixedTextIntangiblePower;
+import abyss.powers.ResonancePower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -15,7 +15,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import java.util.List;
 
@@ -35,6 +38,8 @@ public abstract class AbstractCrystal extends CustomMonster {
     private static final int A19_BEAM_ARTIFACT = 1;
     private static final int MINERALIZE_AMOUNT = 1;
     private static final int A19_MINERALIZE_AMOUNT = 1;
+    private static final int RESONANCE_AMOUNT = 30;
+    private static final int A19_RESONANCE_AMOUNT = 50;
     private static final int HP_MIN = 63;
     private static final int HP_MAX = 63;
     private static final int A9_HP_MIN = 70;
@@ -44,14 +49,12 @@ public abstract class AbstractCrystal extends CustomMonster {
     private int beamDamage;
     private int beamArtifact;
     private int mineralizeAmount;
-
-    private boolean intangibleNextTurn;
+    private int resonanceAmount;
 
     public AbstractCrystal(String name, String id, String imgUrl, float offsetX, float offsetY, boolean front) {
         super(name, id, HP_MAX, -5.0F, 0, 85.0f, 155.0f, imgUrl, offsetX, offsetY);
         this.type = EnemyType.BOSS;
         this.front = front;
-        this.intangibleNextTurn = !front;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP_MIN, A9_HP_MAX);
         } else {
@@ -71,9 +74,11 @@ public abstract class AbstractCrystal extends CustomMonster {
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.beamArtifact = A19_BEAM_ARTIFACT;
             this.mineralizeAmount = A19_MINERALIZE_AMOUNT;
+            this.resonanceAmount = A19_RESONANCE_AMOUNT;
         } else {
             this.beamArtifact = BEAM_ARTIFACT;
             this.mineralizeAmount = MINERALIZE_AMOUNT;
+            this.resonanceAmount = RESONANCE_AMOUNT;
         }
     }
 
@@ -116,19 +121,8 @@ public abstract class AbstractCrystal extends CustomMonster {
     }
 
     private void intangibleCheck(boolean startOfCombat) {
-        if (!this.hasPower(IntangiblePower.POWER_ID)) {
-            if (this.intangibleNextTurn) {
-                AbstractPower intangible = new FixedTextIntangiblePower(this, 1);
-                if (startOfCombat) {
-                    // To force justApplied to be false
-                    intangible.atEndOfTurn(false);
-                }
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, intangible, 1));
-                this.intangibleNextTurn = AbstractDungeon.ascensionLevel >= 19;
-            }
-            else {
-                this.intangibleNextTurn = true;
-            }
+        if (!this.hasPower(ResonancePower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ResonancePower(this, this.resonanceAmount, !startOfCombat), this.resonanceAmount));
         }
     }
 
@@ -164,6 +158,12 @@ public abstract class AbstractCrystal extends CustomMonster {
             for (AbstractPower p : powers) {
                 ((CrystalLinkPower)p).onCrystalDeath(this, strengthPower.amount);
             }
+        }
+
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            this.useFastShakeAnimation(5.0F);
+            CardCrawlGame.screenShake.rumble(4.0F);
+            this.onBossVictoryLogic();
         }
     }
 

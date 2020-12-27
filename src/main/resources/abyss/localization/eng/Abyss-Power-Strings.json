@@ -91,11 +91,12 @@
     "NAME": "Inactive Crystal",
     "DESCRIPTIONS": ["This enemy is #gInactive. It is invulnerable and will not attack. NL Activates when #b{0} or fewer other crystals are left."]
   },
-  "Abyss:FixedTextIntangiblePower": {
-    "DESCRIPTIONS": ["Reduce ALL damage taken and HP loss to #b1 for #b{0} turns."]
-  },
   "Abyss:EssenceThief": {
     "NAME": "Essence Thief",
     "DESCRIPTIONS": ["This enemy will start #rpermanently #rreducing #ryour #rMax #rHP if left alive. Kill it quickly!"]
+  },
+  "Abyss:Resonance": {
+    "NAME": "Resonance",
+    "DESCRIPTIONS": ["Takes #b{0}% less damage from attacks. #yResonance is reapplied every other turn."]
   }
 }
