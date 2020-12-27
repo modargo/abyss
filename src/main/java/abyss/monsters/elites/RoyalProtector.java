@@ -88,16 +88,16 @@ public class RoyalProtector extends CustomMonster {
                 }
                 break;
             case BURNING_SPIT_DEBUFF:
-                //TODO animation
+                //TODO animation -- adapt BloodShotEffect
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), 1));
                 break;
             case ACID_EXPLOSION_ATTACK:
-                //TODO animation
+                //TODO animation -- maybe Fireball effect, just making it green?
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
                 break;
             case FOR_THE_QUEEN_ATTACK:
-                //TODO animation
+                //TODO animation -- a green explosion (make ExplosionSmallColorEffect)
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.forTheQueenAmount, true), this.forTheQueenAmount));
