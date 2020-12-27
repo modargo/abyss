@@ -130,7 +130,7 @@ public class GnawingCorruption extends CustomMonster
             case ALL_EYES_ATTACK:
                 for (int i=0; i < ALL_EYES_ATTACK; i++) {
                     //TODO Beam animation, all colors
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.NONE));
                 }
                 break;
         }
