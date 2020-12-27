@@ -18,7 +18,8 @@
     ]
   },
   "Abyss:Evolving": {
-    "TEXT": ["Burns", "#yMax #yHP"],
+    "TEXT": ["The Behemoth evolves..."],
+    "EXTRA_TEXT": ["Burns", "#yMax #yHP"],
     "TEXT_DICT": {
       "Anger": "abyss:Enraged {0}",
       "BeatOfDeath": "abyss:Beat\u00a0of\u00a0Death {0}",

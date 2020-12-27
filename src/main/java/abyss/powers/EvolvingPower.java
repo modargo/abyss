@@ -3,10 +3,11 @@ package abyss.powers;
 import abyss.Abyss;
 import abyss.actions.ChangeMaxHpAction;
 import abyss.actions.ChooseAction;
+import abyss.cards.EvolutionChoice;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.status.Burn;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,6 +24,7 @@ public class EvolvingPower extends AbstractPower {
     public static final String POWER_ID = "Abyss:Evolving";
     private static final Map<String, String> evolutionStrings;
     private static final String[] evolutionNames;
+    private static final String evolutionQuestion;
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
@@ -52,7 +54,7 @@ public class EvolvingPower extends AbstractPower {
 
     private void showEvolutionChoice() {
         List<Evolution> evolutionChoice = this.getNextEvolutionChoice();
-        ChooseAction choice = new ChooseAction(new Dazed(), null, "TODO evolve question");
+        ChooseAction choice = new ChooseAction(new EvolutionChoice(), null, evolutionQuestion);
         for (Evolution evolution : evolutionChoice) {
             choice.add(evolution.name, evolution.getDescription(), () -> evolution.apply.accept(this.owner, evolution.amount));
         }
@@ -128,7 +130,8 @@ public class EvolvingPower extends AbstractPower {
 
     static {
         evolutionStrings = CardCrawlGame.languagePack.getUIString(POWER_ID).TEXT_DICT;
-        evolutionNames = CardCrawlGame.languagePack.getUIString(POWER_ID).TEXT;
+        evolutionNames = CardCrawlGame.languagePack.getUIString(POWER_ID).EXTRA_TEXT;
+        evolutionQuestion = CardCrawlGame.languagePack.getUIString(POWER_ID).TEXT[0];
         powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         NAME = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
