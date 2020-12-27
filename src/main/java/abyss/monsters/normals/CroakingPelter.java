@@ -20,10 +20,10 @@ public class CroakingPelter extends AbstractCroaking {
     public static final String[] DIALOG;
     private static final String IMG = Abyss.monsterImage(ID);
     private static final byte ROCK_TOSS_ATTACK = 2;
-    private static final int ROCK_TOSS_DAMAGE = 4;
-    private static final int A2_ROCK_TOSS_DAMAGE = 5;
-    private static final int ROCK_TOSS_BLOCK = 4;
-    private static final int A7_ROCK_TOSS_BLOCK = 6;
+    private static final int ROCK_TOSS_DAMAGE = 3;
+    private static final int A2_ROCK_TOSS_DAMAGE = 4;
+    private static final int ROCK_TOSS_BLOCK = 5;
+    private static final int A7_ROCK_TOSS_BLOCK = 8;
     private int rockTossDamage;
     private int rockTossBlock;
 
@@ -71,7 +71,7 @@ public class CroakingPelter extends AbstractCroaking {
     protected void executeSecondMove() {
         AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, this.rockTossBlock));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.rockTossBlock));
     }
 
     @Override

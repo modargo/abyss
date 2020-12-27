@@ -21,9 +21,9 @@ public class CroakingSeer extends AbstractCroaking {
     public static final String[] DIALOG;
     private static final String IMG = Abyss.monsterImage(ID);
     private static final byte PROTECTIVE_WARD_BUFF = 2;
-    private static final int PROTECTIVE_WARD_BLOCK = 8;
-    private static final int A7_PROTECTIVE_WARD_BLOCK = 8;
-    private static final int PROTECTIVE_WARD_ARTIFACT = 8;
+    private static final int PROTECTIVE_WARD_BLOCK = 3;
+    private static final int A7_PROTECTIVE_WARD_BLOCK = 5;
+    private static final int PROTECTIVE_WARD_ARTIFACT = 1;
     private int protectiveWardBlock;
 
     public CroakingSeer() {

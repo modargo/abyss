@@ -19,8 +19,8 @@ public class CroakingBrute extends AbstractCroaking {
     public static final String[] DIALOG;
     private static final String IMG = Abyss.monsterImage(ID);
     private static final byte BULL_RUSH_ATTACK = 2;
-    private static final int BULL_RUSH_DAMAGE = 8;
-    private static final int A2_BULL_RUSH_DAMAGE = 9;
+    private static final int BULL_RUSH_DAMAGE = 7;
+    private static final int A2_BULL_RUSH_DAMAGE = 8;
     private int bullRushDamage;
 
     public CroakingBrute() {
