@@ -2,16 +2,23 @@ package abyss.monsters.elites;
 
 import abyss.Abyss;
 import abyss.cards.*;
+import abyss.effects.SmallColorLaserEffect;
 import basemod.abstracts.CustomMonster;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
@@ -116,20 +123,24 @@ public class GnawingCorruption extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
                 break;
             case LEFT_EYE_ATTACK:
-                //TODO Beam animation
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallColorLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, Color.MAROON), Settings.FAST_MODE ? 0.1F : 0.3F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 for (AbstractCard c : this.getCurses(this.leftEyeCurses)) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, true));
                 }
                 break;
             case RIGHT_EYE_ATTACK:
-                //TODO Beam animation
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallColorLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, Color.NAVY), Settings.FAST_MODE ? 0.1F : 0.3F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.rightEyeHeal));
                 break;
             case ALL_EYES_ATTACK:
+                Color[] laserColors = {Color.RED, Color.GREEN, Color.BLUE, Color.PURPLE, Color.GOLD};
                 for (int i=0; i < ALL_EYES_ATTACK; i++) {
-                    //TODO Beam animation, all colors
+                    AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+                    AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallColorLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, laserColors[i]), Settings.FAST_MODE ? 0.1F : 0.3F));
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.NONE));
                 }
                 break;
