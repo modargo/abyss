@@ -25,7 +25,7 @@
   },
   "Abyss:HandOfTheAbyss": {
     "NAME": "Hand of the Abyss",
-    "DESCRIPTION": "Whenever an attack deals unblocked damage, apply !M! abyss:Abysstouched."
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! abyss:Abysstouched."
   },
   "Abyss:Mineralized": {
     "NAME": "Mineralized",
