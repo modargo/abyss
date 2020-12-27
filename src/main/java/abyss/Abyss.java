@@ -17,9 +17,7 @@ import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import abyss.relics.CrystalEnergy;
 import abyss.relics.HuntersRespect;
-import abyss.subscribers.TriggerGrayCrystalPowerPostPowerApplySubscriber;
-import abyss.subscribers.TriggerPurpleCrystalPowerPostPowerApplySubscriber;
-import abyss.subscribers.TriggerThoughtStealerPostDrawSubscriber;
+import abyss.subscribers.*;
 import abyss.util.TextureLoader;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
@@ -77,6 +75,8 @@ public class Abyss implements
         BaseMod.subscribe(new TriggerGrayCrystalPowerPostPowerApplySubscriber());
         BaseMod.subscribe(new TriggerPurpleCrystalPowerPostPowerApplySubscriber());
         BaseMod.subscribe(new TriggerThoughtStealerPostDrawSubscriber());
+        BaseMod.subscribe(new TriggerDrainedPostExhaustSubscriber());
+        BaseMod.subscribe(new TriggerRedCrystalPowerPostExhaustSubscriber());
     }
 
     private static void addMonsters() {
