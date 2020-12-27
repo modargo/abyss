@@ -71,12 +71,6 @@ public class VoidSpawn extends CustomMonster
         this.damage.add(new DamageInfo(this, this.clobberDamage));
         this.damage.add(new DamageInfo(this, this.beakedMawDamage));
         this.damage.add(new DamageInfo(this, this.tentacleBarrageDamage));
-
-        if (AbstractDungeon.ascensionLevel >= 19) {
-            //TODO How does this get harder at A19?
-        }
-        else {
-        }
     }
 
     @Override
@@ -116,10 +110,10 @@ public class VoidSpawn extends CustomMonster
 
     @Override
     protected void getMove(final int num) {
-        if (this.firstMove || this.lastMove(TENTACLE_BARRAGE_ATTACK)) {
+        if ((this.firstMove && AbstractDungeon.ascensionLevel < 19) || this.lastMove(TENTACLE_BARRAGE_ATTACK)) {
             this.setMove(MOVES[0], CLOBBER_ATTACK, Intent.ATTACK, this.clobberDamage);
         }
-        else if (this.lastMove(CLOBBER_ATTACK)) {
+        else if ((this.firstMove && AbstractDungeon.ascensionLevel >= 19) || this.lastMove(CLOBBER_ATTACK)) {
             this.setMove(MOVES[1], BEAKED_MAW_ATTACK, Intent.ATTACK_DEFEND, this.beakedMawDamage);
         }
         else {
