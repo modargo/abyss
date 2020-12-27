@@ -33,8 +33,8 @@ public class ElderBehemoth extends AbstractImageEvent {
     private static final float HEAL_PERCENTAGE = 0.50F;
     private static final float MAX_HEALTH_LOSS_PERCENTAGE = 0.10F;
     private static final float A15_MAX_HEALTH_LOSS_PERCENTAGE = 0.14F;
-    private static final int GOLDEN_IDOL_UPGRADES = 3;
-    private static final int A15_GOLDEN_IDOL_UPGRADES = 2;
+    private static final int GOLDEN_IDOL_UPGRADES = 4;
+    private static final int A15_GOLDEN_IDOL_UPGRADES = 3;
     private static final int BITE_MAX_HEALTH = 3;
     private static final int A15_BITE_MAX_HEALTH = 2;
     private static final int APPARITION_BLADE_MAX_HEALTH = 20;
@@ -46,6 +46,7 @@ public class ElderBehemoth extends AbstractImageEvent {
     private Map<CardCostType, AbstractCard> cardOptions;
 
     private AbstractRelic relicCost;
+    private int goldenIdolUpgrades;
     private int healAmount;
     private int maxHealthCost;
     private int biteMaxHealth;
@@ -60,6 +61,7 @@ public class ElderBehemoth extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         this.relicCost = AbstractDungeon.player.getRelic(GoldenIdol.ID);
+        this.goldenIdolUpgrades = AbstractDungeon.ascensionLevel >= 15 ? A15_GOLDEN_IDOL_UPGRADES : GOLDEN_IDOL_UPGRADES;
 
         this.cardOptionsList = new ArrayList<>();
         this.cardOptions = new HashMap<>();
@@ -288,7 +290,7 @@ public class ElderBehemoth extends AbstractImageEvent {
                 this.imageEventText.clearAllDialogs();
                 this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.healAmount, this.maxHealthCost));
                 if (this.relicCost != null) {
-                    this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[2], this.relicCost.name), this.relicCost);
+                    this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[2], this.goldenIdolUpgrades, this.relicCost.name), this.relicCost);
                 } else {
                     this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[3], new GoldenIdol().name), true);
                 }

@@ -41,11 +41,11 @@
     "OPTIONS": [
       "[Continue]",
       "[Appreciative] #gHeal #g{0} #gHP. #rLose #r{1} #rMax #rHP.",
-      "[Golden] #gUpgrade #g{0} #grandom #gcards. #rLose {1}",
+      "[Golden] #gUpgrade #g{0} #grandom #gcards. #rLose {1}.",
       "[Locked] Requires {0}.",
       "[Vampiric] #gGain #g{0} #gMax #gHP. #rLose {1}.",
       "[Ghostly] #gGain #g{0} #gMax #gHP #gand {1}. #rLose {2}.",
-      "[Gilded] #gGain #g{0} #ggold. #rLose #r{1}.",
+      "[Gilded] #gGain #g{0} #ggold. #rLose {1}.",
       "[Elemental] #gGain #g{0} #gMax #gHP #gand {1}. #rLose {2}.",
       "[Magical] #rLose {0}.",
       "[Exceptional] #gGain {0}. #rLose {1}.",
