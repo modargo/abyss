@@ -43,6 +43,8 @@ public class TheCrystal extends CustomMonster
     private static final int A19_RESONANCE_STRENGTH = 2;
     private static final int RESONANCE_HEAL = 30;
     private static final int A19_RESONANCE_HEAL = 40;
+    private static final int CRYSTAL_LINK_PERCENT = 100;
+    private static final int A19_CRYSTAL_LINK_PERCENT = 150;
     public static final int ACTIVATION_CRYSTAL_COUNT = 3;
     private static final int HP = 280;
     private static final int A9_HP = 300;
@@ -51,6 +53,7 @@ public class TheCrystal extends CustomMonster
     private int crystalSpearMineralizes;
     private int resonanceStrength;
     private int resonanceHeal;
+    private int crystalLinkPercent;
 
     private boolean active;
 
@@ -82,11 +85,13 @@ public class TheCrystal extends CustomMonster
             this.crystalSpearMineralizes = A19_CRYSTAL_SPEAR_MINERALIZES;
             this.resonanceStrength = A19_RESONANCE_STRENGTH;
             this.resonanceHeal = A19_RESONANCE_HEAL;
+            this.crystalLinkPercent = A19_CRYSTAL_LINK_PERCENT;
         }
         else {
             this.crystalSpearMineralizes = CRYSTAL_SPEAR_MINERALIZES;
             this.resonanceStrength = RESONANCE_STRENGTH;
             this.resonanceHeal = RESONANCE_HEAL;
+            this.crystalLinkPercent = CRYSTAL_LINK_PERCENT;
         }
     }
 
@@ -97,7 +102,7 @@ public class TheCrystal extends CustomMonster
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
 
         this.addToBot(new ApplyPowerAction(this, this, new InactiveCrystalPower(this)));
-        this.addToBot(new ApplyPowerAction(this, this, new CrystalLinkPower(this)));
+        this.addToBot(new ApplyPowerAction(this, this, new CrystalLinkPower(this, this.crystalLinkPercent)));
     }
 
     @Override
@@ -122,7 +127,6 @@ public class TheCrystal extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Mineralized(), this.crystalSpearMineralizes, true, true));
                 break;
             case RESONANCE_BUFF:
-                //TODO Implement this
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.resonanceHeal));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, this.resonanceStrength), this.resonanceStrength));

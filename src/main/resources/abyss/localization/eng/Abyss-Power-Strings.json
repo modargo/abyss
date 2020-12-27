@@ -85,7 +85,7 @@
   },
   "Abyss:CrystalLink": {
     "NAME": "Crystal Link",
-    "DESCRIPTIONS": ["Whenever a crystal dies, this enemy gains any positive #yStrength it had."]
+    "DESCRIPTIONS": ["Whenever a crystal dies, this enemy gains #b{0}% of the positive #yStrength it had after its next turn."]
   },
   "Abyss:InactiveCrystal": {
     "NAME": "Inactive Crystal",

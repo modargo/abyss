@@ -33,8 +33,6 @@ public abstract class AbstractCrystal extends CustomMonster {
     private static final int A4_BEAM_DAMAGE = 1;
     private static final int BEAM_ARTIFACT = 1;
     private static final int A19_BEAM_ARTIFACT = 1;
-    private static final int BEAM_METALLICIZE = 1;
-    private static final int A19_BEAM_METALLICIZE = 1;
     private static final int MINERALIZE_AMOUNT = 1;
     private static final int A19_MINERALIZE_AMOUNT = 1;
     private static final int HP_MIN = 63;
@@ -45,7 +43,6 @@ public abstract class AbstractCrystal extends CustomMonster {
     private int crystalShardDamage;
     private int beamDamage;
     private int beamArtifact;
-    private int beamMetallicize;
     private int mineralizeAmount;
 
     private boolean intangibleNextTurn;
@@ -73,11 +70,9 @@ public abstract class AbstractCrystal extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.beamArtifact = A19_BEAM_ARTIFACT;
-            this.beamMetallicize = A19_BEAM_METALLICIZE;
             this.mineralizeAmount = A19_MINERALIZE_AMOUNT;
         } else {
             this.beamArtifact = BEAM_ARTIFACT;
-            this.beamMetallicize = BEAM_METALLICIZE;
             this.mineralizeAmount = MINERALIZE_AMOUNT;
         }
     }
@@ -107,7 +102,6 @@ public abstract class AbstractCrystal extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.beamArtifact), this.beamArtifact));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MetallicizePower(this, this.beamMetallicize), this.beamMetallicize));
                 break;
             case MINERALIZE_DEBUFF:
                 //TODO Some kind of effect effect, using the color of each crystal

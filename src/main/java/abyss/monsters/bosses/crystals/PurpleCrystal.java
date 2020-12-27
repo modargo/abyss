@@ -13,7 +13,7 @@ public class PurpleCrystal extends AbstractCrystal {
     public static final String NAME;
     private static final String IMG = Abyss.monsterImage(ID);
     private static final int BUFF = 1;
-    private static final int A19_BUFF = 2;
+    private static final int A19_BUFF = 1;
     private int buff;
 
     public PurpleCrystal() {
