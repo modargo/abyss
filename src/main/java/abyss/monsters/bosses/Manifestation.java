@@ -22,14 +22,14 @@ public class Manifestation extends CustomMonster {
     private boolean firstMove = true;
     private static final byte GRASP_THE_ABYSS_ATTACK = 1;
     private static final byte MADNESS_BUFF = 2;
-    private static final int GRASP_THE_ABYSS_DAMAGE = 7;
-    private static final int A4_GRASP_THE_ABYSS_DAMAGE = 8;
+    private static final int GRASP_THE_ABYSS_DAMAGE = 6;
+    private static final int A4_GRASP_THE_ABYSS_DAMAGE = 7;
     private static final int MADNESS_STRENGTH = 2;
     private static final int A19_MADNESS_STRENGTH = 4;
-    private static final int HP_MIN = 54;
-    private static final int HP_MAX = 57;
-    private static final int A9_HP_MIN = 56;
-    private static final int A9_HP_MAX = 59;
+    private static final int HP_MIN = 44;
+    private static final int HP_MAX = 47;
+    private static final int A9_HP_MIN = 46;
+    private static final int A9_HP_MAX = 49;
     private int graspTheAbyssDamage;
     private int madnessStrength;
 

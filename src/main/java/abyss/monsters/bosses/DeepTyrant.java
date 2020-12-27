@@ -30,15 +30,15 @@ public class DeepTyrant extends CustomMonster
     private static final byte THRASH_ATTACK = 3;
     private static final byte BODY_SLAM_ATTACK = 4;
     private static final byte CALL_THE_ABYSS_MOVE = 5;
-    private static final int BLAST_DAMAGE = 21;
-    private static final int A4_BLAST_DAMAGE = 23;
+    private static final int BLAST_DAMAGE = 19;
+    private static final int A4_BLAST_DAMAGE = 21;
     private static final int BLAST_WOUNDS = 2;
     private static final int ABYSSAL_GAZE_WEAK_FRAIL = 2;
     private static final int A19_ABYSSAL_GAZE_WEAK_FRAIL = 2;
-    private static final int ABYSSAL_GAZE_AMOUNT = 6;
-    private static final int A19_ABYSSAL_GAZE_AMOUNT = 8;
-    private static final int THRASH_DAMAGE = 13;
-    private static final int A4_THRASH_DAMAGE = 15;
+    private static final int ABYSSAL_GAZE_AMOUNT = 4;
+    private static final int A19_ABYSSAL_GAZE_AMOUNT = 6;
+    private static final int THRASH_DAMAGE = 12;
+    private static final int A4_THRASH_DAMAGE = 14;
     private static final int THRASH_HITS = 2;
     private static final int THRASH_STRENGTH = 1;
     private static final int A19_THRASH_STRENGTH = 1;
@@ -50,7 +50,6 @@ public class DeepTyrant extends CustomMonster
     private static final int A19_CALL_THE_ABYSS_SUMMONS = 3;
     private static final int HP = 475;
     private static final int A9_HP = 500;
-    private boolean summoned = false;
     private int blastDamage;
     private int terrifyingGazeWeakFrail;
     private int terrifyingGazeAmount;
@@ -60,6 +59,8 @@ public class DeepTyrant extends CustomMonster
     private int bodySlamDamage;
     private int callTheAbyssSummons;
 
+    private boolean summoned;
+
     public DeepTyrant() {
         this(0.0f, 0.0f);
     }
@@ -67,6 +68,7 @@ public class DeepTyrant extends CustomMonster
     public DeepTyrant(final float x, final float y) {
         super(DeepTyrant.NAME, ID, HP, -5.0F, 0, 565.0f, 630.0f, IMG, x, y);
         this.type = EnemyType.BOSS;
+        this.summoned = false;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);
         } else {
