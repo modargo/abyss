@@ -41,8 +41,8 @@ public class TheCrystal extends CustomMonster
     private static final int A19_RESONANCE_STRENGTH = 2;
     private static final int RESONANCE_HEAL = 30;
     private static final int A19_RESONANCE_HEAL = 40;
-    private static final int CRYSTAL_LINK_PERCENT = 100;
-    private static final int A19_CRYSTAL_LINK_PERCENT = 150;
+    private static final int CRYSTAL_LINK_PERCENT = 75;
+    private static final int A19_CRYSTAL_LINK_PERCENT = 125;
     public static final int ACTIVATION_CRYSTAL_COUNT = 3;
     private static final int HP = 280;
     private static final int A9_HP = 300;
@@ -165,11 +165,11 @@ public class TheCrystal extends CustomMonster
             // Deliberately left nameless
             this.setMove(INACTIVE_MOVE, Intent.UNKNOWN);
         }
-        else if (!this.lastMove(CRYSTAL_BARRAGE_ATTACK) && !this.lastMoveBefore(CRYSTAL_BARRAGE_ATTACK)) {
-            this.setMove(MOVES[1], CRYSTAL_BARRAGE_ATTACK, Intent.ATTACK, this.crystalBarrageDamage, CRYSTAL_BARRAGE_HITS, true);
-        }
-        else if (this.lastMove(RESONANCE_BUFF) || (num < 50 && this.lastMove(CRYSTAL_SPEAR_ATTACK))) {
+        else if (!this.lastMove(CRYSTAL_SPEAR_ATTACK) && !this.lastMoveBefore(CRYSTAL_SPEAR_ATTACK)) {
             this.setMove(MOVES[2], CRYSTAL_SPEAR_ATTACK, Intent.ATTACK_DEBUFF, this.crystalSpearDamage);
+        }
+        else if (this.lastMove(RESONANCE_BUFF) || (this.lastMove(CRYSTAL_SPEAR_ATTACK) && num < 50)) {
+            this.setMove(MOVES[1], CRYSTAL_BARRAGE_ATTACK, Intent.ATTACK, this.crystalBarrageDamage, CRYSTAL_BARRAGE_HITS, true);
         }
         else {
             this.setMove(MOVES[3], RESONANCE_BUFF, Intent.BUFF);
