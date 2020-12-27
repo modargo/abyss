@@ -17,23 +17,22 @@ public class DazedPulsePower extends AbstractPower {
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
 
-    public DazedPulsePower(AbstractCreature owner, int amount) {
+    public DazedPulsePower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = amount;
         this.updateDescription();
         Abyss.LoadPowerImage(this);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), this.amount, true, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), 1, true, true));
     }
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], 1);
     }
 
     static {

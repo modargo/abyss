@@ -16,5 +16,19 @@
       "Choose ",
       " Cards to Exhaust."
     ]
+  },
+  "Abyss:Evolving": {
+    "TEXT": ["Burns", "#yMax #yHP"],
+    "TEXT_DICT": {
+      "Anger": "abyss:Enraged {0}",
+      "BeatOfDeath": "abyss:Beat\u00a0of\u00a0Death {0}",
+      "Metallicize": "abyss:Metallicize {0}",
+      "Buffer": "abyss:Buffer {0}",
+      "Abyss:FrailPulse": "abyss:Frail\u00a0Pulse",
+      "Abyss:DazedPulse": "abyss:Dazed\u00a0Pulse",
+      "Abyss:AbysstouchedPulse": "abyss:Abysstouched\u00a0Pulse {0}",
+      "Abyss:SlimyBody": "abyss:Slimy\u00a0Body",
+      "Invincible": "abyss:Invincible"
+    }
   }
 }

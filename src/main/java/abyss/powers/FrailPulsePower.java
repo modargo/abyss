@@ -17,23 +17,22 @@ public class FrailPulsePower extends AbstractPower {
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
 
-    public FrailPulsePower(AbstractCreature owner, int amount) {
+    public FrailPulsePower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = amount;
         this.updateDescription();
         Abyss.LoadPowerImage(this);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this.owner, new FrailPower(AbstractDungeon.player, this.amount, true)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this.owner, new FrailPower(AbstractDungeon.player, 1, true)));
     }
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], 1);
     }
 
     static {
