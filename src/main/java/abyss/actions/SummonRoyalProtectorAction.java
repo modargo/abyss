@@ -74,6 +74,7 @@ public class SummonRoyalProtectorAction extends AbstractGameAction {
             this.m.usePreBattleAction();
             if (this.endOfTurn) {
                 this.m.rollMove();
+                this.m.createIntent();
             }
         } else {
             this.m.animX = Interpolation.fade.apply(0.0F, 1200.0F * Settings.scale, this.duration);

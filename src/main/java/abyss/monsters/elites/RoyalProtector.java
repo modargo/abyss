@@ -26,22 +26,18 @@ public class RoyalProtector extends CustomMonster {
     private static final byte BURNING_SPIT_DEBUFF = 2;
     private static final byte ACID_EXPLOSION_ATTACK = 3;
     private static final byte FOR_THE_QUEEN_ATTACK = 4;
-    private static final int CARAPACE_BLOCK = 5;
-    private static final int A8_CARAPACE_BLOCK = 5;
-    private static final int CARAPACE_PLATED_ARMOR = 0;
-    private static final int A18_CARAPACE_PLATED_ARMOR = 5;
-    private static final int ACID_EXPLOSION_DAMAGE = 24;
-    private static final int A3_ACID_EXPLOSION_DAMAGE = 27;
+    private static final int CARAPACE_BLOCK_OR_PLATED_ARMOR = 5;
+    private static final int ACID_EXPLOSION_DAMAGE = 23;
+    private static final int A3_ACID_EXPLOSION_DAMAGE = 26;
     private static final int FOR_THE_QUEEN_DAMAGE = 4;
     private static final int A3_FOR_THE_QUEEN_DAMAGE = 5;
     private static final int FOR_THE_QUEEN_AMOUNT = 1;
     private static final int A18_FOR_THE_QUEEN_AMOUNT = 2;
-    private static final int HP_MIN = 26;
-    private static final int HP_MAX = 30;
-    private static final int A8_HP_MIN = 28;
-    private static final int A8_HP_MAX = 32;
-    private int carapaceBlock;
-    private int carapacePlatedArmor;
+    private static final int HP_MIN = 24;
+    private static final int HP_MAX = 28;
+    private static final int A8_HP_MIN = 26;
+    private static final int A8_HP_MAX = 30;
+    private int carapaceBlockOrPlatedArmor;
     private int acidExplosionDamage;
     private int forTheQueenDamage;
     private int forTheQueenAmount;
@@ -53,12 +49,11 @@ public class RoyalProtector extends CustomMonster {
     public RoyalProtector(final float x, final float y) {
         super(RoyalProtector.NAME, ID, HP_MAX, -5.0F, 0, 135.0f, 135.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
+        this.carapaceBlockOrPlatedArmor = CARAPACE_BLOCK_OR_PLATED_ARMOR;
         if (AbstractDungeon.ascensionLevel >= 8) {
             this.setHp(A8_HP_MIN, A8_HP_MAX);
-            this.carapaceBlock = A8_CARAPACE_BLOCK;
         } else {
             this.setHp(HP_MIN, HP_MAX);
-            this.carapaceBlock = CARAPACE_BLOCK;
         }
 
         if (AbstractDungeon.ascensionLevel >= 3) {
@@ -72,10 +67,8 @@ public class RoyalProtector extends CustomMonster {
         this.damage.add(new DamageInfo(this, this.forTheQueenDamage));
 
         if (AbstractDungeon.ascensionLevel >= 18) {
-            this.carapacePlatedArmor = A18_CARAPACE_PLATED_ARMOR;
             this.forTheQueenAmount = A18_FOR_THE_QUEEN_AMOUNT;
         } else {
-            this.carapacePlatedArmor = CARAPACE_PLATED_ARMOR;
             this.forTheQueenAmount = FOR_THE_QUEEN_AMOUNT;
         }
     }
@@ -87,9 +80,11 @@ public class RoyalProtector extends CustomMonster {
         }
         switch (this.nextMove) {
             case CARAPACE_MOVE:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.carapaceBlock));
-                if (this.carapacePlatedArmor > 0) {
-                    this.addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, this.carapacePlatedArmor), this.carapacePlatedArmor));
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.carapaceBlockOrPlatedArmor));
+                }
+                else {
+                    this.addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, this.carapaceBlockOrPlatedArmor), this.carapaceBlockOrPlatedArmor));
                 }
                 break;
             case BURNING_SPIT_DEBUFF:

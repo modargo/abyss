@@ -36,10 +36,10 @@ public class PrimevalQueen extends CustomMonster
     private static final byte CALL_PROTECTOR_MOVE = 3;
     private static final int SCYTHE_DAMAGE = 18;
     private static final int A3_SCYTHE_DAMAGE = 20;
-    private static final int STRENGTHEN_CARAPACE_BLOCK = 24;
-    private static final int A8_STRENGTHEN_CARAPACE_BLOCK = 30;
-    private static final int STRENGTHEN_CARAPACE_STRENGTH = 5;
-    private static final int A18_STRENGTHEN_CARAPACE_STRENGTH = 10;
+    private static final int STRENGTHEN_CARAPACE_BLOCK = 15;
+    private static final int A8_STRENGTHEN_CARAPACE_BLOCK = 20;
+    private static final int STRENGTHEN_CARAPACE_STRENGTH = 3;
+    private static final int A18_STRENGTHEN_CARAPACE_STRENGTH = 6;
     private static final int STARTING_SUMMONS = 1;
     private static final int A18_STARTING_SUMMONS = 2;
     private static final int HP_MIN = 180;
@@ -129,7 +129,7 @@ public class PrimevalQueen extends CustomMonster
             remove.accept(STRENGTHEN_CARAPACE_BUFF);
             remove.accept(CALL_PROTECTOR_MOVE);
         }
-        if (minionCount > 3) {
+        if (minionCount > 2) {
             remove.accept(CALL_PROTECTOR_MOVE);
         }
         if (this.lastMove(SCYTHE_ATTACK) && this.lastMoveBefore(SCYTHE_ATTACK)) {
