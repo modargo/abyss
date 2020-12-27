@@ -2,11 +2,11 @@ package abyss.powers;
 
 import abyss.Abyss;
 import abyss.actions.ChangeMaxHpAction;
-import abyss.actions.ChooseAction;
 import abyss.cards.EvolutionChoice;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.*;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -54,11 +55,11 @@ public class EvolvingPower extends AbstractPower {
 
     private void showEvolutionChoice() {
         List<Evolution> evolutionChoice = this.getNextEvolutionChoice();
-        ChooseAction choice = new ChooseAction(new EvolutionChoice(), null, evolutionQuestion);
+        ArrayList<AbstractCard> options = new ArrayList<>();
         for (Evolution evolution : evolutionChoice) {
-            choice.add(evolution.name, evolution.getDescription(), () -> evolution.apply.accept(this.owner, evolution.amount));
+            options.add(new EvolutionChoice(evolution.name, evolution.getDescription(), () -> evolution.apply.accept(this.owner, evolution.amount)));
         }
-        AbstractDungeon.actionManager.addToTop(choice);
+        AbstractDungeon.actionManager.addToTop(new ChooseOneAction(options));
     }
 
     private List<Evolution> getNextEvolutionChoice() {
