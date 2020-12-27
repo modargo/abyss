@@ -48,6 +48,7 @@ public class ResummonPower extends AbstractPower {
                     if (strengthPower != null && strengthPower.amount > 0) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(voidSpawn, this.owner, new StrengthPower(this.owner, strengthPower.amount), strengthPower.amount));
                     }
+                    voidSpawn.applyPowers();
                     this.voidSpawnResummonCounter = 0;
                     this.flash();
                 }

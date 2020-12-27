@@ -78,7 +78,9 @@ public class VoidSpawn extends CustomMonster
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
+    }
 
+    public void applyPowers() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BerserkerPower(this, BERSERKER_STRENGTH)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ResummonPower(this)));
     }
