@@ -1,6 +1,8 @@
 package abyss.powers;
 
 import abyss.Abyss;
+import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,7 +14,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.MessageFormat;
 
-public class AbysstouchedPower extends AbstractPower {
+public class AbysstouchedPower extends AbstractPower implements HealthBarRenderPower {
     public static final String POWER_ID = "Abyss:Abysstouched";
     private static final PowerStrings powerStrings;
     public static final String NAME;
@@ -62,5 +64,15 @@ public class AbysstouchedPower extends AbstractPower {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
         NAME = powerStrings.NAME;
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    }
+
+    @Override
+    public int getHealthBarAmount() {
+        return this.amount;
+    }
+
+    @Override
+    public Color getColor() {
+        return Color.PURPLE.cpy();
     }
 }
