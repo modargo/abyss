@@ -189,7 +189,9 @@ public class GnawingCorruption extends CustomMonster
 
     private byte getVariableAttack() {
         List<Byte> variableAttackOptions = new ArrayList<>();
-        variableAttackOptions.add(TENTACLE_SWEEP_ATTACK);
+        if (!this.firstMove) {
+            variableAttackOptions.add(TENTACLE_SWEEP_ATTACK);
+        }
         variableAttackOptions.add(LEFT_EYE_ATTACK);
         variableAttackOptions.add(RIGHT_EYE_ATTACK);
         for (byte move : this.moveHistory) {
