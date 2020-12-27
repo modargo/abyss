@@ -46,10 +46,10 @@ public class GnawingCorruption extends CustomMonster
     private static final int ALL_EYES_DAMAGE = 9;
     private static final int A3_ALL_EYES_DAMAGE = 10;
     private static final int ALL_EYES_HITS = 5;
-    private static final int HP_MIN = 250;
-    private static final int HP_MAX = 250;
-    private static final int A8_HP_MIN = 275;
-    private static final int A8_HP_MAX = 275;
+    private static final int HP_MIN = 280;
+    private static final int HP_MAX = 280;
+    private static final int A8_HP_MIN = 315;
+    private static final int A8_HP_MAX = 315;
     private int gnawingCorruptionCurses;
     private int tentacleSweepDamage;
     private int leftEyeDamage;
@@ -196,7 +196,7 @@ public class GnawingCorruption extends CustomMonster
         variableAttackOptions.add(RIGHT_EYE_ATTACK);
         for (byte move : this.moveHistory) {
             if (variableAttackOptions.contains(move)) {
-                variableAttackOptions.remove(move);
+                variableAttackOptions.removeIf(m -> m == move);
                 break;
             }
         }
