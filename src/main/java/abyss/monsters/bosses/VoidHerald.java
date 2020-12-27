@@ -2,7 +2,6 @@ package abyss.monsters.bosses;
 
 import abyss.Abyss;
 import abyss.monsters.MonsterUtil;
-import abyss.monsters.normals.UnboundAbyssal;
 import abyss.powers.ResummonPower;
 import abyss.powers.TemporaryHexPower;
 import abyss.powers.ThoughtStealerPower;

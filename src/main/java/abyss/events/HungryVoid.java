@@ -1,7 +1,6 @@
 package abyss.events;
 
 import abyss.Abyss;
-import abyss.cards.BrokenCrystal;
 import abyss.cards.HandOfTheAbyss;
 import abyss.cards.Tormented;
 import com.megacrit.cardcrawl.cards.AbstractCard;
