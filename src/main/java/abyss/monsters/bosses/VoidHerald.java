@@ -47,8 +47,8 @@ public class VoidHerald extends CustomMonster
     private static final int ONSLAUGHT_DAMAGE = 3;
     private static final int A4_ONSLAUGHT_DAMAGE = 4;
     private static final int ONSLAUGHT_HITS = 3;
-    private static final int THORNS = 3;
-    private static final int A19_THORNS = 4;
+    private static final int THORNS = 2;
+    private static final int A19_THORNS = 3;
     private static final int HP = 380;
     private static final int A9_HP = 400;
     private int duressVulnerable;
@@ -63,6 +63,8 @@ public class VoidHerald extends CustomMonster
 
     public VoidHerald(final float x, final float y) {
         super(VoidHerald.NAME, ID, HP, -5.0F, 0, 455.0f, 405.0f, IMG, x, y);
+        this.dialogX = -100;
+        this.dialogY = 50;
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);

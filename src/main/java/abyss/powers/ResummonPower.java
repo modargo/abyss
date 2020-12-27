@@ -40,11 +40,13 @@ public class ResummonPower extends AbstractPower {
             }
             if (!voidSpawnAlive) {
                 if (this.voidSpawnResummonCounter >= VOID_SPAWN_RESUMMON_TURNS) {
-                    VoidHerald voidHerald = new VoidHerald(-250.0F, 0.0F);
-                    AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(voidHerald, false));
+                    VoidSpawn voidSpawn = new VoidSpawn(-250.0F, 0.0F);
+                    voidSpawn.rollMove();
+                    voidSpawn.createIntent();
+                    AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(voidSpawn, false));
                     AbstractPower strengthPower = this.owner.getPower(StrengthPower.POWER_ID);
-                    if (strengthPower != null) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(voidHerald, this.owner, new StrengthPower(this.owner, strengthPower.amount), strengthPower.amount));
+                    if (strengthPower != null && strengthPower.amount > 0) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(voidSpawn, this.owner, new StrengthPower(this.owner, strengthPower.amount), strengthPower.amount));
                     }
                     this.voidSpawnResummonCounter = 0;
                     this.flash();

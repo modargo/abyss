@@ -1,7 +1,7 @@
 {
   "Abyss:ThoughtStealer": {
     "NAME": "Thought Stealer",
-    "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, all enemies gain #b{2} #yStrength and heal #b{3}."]
+    "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, ALL enemies gain #b{2} #yStrength and heal #b{3}."]
   },
   "Abyss:Berserker": {
     "NAME": "Berserker",
@@ -9,7 +9,7 @@
   },
   "Abyss:Resummon": {
     "NAME": "Resummon",
-    "DESCRIPTIONS": ["#pVoid #pHerald will resummon #pVoid #pSpawn one turn after it dies, with the same amount of #yStrength as #pVoid #pHerald."]
+    "DESCRIPTIONS": ["#pVoid #pHerald will resummon #pVoid #pSpawn one turn after it dies, with the same amount of positive #yStrength as #pVoid #pHerald."]
   },
   "Abyss:Abysstouched": {
     "NAME": "Abysstouched",

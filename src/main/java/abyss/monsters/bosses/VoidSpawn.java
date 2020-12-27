@@ -27,18 +27,18 @@ public class VoidSpawn extends CustomMonster
     private static final byte CLOBBER_ATTACK = 1;
     private static final byte BEAKED_MAW_ATTACK = 2;
     private static final byte TENTACLE_BARRAGE_ATTACK = 3;
-    private static final int CLOBBER_DAMAGE = 16;
-    private static final int A4_CLOBBER_DAMAGE = 18;
+    private static final int CLOBBER_DAMAGE = 8;
+    private static final int A4_CLOBBER_DAMAGE = 9;
     private static final int BEAKED_MAW_DAMAGE = 10;
     private static final int A4_BEAKED_MAW_DAMAGE = 12;
-    private static final int BEAKED_MAW_BLOCK = 15;
-    private static final int A9_BEAKED_MAW_BLOCK = 20;
-    private static final int TENTACLE_BARRAGE_DAMAGE = 4;
-    private static final int A4_TENTACLE_BARRAGE_DAMAGE = 5;
+    private static final int BEAKED_MAW_BLOCK = 10;
+    private static final int A9_BEAKED_MAW_BLOCK = 15;
+    private static final int TENTACLE_BARRAGE_DAMAGE = 3;
+    private static final int A4_TENTACLE_BARRAGE_DAMAGE = 4;
     private static final int TENTACLE_BARRAGE_HITS = 4;
     private static final int BERSERKER_STRENGTH = 5;
-    private static final int HP = 140;
-    private static final int A9_HP = 150;
+    private static final int HP = 90;
+    private static final int A9_HP = 100;
     private int clobberDamage;
     private int beakedMawDamage;
     private int beakedMawBlock;
@@ -49,7 +49,7 @@ public class VoidSpawn extends CustomMonster
     }
 
     public VoidSpawn(final float x, final float y) {
-        super(VoidSpawn.NAME, ID, HP, -5.0F, 0, 305.0f, 315.0f, IMG, x, y);
+        super(VoidSpawn.NAME, ID, HP, -5.0F, 0, 225, 235, IMG, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);
