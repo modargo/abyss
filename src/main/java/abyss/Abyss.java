@@ -108,8 +108,8 @@ public class Abyss implements
                 }));
         BaseMod.addMonster(Encounters.SQUIRMING_HORROR_AND_HATCHLING, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new Hatchling(-200.0F, -30.0F, false),
-                        new SquirmingHorror(0.0F, 0.0F)
+                        new Hatchling(-300.0F, 0.0F, false),
+                        new SquirmingHorror(100.0F, 0.0F)
                 }));
         BaseMod.addMonster(Encounters.ESSENCE_THIEF_AND_HUNTER, () -> new MonsterGroup(
                 new AbstractMonster[] {
