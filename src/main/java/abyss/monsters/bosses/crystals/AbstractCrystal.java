@@ -121,7 +121,7 @@ public abstract class AbstractCrystal extends CustomMonster {
     }
 
     private void intangibleCheck(boolean startOfCombat) {
-        if (!this.hasPower(ResonancePower.POWER_ID)) {
+        if (!this.hasPower(ResonancePower.POWER_ID) && (!this.firstMove || !this.front)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ResonancePower(this, this.resonanceAmount, !startOfCombat), this.resonanceAmount));
         }
     }
