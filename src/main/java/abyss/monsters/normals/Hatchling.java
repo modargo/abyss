@@ -53,7 +53,7 @@ public class Hatchling extends CustomMonster {
         super(Hatchling.NAME, ID, HP_MAX, -5.0F, 0, 230.0f, 170.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
         this.justHatched = justHatched;
-        //TODO How does this get harder at A17+?
+        //TODO How does this get harder at A17+? Maybe always starts with Headbutt, which seems least dangerous?
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A7_HP_MIN, A7_HP_MAX);
             this.headbuttBlock = A7_HEADBUTT_BLOCK;
