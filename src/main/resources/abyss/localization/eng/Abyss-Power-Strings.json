@@ -73,7 +73,7 @@
   },
   "Abyss:RedCrystal": {
     "NAME": "Red Crystal",
-    "DESCRIPTIONS": ["Whenever you #yExhaust a card that isn't a #yStatus, gains #b{0} #yStrength."]
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card that isn''t a #yStatus, gains #b{0} #yStrength."]
   },
   "Abyss:PurpleCrystal": {
     "NAME": "Purple Crystal",
