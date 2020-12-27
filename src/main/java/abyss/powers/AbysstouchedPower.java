@@ -68,7 +68,7 @@ public class AbysstouchedPower extends AbstractPower implements HealthBarRenderP
 
     @Override
     public int getHealthBarAmount() {
-        return this.amount;
+        return this.owner.isPlayer ? 0 : this.amount;
     }
 
     @Override
