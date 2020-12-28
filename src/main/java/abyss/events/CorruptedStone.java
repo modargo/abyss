@@ -1,6 +1,7 @@
 package abyss.events;
 
 import abyss.Abyss;
+import abyss.cards.CardUtil;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
@@ -117,7 +118,7 @@ public class CorruptedStone extends AbstractImageEvent {
         ArrayList<AbstractCard> rewardCards = new ArrayList<>();
 
         rewardCards.add(AbstractDungeon.getCard(AbstractCard.CardRarity.RARE));
-        rewardCards.add(CardLibrary.getAnyColorCard(AbstractCard.CardRarity.RARE));
+        rewardCards.add(CardUtil.getOtherColorCard(AbstractCard.CardRarity.RARE, Arrays.asList(AbstractDungeon.player.getCardColor(), AbstractCard.CardColor.COLORLESS)));
 
         List<AbstractCard> powerfulCards = Arrays.asList(new Apparition(), new Apotheosis(), new MasterOfStrategy());
         rewardCards.add(powerfulCards.get(AbstractDungeon.miscRng.random(powerfulCards.size() - 1)));
