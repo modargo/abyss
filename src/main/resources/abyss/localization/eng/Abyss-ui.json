@@ -19,7 +19,7 @@
   },
   "Abyss:Evolving": {
     "TEXT": ["The Behemoth evolves..."],
-    "EXTRA_TEXT": ["Burns", "Max HP"],
+    "EXTRA_TEXT": ["Burns in draw pile", "Max HP"],
     "TEXT_DICT": {
       "Anger": "abyss:Enraged {0}",
       "BeatOfDeath": "abyss:Beat\u00a0of\u00a0Death {0}",

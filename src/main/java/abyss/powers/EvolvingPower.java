@@ -81,17 +81,17 @@ public class EvolvingPower extends AbstractPower {
     private List<List<Evolution>> getEvolutionChoices() {
         Evolution[] o1 = new Evolution [] {
                 new Evolution(AngerPower.NAME, evolutionStrings.get(AngerPower.POWER_ID), 2, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new AngerPower(m, n), n))),
-                new Evolution(RitualPower.NAME,4, (AbstractCreature m, Integer n) -> { AbstractPower power = new RitualPower(m, n, false); power.atEndOfRound(); AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, power, n)); }),
+                new Evolution(RitualPower.NAME,5, (AbstractCreature m, Integer n) -> { AbstractPower power = new RitualPower(m, n, false); power.atEndOfRound(); AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, power, n)); }),
                 new Evolution(StrengthPower.NAME, 20, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new StrengthPower(m, n), n)))
         };
         Evolution[] o2 = new Evolution [] {
                 new Evolution(BeatOfDeathPower.NAME, evolutionStrings.get(BeatOfDeathPower.POWER_ID), 1, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new BeatOfDeathPower(m, n), n))),
-                new Evolution(ThornsPower.NAME, 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new ThornsPower(m, n), n))),
-                new Evolution(evolutionNames[0], 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), n, true, true)))
+                new Evolution(ThornsPower.NAME, 4, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new ThornsPower(m, n), n))),
+                new Evolution(evolutionNames[0], 4, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), n, true, true)))
         };
         Evolution[] o3 = new Evolution [] {
                 new Evolution(BufferPower.NAME, evolutionStrings.get(BufferPower.POWER_ID), 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new BufferPower(m, n), n))),
-                new Evolution(MetallicizePower.NAME, evolutionStrings.get(MetallicizePower.POWER_ID), 20, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new MetallicizePower(m, n), n))),
+                new Evolution(MetallicizePower.NAME, evolutionStrings.get(MetallicizePower.POWER_ID), 25, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new MetallicizePower(m, n), n))),
                 new Evolution(evolutionNames[1], 100, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ChangeMaxHpAction(m, n, true)))
         };
         Evolution[] o4 = new Evolution [] {
