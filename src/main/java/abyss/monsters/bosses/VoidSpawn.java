@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class VoidSpawn extends CustomMonster
 {
@@ -27,15 +28,16 @@ public class VoidSpawn extends CustomMonster
     private static final byte CLOBBER_ATTACK = 1;
     private static final byte BEAKED_MAW_ATTACK = 2;
     private static final byte TENTACLE_BARRAGE_ATTACK = 3;
-    private static final int CLOBBER_DAMAGE = 8;
-    private static final int A4_CLOBBER_DAMAGE = 9;
-    private static final int BEAKED_MAW_DAMAGE = 10;
-    private static final int A4_BEAKED_MAW_DAMAGE = 12;
+    private static final int CLOBBER_DAMAGE = 9;
+    private static final int A4_CLOBBER_DAMAGE = 10;
+    private static final int BEAKED_MAW_DAMAGE = 11;
+    private static final int A4_BEAKED_MAW_DAMAGE = 13;
     private static final int BEAKED_MAW_BLOCK = 10;
     private static final int A9_BEAKED_MAW_BLOCK = 15;
-    private static final int TENTACLE_BARRAGE_DAMAGE = 3;
-    private static final int A4_TENTACLE_BARRAGE_DAMAGE = 4;
-    private static final int TENTACLE_BARRAGE_HITS = 4;
+    private static final int TENTACLE_BARRAGE_DAMAGE = 4;
+    private static final int A4_TENTACLE_BARRAGE_DAMAGE = 5;
+    private static final int TENTACLE_BARRAGE_HITS = 3;
+    private static final int TENTACLE_BARRAGE_STRENGTH = 2;
     private static final int BERSERKER_STRENGTH = 5;
     private static final int HP = 90;
     private static final int A9_HP = 100;
@@ -78,9 +80,11 @@ public class VoidSpawn extends CustomMonster
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
+
+        this.applyStartingPowers();
     }
 
-    public void applyPowers() {
+    public void applyStartingPowers() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BerserkerPower(this, BERSERKER_STRENGTH)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ResummonPower(this)));
     }
@@ -105,6 +109,7 @@ public class VoidSpawn extends CustomMonster
                 for (int i = 0; i < TENTACLE_BARRAGE_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 }
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, TENTACLE_BARRAGE_STRENGTH), TENTACLE_BARRAGE_STRENGTH));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -119,7 +124,7 @@ public class VoidSpawn extends CustomMonster
             this.setMove(MOVES[1], BEAKED_MAW_ATTACK, Intent.ATTACK_DEFEND, this.beakedMawDamage);
         }
         else {
-            this.setMove(MOVES[2], TENTACLE_BARRAGE_ATTACK, Intent.ATTACK, this.tentacleBarrageDamage, TENTACLE_BARRAGE_HITS, true);
+            this.setMove(MOVES[2], TENTACLE_BARRAGE_ATTACK, Intent.ATTACK_BUFF, this.tentacleBarrageDamage, TENTACLE_BARRAGE_HITS, true);
         }
     }
 

@@ -22,17 +22,11 @@ public class GreenCrystal extends AbstractCrystal {
 
     public GreenCrystal(final float x, final float y) {
         super(GreenCrystal.NAME, ID, IMG, x, y, true);
-
-        if (AbstractDungeon.ascensionLevel >= 19) {
-            this.buff = A19_BUFF;
-        } else {
-            this.buff = BUFF;
-        }
     }
 
     @Override
     protected AbstractPower getBuffPower() {
-        return new GreenCrystalPower(this, this.buff);
+        return new GreenCrystalPower(this);
     }
 
     static {

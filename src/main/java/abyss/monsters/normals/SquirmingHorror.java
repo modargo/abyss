@@ -31,7 +31,7 @@ public class SquirmingHorror extends CustomMonster {
     private static final int TENTACLE_WRAP_ABYSSTOUCHED = 2;
     private static final int A17_TENTACLE_WRAP_ABYSSTOUCHED = 3;
     private static final int EMBRACE_ABYSSTOUCHED = 5;
-    private static final int A17_EMBRACE_ABYSSTOUCHED = 6;
+    private static final int A17_EMBRACE_ABYSSTOUCHED = 7;
     private static final int EMBRACE_SLIMES = 1;
     private static final int A17_EMBRACE_SLIMES = 1;
     private static final int MALLEABLE = 2;

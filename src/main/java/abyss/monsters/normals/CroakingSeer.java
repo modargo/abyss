@@ -3,14 +3,12 @@ package abyss.monsters.normals;
 import abyss.Abyss;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.CuriosityPower;
 
 public class CroakingSeer extends AbstractCroaking {
@@ -23,7 +21,6 @@ public class CroakingSeer extends AbstractCroaking {
     private static final byte PROTECTIVE_WARD_BUFF = 2;
     private static final int PROTECTIVE_WARD_BLOCK = 3;
     private static final int A7_PROTECTIVE_WARD_BLOCK = 5;
-    private static final int PROTECTIVE_WARD_ARTIFACT = 1;
     private int protectiveWardBlock;
 
     public CroakingSeer() {
@@ -66,14 +63,13 @@ public class CroakingSeer extends AbstractCroaking {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (m == this || !m.isDying) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(m, this, this.protectiveWardBlock));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new ArtifactPower(m, PROTECTIVE_WARD_ARTIFACT), PROTECTIVE_WARD_ARTIFACT));
             }
         }
     }
 
     @Override
     protected void setSecondMoveIntent() {
-        this.setMove(MOVES[1], PROTECTIVE_WARD_BUFF, Intent.DEFEND_BUFF);
+        this.setMove(MOVES[1], PROTECTIVE_WARD_BUFF, Intent.DEFEND);
     }
 
     static {

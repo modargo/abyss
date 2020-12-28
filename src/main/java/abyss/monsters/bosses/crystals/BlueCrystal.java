@@ -12,27 +12,18 @@ public class BlueCrystal extends AbstractCrystal {
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     private static final String IMG = Abyss.monsterImage(ID);
-    private static final int BUFF = 1;
-    private static final int A19_BUFF = 1;
-    private int buff;
 
     public BlueCrystal() {
         this(0.0f, 0.0f);
     }
 
     public BlueCrystal(final float x, final float y) {
-        super(BlueCrystal.NAME, ID, IMG, x, y, false);
-
-        if (AbstractDungeon.ascensionLevel >= 19) {
-            this.buff = A19_BUFF;
-        } else {
-            this.buff = BUFF;
-        }
+        super(BlueCrystal.NAME, ID, IMG, x, y, true);
     }
 
     @Override
     protected AbstractPower getBuffPower() {
-        return new BlueCrystalPower(this, this.buff);
+        return new BlueCrystalPower(this);
     }
 
     static {

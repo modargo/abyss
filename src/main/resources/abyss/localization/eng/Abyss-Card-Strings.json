@@ -9,7 +9,7 @@
   },
   "Abyss:Staggered": {
     "NAME": "Staggered",
-    "DESCRIPTION": "Unplayable. NL While in hand, whenever you play an attack, shuffle a Wound into your discard pile."
+    "DESCRIPTION": "Unplayable. NL While in hand, whenever you play an attack, add a Wound into your discard pile."
   },
   "Abyss:Withering": {
     "NAME": "Withering",

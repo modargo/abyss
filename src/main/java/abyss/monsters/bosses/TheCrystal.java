@@ -37,12 +37,14 @@ public class TheCrystal extends CustomMonster
     private static final int A4_CRYSTAL_SPEAR_DAMAGE = 10;
     private static final int CRYSTAL_SPEAR_MINERALIZES = 1;
     private static final int A19_CRYSTAL_SPEAR_MINERALIZES = 1;
-    private static final int RESONANCE_STRENGTH = 1;
-    private static final int A19_RESONANCE_STRENGTH = 2;
+    private static final int RESONANCE_STRENGTH = 2;
+    private static final int A19_RESONANCE_STRENGTH = 4;
     private static final int RESONANCE_HEAL = 30;
     private static final int A19_RESONANCE_HEAL = 40;
-    private static final int CRYSTAL_LINK_PERCENT = 75;
-    private static final int A19_CRYSTAL_LINK_PERCENT = 125;
+    private static final int CRYSTAL_LINK_PERCENT = 100;
+    private static final int A19_CRYSTAL_LINK_PERCENT = 150;
+    private static final int STARTING_STRENGTH = -10;
+    private static final int A19_STARTING_STRENGTH = -10;
     public static final int ACTIVATION_CRYSTAL_COUNT = 3;
     private static final int HP = 280;
     private static final int A9_HP = 300;
@@ -52,6 +54,7 @@ public class TheCrystal extends CustomMonster
     private int resonanceStrength;
     private int resonanceHeal;
     private int crystalLinkPercent;
+    private int startingStrength;
 
     private boolean active;
 
@@ -84,12 +87,14 @@ public class TheCrystal extends CustomMonster
             this.resonanceStrength = A19_RESONANCE_STRENGTH;
             this.resonanceHeal = A19_RESONANCE_HEAL;
             this.crystalLinkPercent = A19_CRYSTAL_LINK_PERCENT;
+            this.startingStrength = A19_STARTING_STRENGTH;
         }
         else {
             this.crystalSpearMineralizes = CRYSTAL_SPEAR_MINERALIZES;
             this.resonanceStrength = RESONANCE_STRENGTH;
             this.resonanceHeal = RESONANCE_HEAL;
             this.crystalLinkPercent = CRYSTAL_LINK_PERCENT;
+            this.startingStrength = STARTING_STRENGTH;
         }
     }
 
@@ -100,7 +105,8 @@ public class TheCrystal extends CustomMonster
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
 
         this.addToBot(new ApplyPowerAction(this, this, new InactiveCrystalPower(this)));
-        this.addToBot(new ApplyPowerAction(this, this, new CrystalLinkPower(this, this.crystalLinkPercent)));
+        this.addToBot(new ApplyPowerAction(this, this, new CrystalLinkPower(this, this.crystalLinkPercent), this.crystalLinkPercent));
+        this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.startingStrength), this.startingStrength));
     }
 
     @Override
@@ -113,21 +119,27 @@ public class TheCrystal extends CustomMonster
                 //TODO Some kind of effect?
                 break;
             case CRYSTAL_BARRAGE_ATTACK:
+                //TODO animation: see if I can make crystal spears
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 for (int i = 0; i < CRYSTAL_BARRAGE_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 }
                 break;
             case CRYSTAL_SPEAR_ATTACK:
+                //TODO animation: see if I can make a crystal spear
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Mineralized(), this.crystalSpearMineralizes));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Mineralized(), this.crystalSpearMineralizes, true, true));
                 break;
             case RESONANCE_BUFF:
+                //TODO animation: some kind of effect -- maybe the devotion sound and a glow?
+                //this.addToBot((AbstractGameAction)new SFXAction("HEAL_2", -0.4F, true));
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.resonanceHeal));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, this.resonanceStrength), this.resonanceStrength));
+                int currentStrength = this.getCurrentStrength();
+                int strengthGain = currentStrength < 0 ? -currentStrength + this.resonanceStrength : this.resonanceStrength;
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, strengthGain), strengthGain));
                 break;
         }
 
@@ -168,12 +180,17 @@ public class TheCrystal extends CustomMonster
         else if (!this.lastMove(CRYSTAL_SPEAR_ATTACK) && !this.lastMoveBefore(CRYSTAL_SPEAR_ATTACK)) {
             this.setMove(MOVES[2], CRYSTAL_SPEAR_ATTACK, Intent.ATTACK_DEBUFF, this.crystalSpearDamage);
         }
-        else if (this.lastMove(RESONANCE_BUFF) || (this.lastMove(CRYSTAL_SPEAR_ATTACK) && num < 50)) {
+        else if (this.lastMove(RESONANCE_BUFF) || (this.lastMove(CRYSTAL_SPEAR_ATTACK) && this.getCurrentStrength() > 0 && num < 50)) {
             this.setMove(MOVES[1], CRYSTAL_BARRAGE_ATTACK, Intent.ATTACK, this.crystalBarrageDamage, CRYSTAL_BARRAGE_HITS, true);
         }
         else {
             this.setMove(MOVES[3], RESONANCE_BUFF, Intent.BUFF);
         }
+    }
+
+    private int getCurrentStrength() {
+        AbstractPower strengthPower = this.getPower(StrengthPower.POWER_ID);
+        return strengthPower != null ? strengthPower.amount : 0;
     }
 
     @Override

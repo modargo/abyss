@@ -29,7 +29,7 @@
       "Abyss:DazedPulse": "abyss:Dazed\u00a0Pulse",
       "Abyss:AbysstouchedPulse": "abyss:Abysstouched\u00a0Pulse {0}",
       "Abyss:SlimyBody": "abyss:Slimy\u00a0Body",
-      "Invincible": "abyss:Invincible"
+      "Invincible": "abyss:Invincible {0}"
     }
   }
 }

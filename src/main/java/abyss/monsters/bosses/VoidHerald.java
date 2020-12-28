@@ -20,8 +20,12 @@ import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
+import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
+import java.util.function.Supplier;
 
 public class VoidHerald extends CustomMonster
 {
@@ -33,28 +37,34 @@ public class VoidHerald extends CustomMonster
     private static final String IMG = Abyss.monsterImage(ID);
     private boolean firstMove = true;
     private static final byte DURESS_DEBUFF = 1;
-    private static final byte CORRUPTING_TOUCH_ATTACK = 2;
-    private static final byte ONSLAUGHT_ATTACK = 3;
-    private static final int DURESS_VULNERABLE = 1;
-    private static final int A19_DURESS_VULNERABLE = 2;
+    private static final byte HYMN_TO_THE_VOID_DEBUFF = 2;
+    private static final byte CORRUPTING_TOUCH_ATTACK = 3;
+    private static final byte ONSLAUGHT_ATTACK = 4;
+    private static final int DURESS_FRAIL = 1;
+    private static final int A19_DURESS_FRAIL = 2;
     private static final int DURESS_TEMPORARY_HEX = 1;
-    private static final int CORRUPTING_TOUCH_DAMAGE = 6;
-    private static final int A4_CORRUPTING_TOUCH_DAMAGE = 7;
-    private static final int CORRUPTING_TOUCH_HITS = 2;
-    private static final int CORRUPTING_TOUCH_SLIMES = 1;
-    private static final int A19_CORRUPTING_TOUCH_SLIMES = 2;
-    private static final int ONSLAUGHT_DAMAGE = 3;
-    private static final int A4_ONSLAUGHT_DAMAGE = 4;
-    private static final int ONSLAUGHT_HITS = 3;
-    private static final int THORNS = 2;
-    private static final int A19_THORNS = 3;
+    private static final int HYMN_TO_THE_VOID_VULNERABLE = 1;
+    private static final int A19_HYMN_TO_THE_VOID_VULNERABLE = 2;
+    private static final int HYMN_TO_THE_VOID_SLIMES = 1;
+    private static final int A19_HYMN_TO_THE_VOID_SLIMES = 2;
+    private static final int CORRUPTING_TOUCH_DAMAGE = 12;
+    private static final int A4_CORRUPTING_TOUCH_DAMAGE = 14;
+    private static final int CORRUPTING_TOUCH_WEAK = 1;
+    private static final int A19_CORRUPTING_TOUCH_WEAK = 1;
+    private static final int CORRUPTING_TOUCH_DRAW = 1;
+    private static final int A19_CORRUPTING_TOUCH_DRAW = 1;
+    private static final int ONSLAUGHT_DAMAGE = 5;
+    private static final int A4_ONSLAUGHT_DAMAGE = 6;
+    private static final int ONSLAUGHT_HITS = 2;
     private static final int HP = 380;
     private static final int A9_HP = 400;
-    private int duressVulnerable;
+    private int duressFrail;
+    private int hymnToTheVoidVulnerable;
+    private int hymnToTheVoidSlimes;
     private int corruptingTouchDamage;
-    private int corruptingTouchSlimes;
+    private int corruptingTouchWeak;
+    private int corruptingTouchDraw;
     private int onslaughtDamage;
-    private int thorns;
 
     public VoidHerald() {
         this(0.0f, 0.0f);
@@ -82,14 +92,18 @@ public class VoidHerald extends CustomMonster
         this.damage.add(new DamageInfo(this, this.onslaughtDamage));
 
         if (AbstractDungeon.ascensionLevel >= 19) {
-            this.duressVulnerable = A19_DURESS_VULNERABLE;
-            this.corruptingTouchSlimes = A19_CORRUPTING_TOUCH_SLIMES;
-            this.thorns = A19_THORNS;
+            this.duressFrail = A19_DURESS_FRAIL;
+            this.hymnToTheVoidVulnerable = A19_HYMN_TO_THE_VOID_VULNERABLE;
+            this.hymnToTheVoidSlimes = A19_HYMN_TO_THE_VOID_SLIMES;
+            this.corruptingTouchWeak = A19_CORRUPTING_TOUCH_WEAK;
+            this.corruptingTouchDraw = A19_CORRUPTING_TOUCH_DRAW;
         }
         else {
-            this.duressVulnerable = DURESS_VULNERABLE;
-            this.corruptingTouchSlimes = CORRUPTING_TOUCH_SLIMES;
-            this.thorns = THORNS;
+            this.duressFrail = DURESS_FRAIL;
+            this.hymnToTheVoidVulnerable = HYMN_TO_THE_VOID_VULNERABLE;
+            this.hymnToTheVoidSlimes = HYMN_TO_THE_VOID_SLIMES;
+            this.corruptingTouchWeak = CORRUPTING_TOUCH_WEAK;
+            this.corruptingTouchDraw = CORRUPTING_TOUCH_DRAW;
         }
     }
 
@@ -99,7 +113,6 @@ public class VoidHerald extends CustomMonster
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ThornsPower(this, this.thorns), this.thorns));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ThoughtStealerPower(this)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ResummonPower(this)));
     }
@@ -118,15 +131,19 @@ public class VoidHerald extends CustomMonster
         switch (this.nextMove) {
             case DURESS_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.duressVulnerable, true), this.duressVulnerable));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new TemporaryHexPower(AbstractDungeon.player, DURESS_TEMPORARY_HEX, true), DURESS_TEMPORARY_HEX));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, this.duressFrail, true), this.duressFrail));
+                break;
+            case HYMN_TO_THE_VOID_DEBUFF:
+                AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.hymnToTheVoidVulnerable, true), this.hymnToTheVoidVulnerable));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Slimed(), this.hymnToTheVoidSlimes));
                 break;
             case CORRUPTING_TOUCH_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                for (int i = 0; i < CORRUPTING_TOUCH_HITS; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
-                }
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Slimed(), this.corruptingTouchSlimes));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.corruptingTouchWeak, true), this.corruptingTouchWeak));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DrawCardNextTurnPower(AbstractDungeon.player, this.corruptingTouchDraw), this.corruptingTouchDraw));
                 break;
             case ONSLAUGHT_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
@@ -141,17 +158,18 @@ public class VoidHerald extends CustomMonster
     @Override
     protected void getMove(final int num) {
         byte move;
-        boolean lastTwoNotDuress = !this.lastMove(DURESS_DEBUFF) && !this.lastMoveBefore(DURESS_DEBUFF);
-        boolean lastThreeNotDuress = lastTwoNotDuress && !MonsterUtil.lastMoveX(this, DURESS_DEBUFF, 3);
-        boolean lastFourNotDuress = lastThreeNotDuress && !MonsterUtil.lastMoveX(this, DURESS_DEBUFF, 4);
-        if (!this.firstMove && lastFourNotDuress) {
-                move = DURESS_DEBUFF;
+        boolean lastTwoNotDebuff = !this.lastMove(DURESS_DEBUFF) && !this.lastMoveBefore(DURESS_DEBUFF) && !this.lastMove(HYMN_TO_THE_VOID_DEBUFF) && !this.lastMoveBefore(HYMN_TO_THE_VOID_DEBUFF);
+        boolean lastThreeNotDebuff = lastTwoNotDebuff && !MonsterUtil.lastMoveX(this, DURESS_DEBUFF, 3) && !MonsterUtil.lastMoveX(this, HYMN_TO_THE_VOID_DEBUFF, 3);
+        boolean lastFourNotDebuff = lastThreeNotDebuff && !MonsterUtil.lastMoveX(this, DURESS_DEBUFF, 4) && !MonsterUtil.lastMoveX(this, HYMN_TO_THE_VOID_DEBUFF, 4);
+        Supplier<Byte> randomDebuff = () -> AbstractDungeon.aiRng.randomBoolean() ? DURESS_DEBUFF : HYMN_TO_THE_VOID_DEBUFF;
+        if (!this.firstMove && lastFourNotDebuff) {
+            move = randomDebuff.get();
         }
-        else if (lastThreeNotDuress && num < 50) {
-            move = DURESS_DEBUFF;
+        else if (lastThreeNotDebuff && num < 50) {
+            move = randomDebuff.get();
         }
-        else if (lastTwoNotDuress) {
-            move = num < 25 ? DURESS_DEBUFF : num < 60 ? ONSLAUGHT_ATTACK : CORRUPTING_TOUCH_ATTACK;
+        else if (lastTwoNotDebuff) {
+            move = num < 25 ? randomDebuff.get() : num < 60 ? ONSLAUGHT_ATTACK : CORRUPTING_TOUCH_ATTACK;
         }
         else {
             move = num < 40 ? ONSLAUGHT_ATTACK : CORRUPTING_TOUCH_ATTACK;
@@ -160,11 +178,14 @@ public class VoidHerald extends CustomMonster
             case DURESS_DEBUFF:
                 this.setMove(MOVES[0], move, Intent.STRONG_DEBUFF);
                 break;
+            case HYMN_TO_THE_VOID_DEBUFF:
+                this.setMove(MOVES[1], move, Intent.DEBUFF);
+                break;
             case ONSLAUGHT_ATTACK:
-                this.setMove(MOVES[1], move, Intent.ATTACK, this.onslaughtDamage, ONSLAUGHT_HITS, true);
+                this.setMove(MOVES[2], move, Intent.ATTACK, this.onslaughtDamage, ONSLAUGHT_HITS, true);
                 break;
             case CORRUPTING_TOUCH_ATTACK:
-                this.setMove(MOVES[2], move, Intent.ATTACK_DEBUFF, this.corruptingTouchDamage, CORRUPTING_TOUCH_HITS, true);
+                this.setMove(MOVES[3], move, Intent.ATTACK_DEBUFF, this.corruptingTouchDamage);
                 break;
         }
     }

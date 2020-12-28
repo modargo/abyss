@@ -1,7 +1,7 @@
 {
   "Abyss:ThoughtStealer": {
     "NAME": "Thought Stealer",
-    "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, ALL enemies gain #b{2} #yStrength and heal #b{3}."]
+    "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, ALL enemies gain #b{2} #yStrength."]
   },
   "Abyss:Berserker": {
     "NAME": "Berserker",
@@ -77,11 +77,11 @@
   },
   "Abyss:PurpleCrystal": {
     "NAME": "Purple Crystal",
-    "DESCRIPTIONS": ["Whenever you apply a debuff to this enemy, gains #b{0} #yStrength."]
+    "DESCRIPTIONS": ["Whenever you gain energy during your turn, gains #b{0} #yStrength."]
   },
   "Abyss:GrayCrystal": {
     "NAME": "Gray Crystal",
-    "DESCRIPTIONS": ["Whenever you gain #yStrength, gain #yDexterity, channel an orb, or change stances, gains #b{0} #yStrength."]
+    "DESCRIPTIONS": ["Whenever you gain #yStrength or #yDexterity, gains #b{0} #yStrength."]
   },
   "Abyss:CrystalLink": {
     "NAME": "Crystal Link",

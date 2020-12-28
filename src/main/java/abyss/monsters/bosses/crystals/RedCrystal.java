@@ -12,9 +12,6 @@ public class RedCrystal extends AbstractCrystal {
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     private static final String IMG = Abyss.monsterImage(ID);
-    private static final int BUFF = 1;
-    private static final int A19_BUFF = 1;
-    private int buff;
 
     public RedCrystal() {
         this(0.0f, 0.0f);
@@ -22,17 +19,11 @@ public class RedCrystal extends AbstractCrystal {
 
     public RedCrystal(final float x, final float y) {
         super(RedCrystal.NAME, ID, IMG, x, y, false);
-
-        if (AbstractDungeon.ascensionLevel >= 19) {
-            this.buff = A19_BUFF;
-        } else {
-            this.buff = BUFF;
-        }
     }
 
     @Override
     protected AbstractPower getBuffPower() {
-        return new RedCrystalPower(this, this.buff);
+        return new RedCrystalPower(this);
     }
 
     static {

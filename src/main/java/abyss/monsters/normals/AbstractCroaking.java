@@ -16,15 +16,15 @@ public abstract class AbstractCroaking extends CustomMonster {
     private boolean firstMove = true;
     private static final byte LACERATE_ATTACK = 1;
     private static final byte SECOND_MOVE = 2;
-    private static final int LACERATE_DAMAGE = 2;
-    private static final int A2_LACERATE_DAMAGE = 3;
+    private static final int LACERATE_DAMAGE = 1;
+    private static final int A2_LACERATE_DAMAGE = 2;
     private static final int LACERATE_HITS = 2;
     private static final int BUFF = 1;
     private static final int A17_BUFF = 2;
-    private static final int HP_MIN = 58;
-    private static final int HP_MAX = 64;
-    private static final int A7_HP_MIN = 62;
-    private static final int A7_HP_MAX = 67;
+    private static final int HP_MIN = 50;
+    private static final int HP_MAX = 55;
+    private static final int A7_HP_MIN = 53;
+    private static final int A7_HP_MAX = 58;
     private int lacerateDamage;
     private int buff;
 

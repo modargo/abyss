@@ -16,35 +16,22 @@ public class GrayCrystalPower extends AbstractPower {
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
 
-    public GrayCrystalPower(AbstractCreature owner, int amount) {
+    public GrayCrystalPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.amount = amount;
         this.updateDescription();
         Abyss.LoadPowerImage(this);
     }
 
     public void onPlayerGainStrengthOrDexterity() {
-        this.trigger();
-    }
-
-    public void onPlayerChannelOrb() {
-        this.trigger();
-    }
-
-    public void onPlayerSwitchedStance() {
-        this.trigger();
+        this.flash();
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
     }
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
-    }
-
-    private void trigger() {
-        this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
+        this.description = MessageFormat.format(DESCRIPTIONS[0], 1);
     }
 
     static {

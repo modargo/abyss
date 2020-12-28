@@ -8,8 +8,11 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CrystalLinkPower extends AbstractPower {
+    public static final Logger logger = LogManager.getLogger(CrystalLinkPower.class.getName());
     public static final String POWER_ID = "Abyss:CrystalLink";
     private static final PowerStrings powerStrings;
     public static final String NAME;
@@ -35,6 +38,8 @@ public class CrystalLinkPower extends AbstractPower {
         AbstractPower gainStrengthPower = new GainStrengthPower(this.owner, gain);
         gainStrengthPower.type = PowerType.BUFF;
         this.addToBot(new ApplyPowerAction(this.owner, crystal, gainStrengthPower, gain));
+
+        logger.info("Crystal Link strength gain: " + gain + " from " + crystal.id);
     }
 
     static {

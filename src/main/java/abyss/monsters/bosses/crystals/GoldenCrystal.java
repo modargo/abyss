@@ -12,27 +12,18 @@ public class GoldenCrystal extends AbstractCrystal {
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     private static final String IMG = Abyss.monsterImage(ID);
-    private static final int BUFF = 2;
-    private static final int A19_BUFF = 2;
-    private int buff;
 
     public GoldenCrystal() {
         this(0.0f, 0.0f);
     }
 
     public GoldenCrystal(final float x, final float y) {
-        super(GoldenCrystal.NAME, ID, IMG, x, y, true);
-
-        if (AbstractDungeon.ascensionLevel >= 19) {
-            this.buff = A19_BUFF;
-        } else {
-            this.buff = BUFF;
-        }
+        super(GoldenCrystal.NAME, ID, IMG, x, y, false);
     }
 
     @Override
     protected AbstractPower getBuffPower() {
-        return new GoldenCrystalPower(this, this.buff);
+        return new GoldenCrystalPower(this);
     }
 
     static {

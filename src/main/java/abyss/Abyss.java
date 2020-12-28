@@ -73,7 +73,6 @@ public class Abyss implements
         addEvents();
 
         BaseMod.subscribe(new TriggerGrayCrystalPowerPostPowerApplySubscriber());
-        BaseMod.subscribe(new TriggerPurpleCrystalPowerPostPowerApplySubscriber());
         BaseMod.subscribe(new TriggerThoughtStealerPostDrawSubscriber());
         BaseMod.subscribe(new TriggerDrainedPostExhaustSubscriber());
         BaseMod.subscribe(new TriggerRedCrystalPowerPostExhaustSubscriber());
@@ -144,8 +143,8 @@ public class Abyss implements
         BaseMod.addBoss(AbyssAct.ID, DeepTyrant.ID, "abyss/images/map/bosses/DeepTyrant.png", "abyss/images/map/bosses/DeepTyrantOutline.png");
         BaseMod.addMonster(Encounters.CRYSTALS, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new GoldenCrystal(-350.0F, 400.0F),
-                        new BlueCrystal(250.0F, 400.0F),
+                        new BlueCrystal(-350.0F, 400.0F),
+                        new GoldenCrystal(250.0F, 400.0F),
                         new GreenCrystal(-450.0F, 200.0F),
                         new RedCrystal(350.0F, 200.0F),
                         new PurpleCrystal(-350.0F, 0.0F),
