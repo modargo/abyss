@@ -6,10 +6,7 @@ import abyss.cards.Tormented;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Buffer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -30,15 +27,15 @@ public class BoundAbyssal extends CustomMonster {
     private static final byte SCRUTINIZE_ATTACK = 4;
     private static final int OBSERVE_DAMAGE = 13;
     private static final int A2_OBSERVE_DAMAGE = 15;
-    private static final int GLARE_DAMAGE = 5;
-    private static final int A2_GLARE_DAMAGE = 6;
+    private static final int GLARE_DAMAGE = 4;
+    private static final int A2_GLARE_DAMAGE = 5;
     private static final int GLARE_HITS = 2;
     private static final int CONTEMPLATE_DAMAGE = 7;
     private static final int A2_CONTEMPLATE_DAMAGE = 8;
-    private static final int CONTEMPLATE_STRENGTH = 2;
-    private static final int A17_CONTEMPLATE_STRENGTH = 3;
+    private static final int CONTEMPLATE_STRENGTH = 1;
+    private static final int A17_CONTEMPLATE_STRENGTH = 2;
     private static final int CONTEMPLATE_BUFFER = 1;
-    private static final int A17_CONTEMPLATE_BUFFER = 3;
+    private static final int A17_CONTEMPLATE_BUFFER = 1;
     private static final int CONTEMPLATE_ARTIFACT = 1;
     private static final int A17_CONTEMPLATE_ARTIFACT = 1;
     private static final int SCRUTINIZE_DAMAGE = 7;
@@ -49,8 +46,8 @@ public class BoundAbyssal extends CustomMonster {
     private static final int HP_MAX = 45;
     private static final int A7_HP_MIN = 50;
     private static final int A7_HP_MAX = 50;
-    private static final int STARTING_BUFFER = 20;
-    private static final int A17_STARTING_BUFFER = 20;
+    private static final int STARTING_BUFFER = 15;
+    private static final int A17_STARTING_BUFFER = 15;
     private static final int STARTING_ARTIFACT = 3;
     private static final int A17_STARTING_ARTIFACT = 3;
     private int observeDamage;
@@ -143,9 +140,11 @@ public class BoundAbyssal extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.scrutinizeVulnerable, true), this.scrutinizeVulnerable));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Tormented(), 1, true, true));
                 if (AbstractDungeon.ascensionLevel >= 17) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Withering(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Tormented(), 1));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Tormented(), 1, true, true));
                 }
                 break;
         }
