@@ -81,7 +81,7 @@
   },
   "Abyss:GrayCrystal": {
     "NAME": "Gray Crystal",
-    "DESCRIPTIONS": ["Whenever you gain #yStrength or #yDexterity, gains #b{0} #yStrength."]
+    "DESCRIPTIONS": ["Whenever you gain #yStrength, #yDexterity, or #yFocus, gains #b{0} #yStrength."]
   },
   "Abyss:CrystalLink": {
     "NAME": "Crystal Link",

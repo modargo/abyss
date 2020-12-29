@@ -24,7 +24,7 @@ public class GrayCrystalPower extends AbstractPower {
         Abyss.LoadPowerImage(this);
     }
 
-    public void onPlayerGainStrengthOrDexterity() {
+    public void onPlayerGainStrengthDexterityOrFocus() {
         this.flash();
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
     }
