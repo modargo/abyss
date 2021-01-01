@@ -33,10 +33,10 @@ public class RoyalProtector extends CustomMonster {
     private static final int A3_FOR_THE_QUEEN_DAMAGE = 5;
     private static final int FOR_THE_QUEEN_AMOUNT = 1;
     private static final int A18_FOR_THE_QUEEN_AMOUNT = 2;
-    private static final int HP_MIN = 24;
-    private static final int HP_MAX = 28;
-    private static final int A8_HP_MIN = 26;
-    private static final int A8_HP_MAX = 30;
+    private static final int HP_MIN = 29;
+    private static final int HP_MAX = 33;
+    private static final int A8_HP_MIN = 31;
+    private static final int A8_HP_MAX = 35;
     private int carapaceBlockOrPlatedArmor;
     private int acidExplosionDamage;
     private int forTheQueenDamage;
