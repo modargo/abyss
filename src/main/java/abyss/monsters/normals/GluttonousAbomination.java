@@ -72,7 +72,7 @@ public class GluttonousAbomination extends CustomMonster {
     @Override
     public void usePreBattleAction() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new GluttonyPower(this, this.gluttony)));
-        int strength = (AbstractDungeon.player.maxHealth + this.gluttony - 1) / this.gluttony;
+        int strength = AbstractDungeon.player.currentHealth / this.gluttony;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, strength), strength));
     }
 

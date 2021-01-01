@@ -41,7 +41,7 @@
   },
   "Abyss:Gluttony": {
     "NAME": "Gluttony",
-    "DESCRIPTIONS": ["Gains #b1 Strength for every #b{0} Max HP you have (rounded up)."]
+    "DESCRIPTIONS": ["At the start of combat, gains #b1 Strength for every #b{0} HP you have."]
   },
   "Abyss:Wary": {
     "NAME": "Wary",

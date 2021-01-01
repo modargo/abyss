@@ -15,7 +15,7 @@ public class CrystalEnergy extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(Abyss.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(Abyss.relicOutlineImage(ID));
     private static final int HEAL = 5;
-    private static final int DAMAGE_THRESHOLD = 30;
+    private static final int DAMAGE_THRESHOLD = 25;
 
     public CrystalEnergy() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);

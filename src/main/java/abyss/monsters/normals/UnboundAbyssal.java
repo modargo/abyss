@@ -63,6 +63,8 @@ public class UnboundAbyssal extends CustomMonster {
     public UnboundAbyssal(final float x, final float y) {
         super(UnboundAbyssal.NAME, ID, HP_MAX, -5.0F, 0, 300, 300, IMG, x, y);
         this.type = EnemyType.NORMAL;
+        this.dialogX = -100;
+        this.dialogY = 50;
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A7_HP_MIN, A7_HP_MAX);
         } else {
@@ -115,6 +117,7 @@ public class UnboundAbyssal extends CustomMonster {
             case WONT_GO_BACK_MOVE:
                 if (!this.usedDialog) {
                     AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F));
+                    this.usedDialog = true;
                 }
                 if (AbstractDungeon.ascensionLevel >= 17) {
                     AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));

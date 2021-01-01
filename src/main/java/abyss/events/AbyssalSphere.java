@@ -74,7 +74,7 @@ public class AbyssalSphere extends AbstractEvent {
 
                 this.img = ImageMaster.loadImage("images/events/sphereOpen.png");
                 this.enterCombat();
-                AbstractDungeon.lastCombatMetricKey = "2 Orb Walkers";
+                AbstractDungeon.lastCombatMetricKey = Encounters.SQUIRMING_HORRORS_2;
                 break;
             case END:
                 this.openMap();
