@@ -4,14 +4,15 @@ import abyss.act.Encounters;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractEvent;
-import com.megacrit.cardcrawl.events.RoomEventDialog;
+import com.megacrit.cardcrawl.events.beyond.MysteriousSphere;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier;
 
-public class AbyssalSphere extends AbstractEvent {
+// We extend the MysteriousSphere event because ProceedButton.java specifically checks if an event is an instance of this type
+// (or a few other types) in the logic for what happens when you click proceed. This is easier than a patch.
+public class AbyssalSphere extends MysteriousSphere {
     public static final String ID = "Abyss:AbyssalSphere";
     private static final EventStrings eventStrings;
     public static final String NAME;
@@ -21,23 +22,17 @@ public class AbyssalSphere extends AbstractEvent {
     private AbyssalSphere.CurScreen screen;
 
     public AbyssalSphere() {
+        this.roomEventText.clear();
+        this.imageEventText.clearAllDialogs();
         this.screen = AbyssalSphere.CurScreen.INTRO;
         this.initializeImage("images/events/sphereClosed.png", 1120.0F * Settings.xScale, AbstractDungeon.floorY - 50.0F * Settings.scale);
         this.body = INTRO_MSG;
         this.roomEventText.addDialogOption(OPTIONS[0]);
         this.roomEventText.addDialogOption(OPTIONS[1]);
-        this.hasDialog = true;
-        this.hasFocus = true;
         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.SQUIRMING_HORRORS_2);
     }
 
-    public void update() {
-        super.update();
-        if (!RoomEventDialog.waitForInput) {
-            this.buttonEffect(this.roomEventText.getSelectedOption());
-        }
-    }
-
+    @Override
     protected void buttonEffect(int buttonPressed) {
         switch(this.screen) {
             case INTRO:
