@@ -27,8 +27,8 @@ public class Behemoth extends CustomMonster
     private static final byte BIDE_MOVE = 1;
     private static final byte EVOLVE_MOVE = 2;
     private static final byte CLAW_SWIPE_ATTACK = 3;
-    private static final int CLAW_SWIPE_DAMAGE = 8;
-    private static final int A3_CLAW_SWIPE_DAMAGE = 10;
+    private static final int CLAW_SWIPE_DAMAGE = 13;
+    private static final int A3_CLAW_SWIPE_DAMAGE = 15;
     private static final int STARTING_BLOCK = 90;
     private static final int A8_STARTING_BLOCK = 100;
     private static final int HP_MIN = 270;
