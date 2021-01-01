@@ -27,8 +27,8 @@ public class HungryVoid extends AbstractImageEvent {
     private static final float A15_HEALTH_LOSS_PERCENT = 0.18F;
     private static final float HEAL_PERCENT = 0.25F;
     private static final float A15_HEAL_PERCENT = 0.20F;
-    private static final int GOLD_LOSS = 50;
-    private static final int A15_GOLD_LOSS = 70;
+    private static final int GOLD_LOSS = 40;
+    private static final int A15_GOLD_LOSS = 60;
     private static final int CARD_REWARD_AMOUNT = 2;
 
     private int healthLoss;
