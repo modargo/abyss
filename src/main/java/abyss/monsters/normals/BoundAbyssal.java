@@ -1,7 +1,6 @@
 package abyss.monsters.normals;
 
 import abyss.Abyss;
-import abyss.cards.Withering;
 import abyss.cards.Tormented;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

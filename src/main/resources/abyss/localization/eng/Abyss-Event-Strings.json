@@ -116,5 +116,21 @@
       "[Locked] Requires one of the hunter's relics.",
       "[Leave]"
     ]
+  },
+  "Abyss:DeepShrine": {
+    "NAME": "Deep Shrine",
+    "DESCRIPTIONS": [
+      "Before you lies a #yshrine built in the midst of a #bgreat #blake, extending both above and below, #gtwisting #gvines shrouding its center. NL NL Offerings of gold litter the shrine, and you can feel its power.",
+      "The power of the shrine flows into you, and you feel ready to confront the horrors of this place.",
+      "The offering will help equip you to confront the horrors of this place."
+    ],
+    "OPTIONS": [
+      "[Contemplate] #gUpgarde #ga #gcard.",
+      "[Pray] #gRemove #ga #gcard #gfrom #gyour #gdeck.",
+      "[Take] #gGain #g{0} #ggold.",
+      "[Leave]",
+      "Select a Card to Upgrade.",
+      "Select a Card to Remove."
+    ]
   }
 }

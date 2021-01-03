@@ -172,6 +172,7 @@ public class Abyss implements
         BaseMod.addEvent(Humming.ID, Humming.class, AbyssAct.ID);
         BaseMod.addEvent(SpawningGrounds.ID, SpawningGrounds.class, AbyssAct.ID);
         BaseMod.addEvent(BigGameHunter.ID, BigGameHunter.class, AbyssAct.ID);
+        BaseMod.addEvent(DeepShrine.ID, DeepShrine.class, AbyssAct.ID);
     }
 
     @Override
