@@ -3,7 +3,6 @@ package abyss.monsters.bosses.crystals;
 import abyss.Abyss;
 import abyss.powers.crystals.RedCrystalPower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 

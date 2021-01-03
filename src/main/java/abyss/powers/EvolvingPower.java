@@ -101,7 +101,7 @@ public class EvolvingPower extends AbstractPower {
         };
         Evolution[] o5 = new Evolution [] {
                 new Evolution(ArtifactPower.NAME, 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new ArtifactPower(m, n), n))),
-                new Evolution(SlimyBodyPower.NAME, evolutionStrings.get(SlimyBodyPower.POWER_ID), 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new SlimyBodyPower(m), n))),
+                new Evolution(SlimyBodyPower.NAME, evolutionStrings.get(SlimyBodyPower.POWER_ID), 1, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new SlimyBodyPower(m), n))),
                 new Evolution(InvinciblePower.NAME, evolutionStrings.get(InvinciblePower.POWER_ID), 50, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new InvinciblePower(m, n), n)))
         };
         return Arrays.asList(Arrays.asList(o1), Arrays.asList(o2), Arrays.asList(o3), Arrays.asList(o4), Arrays.asList(o5));

@@ -1,6 +1,5 @@
 package abyss.settings;
 
-import basemod.ModLabel;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.ModToggleButton;
