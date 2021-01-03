@@ -191,5 +191,25 @@
       "Steal Essence"
     ],
     "NAME": "Essence Thief"
+  },
+  "Abyss:AnnihilationMage": {
+    "MOVES": [
+      "Annihilation Curse",
+      "Chaos Bolt",
+      "Lesser Annihilation",
+      "Strength from the Void",
+      "Breath of Darkness"
+    ],
+    "NAME": "Annihilation Mage"
+  },
+  "Abyss:AnnihilationWarrior": {
+    "MOVES": [
+      "Withering Strike",
+      "Dark Barrier",
+      "Touch of Suffering",
+      "Circle of Protection",
+      "Poleaxe"
+    ],
+    "NAME": "Annihilation Warrior"
   }
 }

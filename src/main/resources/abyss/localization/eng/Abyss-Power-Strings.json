@@ -98,5 +98,9 @@
   "Abyss:Resonance": {
     "NAME": "Resonance",
     "DESCRIPTIONS": ["Takes #b{0}% less damage from attacks. #yResonance is reapplied every other turn."]
+  },
+  "Abyss:ChainsOfDoom": {
+    "NAME": "Chains of Doom",
+    "DESCRIPTIONS": ["While this enemy is alive, you cannot escape from combat."]
   }
 }

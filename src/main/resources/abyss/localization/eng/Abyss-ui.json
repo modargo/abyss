@@ -31,5 +31,10 @@
       "Abyss:SlimyBody": "abyss:Slimy\u00a0Body",
       "Invincible": "abyss:Invincible {0}"
     }
+  },
+  "Abyss:ModSettingsPanel": {
+    "TEXT": [
+      "Different act 4 elite fight when going through the Abyss"
+    ]
   }
 }

@@ -4,6 +4,8 @@ import abyss.act.AbyssAct;
 import abyss.act.Encounters;
 import abyss.cards.*;
 import abyss.events.*;
+import abyss.monsters.act4.AnnihilationMage;
+import abyss.monsters.act4.AnnihilationWarrior;
 import abyss.monsters.bosses.DeepTyrant;
 import abyss.monsters.bosses.TheCrystal;
 import abyss.monsters.bosses.VoidHerald;
@@ -17,11 +19,14 @@ import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import abyss.relics.CrystalEnergy;
 import abyss.relics.HuntersRespect;
-import abyss.subscribers.*;
+import abyss.settings.ModSettings;
+import abyss.subscribers.TriggerDrainedPostExhaustSubscriber;
+import abyss.subscribers.TriggerGrayCrystalPowerPostPowerApplySubscriber;
+import abyss.subscribers.TriggerRedCrystalPowerPostExhaustSubscriber;
+import abyss.subscribers.TriggerThoughtStealerPostDrawSubscriber;
 import abyss.util.TextureLoader;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
-import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -57,6 +62,8 @@ public class Abyss implements
 
     public Abyss() {
         BaseMod.subscribe(this);
+        logger.info("Adding mod settings");
+        ModSettings.initialize();
     }
 
     public static void initialize() {
@@ -66,7 +73,7 @@ public class Abyss implements
     @Override
     public void receivePostInitialize() {
         Texture badgeTexture = new Texture("abyss/images/AbyssBadge.png");
-        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", new ModPanel());
+        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", ModSettings.getModPanel());
 
         CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
         addMonsters();
@@ -158,6 +165,13 @@ public class Abyss implements
                 new AbstractMonster[] {
                         new SquirmingHorror(-250.0F, 0.0F),
                         new SquirmingHorror(150.0F, 0.0F)
+                }));
+
+        //Act 4 elites
+        BaseMod.addMonster(Encounters.ANNIHILATION_DUO, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new AnnihilationWarrior(-250.0F, 0.0F),
+                        new AnnihilationMage(150.0F, 0.0F)
                 }));
     }
 
