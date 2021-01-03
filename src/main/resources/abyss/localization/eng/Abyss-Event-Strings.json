@@ -125,7 +125,7 @@
       "The offering will help equip you to confront the horrors of this place."
     ],
     "OPTIONS": [
-      "[Contemplate] #gUpgarde #ga #gcard.",
+      "[Study] #gUpgrade #ga #gcard.",
       "[Pray] #gRemove #ga #gcard #gfrom #gyour #gdeck.",
       "[Take] #gGain #g{0} #ggold.",
       "[Leave]",

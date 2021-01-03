@@ -76,7 +76,7 @@ public class DeepShrine extends AbstractImageEvent {
         switch (screenNum) {
             case 0:
                 switch (buttonPressed) {
-                    case 0: // Contemplate
+                    case 0: // Study
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.screenNum = 1;
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
