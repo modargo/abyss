@@ -66,7 +66,7 @@ public class DeepTyrant extends CustomMonster
     }
 
     public DeepTyrant(final float x, final float y) {
-        super(DeepTyrant.NAME, ID, HP, -5.0F, 0, 565.0f, 630.0f, IMG, x, y);
+        super(DeepTyrant.NAME, ID, HP, -5.0F, 0, 565.0f, 600.0f, IMG, x, y);
         this.type = EnemyType.BOSS;
         this.summoned = false;
         if (AbstractDungeon.ascensionLevel >= 9) {
