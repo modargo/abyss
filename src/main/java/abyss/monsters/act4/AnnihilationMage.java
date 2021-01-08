@@ -4,6 +4,7 @@ import abyss.Abyss;
 import abyss.cards.Tormented;
 import abyss.powers.AbysstouchedPower;
 import abyss.powers.AbysstouchedPulsePower;
+import abyss.powers.DelayedAbysstouchedPower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
@@ -168,8 +169,10 @@ public class AnnihilationMage extends CustomMonster
             this.setMove(MOVES[1], CHAOS_BOLT_ATTACK, Intent.ATTACK_DEBUFF, this.chaosBoltDamage, CHAOS_BOLT_HITS, true);
         }
         else if (this.lastMove(CHAOS_BOLT_ATTACK)) {
-            AbstractPower p = AbstractDungeon.player.getPower(AbysstouchedPower.POWER_ID);
-            if (p != null && p.amount <= this.lesserAnnihilationThreshold) {
+            AbstractPower p1 = AbstractDungeon.player.getPower(AbysstouchedPower.POWER_ID);
+            AbstractPower p2 = AbstractDungeon.player.getPower(DelayedAbysstouchedPower.POWER_ID);
+            int abysstouchedAmount = (p1 != null ? p1.amount : 0) + (p2 != null ? p2.amount : 0);
+            if (abysstouchedAmount <= this.lesserAnnihilationThreshold) {
                 this.setMove(MOVES[2], LESSER_ANNIHILATION_DEBUFF, Intent.DEBUFF);
             }
             else {
