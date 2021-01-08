@@ -43,7 +43,8 @@ public class ResummonPower extends AbstractPower {
                     VoidSpawn voidSpawn = new VoidSpawn(-250.0F, 0.0F);
                     voidSpawn.rollMove();
                     voidSpawn.createIntent();
-                    AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(voidSpawn, false));
+                    AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(voidSpawn, true));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(voidSpawn, this.owner, new DurableMinionPower(voidSpawn)));
                     AbstractPower strengthPower = this.owner.getPower(StrengthPower.POWER_ID);
                     if (strengthPower != null && strengthPower.amount > 0) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(voidSpawn, this.owner, new StrengthPower(this.owner, strengthPower.amount), strengthPower.amount));
