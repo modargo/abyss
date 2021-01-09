@@ -6,8 +6,9 @@ import abyss.powers.AbysstouchedPower;
 import abyss.powers.AbysstouchedPulsePower;
 import abyss.powers.DelayedAbysstouchedPower;
 import basemod.abstracts.CustomMonster;
+import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,11 +17,13 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class AnnihilationMage extends CustomMonster
 {
@@ -125,17 +128,32 @@ public class AnnihilationMage extends CustomMonster
         }
         switch (this.nextMove) {
             case ANNIHILATION_CURSE_DEBUFF:
-                //TODO sound would really benefit from a curse sound effect
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 for (int i=0; i < this.annihilationCurseHits; i++) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new AbysstouchedPower(AbstractDungeon.player, ANNIHILATION_CURSE_ABYSSTOUCHED), ANNIHILATION_CURSE_ABYSSTOUCHED));
                 }
                 break;
             case CHAOS_BOLT_ATTACK:
-                //TODO Add effect: spinning darkness orb
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
+                float x1 = this.hb.cX;
+                float y1 = this.hb.cY;
+                float x2 = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float y2 = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 4.0f;
+                int numEffects = 6;
+                Texture[] textures = new Texture[] { ImageMaster.ORB_LIGHTNING, ImageMaster.ORB_PLASMA, ImageMaster.ORB_DARK};
+                String[] soundKeys = new String[] { "ORB_LIGHTNING_EVOKE", "ORB_PLASMA_EVOKE", "ORB_DARK_EVOKE"};
+                for (int i=0; i < numEffects; i++) {
+                    float delay = 0.2f * i;
+                    AbstractGameEffect effect = new VfxBuilder(textures[i % textures.length], x1, y1, 0.3f + delay)
+                            .setScale(1.5f)
+                            .rotate(-400.0f)
+                            .moveX(x1, x2)
+                            .moveY(y1, y2)
+                            .playSoundAt(delay, -0.4F, soundKeys[i % soundKeys.length])
+                            .build();
+                    AbstractDungeon.effectsQueue.add(effect);
+                }
                 for (int i=0; i < CHAOS_BOLT_HITS; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 }
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Tormented(), 1, true, true));
                 break;
@@ -154,6 +172,19 @@ public class AnnihilationMage extends CustomMonster
                 }
                 break;
             case BREATH_OF_DARKNESS_ATTACK:
+                float x1a = this.hb.cX;
+                float y1a = this.hb.cY;
+                float x2a = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float y2a = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0f;
+                AbstractGameEffect effect = new VfxBuilder(ImageMaster.ORB_DARK, x1a, y1a, 1.0f)
+                        .setScale(2.5f)
+                        .rotate(-200.0f)
+                        .moveX(x1a, x2a)
+                        .moveY(y1a, y2a)
+                        .playSoundAt(0.0f, -0.4F, "ORB_DARK_EVOKE")
+                        .playSoundAt(0.5f, -0.4F, "ORB_DARK_EVOKE")
+                        .build();
+                AbstractDungeon.effectsQueue.add(effect);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AbysstouchedPulsePower(this, this.breathOfDarknessAbysstouchedPulse), this.breathOfDarknessAbysstouchedPulse));
                 break;

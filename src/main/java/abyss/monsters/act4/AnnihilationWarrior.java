@@ -116,7 +116,6 @@ public class AnnihilationWarrior extends CustomMonster
         }
         switch (this.nextMove) {
             case WITHERING_STRIKE_ATTACK:
-                //TODO sound would really benefit from a curse sound effect
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 if (AbstractDungeon.ascensionLevel >= 18) {
@@ -146,7 +145,7 @@ public class AnnihilationWarrior extends CustomMonster
                 break;
             case POLEAXE_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.poleaxeBlock));
                 break;
         }
