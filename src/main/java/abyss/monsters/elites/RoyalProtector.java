@@ -27,16 +27,17 @@ public class RoyalProtector extends CustomMonster {
     private static final byte ACID_EXPLOSION_ATTACK = 3;
     private static final byte FOR_THE_QUEEN_ATTACK = 4;
     private static final int CARAPACE_BLOCK_OR_PLATED_ARMOR = 5;
-    private static final int ACID_EXPLOSION_DAMAGE = 23;
-    private static final int A3_ACID_EXPLOSION_DAMAGE = 26;
+    private static final int BURNING_SPIT_BURNS = 2;
     private static final int FOR_THE_QUEEN_DAMAGE = 4;
+    private static final int ACID_EXPLOSION_DAMAGE = 24;
+    private static final int A3_ACID_EXPLOSION_DAMAGE = 27;
     private static final int A3_FOR_THE_QUEEN_DAMAGE = 5;
     private static final int FOR_THE_QUEEN_AMOUNT = 1;
     private static final int A18_FOR_THE_QUEEN_AMOUNT = 2;
-    private static final int HP_MIN = 29;
-    private static final int HP_MAX = 33;
-    private static final int A8_HP_MIN = 31;
-    private static final int A8_HP_MAX = 35;
+    private static final int HP_MIN = 31;
+    private static final int HP_MAX = 35;
+    private static final int A8_HP_MIN = 33;
+    private static final int A8_HP_MAX = 37;
     private int carapaceBlockOrPlatedArmor;
     private int acidExplosionDamage;
     private int forTheQueenDamage;
@@ -89,7 +90,12 @@ public class RoyalProtector extends CustomMonster {
                 break;
             case BURNING_SPIT_DEBUFF:
                 //TODO animation -- adapt BloodShotEffect
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), 1));
+                if (AbstractDungeon.ascensionLevel >= 18) {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), BURNING_SPIT_BURNS, true, true));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), BURNING_SPIT_BURNS));
+                }
                 break;
             case ACID_EXPLOSION_ATTACK:
                 //TODO animation -- maybe Fireball effect, just making it green?

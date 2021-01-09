@@ -50,8 +50,8 @@ public class TheCrystal extends CustomMonster
     private static final int A19_RESONANCE_HEAL = 40;
     private static final int CRYSTAL_LINK_PERCENT = 100;
     private static final int A19_CRYSTAL_LINK_PERCENT = 150;
-    private static final int STARTING_STRENGTH = -10;
-    private static final int A19_STARTING_STRENGTH = -10;
+    private static final int STARTING_STRENGTH = -5;
+    private static final int A19_STARTING_STRENGTH = -5;
     public static final int ACTIVATION_CRYSTAL_COUNT = 3;
     private static final int HP = 280;
     private static final int A9_HP = 300;

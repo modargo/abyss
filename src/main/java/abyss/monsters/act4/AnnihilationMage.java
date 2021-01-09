@@ -38,20 +38,20 @@ public class AnnihilationMage extends CustomMonster
     private static final int ANNIHILATION_CURSE_ABYSSTOUCHED = 3;
     private static final int ANNIHILATION_CURSE_HITS = 5;
     private static final int A18_ANNIHILATION_CURSE_HITS = 6;
-    private static final int CHAOS_BOLT_DAMAGE = 4;
-    private static final int A3_CHAOS_BOLT_DAMAGE = 5;
-    private static final int CHAOS_BOLT_HITS = 3;
+    private static final int CHAOS_BOLT_DAMAGE = 7;
+    private static final int A3_CHAOS_BOLT_DAMAGE = 8;
+    private static final int CHAOS_BOLT_HITS = 2;
     private static final int LESSER_ANNIHILATION_ABYSSTOUCHED = 3;
-    private static final int LESSER_ANNIHILATION_HITS = 3;
-    private static final int A18_LESSER_ANNIHILATION_HITS = 4;
+    private static final int LESSER_ANNIHILATION_HITS = 4;
+    private static final int A18_LESSER_ANNIHILATION_HITS = 5;
     private static final int LESSER_ANNIHILATION_THRESHOLD = 5;
     private static final int A18_LESSER_ANNIHILATION_THRESHOLD = 10;
-    private static final int STRENGTH_FROM_THE_VOID_STRENGTH = 1;
-    private static final int A18_STRENGTH_FROM_THE_VOID_STRENGTH = 1;
+    private static final int STRENGTH_FROM_THE_VOID_STRENGTH = 2;
+    private static final int A18_STRENGTH_FROM_THE_VOID_STRENGTH = 2;
     private static final int STRENGTH_FROM_THE_VOID_ARTIFACT = 1;
     private static final int A18_STRENGTH_FROM_THE_VOID_ARTIFACT = 1;
-    private static final int BREATH_OF_DARKNESS_DAMAGE = 4;
-    private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 5;
+    private static final int BREATH_OF_DARKNESS_DAMAGE = 5;
+    private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 6;
     private static final int BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
     private static final int A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
     private static final int ABYSSTOUCHED_PULSE_AMOUNT = 1;
@@ -132,6 +132,7 @@ public class AnnihilationMage extends CustomMonster
                 }
                 break;
             case CHAOS_BOLT_ATTACK:
+                //TODO Add effect: spinning darkness orb
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 for (int i=0; i < CHAOS_BOLT_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));

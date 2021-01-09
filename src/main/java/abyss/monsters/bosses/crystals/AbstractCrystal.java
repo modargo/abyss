@@ -40,8 +40,8 @@ public abstract class AbstractCrystal extends CustomMonster {
     private static final byte MINERALIZE_DEBUFF = 3;
     private static final int CRYSTAL_SHARD_DAMAGE = 4;
     private static final int A4_CRYSTAL_SHARD_DAMAGE = 5;
-    private static final int BEAM_DAMAGE = 0;
-    private static final int A4_BEAM_DAMAGE = 1;
+    private static final int BEAM_DAMAGE = 1;
+    private static final int A4_BEAM_DAMAGE = 2;
     private static final int BEAM_ARTIFACT = 1;
     private static final int A19_BEAM_ARTIFACT = 1;
     private static final int MINERALIZE_AMOUNT = 1;

@@ -42,10 +42,10 @@ public class PrimevalQueen extends CustomMonster
     private static final int A18_STRENGTHEN_CARAPACE_STRENGTH = 6;
     private static final int STARTING_SUMMONS = 1;
     private static final int A18_STARTING_SUMMONS = 2;
-    private static final int HP_MIN = 190;
-    private static final int HP_MAX = 190;
-    private static final int A8_HP_MIN = 210;
-    private static final int A8_HP_MAX = 210;
+    private static final int HP_MIN = 200;
+    private static final int HP_MAX = 200;
+    private static final int A8_HP_MIN = 220;
+    private static final int A8_HP_MAX = 220;
     private int scytheDamage;
     private int strengthenCarapaceBlock;
     private int strengthenCarapaceStrength;

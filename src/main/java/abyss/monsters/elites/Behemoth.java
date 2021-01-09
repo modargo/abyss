@@ -31,10 +31,10 @@ public class Behemoth extends CustomMonster
     private static final int A3_CLAW_SWIPE_DAMAGE = 15;
     private static final int STARTING_BLOCK = 90;
     private static final int A8_STARTING_BLOCK = 100;
-    private static final int HP_MIN = 270;
-    private static final int HP_MAX = 270;
-    private static final int A8_HP_MIN = 300;
-    private static final int A8_HP_MAX = 300;
+    private static final int HP_MIN = 320;
+    private static final int HP_MAX = 320;
+    private static final int A8_HP_MIN = 360;
+    private static final int A8_HP_MAX = 360;
     private int clawSwipeDamage;
     private int startingBlock;
 

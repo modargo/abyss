@@ -46,10 +46,10 @@ public class GnawingCorruption extends CustomMonster
     private static final int A18_LEFT_EYE_CURSES = 2;
     private static final int RIGHT_EYE_DAMAGE = 18;
     private static final int A3_RIGHT_EYE_DAMAGE = 20;
-    private static final int RIGHT_EYE_HEAL = 20;
-    private static final int A18_RIGHT_EYE_HEAL = 40;
-    private static final int ALL_EYES_DAMAGE = 9;
-    private static final int A3_ALL_EYES_DAMAGE = 10;
+    private static final int RIGHT_EYE_HEAL = 25;
+    private static final int A18_RIGHT_EYE_HEAL = 50;
+    private static final int ALL_EYES_DAMAGE = 10;
+    private static final int A3_ALL_EYES_DAMAGE = 11;
     private static final int ALL_EYES_HITS = 5;
     private static final int HP_MIN = 290;
     private static final int HP_MAX = 290;
