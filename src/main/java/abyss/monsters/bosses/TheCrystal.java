@@ -6,6 +6,8 @@ import abyss.monsters.bosses.crystals.AbstractCrystal;
 import abyss.powers.CrystalLinkPower;
 import abyss.powers.InactiveCrystalPower;
 import basemod.abstracts.CustomMonster;
+import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
@@ -13,13 +15,18 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TheCrystal extends CustomMonster
 {
+    public static final Logger logger = LogManager.getLogger(TheCrystal.class.getName());
     public static final String ID = "Abyss:TheCrystal";
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
@@ -116,25 +123,54 @@ public class TheCrystal extends CustomMonster
         }
         switch (this.nextMove) {
             case INACTIVE_MOVE:
-                //TODO Some kind of effect?
                 break;
             case CRYSTAL_BARRAGE_ATTACK:
-                //TODO animation: see if I can make crystal spears
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
+                float x1a = this.hb.cX;
+                float y1a = this.hb.cY;
+                float x2a = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float y2_1 = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 4.0f;
+                float y2_2 = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h * 3.0f / 4.0f;
+                float angle1 = VfxBuilder.calculateAngle(x2a, y2_1, x1a, y1a) - 90;
+                float angle2 = VfxBuilder.calculateAngle(x2a, y2_2, x1a, y1a) - 90;
+                AbstractGameEffect effect1 = new VfxBuilder(ImageMaster.FROST_ORB_MIDDLE, x1a, y1a, 0.3f)
+                        .setScale(1.5f)
+                        .setAngle(angle1)
+                        .moveX(x1a, x2a)
+                        .moveY(y1a, y2_1)
+                        .playSoundAt(0.0f, -0.4F, "ATTACK_MAGIC_FAST_1")
+                        .build();
+                AbstractGameEffect effect2 = new VfxBuilder(ImageMaster.FROST_ORB_MIDDLE, x1a, y1a, 0.3f)
+                        .setScale(1.5f)
+                        .setAngle(angle2)
+                        .moveX(x1a, x2a)
+                        .moveY(y1a, y2_2)
+                        .playSoundAt(0.0f, -0.4F, "ATTACK_MAGIC_FAST_1")
+                        .build();
+                AbstractDungeon.effectsQueue.add(effect1);
+                AbstractDungeon.effectsQueue.add(effect2);
                 for (int i = 0; i < CRYSTAL_BARRAGE_HITS; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 }
                 break;
             case CRYSTAL_SPEAR_ATTACK:
-                //TODO animation: see if I can make a crystal spear
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                float x1 = this.hb.cX;
+                float y1 = this.hb.cY;
+                float x2 = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float y2 = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 4.0f;
+                float angle = VfxBuilder.calculateAngle(x2, y2, x1, y1) - 90;
+                AbstractGameEffect effect = new VfxBuilder(ImageMaster.FROST_ORB_MIDDLE, x1, y1, 0.3f)
+                        .setScale(3.0f)
+                        .setAngle(angle)
+                        .moveX(x1, x2)
+                        .moveY(y1, y2)
+                        .playSoundAt(0.0f, -0.4F, "ATTACK_MAGIC_FAST_3")
+                        .build();
+                AbstractDungeon.effectsQueue.add(effect);
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Mineralized(), this.crystalSpearMineralizes));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Mineralized(), this.crystalSpearMineralizes, true, true));
                 break;
             case RESONANCE_BUFF:
-                //TODO animation: some kind of effect -- maybe the devotion sound and a glow?
-                //this.addToBot((AbstractGameAction)new SFXAction("HEAL_2", -0.4F, true));
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.resonanceHeal));
                 int currentStrength = this.getCurrentStrength();

@@ -2,6 +2,7 @@ package abyss.monsters.bosses.crystals;
 
 import abyss.Abyss;
 import abyss.powers.crystals.GrayCrystalPower;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -23,6 +24,11 @@ public class GrayCrystal extends AbstractCrystal {
     @Override
     protected AbstractPower getBuffPower() {
         return new GrayCrystalPower(this);
+    }
+
+    @Override
+    protected Color getColor() {
+        return Color.DARK_GRAY;
     }
 
     static {

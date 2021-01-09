@@ -1,24 +1,32 @@
 package abyss.monsters.bosses.crystals;
 
 import abyss.cards.Mineralized;
+import abyss.effects.SmallColorLaserEffect;
 import abyss.monsters.MonsterUtil;
 import abyss.powers.CrystalLinkPower;
 import abyss.powers.ResonancePower;
 import basemod.abstracts.CustomMonster;
+import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.List;
 
@@ -84,6 +92,8 @@ public abstract class AbstractCrystal extends CustomMonster {
 
     protected abstract AbstractPower getBuffPower();
 
+    protected abstract Color getColor();
+
     @Override
     public void usePreBattleAction() {
         AbstractPower buffPower = this.getBuffPower();
@@ -98,12 +108,24 @@ public abstract class AbstractCrystal extends CustomMonster {
         }
         switch (this.nextMove) {
             case CRYSTAL_SHARD_ATTACK:
-                //TODO flying shard effect, maybe need the color of each crystal
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
+                float x1 = this.hb.cX;
+                float y1 = this.hb.cY;
+                float x2 = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float y2 = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 4.0f;
+                float angle = VfxBuilder.calculateAngle(x2, y2, x1, y1) - 90;
+                AbstractGameEffect effect = new VfxBuilder(ImageMaster.FROST_ORB_LEFT, x1, y1, 0.15f)
+                        .setScale(2.5f)
+                        .setAngle(angle)
+                        .moveX(x1, x2)
+                        .moveY(y1, y2)
+                        .playSoundAt(0.0f, -0.4F, "ORB_FROST_EVOKE")
+                        .build();
+                AbstractDungeon.effectsQueue.add(effect);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 break;
             case BEAM_ATTACK:
-                //TODO Beam effect, using the color of each crystal
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallColorLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, this.getColor()), Settings.FAST_MODE ? 0.1F : 0.3F));
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.beamArtifact), this.beamArtifact));
