@@ -34,12 +34,13 @@ public class AnnihilationWarrior extends CustomMonster
     private static final byte TOUCH_OF_SUFFERING_DEBUFF = 3;
     private static final byte CIRCLE_OF_PROTECTION_MOVE = 4;
     private static final byte POLEAXE_ATTACK = 5;
-    private static final int WITHERING_STRIKE_DAMAGE = 22;
-    private static final int A3_WITHERING_STRIKE_DAMAGE = 25;
+    private static final int WITHERING_STRIKE_DAMAGE = 11;
+    private static final int A3_WITHERING_STRIKE_DAMAGE = 13;
+    private static final int WITHERING_STRIKE_HITS = 2;
     private static final int DARK_BARRIER_BLOCK = 30;
     private static final int A8_DARK_BARRIER_BLOCK = 50;
-    private static final int DARK_BARRIER_STRENGTH = 2;
-    private static final int A18_DARK_BARRIER_STRENGTH = 4;
+    private static final int DARK_BARRIER_STRENGTH = 1;
+    private static final int A18_DARK_BARRIER_STRENGTH = 2;
     private static final int DARK_BARRIER_BUFFER = 0;
     private static final int A18_DARK_BARRIER_BUFFER = 1;
     private static final int TOUCH_OF_SUFFERING_ABYSSTOUCHED = 3;
@@ -117,7 +118,9 @@ public class AnnihilationWarrior extends CustomMonster
         switch (this.nextMove) {
             case WITHERING_STRIKE_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                for (int i=0; i < WITHERING_STRIKE_HITS; i++) {
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                }
                 if (AbstractDungeon.ascensionLevel >= 18) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Withering(), 1, false, true));
                 }
@@ -189,7 +192,7 @@ public class AnnihilationWarrior extends CustomMonster
 
         switch (move) {
             case WITHERING_STRIKE_ATTACK:
-                this.setMove(MOVES[0], WITHERING_STRIKE_ATTACK, Intent.ATTACK_DEBUFF, this.witheringStrikeDamage);
+                this.setMove(MOVES[0], WITHERING_STRIKE_ATTACK, Intent.ATTACK_DEBUFF, this.witheringStrikeDamage, WITHERING_STRIKE_HITS, true);
                 break;
             case DARK_BARRIER_MOVE:
                 this.setMove(MOVES[1], DARK_BARRIER_MOVE, Intent.DEFEND_BUFF);

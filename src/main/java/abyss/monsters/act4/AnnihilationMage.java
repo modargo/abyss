@@ -41,9 +41,8 @@ public class AnnihilationMage extends CustomMonster
     private static final int ANNIHILATION_CURSE_ABYSSTOUCHED = 3;
     private static final int ANNIHILATION_CURSE_HITS = 5;
     private static final int A18_ANNIHILATION_CURSE_HITS = 6;
-    private static final int CHAOS_BOLT_DAMAGE = 7;
-    private static final int A3_CHAOS_BOLT_DAMAGE = 8;
-    private static final int CHAOS_BOLT_HITS = 2;
+    private static final int CHAOS_BOLT_DAMAGE = 12;
+    private static final int A3_CHAOS_BOLT_DAMAGE = 14;
     private static final int LESSER_ANNIHILATION_ABYSSTOUCHED = 3;
     private static final int LESSER_ANNIHILATION_HITS = 4;
     private static final int A18_LESSER_ANNIHILATION_HITS = 5;
@@ -53,8 +52,9 @@ public class AnnihilationMage extends CustomMonster
     private static final int A18_STRENGTH_FROM_THE_VOID_STRENGTH = 2;
     private static final int STRENGTH_FROM_THE_VOID_ARTIFACT = 1;
     private static final int A18_STRENGTH_FROM_THE_VOID_ARTIFACT = 1;
-    private static final int BREATH_OF_DARKNESS_DAMAGE = 5;
-    private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 6;
+    private static final int BREATH_OF_DARKNESS_DAMAGE = 0;
+    private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 1;
+    private static final int BREATH_OF_DARKNESS_HITS = 3;
     private static final int BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
     private static final int A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
     private static final int ABYSSTOUCHED_PULSE_AMOUNT = 1;
@@ -152,9 +152,7 @@ public class AnnihilationMage extends CustomMonster
                             .build();
                     AbstractDungeon.effectsQueue.add(effect);
                 }
-                for (int i=0; i < CHAOS_BOLT_HITS; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
-                }
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Tormented(), 1, true, true));
                 break;
             case LESSER_ANNIHILATION_DEBUFF:
@@ -198,7 +196,7 @@ public class AnnihilationMage extends CustomMonster
             this.setMove(MOVES[0], ANNIHILATION_CURSE_DEBUFF, Intent.STRONG_DEBUFF);
         }
         else if (this.lastMove(ANNIHILATION_CURSE_DEBUFF) || this.lastMove(BREATH_OF_DARKNESS_ATTACK)) {
-            this.setMove(MOVES[1], CHAOS_BOLT_ATTACK, Intent.ATTACK_DEBUFF, this.chaosBoltDamage, CHAOS_BOLT_HITS, true);
+            this.setMove(MOVES[1], CHAOS_BOLT_ATTACK, Intent.ATTACK_DEBUFF, this.chaosBoltDamage);
         }
         else if (this.lastMove(CHAOS_BOLT_ATTACK)) {
             AbstractPower p1 = AbstractDungeon.player.getPower(AbysstouchedPower.POWER_ID);
@@ -212,7 +210,7 @@ public class AnnihilationMage extends CustomMonster
             }
         }
         else {
-            this.setMove(MOVES[4], BREATH_OF_DARKNESS_ATTACK, Intent.ATTACK_BUFF, this.breathOfDarknessDamage);
+            this.setMove(MOVES[4], BREATH_OF_DARKNESS_ATTACK, Intent.ATTACK_BUFF, this.breathOfDarknessDamage, BREATH_OF_DARKNESS_HITS, true);
         }
     }
 
