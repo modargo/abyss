@@ -93,13 +93,13 @@ public class EssenceThief extends CustomMonster {
                 this.attacksMade++;
                 break;
             case STEAL_ESSENCE_DEBUFF:
-                float x = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float x = AbstractDungeon.player.drawX;
                 float y = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0f;
                 AbstractGameEffect effect = new VfxBuilder(ImageMaster.INTENT_DEBUFF2, x, y, 0.8f)
-                        .scale(1.0f, 3.0f)
+                        .scale(1.0f, 5.0f)
                         .fadeIn(0.1f)
                         .fadeOut(0.1f)
-                        .playSoundAt(0.1f, -0.75f, "BLOOD_SPLIT")
+                        .playSoundAt(0.0f, -0.75f, "BLOOD_SPLIT")
                         .build();
                 AbstractDungeon.effectsQueue.add(effect);
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
