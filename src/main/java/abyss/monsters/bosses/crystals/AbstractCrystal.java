@@ -114,7 +114,7 @@ public abstract class AbstractCrystal extends CustomMonster {
                 float x2 = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
                 float y2 = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 4.0f;
                 float angle = VfxBuilder.calculateAngle(x2, y2, x1, y1) - 90;
-                AbstractGameEffect effect = new VfxBuilder(ImageMaster.FROST_ORB_LEFT, x1, y1, 0.15f)
+                AbstractGameEffect effect = new VfxBuilder(ImageMaster.FROST_ORB_LEFT, x1, y1, 0.3f)
                         .setScale(2.5f)
                         .setAngle(angle)
                         .moveX(x1, x2)
@@ -131,7 +131,6 @@ public abstract class AbstractCrystal extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.beamArtifact), this.beamArtifact));
                 break;
             case MINERALIZE_DEBUFF:
-                //TODO Some kind of effect effect, using the color of each crystal
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Mineralized(), this.mineralizeAmount));
                 break;

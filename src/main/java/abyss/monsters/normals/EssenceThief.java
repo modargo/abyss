@@ -4,6 +4,7 @@ import abyss.Abyss;
 import abyss.actions.ChangeMaxHpAction;
 import abyss.powers.EssenceThiefPower;
 import basemod.abstracts.CustomMonster;
+import basemod.helpers.VfxBuilder;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
@@ -13,7 +14,9 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class EssenceThief extends CustomMonster {
     public static final String ID = "Abyss:EssenceThief";
@@ -90,7 +93,15 @@ public class EssenceThief extends CustomMonster {
                 this.attacksMade++;
                 break;
             case STEAL_ESSENCE_DEBUFF:
-                //TODO need a really evil looking effect
+                float x = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_w / 2.0f;
+                float y = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_h / 2.0f;
+                AbstractGameEffect effect = new VfxBuilder(ImageMaster.INTENT_DEBUFF2, x, y, 0.8f)
+                        .scale(1.0f, 3.0f)
+                        .fadeIn(0.1f)
+                        .fadeOut(0.1f)
+                        .playSoundAt(0.1f, -0.75f, "BLOOD_SPLIT")
+                        .build();
+                AbstractDungeon.effectsQueue.add(effect);
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new ChangeMaxHpAction(AbstractDungeon.player, -this.stealEssenceAmount, false));
                 this.maxHpStolen++;
