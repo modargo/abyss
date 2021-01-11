@@ -183,8 +183,10 @@ public class AnnihilationMage extends CustomMonster
                         .playSoundAt(0.5f, -0.4F, "ORB_DARK_EVOKE")
                         .build();
                 AbstractDungeon.effectsQueue.add(effect);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AbysstouchedPulsePower(this, this.breathOfDarknessAbysstouchedPulse), this.breathOfDarknessAbysstouchedPulse));
+                for (int i=0; i < BREATH_OF_DARKNESS_HITS; i++) {
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AbysstouchedPulsePower(this, this.breathOfDarknessAbysstouchedPulse), this.breathOfDarknessAbysstouchedPulse));
+                }
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
