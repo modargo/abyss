@@ -14,7 +14,7 @@ public class ModSettings {
     private static Properties DEFAULT_SETTINGS = new Properties();
     private static final String ACT_4_ELITE_SETTING = "act_4_elite";
     static {
-        DEFAULT_SETTINGS.setProperty(ACT_4_ELITE_SETTING, "true");
+        DEFAULT_SETTINGS.setProperty(ACT_4_ELITE_SETTING, "false");
     }
 
     private static SpireConfig config;
