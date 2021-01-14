@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
@@ -109,7 +110,12 @@ public class SpawningGrounds extends AbstractImageEvent {
             //We see what was already generated and use that, to avoid advancing the rare counter further
             for (AbstractCard c : reward.cards) {
                 AbstractCard.CardRarity rarity = c.rarity == AbstractCard.CardRarity.COMMON || c.rarity == AbstractCard.CardRarity.UNCOMMON || c.rarity == AbstractCard.CardRarity.RARE ? c.rarity : AbstractCard.CardRarity.COMMON;
-                cards.add(CardUtil.getOtherColorCard(rarity, Arrays.asList(AbstractDungeon.player.getCardColor(), AbstractCard.CardColor.COLORLESS)));
+
+                AbstractCard card = CardUtil.getOtherColorCard(rarity, Arrays.asList(AbstractDungeon.player.getCardColor(), AbstractCard.CardColor.COLORLESS));
+                for (AbstractRelic r : AbstractDungeon.player.relics) {
+                    r.onPreviewObtainCard(card);
+                }
+                cards.add(card);
             }
             reward.cards = cards;
             AbstractDungeon.getCurrRoom().addCardReward(reward);
