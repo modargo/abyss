@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class HuntersRespect extends CustomRelic {
     public static final String ID = "Abyss:HuntersRespect";
@@ -29,6 +30,11 @@ public class HuntersRespect extends CustomRelic {
         this.flash();
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawCardNextTurnPower(AbstractDungeon.player, CARDS), CARDS));
         this.grayscale = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.grayscale = false;
     }
 
     @Override

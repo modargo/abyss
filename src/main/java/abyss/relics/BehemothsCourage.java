@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.MessageFormat;
 
@@ -36,6 +37,11 @@ public class BehemothsCourage extends CustomRelic {
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BlurPower(AbstractDungeon.player, BLUR), BLUR));
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MetallicizePower(AbstractDungeon.player, METALLICIZE), METALLICIZE));
         this.grayscale = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.grayscale = false;
     }
 
     @Override
