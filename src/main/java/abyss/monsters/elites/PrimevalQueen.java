@@ -34,10 +34,10 @@ public class PrimevalQueen extends CustomMonster
     private static final byte SCYTHE_ATTACK = 1;
     private static final byte STRENGTHEN_CARAPACE_BUFF = 2;
     private static final byte CALL_PROTECTOR_MOVE = 3;
-    private static final int SCYTHE_DAMAGE = 20;
-    private static final int A3_SCYTHE_DAMAGE = 22;
-    private static final int STRENGTHEN_CARAPACE_BLOCK = 15;
-    private static final int A8_STRENGTHEN_CARAPACE_BLOCK = 20;
+    private static final int SCYTHE_DAMAGE = 22;
+    private static final int A3_SCYTHE_DAMAGE = 24;
+    private static final int STRENGTHEN_CARAPACE_BLOCK = 20;
+    private static final int A8_STRENGTHEN_CARAPACE_BLOCK = 25;
     private static final int STRENGTHEN_CARAPACE_STRENGTH = 3;
     private static final int A18_STRENGTHEN_CARAPACE_STRENGTH = 6;
     private static final int STARTING_SUMMONS = 1;
