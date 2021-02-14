@@ -24,13 +24,13 @@ public class BoundAbyssal extends CustomMonster {
     private static final byte GLARE_ATTACK = 2;
     private static final byte CONTEMPLATE_ATTACK = 3;
     private static final byte SCRUTINIZE_ATTACK = 4;
-    private static final int OBSERVE_DAMAGE = 13;
-    private static final int A2_OBSERVE_DAMAGE = 15;
+    private static final int OBSERVE_DAMAGE = 15;
+    private static final int A2_OBSERVE_DAMAGE = 17;
     private static final int GLARE_DAMAGE = 4;
     private static final int A2_GLARE_DAMAGE = 5;
     private static final int GLARE_HITS = 2;
-    private static final int CONTEMPLATE_DAMAGE = 7;
-    private static final int A2_CONTEMPLATE_DAMAGE = 8;
+    private static final int CONTEMPLATE_DAMAGE = 8;
+    private static final int A2_CONTEMPLATE_DAMAGE = 9;
     private static final int CONTEMPLATE_STRENGTH = 2;
     private static final int A17_CONTEMPLATE_STRENGTH = 3;
     private static final int CONTEMPLATE_BUFFER = 1;

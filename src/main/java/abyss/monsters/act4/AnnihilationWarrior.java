@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
@@ -55,6 +56,8 @@ public class AnnihilationWarrior extends CustomMonster
     private static final int HP_MAX = 130;
     private static final int A8_HP_MIN = 145;
     private static final int A8_HP_MAX = 145;
+    private static final int ARTIFACT_AMOUNT = 1;
+    private static final int A18_ARTIFACT_AMOUNT = 1;
     private int witheringStrikeDamage;
     private int darkBarrierBlock;
     private int darkBarrierStrength;
@@ -63,6 +66,7 @@ public class AnnihilationWarrior extends CustomMonster
     private int circleOfProtectionBlock;
     private int poleaxeDamage;
     private int poleaxeBlock;
+    private int artifact;
 
     public AnnihilationWarrior() {
         this(0.0f, 0.0f);
@@ -97,17 +101,20 @@ public class AnnihilationWarrior extends CustomMonster
             this.darkBarrierStrength = A18_DARK_BARRIER_STRENGTH;
             this.darkBarrierBuffer = A18_DARK_BARRIER_BUFFER;
             this.touchOfSufferingAbysstouched = A18_TOUCH_OF_SUFFERING_ABYSSTOUCHED;
+            this.artifact = A18_ARTIFACT_AMOUNT;
         }
         else {
             this.darkBarrierStrength = DARK_BARRIER_STRENGTH;
             this.darkBarrierBuffer = DARK_BARRIER_BUFFER;
             this.touchOfSufferingAbysstouched = TOUCH_OF_SUFFERING_ABYSSTOUCHED;
+            this.artifact = ARTIFACT_AMOUNT;
         }
     }
 
     @Override
     public void usePreBattleAction() {
         this.addToBot(new ApplyPowerAction(this, this, new ChainsOfDoomPower(this)));
+        this.addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, this.artifact), this.artifact));
     }
 
     @Override

@@ -41,8 +41,8 @@ public class AnnihilationMage extends CustomMonster
     private static final int ANNIHILATION_CURSE_ABYSSTOUCHED = 3;
     private static final int ANNIHILATION_CURSE_HITS = 5;
     private static final int A18_ANNIHILATION_CURSE_HITS = 6;
-    private static final int CHAOS_BOLT_DAMAGE = 12;
-    private static final int A3_CHAOS_BOLT_DAMAGE = 14;
+    private static final int CHAOS_BOLT_DAMAGE = 13;
+    private static final int A3_CHAOS_BOLT_DAMAGE = 15;
     private static final int LESSER_ANNIHILATION_ABYSSTOUCHED = 3;
     private static final int LESSER_ANNIHILATION_HITS = 4;
     private static final int A18_LESSER_ANNIHILATION_HITS = 5;
@@ -59,10 +59,12 @@ public class AnnihilationMage extends CustomMonster
     private static final int A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
     private static final int ABYSSTOUCHED_PULSE_AMOUNT = 1;
     private static final int A18_ABYSSTOUCHED_PULSE_AMOUNT = 2;
-    private static final int HP_MIN = 170;
-    private static final int HP_MAX = 170;
-    private static final int A8_HP_MIN = 190;
-    private static final int A8_HP_MAX = 190;
+    private static final int ARTIFACT_AMOUNT = 1;
+    private static final int A18_ARTIFACT_AMOUNT = 1;
+    private static final int HP_MIN = 180;
+    private static final int HP_MAX = 180;
+    private static final int A8_HP_MIN = 200;
+    private static final int A8_HP_MAX = 200;
     private int annihilationCurseHits;
     private int chaosBoltDamage;
     private int lesserAnnihilationHits;
@@ -72,6 +74,7 @@ public class AnnihilationMage extends CustomMonster
     private int breathOfDarknessDamage;
     private int breathOfDarknessAbysstouchedPulse;
     private int abysstouchedPulse;
+    private int artifact;
 
     public AnnihilationMage() {
         this(0.0f, 0.0f);
@@ -104,6 +107,7 @@ public class AnnihilationMage extends CustomMonster
             this.strengthFromTheVoidArtifact = A18_STRENGTH_FROM_THE_VOID_ARTIFACT;
             this.breathOfDarknessAbysstouchedPulse = A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE;
             this.abysstouchedPulse = A18_ABYSSTOUCHED_PULSE_AMOUNT;
+            this.artifact = A18_ARTIFACT_AMOUNT;
         }
         else {
             this.annihilationCurseHits = ANNIHILATION_CURSE_HITS;
@@ -113,12 +117,14 @@ public class AnnihilationMage extends CustomMonster
             this.strengthFromTheVoidArtifact = STRENGTH_FROM_THE_VOID_ARTIFACT;
             this.breathOfDarknessAbysstouchedPulse = BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE;
             this.abysstouchedPulse = ABYSSTOUCHED_PULSE_AMOUNT;
+            this.artifact = ARTIFACT_AMOUNT;
         }
     }
 
     @Override
     public void usePreBattleAction() {
         this.addToBot(new ApplyPowerAction(this, this, new AbysstouchedPulsePower(this, this.abysstouchedPulse), this.abysstouchedPulse));
+        this.addToBot(new ApplyPowerAction(this, this, new ArtifactPower(this, this.artifact), this.artifact));
     }
 
     @Override

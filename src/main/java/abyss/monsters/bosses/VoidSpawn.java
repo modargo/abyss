@@ -28,10 +28,10 @@ public class VoidSpawn extends CustomMonster
     private static final byte CLOBBER_ATTACK = 1;
     private static final byte BEAKED_MAW_ATTACK = 2;
     private static final byte TENTACLE_BARRAGE_ATTACK = 3;
-    private static final int CLOBBER_DAMAGE = 9;
-    private static final int A4_CLOBBER_DAMAGE = 10;
-    private static final int BEAKED_MAW_DAMAGE = 11;
-    private static final int A4_BEAKED_MAW_DAMAGE = 13;
+    private static final int CLOBBER_DAMAGE = 10;
+    private static final int A4_CLOBBER_DAMAGE = 12;
+    private static final int BEAKED_MAW_DAMAGE = 13;
+    private static final int A4_BEAKED_MAW_DAMAGE = 15;
     private static final int BEAKED_MAW_BLOCK = 10;
     private static final int A9_BEAKED_MAW_BLOCK = 15;
     private static final int TENTACLE_BARRAGE_DAMAGE = 4;

@@ -30,8 +30,8 @@ public class DeepTyrant extends CustomMonster
     private static final byte THRASH_ATTACK = 3;
     private static final byte BODY_SLAM_ATTACK = 4;
     private static final byte CALL_THE_ABYSS_MOVE = 5;
-    private static final int BLAST_DAMAGE = 19;
-    private static final int A4_BLAST_DAMAGE = 21;
+    private static final int BLAST_DAMAGE = 21;
+    private static final int A4_BLAST_DAMAGE = 23;
     private static final int BLAST_WOUNDS = 2;
     private static final int ABYSSAL_GAZE_WEAK_FRAIL = 2;
     private static final int A19_ABYSSAL_GAZE_WEAK_FRAIL = 2;

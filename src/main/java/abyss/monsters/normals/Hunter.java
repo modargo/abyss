@@ -26,8 +26,8 @@ public class Hunter extends CustomMonster {
     private static final byte RAZOR_SPINES_ATTACK = 1;
     private static final byte SKULK_ATTACK = 2;
     private static final byte EMPOWER_BUFF = 3;
-    private static final int RAZOR_SPINES_DAMAGE = 10;
-    private static final int A2_RAZOR_SPINES_DAMAGE = 12;
+    private static final int RAZOR_SPINES_DAMAGE = 11;
+    private static final int A2_RAZOR_SPINES_DAMAGE = 13;
     private static final int SKULK_DAMAGE = 8;
     private static final int A2_SKULK_DAMAGE = 9;
     private static final int SKULK_PLATED_ARMOR = 2;
