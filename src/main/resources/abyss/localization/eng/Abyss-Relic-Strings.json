@@ -12,7 +12,7 @@
   "Abyss:CrystalEnergy": {
     "NAME": "Crystal Energy",
     "FLAVOR": "It's easy to be courageous when you have skin of iron.",
-    "DESCRIPTIONS": ["When you take more than {0} damage in a turn, heal {1} HP."]
+    "DESCRIPTIONS": ["When you take {0} or more damage in a turn, heal {1} HP."]
   },
   "Abyss:HuntersRespect": {
     "NAME": "Hunter's Respect",
