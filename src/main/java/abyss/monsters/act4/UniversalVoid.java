@@ -5,15 +5,12 @@ import abyss.cards.act4.Doomed;
 import abyss.cards.act4.Overwhelmed;
 import abyss.cards.act4.Shadowed;
 import abyss.cards.act4.Silenced;
-import abyss.effects.CalamityDebuffEffect;
-import abyss.effects.DamnationEffect;
-import abyss.effects.DoNothingEffect;
+import abyss.effects.*;
 import abyss.powers.act4.*;
 import basemod.abstracts.CustomMonster;
 import basemod.helpers.VfxBuilder;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
-import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
@@ -26,7 +23,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.ViceCrushEffect;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.HeartBuffEffect;
 
 import java.util.Arrays;
 
@@ -55,6 +53,7 @@ public class UniversalVoid extends CustomMonster
     private static final int A4_DAMNATION_DAMAGE = 36;
     private static final int EMBRACE_THE_END_DEMON_FORM = 2;
     private static final int EMBRACE_THE_END_STRENGTH = 30;
+    private static final int EMBRACE_THE_END_FINAL_STRENGTH = 120;
     private static final int ALL_IS_DUST_DAMAGE = 16;
     private static final int A4_ALL_IS_DUST_DAMAGE = 18;
     private static final int ENDURE_BLOCK = 10;
@@ -140,11 +139,11 @@ public class UniversalVoid extends CustomMonster
         int cycle = (m - 2) / 3;
         switch (this.nextMove) {
             case OBLITERATE_ATTACK:
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ViceCrushEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ObliterateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SMASH));
                 break;
             case CALAMITY_DEBUFF:
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new CalamityDebuffEffect(), 0.5F));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new CalamityDebuffEffect(), 1.0F));
                 boolean isUnknownClass = !Arrays.asList(AbstractPlayer.PlayerClass.IRONCLAD, AbstractPlayer.PlayerClass.THE_SILENT, AbstractPlayer.PlayerClass.DEFECT, AbstractPlayer.PlayerClass.WATCHER).contains(AbstractDungeon.player.chosenClass);
                 if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.IRONCLAD) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReducedCombatHealingPower(AbstractDungeon.player)));
@@ -180,7 +179,7 @@ public class UniversalVoid extends CustomMonster
                     float thirdPartDuration = Settings.FAST_MODE ? 0.1f : 0.2f;
                     float x1 = AbstractDungeon.player.hb.cX + 100.0f;
                     float y1 = AbstractDungeon.player.hb.cY + 100.0f - (50.0f * i);
-                    VfxBuilder builder = new VfxBuilder(ImageMaster.ORB_DARK, x1, y1, delay)
+                    AbstractGameEffect effect = new VfxBuilder(ImageMaster.ORB_DARK, x1, y1, delay)
                             .setScale(1.5f)
                             .fadeIn(delay)
                             .playSoundAt(delay, 0.4F, "GHOST_ORB_IGNITE_1")
@@ -188,15 +187,8 @@ public class UniversalVoid extends CustomMonster
                             .moveX(x1, AbstractDungeon.player.hb.cX)
                             .moveY(y1, AbstractDungeon.player.hb.cY)
                             .andThen(thirdPartDuration)
-                            .fadeOut(thirdPartDuration);
-                    //if (i == this.ravageHits - 1) {
-                    //    builder.whenComplete(x -> {
-                    //        for (int j = 0; j < this.ravageHits; j++) {
-                    //            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
-                    //        }
-                    //    });
-                    //}
-                    AbstractGameEffect effect = builder.build();
+                            .fadeOut(thirdPartDuration)
+                            .build();
                     AbstractDungeon.effectsQueue.add(effect);
                     AbstractDungeon.actionManager.addToBottom(new VFXAction(new DoNothingEffect(), i == 0 ? secondPartDuration : delayIncrement));
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
@@ -212,7 +204,8 @@ public class UniversalVoid extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, true));
                 break;
             case EMBRACE_THE_END_BUFF:
-                AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.NAVY.cpy())));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new HeartBuffEffect(this.hb.cX, this.hb.cY)));
                 if (cycle < 3) {
                     int strengthGain = this.hasPower(StrengthPower.POWER_ID) ? -this.getPower(StrengthPower.POWER_ID).amount : 0;
                     if (strengthGain > 0) {
@@ -221,13 +214,15 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RitualPower(this, EMBRACE_THE_END_DEMON_FORM, false), EMBRACE_THE_END_DEMON_FORM));
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_DEMON_FORM), EMBRACE_THE_END_DEMON_FORM));
                 }
-                else {
+                else if (cycle == 3) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_STRENGTH), EMBRACE_THE_END_STRENGTH));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_FINAL_STRENGTH), EMBRACE_THE_END_FINAL_STRENGTH));
                 }
                 break;
             case ALL_IS_DUST_ATTACK:
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                //TODO VFX
+                this.addToBot(new VFXAction(new AllIsDustEffect(this.hb.cX, this.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 if (cycle < 3) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, 1), 1));
