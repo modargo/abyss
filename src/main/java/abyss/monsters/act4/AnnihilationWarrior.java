@@ -2,7 +2,7 @@ package abyss.monsters.act4;
 
 import abyss.Abyss;
 import abyss.cards.Withering;
-import abyss.powers.ChainsOfDoomPower;
+import abyss.powers.act4.ChainsOfDoomPower;
 import abyss.powers.DelayedAbysstouchedPower;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

@@ -1,4 +1,4 @@
-package abyss.patches;
+package abyss.patches.act4;
 
 import abyss.act.AbyssAct;
 import abyss.act.Encounters;
@@ -15,7 +15,6 @@ import java.util.Map;
         clz = TheEnding.class,
         method = "generateMonsters"
 )
-// A patch to make certain events only appear if the player fulfills some condition
 public class TheEndingGenerateMonstersPatch {
     @SpirePostfixPatch
     public static void CheckForAbyssElite(TheEnding __instance) {

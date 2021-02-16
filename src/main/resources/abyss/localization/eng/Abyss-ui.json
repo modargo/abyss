@@ -7,6 +7,14 @@
       "Venture into the Abyss"
     ]
   },
+  "Abyss:Void": {
+    "TEXT": [
+      "The Void",
+      "Final Act",
+      "#bAhead #blies #bthe #bvoid, #bcalling #bto #byou, #bspeaking #bof #bboth #bcreation #band #bdestruction, #bpromising #banswers #bat #blast. ",
+      "Descend into the Void"
+    ]
+  },
   "Abyss:BehemothsWisdomAction": {
     "TEXT": ["Exhaust and replace (Behemoth's Wisdom)"]
   },
@@ -34,7 +42,8 @@
   },
   "Abyss:ModSettingsPanel": {
     "TEXT": [
-      "Different act 4 elite fight when going through the Abyss"
+      "Different act 4 elite fight when going through the Abyss",
+      "Different act 4 boss fight when going through the Abyss"
     ]
   }
 }

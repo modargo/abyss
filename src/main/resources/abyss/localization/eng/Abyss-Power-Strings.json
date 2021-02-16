@@ -102,5 +102,35 @@
   "Abyss:ChainsOfDoom": {
     "NAME": "Chains of Doom",
     "DESCRIPTIONS": ["While this enemy is alive, you cannot escape from combat."]
+  },
+  "Abyss:Emptiness": {
+    "NAME": "Emptiness",
+    "DESCRIPTIONS": [
+      "At the end of this enemy''s turn, gains #b{0} #yArtifact if it dealt #b{1} or less no unblocked attack damage this turn."
+    ]
+  },
+  "Abyss:ReducedCombatHealing": {
+    "NAME": "Reduced Healing",
+    "DESCRIPTIONS": ["#pUncleansable. Healing is #b{0}% less effective."]
+  },
+  "Abyss:StrengthDegeneration": {
+    "NAME": "Strength Degeneration",
+    "DESCRIPTIONS": ["#pUncleansable. At the start of each turn, if your #yStrength is positive, lose a third of it (rounded up)."]
+  },
+  "Abyss:FlimsyDaggers": {
+    "NAME": "Flimsy Daggers",
+    "DESCRIPTIONS": ["#pUncleansable. Attacks that cost #b0 deal half damage."]
+  },
+  "Abyss:FeeblePoison": {
+    "NAME": "Feeble Poison",
+    "DESCRIPTIONS": ["#pUncleansable. Reduce #yPoison applied by #b{0}% (rounded up)."]
+  },
+  "Abyss:DisturbedCalm": {
+    "NAME": "Disturbed Calm",
+    "DESCRIPTIONS": ["#pUncleansable. Whenever you exit Calm or enter Divinity, gain one less [E] ."]
+  },
+  "Abyss:SubduedSpirit": {
+    "NAME": "Subdued Spirit",
+    "DESCRIPTIONS": ["#pUncleansable. Deal a third less attack damage in Wrath and Divinity."]
   }
 }

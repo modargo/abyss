@@ -211,5 +211,17 @@
       "Poleaxe"
     ],
     "NAME": "Annihilation Warrior"
+  },
+  "Abyss:UniversalVoid": {
+    "MOVES": [
+      "Obliterate",
+      "Calamity",
+      "Ravage",
+      "Damnation",
+      "Embrace the End",
+      "All Is Dust",
+      "Endure"
+    ],
+    "NAME": "Universal Void"
   }
 }

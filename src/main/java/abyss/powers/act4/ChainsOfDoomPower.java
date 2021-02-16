@@ -1,4 +1,4 @@
-package abyss.powers;
+package abyss.powers.act4;
 
 import abyss.Abyss;
 import com.megacrit.cardcrawl.core.AbstractCreature;

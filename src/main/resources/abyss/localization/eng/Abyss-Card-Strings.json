@@ -13,7 +13,7 @@
   },
   "Abyss:Withering": {
     "NAME": "Withering",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, shuffle a Burn into your discard pile."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, shuffle a Burn into your draw pile."
   },
   "Abyss:Panic": {
     "NAME": "Panic",
@@ -30,5 +30,23 @@
   "Abyss:Mineralized": {
     "NAME": "Mineralized",
     "DESCRIPTION": "Ethereal. NL When this is Exhausted due to Ethereal, add a Dazed to your discard pile."
+  },
+  "Abyss:Silenced": {
+    "NAME": "Silenced",
+    "DESCRIPTION": "You cannot play cards that cost 2 or more. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["I cannot play cards that cost 2 or more."]
+  },
+  "Abyss:Overwhelmed": {
+    "NAME": "Overwhelmed",
+    "DESCRIPTION": "Exhaust.",
+    "EXTENDED_DESCRIPTION": ["I cannot play cards that cost 2 or more."]
+  },
+  "Abyss:Doomed": {
+    "NAME": "Doomed",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this is Exhausted, shuffle a Regret into your draw pile."
+  },
+  "Abyss:Shadowed": {
+    "NAME": "Shadowed",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn or when discarded or Exhausted, take !M! damage."
   }
 }

@@ -2,10 +2,12 @@ package abyss;
 
 import abyss.act.AbyssAct;
 import abyss.act.Encounters;
+import abyss.act.VoidAct;
 import abyss.cards.*;
 import abyss.events.*;
 import abyss.monsters.act4.AnnihilationMage;
 import abyss.monsters.act4.AnnihilationWarrior;
+import abyss.monsters.act4.UniversalVoid;
 import abyss.monsters.bosses.DeepTyrant;
 import abyss.monsters.bosses.TheCrystal;
 import abyss.monsters.bosses.VoidHerald;
@@ -76,6 +78,7 @@ public class Abyss implements
         BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", ModSettings.getModPanel());
 
         CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
+        CustomDungeon.addAct(VoidAct.ACT_NUM, new VoidAct());
         addMonsters();
         addEvents();
 
@@ -167,12 +170,14 @@ public class Abyss implements
                         new SquirmingHorror(150.0F, 0.0F)
                 }));
 
-        //Act 4 elites
+        //Act 4 enemies
         BaseMod.addMonster(Encounters.ANNIHILATION_DUO, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new AnnihilationWarrior(-250.0F, 0.0F),
                         new AnnihilationMage(150.0F, 0.0F)
                 }));
+        BaseMod.addMonster(UniversalVoid.ID, (BaseMod.GetMonster)UniversalVoid::new);
+        BaseMod.addBoss(VoidAct.ID, UniversalVoid.ID, "abyss/images/map/bosses/UniversalVoid.png", "abyss/images/map/bosses/UniversalVoidOutline.png");
     }
 
     private static void addEvents() {
