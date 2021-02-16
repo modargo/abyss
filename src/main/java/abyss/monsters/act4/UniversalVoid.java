@@ -42,7 +42,7 @@ public class UniversalVoid extends CustomMonster
     private static final byte DAMNATION_ATTACK = 4;
     private static final byte EMBRACE_THE_END_BUFF = 5;
     private static final byte ALL_IS_DUST_ATTACK = 6;
-    private static final byte ENDURE_DEFEND = 7;
+    private static final byte RUIN_DEBUFF = 7;
     private static final int OBLITERATE_DAMAGE = 45;
     private static final int A4_OBLITERATE_DAMAGE = 50;
     private static final int CALAMITY_AMOUNT = 2;
@@ -53,26 +53,23 @@ public class UniversalVoid extends CustomMonster
     private static final int A4_DAMNATION_DAMAGE = 36;
     private static final int EMBRACE_THE_END_DEMON_FORM = 2;
     private static final int EMBRACE_THE_END_STRENGTH = 30;
-    private static final int EMBRACE_THE_END_FINAL_STRENGTH = 120;
+    private static final int EMBRACE_THE_END_FINAL_STRENGTH = 60;
     private static final int ALL_IS_DUST_DAMAGE = 16;
     private static final int A4_ALL_IS_DUST_DAMAGE = 18;
-    private static final int ENDURE_BLOCK = 10;
-    private static final int A9_ENDURE_BLOCK = 20;
-    private static final int ENDURE_METALLICIZE = 5;
-    private static final int A9_ENDURE_METALLICIZE = 10;
+    private static final int ALL_IS_DUST_METALLICIZE = 5;
+    private static final int A9_ALL_IS_DUST_METALLICIZE = 5;
     private static final int INVINCIBLE = 300;
     private static final int A19_INVINCIBLE = 200;
     private static final int BEAT_OF_DEATH = 1;
     private static final int A19_BEAT_OF_DEATH = 2;
     private static final int EMPTINESS = 1;
-    private static final int HP = 750;
-    private static final int A9_HP = 800;
+    private static final int HP = 650;
+    private static final int A9_HP = 700;
     private int obliterateDamage;
     private int ravageHits;
     private int damnationDamage;
     private int allIsDustDamage;
-    private int endureBlock;
-    private int endureMetallicize;
+    private int allIsDustMetallicize;
     private int beatOfDeath;
     private int invincible;
 
@@ -85,12 +82,10 @@ public class UniversalVoid extends CustomMonster
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);
-            this.endureBlock = A9_ENDURE_BLOCK;
-            this.endureMetallicize = A9_ENDURE_METALLICIZE;
+            this.allIsDustMetallicize = A9_ALL_IS_DUST_METALLICIZE;
         } else {
             this.setHp(HP);
-            this.endureBlock = ENDURE_BLOCK;
-            this.endureMetallicize = ENDURE_METALLICIZE;
+            this.allIsDustMetallicize = ALL_IS_DUST_METALLICIZE;
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
@@ -224,16 +219,21 @@ public class UniversalVoid extends CustomMonster
             case ALL_IS_DUST_ATTACK:
                 this.addToBot(new VFXAction(new AllIsDustEffect(this.hb.cX, this.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-                if (cycle < 3) {
+                if (cycle < 2) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, 1), 1));
                 }
                 else {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new EmptinessPower(this, 1), 1));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MetallicizePower(this, this.allIsDustMetallicize), this.allIsDustMetallicize));
                 }
                 break;
-            case ENDURE_DEFEND:
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.endureBlock));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MetallicizePower(this, this.endureMetallicize), this.endureMetallicize));
+            case RUIN_DEBUFF:
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.FIREBRICK.cpy())));
+                if (cycle < 3) {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, true));
+                }
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -244,7 +244,7 @@ public class UniversalVoid extends CustomMonster
         int m = this.moveHistory.size();
         int cycle = (m - 2) / 3;
         int index = (m - 2) % 3;
-        byte cycleAttack = cycle >= 3 || cycle % 2 == 0 ? DAMNATION_ATTACK : ALL_IS_DUST_ATTACK;
+        byte cycleAttack = cycle == 0 || cycle >= 3 ? DAMNATION_ATTACK : ALL_IS_DUST_ATTACK;
         byte move;
         if (m == 0) {
             move = OBLITERATE_ATTACK;
@@ -259,7 +259,7 @@ public class UniversalVoid extends CustomMonster
             move = this.lastMove(RAVAGE_ATTACK) ? cycleAttack : RAVAGE_ATTACK;
         }
         else {
-            move = cycle == 0 || cycle >= 3 ? EMBRACE_THE_END_BUFF : ENDURE_DEFEND;
+            move = cycle == 0 || cycle >= 3 ? EMBRACE_THE_END_BUFF : RUIN_DEBUFF;
         }
 
         switch (move) {
@@ -281,8 +281,8 @@ public class UniversalVoid extends CustomMonster
             case ALL_IS_DUST_ATTACK:
                 this.setMove(MOVES[5], ALL_IS_DUST_ATTACK, Intent.ATTACK_BUFF, this.allIsDustDamage);
                 break;
-            case ENDURE_DEFEND:
-                this.setMove(MOVES[6], ENDURE_DEFEND, Intent.DEFEND_BUFF);
+            case RUIN_DEBUFF:
+                this.setMove(MOVES[6], RUIN_DEBUFF, Intent.DEBUFF);
                 break;
             default:
                 throw new RuntimeException("Impossible case");
