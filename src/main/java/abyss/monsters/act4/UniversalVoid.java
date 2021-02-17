@@ -43,8 +43,8 @@ public class UniversalVoid extends CustomMonster
     private static final byte EMBRACE_THE_END_BUFF = 5;
     private static final byte ALL_IS_DUST_ATTACK = 6;
     private static final byte RUIN_DEBUFF = 7;
-    private static final int OBLITERATE_DAMAGE = 45;
-    private static final int A4_OBLITERATE_DAMAGE = 50;
+    private static final int OBLITERATE_DAMAGE = 40;
+    private static final int A4_OBLITERATE_DAMAGE = 45;
     private static final int CALAMITY_AMOUNT = 2;
     private static final int RAVAGE_DAMAGE = 8;
     private static final int RAVAGE_HITS = 4;
