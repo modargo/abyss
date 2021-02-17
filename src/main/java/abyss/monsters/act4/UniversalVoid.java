@@ -78,7 +78,7 @@ public class UniversalVoid extends CustomMonster
     }
 
     public UniversalVoid(final float x, final float y) {
-        super(UniversalVoid.NAME, ID, HP, -5.0F, 0, 1005.0f, 560.0f, IMG, x, y);
+        super(UniversalVoid.NAME, ID, HP, -5.0F, 0, 530.0f, 575.0f, IMG, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);

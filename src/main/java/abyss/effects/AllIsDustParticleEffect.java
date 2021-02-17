@@ -137,7 +137,6 @@ public class AllIsDustParticleEffect extends AbstractGameEffect {
         if (this.duration < 0.0F) {
             this.isDone = true;
         }
-
     }
 
     public void render(SpriteBatch sb) {
