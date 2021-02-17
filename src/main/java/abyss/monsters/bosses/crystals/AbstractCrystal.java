@@ -9,7 +9,6 @@ import basemod.abstracts.CustomMonster;
 import basemod.helpers.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

@@ -28,7 +28,7 @@ public class ExhaustCardInDiscardPileAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             if (!this.player.discardPile.isEmpty() && this.numberOfCards > 0) {
                 if (this.player.discardPile.size() <= this.numberOfCards && !this.optional) {
-                    ArrayList<AbstractCard> cardsToExhaust = new ArrayList();
+                    ArrayList<AbstractCard> cardsToExhaust = new ArrayList<>();
                     for (AbstractCard c : this.player.discardPile.group) {
                         cardsToExhaust.add(c);
                     }

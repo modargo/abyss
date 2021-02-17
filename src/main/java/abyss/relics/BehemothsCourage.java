@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.MessageFormat;
 

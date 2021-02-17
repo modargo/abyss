@@ -20,9 +20,7 @@ public class CustomTextChooseOneAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             AbstractDungeon.cardRewardScreen.chooseOneOpen(this.choices);
             AbstractDungeon.dynamicBanner.appearInstantly(this.bannerText);
-            this.tickDuration();
-        } else {
-            this.tickDuration();
         }
+        this.tickDuration();
     }
 }

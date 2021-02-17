@@ -82,8 +82,8 @@ public class VoidAct extends CustomDungeon {
     @Override
     public void makeMap() {
         long startTime = System.currentTimeMillis();
-        map = new ArrayList();
-        ArrayList<MapRoomNode> row1 = new ArrayList();
+        map = new ArrayList<>();
+        ArrayList<MapRoomNode> row1 = new ArrayList<>();
         MapRoomNode restNode = new MapRoomNode(3, 0);
         restNode.room = new RestRoom();
         MapRoomNode shopNode = new MapRoomNode(3, 1);
@@ -104,7 +104,7 @@ public class VoidAct extends CustomDungeon {
         row1.add(new MapRoomNode(4, 0));
         row1.add(new MapRoomNode(5, 0));
         row1.add(new MapRoomNode(6, 0));
-        ArrayList<MapRoomNode> row2 = new ArrayList();
+        ArrayList<MapRoomNode> row2 = new ArrayList<>();
         row2.add(new MapRoomNode(0, 1));
         row2.add(new MapRoomNode(1, 1));
         row2.add(new MapRoomNode(2, 1));
@@ -112,7 +112,7 @@ public class VoidAct extends CustomDungeon {
         row2.add(new MapRoomNode(4, 1));
         row2.add(new MapRoomNode(5, 1));
         row2.add(new MapRoomNode(6, 1));
-        ArrayList<MapRoomNode> row3 = new ArrayList();
+        ArrayList<MapRoomNode> row3 = new ArrayList<>();
         row3.add(new MapRoomNode(0, 2));
         row3.add(new MapRoomNode(1, 2));
         row3.add(new MapRoomNode(2, 2));
@@ -120,7 +120,7 @@ public class VoidAct extends CustomDungeon {
         row3.add(new MapRoomNode(4, 2));
         row3.add(new MapRoomNode(5, 2));
         row3.add(new MapRoomNode(6, 2));
-        ArrayList<MapRoomNode> row4 = new ArrayList();
+        ArrayList<MapRoomNode> row4 = new ArrayList<>();
         row4.add(new MapRoomNode(0, 3));
         row4.add(new MapRoomNode(1, 3));
         row4.add(new MapRoomNode(2, 3));
@@ -128,7 +128,7 @@ public class VoidAct extends CustomDungeon {
         row4.add(new MapRoomNode(4, 3));
         row4.add(new MapRoomNode(5, 3));
         row4.add(new MapRoomNode(6, 3));
-        ArrayList<MapRoomNode> row5 = new ArrayList();
+        ArrayList<MapRoomNode> row5 = new ArrayList<>();
         row5.add(new MapRoomNode(0, 4));
         row5.add(new MapRoomNode(1, 4));
         row5.add(new MapRoomNode(2, 4));

@@ -23,7 +23,6 @@ public class BehemothsWisdomAction extends AbstractGameAction {
             AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, true, true);
 
             this.addToBot(new WaitAction(0.25F));
-            this.tickDuration();
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
@@ -35,9 +34,8 @@ public class BehemothsWisdomAction extends AbstractGameAction {
 
                 AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
             }
-
-            this.tickDuration();
         }
+        this.tickDuration();
     }
 
     static {

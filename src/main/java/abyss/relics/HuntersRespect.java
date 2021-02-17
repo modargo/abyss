@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class HuntersRespect extends CustomRelic {
     public static final String ID = "Abyss:HuntersRespect";

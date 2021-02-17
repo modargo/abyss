@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 import javassist.CtBehavior;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 @SpirePatch(
         clz = AbstractCard.class,
@@ -43,7 +44,7 @@ public class FlimsyDaggersPowerPatch {
         @Override
         public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
             Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractStance.class, "atDamageGive");
-            return LineFinder.findInOrder(ctMethodToPatch, Arrays.asList(finalMatcher), finalMatcher);
+            return LineFinder.findInOrder(ctMethodToPatch, Collections.singletonList(finalMatcher), finalMatcher);
         }
     }
 }

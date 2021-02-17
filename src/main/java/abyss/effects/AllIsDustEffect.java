@@ -1,4 +1,3 @@
-
 package abyss.effects;
 
 import com.badlogic.gdx.Gdx;

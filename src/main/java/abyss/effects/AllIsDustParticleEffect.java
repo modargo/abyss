@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package abyss.effects;
 
 import com.badlogic.gdx.Gdx;
@@ -11,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.math.CatmullRomSpline;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -28,16 +22,15 @@ public class AllIsDustParticleEffect extends AbstractGameEffect {
     private AtlasRegion img;
     private CatmullRomSpline<Vector2> crs = new CatmullRomSpline<>();
     private ArrayList<Vector2> controlPoints = new ArrayList<>();
-    private static final int TRAIL_ACCURACY = 60;
     private Vector2[] points = new Vector2[60];
     private Vector2 pos;
     private Vector2 target;
-    private float currentSpeed = 0.0F;
+    private float currentSpeed;
     private static final float MAX_VELOCITY;
     private static final float VELOCITY_RAMP_RATE;
     private static final float DST_THRESHOLD;
     private float rotation;
-    private boolean rotateClockwise = true;
+    private boolean rotateClockwise;
     private boolean stopRotating = false;
     private boolean facingLeft;
     private float rotationRate;
@@ -119,7 +112,7 @@ public class AllIsDustParticleEffect extends AbstractGameEffect {
         }
 
         if (!this.controlPoints.isEmpty()) {
-            if (!((Vector2)this.controlPoints.get(0)).equals(this.pos)) {
+            if (!(this.controlPoints.get(0)).equals(this.pos)) {
                 this.controlPoints.add(this.pos.cpy());
             }
         } else {
