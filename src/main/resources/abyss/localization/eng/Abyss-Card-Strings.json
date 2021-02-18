@@ -52,5 +52,9 @@
   "Abyss:Shadowed": {
     "NAME": "Shadowed",
     "DESCRIPTION": "Unplayable. NL At the end of your turn or when discarded or Exhausted, take !M! damage."
+  },
+  "Abyss:Pressured": {
+    "NAME": "Pressured",
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL Whenever this card is drawn, add a Dazed to your discard pile."
   }
 }

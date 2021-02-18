@@ -13,9 +13,12 @@ import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
 import com.megacrit.cardcrawl.scenes.TheEndingScene;
+import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class VoidAct extends CustomDungeon {
@@ -151,6 +154,11 @@ public class VoidAct extends CustomDungeon {
 
     private void connectNode(MapRoomNode src, MapRoomNode dst) {
         src.addEdge(new MapEdge(src.x, src.y, src.offsetX, src.offsetY, dst.x, dst.y, dst.offsetX, dst.offsetY, false));
+    }
+
+    @Override
+    public void Ending() {
+        //Do nothing so that ActLikeIt skips this and our patch applies instead
     }
 
     @Override

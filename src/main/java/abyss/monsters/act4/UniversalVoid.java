@@ -1,10 +1,7 @@
 package abyss.monsters.act4;
 
 import abyss.Abyss;
-import abyss.cards.act4.Doomed;
-import abyss.cards.act4.Overwhelmed;
-import abyss.cards.act4.Shadowed;
-import abyss.cards.act4.Silenced;
+import abyss.cards.act4.*;
 import abyss.effects.*;
 import abyss.powers.act4.*;
 import basemod.abstracts.CustomMonster;
@@ -15,6 +12,9 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Burn;
+import com.megacrit.cardcrawl.cards.status.Slimed;
+import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -45,7 +45,7 @@ public class UniversalVoid extends CustomMonster
     private static final byte RUIN_DEBUFF = 7;
     private static final int OBLITERATE_DAMAGE = 40;
     private static final int A4_OBLITERATE_DAMAGE = 45;
-    private static final int CALAMITY_AMOUNT = 2;
+    private static final int CALAMITY_DEBUFF_AMOUNT = 2;
     private static final int RAVAGE_DAMAGE = 8;
     private static final int A4_RAVAGE_DAMAGE = 8;
     private static final int RAVAGE_HITS = 4;
@@ -140,7 +140,7 @@ public class UniversalVoid extends CustomMonster
         switch (this.nextMove) {
             case OBLITERATE_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ObliterateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SMASH));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
                 break;
             case CALAMITY_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new CalamityDebuffEffect(), 1.0F));
@@ -168,8 +168,8 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
                 }
 
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, CALAMITY_AMOUNT, true), CALAMITY_AMOUNT));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, CALAMITY_AMOUNT, true), CALAMITY_AMOUNT));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, CALAMITY_DEBUFF_AMOUNT, true), CALAMITY_DEBUFF_AMOUNT));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, CALAMITY_DEBUFF_AMOUNT, true), CALAMITY_DEBUFF_AMOUNT));
                 break;
             case RAVAGE_ATTACK:
                 for (int i = 0; i < this.ravageHits; i++) {
@@ -198,15 +198,14 @@ public class UniversalVoid extends CustomMonster
                 int fireballs = 3;
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamnationEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, fireballs), fireballs * DamnationEffect.TIME_PER_FIREBALL));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, true));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pressured(), 1, true, false, false, (float)Settings.WIDTH * 0.30F, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, false, false, (float)Settings.WIDTH * 0.5F, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, false, false, (float)Settings.WIDTH * 0.70F, (float)Settings.HEIGHT / 2.0F));
                 break;
             case EMBRACE_THE_END_BUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.NAVY.cpy())));
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new HeartBuffEffect(this.hb.cX, this.hb.cY)));
-                if (cycle < 3) {
+                if (cycle < 4) {
                     int strengthGain = this.hasPower(StrengthPower.POWER_ID) ? -this.getPower(StrengthPower.POWER_ID).amount : 0;
                     if (strengthGain > 0) {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, strengthGain), strengthGain));
@@ -214,7 +213,7 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RitualPower(this, EMBRACE_THE_END_DEMON_FORM, false), EMBRACE_THE_END_DEMON_FORM));
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_DEMON_FORM), EMBRACE_THE_END_DEMON_FORM));
                 }
-                else if (cycle == 3) {
+                else if (cycle == 4) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_STRENGTH), EMBRACE_THE_END_STRENGTH));
                 }
                 else {
@@ -237,7 +236,7 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
                 }
                 else {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
                 }
                 break;
         }

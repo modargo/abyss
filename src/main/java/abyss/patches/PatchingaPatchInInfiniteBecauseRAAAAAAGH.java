@@ -1,12 +1,12 @@
 package abyss.patches;
 
-import actlikeit.dungeons.CustomDungeon;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+        import actlikeit.dungeons.CustomDungeon;
+        import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+        import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+        import com.megacrit.cardcrawl.characters.AbstractPlayer;
+        import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 @SpirePatch(cls = "infinitespire.patches.AbstractDungeonPatch$InitFirstRoomPatch", method = "initQuestLog", optional = true)
 public class PatchingaPatchInInfiniteBecauseRAAAAAAGH {

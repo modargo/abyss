@@ -249,6 +249,7 @@ public class Abyss implements
         BaseMod.loadCustomStringsFile(RelicStrings.class, makeLocPath(language, "Abyss-Relic-Strings"));
         BaseMod.loadCustomStringsFile(PowerStrings.class, makeLocPath(language, "Abyss-Power-Strings"));
         BaseMod.loadCustomStringsFile(UIStrings.class, makeLocPath(language, "Abyss-ui"));
+        BaseMod.loadCustomStringsFile(ScoreBonusStrings.class, makeLocPath(language, "Abyss-score"));
     }
 
     @Override
