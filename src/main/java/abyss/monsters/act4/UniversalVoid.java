@@ -47,6 +47,7 @@ public class UniversalVoid extends CustomMonster
     private static final int A4_OBLITERATE_DAMAGE = 45;
     private static final int CALAMITY_AMOUNT = 2;
     private static final int RAVAGE_DAMAGE = 8;
+    private static final int A4_RAVAGE_DAMAGE = 8;
     private static final int RAVAGE_HITS = 4;
     private static final int A4_RAVAGE_HITS = 5;
     private static final int DAMNATION_DAMAGE = 32;
@@ -62,10 +63,11 @@ public class UniversalVoid extends CustomMonster
     private static final int A19_INVINCIBLE = 200;
     private static final int BEAT_OF_DEATH = 1;
     private static final int A19_BEAT_OF_DEATH = 2;
-    private static final int EMPTINESS = 1;
+    private static final int STARTING_STRENGTH = 4;
     private static final int HP = 650;
     private static final int A9_HP = 700;
     private int obliterateDamage;
+    private int ravageDamage;
     private int ravageHits;
     private int damnationDamage;
     private int allIsDustDamage;
@@ -89,18 +91,20 @@ public class UniversalVoid extends CustomMonster
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.obliterateDamage = A4_OBLITERATE_DAMAGE;
+            this.obliterateDamage = A4_OBLITERATE_DAMAGE - STARTING_STRENGTH;
+            this.ravageDamage = A4_RAVAGE_DAMAGE - STARTING_STRENGTH;
             this.ravageHits = A4_RAVAGE_HITS;
-            this.damnationDamage = A4_DAMNATION_DAMAGE;
-            this.allIsDustDamage = A4_ALL_IS_DUST_DAMAGE;
+            this.damnationDamage = A4_DAMNATION_DAMAGE - STARTING_STRENGTH;
+            this.allIsDustDamage = A4_ALL_IS_DUST_DAMAGE - STARTING_STRENGTH;
         } else {
-            this.obliterateDamage = OBLITERATE_DAMAGE;
+            this.obliterateDamage = OBLITERATE_DAMAGE - STARTING_STRENGTH;
+            this.ravageDamage = RAVAGE_DAMAGE - STARTING_STRENGTH;
             this.ravageHits = RAVAGE_HITS;
-            this.damnationDamage = DAMNATION_DAMAGE;
-            this.allIsDustDamage = ALL_IS_DUST_DAMAGE;
+            this.damnationDamage = DAMNATION_DAMAGE - STARTING_STRENGTH;
+            this.allIsDustDamage = ALL_IS_DUST_DAMAGE - STARTING_STRENGTH;
         }
         this.damage.add(new DamageInfo(this, this.obliterateDamage));
-        this.damage.add(new DamageInfo(this, RAVAGE_DAMAGE));
+        this.damage.add(new DamageInfo(this, this.ravageDamage));
         this.damage.add(new DamageInfo(this, this.damnationDamage));
         this.damage.add(new DamageInfo(this, this.allIsDustDamage));
 
@@ -122,7 +126,8 @@ public class UniversalVoid extends CustomMonster
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new InvinciblePower(this, this.invincible), this.invincible));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, this.beatOfDeath), this.beatOfDeath));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new EmptinessPower(this, EMPTINESS), EMPTINESS));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new EmptinessPower(this)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, STARTING_STRENGTH), STARTING_STRENGTH));
     }
 
     @Override
@@ -270,7 +275,7 @@ public class UniversalVoid extends CustomMonster
                 this.setMove(MOVES[1], CALAMITY_DEBUFF, Intent.STRONG_DEBUFF);
                 break;
             case RAVAGE_ATTACK:
-                this.setMove(MOVES[2], RAVAGE_ATTACK, Intent.ATTACK, RAVAGE_DAMAGE, this.ravageHits, true);
+                this.setMove(MOVES[2], RAVAGE_ATTACK, Intent.ATTACK, this.ravageDamage, this.ravageHits, true);
                 break;
             case DAMNATION_ATTACK:
                 this.setMove(MOVES[3], DAMNATION_ATTACK, Intent.ATTACK_DEBUFF, this.damnationDamage);

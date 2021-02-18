@@ -14,13 +14,14 @@ public class StrengthDegenerationPower extends AbstractPower {
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
+    private static final int DEGEN_PERCENT = 20;
 
     public StrengthDegenerationPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         // Deliberately not a debuff -- part of the Universal Void effects
-        this.description = DESCRIPTIONS[0].replace("{0}", this.amount + "");
+        this.description = DESCRIPTIONS[0].replace("{0}", DEGEN_PERCENT + "");
         Abyss.LoadPowerImage(this);
     }
 
@@ -29,7 +30,8 @@ public class StrengthDegenerationPower extends AbstractPower {
         this.flash();
         AbstractPower strengthPower = this.owner.getPower(StrengthPower.POWER_ID);
         int currentStrength = strengthPower != null ? strengthPower.amount : 0;
-        int strengthLoss = currentStrength > 0 ? (currentStrength + 2) / 3 : 0;
+
+        int strengthLoss = currentStrength > 0 ? (currentStrength * DEGEN_PERCENT) / 100 : 0;
         if (strengthLoss > 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -strengthLoss), -strengthLoss));
         }

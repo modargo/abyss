@@ -20,8 +20,8 @@ public class FeeblePoisonPowerPatch {
     @SpireInsertPatch(locator = FeeblePoisonPowerPatch.Locator.class)
     public static void FeeblePoison(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, AbstractPower powerToApply, int stackAmount, boolean isFast, AbstractGameAction.AttackEffect effect) {
         if (AbstractDungeon.player.hasPower(FeeblePoisonPower.POWER_ID) && source != null && source.isPlayer && target != source && powerToApply.ID.equals(PoisonPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(FeeblePoisonPower.POWER_ID).flash();
-            int newAmount = (int)Math.ceil(powerToApply.amount * (FeeblePoisonPower.POISON_REDUCTION_PERCENT / 100.0F));
+            FeeblePoisonPower p = (FeeblePoisonPower)AbstractDungeon.player.getPower(FeeblePoisonPower.POWER_ID);
+            int newAmount = p.modifyPoisonAmount(powerToApply.amount);
             powerToApply.amount = newAmount;
             __instance.amount = newAmount;
         }

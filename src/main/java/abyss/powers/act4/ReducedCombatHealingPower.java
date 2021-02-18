@@ -11,7 +11,7 @@ public class ReducedCombatHealingPower extends AbstractPower {
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
-    private static final int HEAL_MULTIPLIER = 50;
+    private static final int HEAL_MULTIPLIER = 30;
 
     public ReducedCombatHealingPower(AbstractCreature owner) {
         this.name = NAME;
@@ -24,7 +24,8 @@ public class ReducedCombatHealingPower extends AbstractPower {
 
     @Override
     public int onHeal(int healAmount) {
-        return Math.round(healAmount * ((100 - HEAL_MULTIPLIER) / 100.0f));
+        this.flash();
+        return (healAmount * (100 - HEAL_MULTIPLIER)) / 100;
     }
 
     static {

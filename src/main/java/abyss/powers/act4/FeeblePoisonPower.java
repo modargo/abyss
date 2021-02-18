@@ -11,7 +11,7 @@ public class FeeblePoisonPower extends AbstractPower {
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
-    public static final int POISON_REDUCTION_PERCENT = 50;
+    private static final int POISON_REDUCTION_PERCENT = 30;
 
     public FeeblePoisonPower(AbstractCreature owner) {
         this.name = NAME;
@@ -22,7 +22,10 @@ public class FeeblePoisonPower extends AbstractPower {
         Abyss.LoadPowerImage(this);
     }
 
-    // This power is just a placeholder -- the actual implementation is in a patch
+    public int modifyPoisonAmount(int poisonAmount) {
+        int newAmount = (poisonAmount * (100 - FeeblePoisonPower.POISON_REDUCTION_PERCENT)) / 100;
+        return poisonAmount > 0 && newAmount == 0 ? 1 : newAmount;
+    }
 
     static {
         powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
