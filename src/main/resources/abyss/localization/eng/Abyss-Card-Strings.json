@@ -19,6 +19,10 @@
     "NAME": "Panic",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, lose !M! Dexterity."
   },
+  "Abyss:Corrupted": {
+    "NAME": "Corrupted",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! abyss:Abysstouched."
+  },
   "Abyss:Tormented": {
     "NAME": "Tormented",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, gain !M! abyss:Abysstouched."

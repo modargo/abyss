@@ -19,7 +19,7 @@ public class Staggered extends CustomCard {
     private static final int COST = -2;
 
     public Staggered() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.CURSE, CardColor.CURSE, CardRarity.SPECIAL, CardTarget.NONE);
+        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     }
 
     @Override

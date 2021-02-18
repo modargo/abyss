@@ -36,14 +36,14 @@ public class GnawingCorruption extends CustomMonster
     private static final byte LEFT_EYE_ATTACK = 3;
     private static final byte RIGHT_EYE_ATTACK = 4;
     private static final byte ALL_EYES_ATTACK = 5;
-    private static final int GNAWING_CORRUPTION_CURSES = 3;
-    private static final int A18_GNAWING_CORRUPTION_CURSES = 5;
+    private static final int GNAWING_CORRUPTION_STATUSES = 3;
+    private static final int A18_GNAWING_CORRUPTION_STATUSES = 5;
     private static final int TENTACLE_SWEEP_DAMAGE = 27;
     private static final int A3_TENTACLE_SWEEP_DAMAGE = 30;
     private static final int LEFT_EYE_DAMAGE = 18;
     private static final int A3_LEFT_EYE_DAMAGE = 20;
-    private static final int LEFT_EYE_CURSES = 1;
-    private static final int A18_LEFT_EYE_CURSES = 2;
+    private static final int LEFT_EYE_STATUSES = 1;
+    private static final int A18_LEFT_EYE_STATUSES = 2;
     private static final int RIGHT_EYE_DAMAGE = 18;
     private static final int A3_RIGHT_EYE_DAMAGE = 20;
     private static final int RIGHT_EYE_HEAL = 25;
@@ -55,10 +55,10 @@ public class GnawingCorruption extends CustomMonster
     private static final int HP_MAX = 300;
     private static final int A8_HP_MIN = 340;
     private static final int A8_HP_MAX = 340;
-    private int gnawingCorruptionCurses;
+    private int gnawingCorruptionStatuses;
     private int tentacleSweepDamage;
     private int leftEyeDamage;
-    private int leftEyeCurses;
+    private int leftEyeStatuses;
     private int rightEyeDamage;
     private int rightEyeHeal;
     private int allEyesDamage;
@@ -93,13 +93,13 @@ public class GnawingCorruption extends CustomMonster
         this.damage.add(new DamageInfo(this, this.allEyesDamage));
 
         if (AbstractDungeon.ascensionLevel >= 18) {
-            this.gnawingCorruptionCurses = A18_GNAWING_CORRUPTION_CURSES;
-            this.leftEyeCurses = A18_LEFT_EYE_CURSES;
+            this.gnawingCorruptionStatuses = A18_GNAWING_CORRUPTION_STATUSES;
+            this.leftEyeStatuses = A18_LEFT_EYE_STATUSES;
             this.rightEyeHeal = A18_RIGHT_EYE_HEAL;
         }
         else {
-            this.gnawingCorruptionCurses = GNAWING_CORRUPTION_CURSES;
-            this.leftEyeCurses = LEFT_EYE_CURSES;
+            this.gnawingCorruptionStatuses = GNAWING_CORRUPTION_STATUSES;
+            this.leftEyeStatuses = LEFT_EYE_STATUSES;
             this.rightEyeHeal = RIGHT_EYE_HEAL;
         }
     }
@@ -114,7 +114,7 @@ public class GnawingCorruption extends CustomMonster
                 //TODO sound would really benefit from a curse sound effect
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 CardCrawlGame.sound.playA("GHOST_ORB_IGNITE_1", -0.6F);
-                for (AbstractCard c : this.getCurses(this.gnawingCorruptionCurses)) {
+                for (AbstractCard c : this.getStatuses(this.gnawingCorruptionStatuses)) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(c, 1));
                 }
                 break;
@@ -126,7 +126,7 @@ public class GnawingCorruption extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallColorLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, Color.MAROON), Settings.FAST_MODE ? 0.1F : 0.3F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
-                for (AbstractCard c : this.getCurses(this.leftEyeCurses)) {
+                for (AbstractCard c : this.getStatuses(this.leftEyeStatuses)) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, true, true));
                 }
                 break;
@@ -148,15 +148,15 @@ public class GnawingCorruption extends CustomMonster
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
-    private List<AbstractCard> getCurses(int amount) {
-        AbstractList<AbstractCard> curses = new ArrayList<>();
-        curses.add(new Drained());
-        curses.add(new Panic());
-        curses.add(new Staggered());
-        curses.add(new Tormented());
-        curses.add(new Withering());
-        Collections.shuffle(curses, AbstractDungeon.aiRng.random);
-        return curses.subList(0, amount);
+    private List<AbstractCard> getStatuses(int amount) {
+        AbstractList<AbstractCard> statuses = new ArrayList<>();
+        statuses.add(new Drained());
+        statuses.add(new Panic());
+        statuses.add(new Staggered());
+        statuses.add(new Corrupted());
+        statuses.add(new Withering());
+        Collections.shuffle(statuses, AbstractDungeon.aiRng.random);
+        return statuses.subList(0, amount);
     }
 
     @Override
