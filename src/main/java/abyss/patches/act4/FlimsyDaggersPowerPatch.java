@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import javassist.CtBehavior;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 @SpirePatch(

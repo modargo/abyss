@@ -2,22 +2,16 @@ package abyss.patches.act4;
 
 import abyss.act.VoidAct;
 import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
-import com.evacipated.cardcrawl.modthespire.lib.Matcher;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.localization.ScoreBonusStrings;
-import com.megacrit.cardcrawl.random.Random;
-import abyss.events.EventFilter;
 import com.megacrit.cardcrawl.screens.GameOverScreen;
 import com.megacrit.cardcrawl.screens.GameOverStat;
 import com.megacrit.cardcrawl.screens.VictoryScreen;
 import javassist.CtBehavior;
+
 import java.util.ArrayList;
 import java.util.Collections;
 

@@ -13,12 +13,9 @@ import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
 import com.megacrit.cardcrawl.scenes.TheEndingScene;
-import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class VoidAct extends CustomDungeon {
