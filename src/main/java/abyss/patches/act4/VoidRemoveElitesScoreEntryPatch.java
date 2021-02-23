@@ -16,7 +16,6 @@ import com.megacrit.cardcrawl.screens.VictoryScreen;
 import java.util.ArrayList;
 
 public class VoidRemoveElitesScoreEntryPatch {
-    private static int ActNum = 4;
     private static String ActID = VoidAct.ID;
 
     public static void RemoveScoreEntryForVoid(ArrayList<GameOverStat> stats) {
