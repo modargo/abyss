@@ -50,13 +50,14 @@ public class UniversalVoid extends CustomMonster
     private static final int A4_RAVAGE_DAMAGE = 8;
     private static final int RAVAGE_HITS = 4;
     private static final int A4_RAVAGE_HITS = 5;
-    private static final int DAMNATION_DAMAGE = 26;
-    private static final int A4_DAMNATION_DAMAGE = 30;
+    private static final int DAMNATION_DAMAGE = 28;
+    private static final int A4_DAMNATION_DAMAGE = 32;
     private static final int EMBRACE_THE_END_DEMON_FORM = 2;
+    private static final int EMBRACE_THE_END_FIRST_STRENGTH = 2;
     private static final int EMBRACE_THE_END_STRENGTH = 30;
     private static final int EMBRACE_THE_END_FINAL_STRENGTH = 60;
-    private static final int ALL_IS_DUST_DAMAGE = 20;
-    private static final int A4_ALL_IS_DUST_DAMAGE = 22;
+    private static final int ALL_IS_DUST_DAMAGE = 23;
+    private static final int A4_ALL_IS_DUST_DAMAGE = 26;
     private static final int ALL_IS_DUST_METALLICIZE = 5;
     private static final int A9_ALL_IS_DUST_METALLICIZE = 10;
     private static final int INVINCIBLE = 300;
@@ -211,7 +212,7 @@ public class UniversalVoid extends CustomMonster
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, strengthGain), strengthGain));
                     }
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RitualPower(this, EMBRACE_THE_END_DEMON_FORM, false), EMBRACE_THE_END_DEMON_FORM));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_DEMON_FORM), EMBRACE_THE_END_DEMON_FORM));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_DEMON_FORM), EMBRACE_THE_END_DEMON_FORM + EMBRACE_THE_END_FIRST_STRENGTH));
                 }
                 else if (cycle == 4) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, EMBRACE_THE_END_STRENGTH), EMBRACE_THE_END_STRENGTH));
