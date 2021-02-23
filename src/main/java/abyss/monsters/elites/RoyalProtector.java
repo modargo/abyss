@@ -23,15 +23,17 @@ public class RoyalProtector extends CustomMonster {
     private static final String IMG = Abyss.monsterImage(ID);
     private boolean firstMove = true;
     private static final byte CARAPACE_MOVE = 1;
-    private static final byte BURNING_SPIT_DEBUFF = 2;
+    private static final byte BURNING_SPIT_ATTACK = 2;
     private static final byte ACID_EXPLOSION_ATTACK = 3;
     private static final byte FOR_THE_QUEEN_ATTACK = 4;
     private static final int CARAPACE_BLOCK_OR_PLATED_ARMOR = 5;
-    private static final int BURNING_SPIT_BURNS = 2;
-    private static final int ACID_EXPLOSION_DAMAGE = 24;
-    private static final int FOR_THE_QUEEN_DAMAGE = 4;
-    private static final int A3_ACID_EXPLOSION_DAMAGE = 27;
-    private static final int A3_FOR_THE_QUEEN_DAMAGE = 5;
+    private static final int BURNING_SPIT_DAMAGE = 6;
+    private static final int A3_BURNING_SPIT_DAMAGE = 7;
+    private static final int BURNING_SPIT_BURNS = 1;
+    private static final int ACID_EXPLOSION_DAMAGE = 22;
+    private static final int A3_ACID_EXPLOSION_DAMAGE = 25;
+    private static final int FOR_THE_QUEEN_DAMAGE = 2;
+    private static final int A3_FOR_THE_QUEEN_DAMAGE = 3;
     private static final int FOR_THE_QUEEN_AMOUNT = 1;
     private static final int A18_FOR_THE_QUEEN_AMOUNT = 2;
     private static final int HP_MIN = 31;
@@ -39,6 +41,7 @@ public class RoyalProtector extends CustomMonster {
     private static final int A8_HP_MIN = 33;
     private static final int A8_HP_MAX = 37;
     private int carapaceBlockOrPlatedArmor;
+    private int burningSpitDamage;
     private int acidExplosionDamage;
     private int forTheQueenDamage;
     private int forTheQueenAmount;
@@ -58,12 +61,15 @@ public class RoyalProtector extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 3) {
+            this.burningSpitDamage = A3_BURNING_SPIT_DAMAGE;
             this.acidExplosionDamage = A3_ACID_EXPLOSION_DAMAGE;
             this.forTheQueenDamage = A3_FOR_THE_QUEEN_DAMAGE;
         } else {
+            this.burningSpitDamage = BURNING_SPIT_DAMAGE;
             this.acidExplosionDamage = ACID_EXPLOSION_DAMAGE;
             this.forTheQueenDamage = FOR_THE_QUEEN_DAMAGE;
         }
+        this.damage.add(new DamageInfo(this, this.burningSpitDamage));
         this.damage.add(new DamageInfo(this, this.acidExplosionDamage));
         this.damage.add(new DamageInfo(this, this.forTheQueenDamage));
 
@@ -88,8 +94,10 @@ public class RoyalProtector extends CustomMonster {
                     this.addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, this.carapaceBlockOrPlatedArmor), this.carapaceBlockOrPlatedArmor));
                 }
                 break;
-            case BURNING_SPIT_DEBUFF:
+            case BURNING_SPIT_ATTACK:
                 //TODO animation -- adapt BloodShotEffect
+                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
                 if (AbstractDungeon.ascensionLevel >= 18) {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), BURNING_SPIT_BURNS, true, true));
                 }
@@ -100,12 +108,12 @@ public class RoyalProtector extends CustomMonster {
             case ACID_EXPLOSION_ATTACK:
                 //TODO animation -- maybe Fireball effect, just making it green?
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.POISON));
                 break;
             case FOR_THE_QUEEN_ATTACK:
                 //TODO animation -- a green explosion (make ExplosionSmallColorEffect)
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.forTheQueenAmount, true), this.forTheQueenAmount));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, this.forTheQueenAmount, true), this.forTheQueenAmount));
                 AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(this, this));
@@ -122,9 +130,9 @@ public class RoyalProtector extends CustomMonster {
             this.setMove(MOVES[0], CARAPACE_MOVE, Intent.DEFEND);
         }
         else if (this.lastMove(CARAPACE_MOVE)) {
-            this.setMove(MOVES[1], BURNING_SPIT_DEBUFF, Intent.DEBUFF);
+            this.setMove(MOVES[1], BURNING_SPIT_ATTACK, Intent.ATTACK_DEBUFF, this.burningSpitDamage);
         }
-        else if (this.lastMove(BURNING_SPIT_DEBUFF)) {
+        else if (this.lastMove(BURNING_SPIT_ATTACK)) {
             this.setMove(MOVES[2], ACID_EXPLOSION_ATTACK, Intent.ATTACK, this.acidExplosionDamage);
         }
         else {
