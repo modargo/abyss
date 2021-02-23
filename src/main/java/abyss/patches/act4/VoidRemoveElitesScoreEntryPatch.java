@@ -20,7 +20,7 @@ public class VoidRemoveElitesScoreEntryPatch {
     private static String ActID = VoidAct.ID;
 
     public static void RemoveScoreEntryForVoid(ArrayList<GameOverStat> stats) {
-        int elitesSlain = ElitesSlain.getKilledElites().get(ActID).kills;
+        int elitesSlain = ElitesSlain.getKilledElites().containsKey(ActID) ? ElitesSlain.getKilledElites().get(ActID).kills : 0;
         String[] parts = CardCrawlGame.languagePack.getScoreString(ActLikeIt.makeID("ElitesKilled")).DESCRIPTIONS;
         String statLabel = parts[0] + CustomDungeon.dungeons.get(ActID).name + parts[2] + " (" + elitesSlain + ")";
         stats.removeIf(stat -> stat != null && stat.label != null && stat.label.equals(statLabel));
