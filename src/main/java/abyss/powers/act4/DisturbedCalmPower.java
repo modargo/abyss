@@ -25,8 +25,7 @@ public class DisturbedCalmPower extends AbstractPower {
         Abyss.LoadPowerImage(this);
     }
 
-    @Override
-    public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {
+    public void afterChangeStance(AbstractStance oldStance, AbstractStance newStance) {
         if (!oldStance.ID.equals(newStance.ID)) {
             if (oldStance.ID.equals(CalmStance.STANCE_ID)) {
                 this.flash();
