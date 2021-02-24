@@ -155,10 +155,8 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FlimsyDaggersPower(AbstractDungeon.player)));
                 }
                 if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.DEFECT) {
-                    AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
-                    AbstractPower focus =  new FocusPower(AbstractDungeon.player, -1);
-                    focus.type = AbstractPower.PowerType.BUFF;
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FocusPower(AbstractDungeon.player, -1), -1));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakOrbsPower(AbstractDungeon.player)));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
                 }
                 if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.WATCHER) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DisturbedCalmPower(AbstractDungeon.player)));
@@ -167,6 +165,10 @@ public class UniversalVoid extends CustomMonster
                 if (isUnknownClass) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReducedCombatHealingPower(AbstractDungeon.player)));
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
+                    if (!AbstractDungeon.player.orbs.isEmpty()) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakOrbsPower(AbstractDungeon.player)));
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
+                    }
                 }
 
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, CALAMITY_DEBUFF_AMOUNT, true), CALAMITY_DEBUFF_AMOUNT));

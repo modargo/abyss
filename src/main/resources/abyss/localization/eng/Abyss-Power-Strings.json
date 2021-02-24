@@ -115,7 +115,7 @@
   },
   "Abyss:StrengthDegeneration": {
     "NAME": "Strength Degeneration",
-    "DESCRIPTIONS": ["#pUncleansable. At the start of each turn, if your #yStrength is positive, lose a {0}% of it."]
+    "DESCRIPTIONS": ["#pUncleansable. At the start of each turn, if your #yStrength is positive, lose {0}% of it."]
   },
   "Abyss:FlimsyDaggers": {
     "NAME": "Flimsy Daggers",
@@ -124,6 +124,14 @@
   "Abyss:FeeblePoison": {
     "NAME": "Feeble Poison",
     "DESCRIPTIONS": ["#pUncleansable. Reduce #yPoison applied by #b{0}% (but not below #b1)."]
+  },
+  "Abyss:WeakOrbs": {
+    "NAME": "Weak Orbs",
+    "DESCRIPTIONS": ["#pUncleansable. Dark and Lightning orbs deal #b{0}% less damage."]
+  },
+  "Abyss:OrbDecay": {
+    "NAME": "Orb Decay",
+    "DESCRIPTIONS": ["#pUncleansable. At the start of every third turn, lose an orb slot."]
   },
   "Abyss:DisturbedCalm": {
     "NAME": "Disturbed Calm",
