@@ -15,8 +15,8 @@ public class WeakOrbsPatch {
     public static void ModifyOrbAmount(AbstractOrb __instance) {
         if (AbstractDungeon.player.hasPower(WeakOrbsPower.POWER_ID)) {
             WeakOrbsPower p = (WeakOrbsPower)AbstractDungeon.player.getPower(WeakOrbsPower.POWER_ID);
-            __instance.passiveAmount = p.modifyOrbAmount(__instance, __instance.passiveAmount);
-            __instance.evokeAmount = p.modifyOrbAmount(__instance, __instance.evokeAmount);
+            __instance.passiveAmount = p.modifyOrbPassiveAmount(__instance, __instance.passiveAmount);
+            __instance.evokeAmount = p.modifyOrbEvokeAmount(__instance, __instance.evokeAmount);
         }
     }
 }

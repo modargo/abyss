@@ -27,7 +27,11 @@ public class WeakOrbsPower extends AbstractPower {
         Abyss.LoadPowerImage(this);
     }
 
-    public int modifyOrbAmount(AbstractOrb orb, int amount) {
+    public int modifyOrbPassiveAmount(AbstractOrb orb, int amount) {
+        return orb.ID.equals(Lightning.ORB_ID) ? (int)(amount * (100 - DARK_LIGHTING_ORB_REDUCTION_PERCENT) / 100.0f) : amount;
+    }
+
+    public int modifyOrbEvokeAmount(AbstractOrb orb, int amount) {
         return orb.ID.equals(Lightning.ORB_ID) || orb.ID.equals(Dark.ORB_ID) ? (int)(amount * (100 - DARK_LIGHTING_ORB_REDUCTION_PERCENT) / 100.0f) : amount;
     }
 
