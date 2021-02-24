@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 )
 public class WeakOrbsPatch {
     @SpirePostfixPatch
-    public void ModifyOrbAmount(AbstractOrb __instance) {
+    public static void ModifyOrbAmount(AbstractOrb __instance) {
         if (AbstractDungeon.player.hasPower(WeakOrbsPower.POWER_ID)) {
             WeakOrbsPower p = (WeakOrbsPower)AbstractDungeon.player.getPower(WeakOrbsPower.POWER_ID);
             __instance.passiveAmount = p.modifyOrbAmount(__instance, __instance.passiveAmount);
