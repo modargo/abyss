@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
@@ -95,8 +96,18 @@ public class Hunter extends CustomMonster {
             case EMPOWER_BUFF:
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    if (!m.isDying) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(this, this.empowerStrength), this.empowerStrength));
+                    if (m == this || !m.isDying) {
+                        // For this enemy, those to the left of it (which have already acted), and those that aren't attacking, give strength
+                        // For enemies to the right of this enemy, give gain strength at end of turn, so their damage doesn't increase
+                        if (m == this) {
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, this.empowerStrength), this.empowerStrength));
+                        }
+                        else if (m.drawX < this.drawX || m.getIntentDmg() == -1) {
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, this.empowerStrength), this.empowerStrength));
+                        }
+                        else {
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new GainStrengthPower(m, this.empowerStrength), this.empowerStrength));
+                        }
                     }
                 }
                 break;
