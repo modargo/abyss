@@ -17,7 +17,7 @@ public class ThoughtStealerPower extends AbstractPower {
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
-    private static final int STRENGTH_GAIN = 1;
+    private static final int STRENGTH_GAIN = 2;
     private static final int INITIAL_SAFE_DRAW = 5;
     private static final int TRIGGER_THRESHOLD = 6;
     private int cardsDrawn = 0;
