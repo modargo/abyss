@@ -86,13 +86,13 @@ public class EvolvingPower extends AbstractPower {
         };
         Evolution[] o2 = new Evolution [] {
                 new Evolution(BeatOfDeathPower.NAME, evolutionStrings.get(BeatOfDeathPower.POWER_ID), 1, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new BeatOfDeathPower(m, n), n))),
-                new Evolution(ThornsPower.NAME, 4, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new ThornsPower(m, n), n))),
+                new Evolution(ThornsPower.NAME, 3, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new ThornsPower(m, n), n))),
                 new Evolution(evolutionNames[0], 4, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), n, true, true)))
         };
         Evolution[] o3 = new Evolution [] {
                 new Evolution(BufferPower.NAME, evolutionStrings.get(BufferPower.POWER_ID), 5, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new BufferPower(m, n), n))),
                 new Evolution(MetallicizePower.NAME, evolutionStrings.get(MetallicizePower.POWER_ID), 25, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new MetallicizePower(m, n), n))),
-                new Evolution(evolutionNames[1], 100, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ChangeMaxHpAction(m, n, true)))
+                new Evolution(evolutionNames[1], 75, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ChangeMaxHpAction(m, n, true)))
         };
         Evolution[] o4 = new Evolution [] {
                 new Evolution(FrailPulsePower.NAME, evolutionStrings.get(FrailPulsePower.POWER_ID), 1, (AbstractCreature m, Integer n) -> AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new FrailPulsePower(m)))),
