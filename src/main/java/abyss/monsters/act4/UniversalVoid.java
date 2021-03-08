@@ -235,12 +235,8 @@ public class UniversalVoid extends CustomMonster
                 break;
             case RUIN_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.FIREBRICK.cpy())));
-                if (cycle < 3) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
-                }
-                else {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
-                }
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
