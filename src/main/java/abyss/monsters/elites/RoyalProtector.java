@@ -27,8 +27,8 @@ public class RoyalProtector extends CustomMonster {
     private static final byte ACID_EXPLOSION_ATTACK = 3;
     private static final byte FOR_THE_QUEEN_ATTACK = 4;
     private static final int CARAPACE_BLOCK_OR_PLATED_ARMOR = 5;
-    private static final int BURNING_SPIT_DAMAGE = 6;
-    private static final int A3_BURNING_SPIT_DAMAGE = 7;
+    private static final int BURNING_SPIT_DAMAGE = 7;
+    private static final int A3_BURNING_SPIT_DAMAGE = 8;
     private static final int BURNING_SPIT_BURNS = 1;
     private static final int ACID_EXPLOSION_DAMAGE = 22;
     private static final int A3_ACID_EXPLOSION_DAMAGE = 25;
