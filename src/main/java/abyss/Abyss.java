@@ -25,7 +25,6 @@ import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
 import abyss.relics.CrystalEnergy;
 import abyss.relics.HuntersRespect;
-import abyss.settings.ModSettings;
 import abyss.subscribers.TriggerDrainedPostExhaustSubscriber;
 import abyss.subscribers.TriggerGrayCrystalPowerPostPowerApplySubscriber;
 import abyss.subscribers.TriggerRedCrystalPowerPostExhaustSubscriber;
@@ -33,6 +32,7 @@ import abyss.subscribers.TriggerThoughtStealerPostDrawSubscriber;
 import abyss.util.TextureLoader;
 import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
+import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -68,8 +68,6 @@ public class Abyss implements
 
     public Abyss() {
         BaseMod.subscribe(this);
-        logger.info("Adding mod settings");
-        ModSettings.initialize();
     }
 
     public static void initialize() {
@@ -79,7 +77,7 @@ public class Abyss implements
     @Override
     public void receivePostInitialize() {
         Texture badgeTexture = new Texture("abyss/images/AbyssBadge.png");
-        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", ModSettings.getModPanel());
+        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", new ModPanel());
 
         CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
         CustomDungeon.addAct(VoidAct.ACT_NUM, new VoidAct());
