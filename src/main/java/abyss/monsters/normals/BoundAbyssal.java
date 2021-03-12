@@ -2,7 +2,6 @@ package abyss.monsters.normals;
 
 import abyss.Abyss;
 import abyss.cards.Corrupted;
-import abyss.cards.Tormented;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;

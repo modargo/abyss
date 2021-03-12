@@ -25,7 +25,7 @@ public class VoidAddVoidkillerScoreEntryPatch {
     @SpireInsertPatch(locator = VoidAddVoidkillerScoreEntryPatch.Locator.class)
     public static void AddVoidkillerScoreEntry(VictoryScreen __instance) {
         if (CardCrawlGame.dungeon instanceof VoidAct) {
-            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             stats.add(new GameOverStat(VOIDKILLER.NAME, VOIDKILLER.DESCRIPTIONS[0], Integer.toString(250)));
         }
     }

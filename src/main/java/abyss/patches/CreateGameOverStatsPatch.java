@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.screens.DeathScreen;
 import com.megacrit.cardcrawl.screens.GameOverScreen;
 import com.megacrit.cardcrawl.screens.GameOverStat;
@@ -18,8 +19,8 @@ import java.util.Map;
 public class CreateGameOverStatsPatch {
     private static String EliteScoreStringKey = "Beyond Elites Killed";
     private static String EliteName = CardCrawlGame.languagePack.getScoreString(EliteScoreStringKey).NAME;
-    private static int ActNum = 3;
-    private static String ActID = Exordium.ID;
+    private static final int ActNum = 3;
+    private static final String ActID = TheBeyond.ID;
 
     public static void RemoveScoreEntries(ArrayList<GameOverStat> stats) {
         int elitesSlain = CardCrawlGame.elites3Slain;
@@ -39,7 +40,7 @@ public class CreateGameOverStatsPatch {
     public static class VictoryScreenPatch {
         @SpirePostfixPatch
         public static void VictoryScreenPatch(VictoryScreen __instance) {
-            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             RemoveScoreEntries(stats);
         }
     }
@@ -51,7 +52,7 @@ public class CreateGameOverStatsPatch {
     public static class DeathScreenPatch {
         @SpirePostfixPatch
         public static void DeathScreenPatch(DeathScreen __instance) {
-            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             RemoveScoreEntries(stats);
         }
     }

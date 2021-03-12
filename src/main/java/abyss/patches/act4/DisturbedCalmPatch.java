@@ -17,7 +17,7 @@ public class DisturbedCalmPatch {
     @SpireInsertPatch(locator = DisturbedCalmPatch.Locator.class, localvars = { "oldStance" })
     public static void ReduceEnergyByOne(ChangeStanceAction __instance, AbstractStance oldStance) {
         if (AbstractDungeon.player.hasPower(DisturbedCalmPower.POWER_ID)) {
-            AbstractStance newStance = (AbstractStance)ReflectionHacks.getPrivate(__instance, ChangeStanceAction.class, "newStance");
+            AbstractStance newStance = ReflectionHacks.getPrivate(__instance, ChangeStanceAction.class, "newStance");
             DisturbedCalmPower power = (DisturbedCalmPower)AbstractDungeon.player.getPower(DisturbedCalmPower.POWER_ID);
             power.afterChangeStance(oldStance, newStance);
         }

@@ -22,8 +22,8 @@ public class DeepShrine extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     public static final String IMG = Abyss.eventImage(ID);
-    private static int GOLD = 120;
-    private static int A15_GOLD = 100;
+    private static final int GOLD = 120;
+    private static final int A15_GOLD = 100;
 
     private int gold;
     private boolean pickCard = false;

@@ -1,15 +1,11 @@
 package abyss.powers.act4;
 
 import abyss.Abyss;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.ConstrictedPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class OrbDecayPower extends AbstractPower {
     public static final String POWER_ID = "Abyss:OrbDecay";

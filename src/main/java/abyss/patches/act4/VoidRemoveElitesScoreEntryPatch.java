@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.screens.VictoryScreen;
 import java.util.ArrayList;
 
 public class VoidRemoveElitesScoreEntryPatch {
-    private static String ActID = VoidAct.ID;
+    private static final String ActID = VoidAct.ID;
 
     public static void RemoveScoreEntryForVoid(ArrayList<GameOverStat> stats) {
         int elitesSlain = ElitesSlain.getKilledElites().containsKey(ActID) ? ElitesSlain.getKilledElites().get(ActID).kills : 0;
@@ -33,7 +33,7 @@ public class VoidRemoveElitesScoreEntryPatch {
     public static class VictoryScreenPatch {
         @SpirePostfixPatch
         public static void VictoryScreenPatch(VictoryScreen __instance) {
-            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             RemoveScoreEntryForVoid(stats);
         }
     }
@@ -45,7 +45,7 @@ public class VoidRemoveElitesScoreEntryPatch {
     public static class DeathScreenPatch {
         @SpirePostfixPatch
         public static void DeathScreenPatch(DeathScreen __instance) {
-            ArrayList<GameOverStat> stats = (ArrayList<GameOverStat>) ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
+            ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             RemoveScoreEntryForVoid(stats);
         }
     }
