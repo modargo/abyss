@@ -34,7 +34,7 @@
       "Navigating a quiet area of the Abyss, you #b@startle@ as you find yourself face to face with a #rbehemoth far larger than any you've seen before. Astonishingly, it #gcamouflaged itself perfectly until you were right in front of it. NL NL Thankfully, rather than being aggressive, it almost seems like it's waiting for something. Perhaps if you give it an offering, it will let you pass?",
       "You decide to offer the behemoth something...",
       "You offer the behemoth only your #gappreciation. It brings its head close to you... then #glicks you. NL NL However, it also grazes you with its massive #ytusks. You've lost a bit of #rblood, but you feel #ghale #gand #ghearty.",
-      "You offer the behemoth a #yshiny #yrelic. The behemoth crunches down on the #yrelic, seeming like it enjoys the meal. NL NL After it finishes, it leaves behind some of its #bshed #bteeth, which turn out to be very useful material for upgrading your equipment.",
+      "You offer the behemoth a #yshiny #yrelic. The behemoth @crunches@ down on the #yrelic, seeming like it enjoys the meal. NL NL After it finishes, it leaves behind some of its #bshed #bteeth, which turn out to be very useful material for upgrading your equipment.",
       "You offer the behemoth some of your power. It gives the offering a questioning look, but accepts it and lets you pass.",
       "You offer the behemoth some of your power. It accepts the offering with fierce vigor and gives you some of its power in return."
     ],
@@ -44,6 +44,7 @@
       "[Golden] #gUpgrade #g{0} #grandom #gcards. #rLose {1}.",
       "[Locked] Requires {0}.",
       "[Vampiric] #gGain #g{0} #gMax #gHP. #rLose {1}.",
+      "[Narcotic] #gGain #g{0} #gMax #gHP. #rLose {1}.",
       "[Ghostly] #gGain #g{0} #gMax #gHP #gand {1}. #rLose {2}.",
       "[Gilded] #gGain #g{0} #ggold. #rLose {1}.",
       "[Elemental] #gGain #g{0} #gMax #gHP #gand {1}. #rLose {2}.",

@@ -7,6 +7,7 @@ import abyss.relics.BehemothsWisdom;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Apparition;
 import com.megacrit.cardcrawl.cards.colorless.Bite;
+import com.megacrit.cardcrawl.cards.colorless.JAX;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -37,6 +38,8 @@ public class ElderBehemoth extends AbstractImageEvent {
     private static final int A15_GOLDEN_IDOL_UPGRADES = 3;
     private static final int BITE_MAX_HEALTH = 3;
     private static final int A15_BITE_MAX_HEALTH = 2;
+    private static final int JAX_MAX_HEALTH = 2;
+    private static final int A15_JAX_MAX_HEALTH = 1;
     private static final int APPARITION_BLADE_MAX_HEALTH = 20;
     private static final int A15_APPARITION_BLADE_MAX_HEALTH = 15;
     private static final int GILDED_GOLD = 80;
@@ -50,6 +53,7 @@ public class ElderBehemoth extends AbstractImageEvent {
     private int healAmount;
     private int maxHealthCost;
     private int biteMaxHealth;
+    private int jaxMaxHealth;
     private int apparitionBladeMaxHealth;
     private AbstractRelic apparitionBladeRelic;
     private int gildedGold;
@@ -69,6 +73,11 @@ public class ElderBehemoth extends AbstractImageEvent {
         if (biteCardCost != null) {
             cardOptionsList.add(CardCostType.Bite);
             cardOptions.put(CardCostType.Bite, biteCardCost);
+        }
+        AbstractCard jaxCost = this.getRandomCardById(JAX.ID);
+        if (jaxCost != null) {
+            cardOptionsList.add(CardCostType.Jax);
+            cardOptions.put(CardCostType.Jax, jaxCost);
         }
         AbstractCard apparitionCardCost = this.getRandomCardById(Apparition.ID);
         if (apparitionCardCost != null) {
@@ -116,6 +125,9 @@ public class ElderBehemoth extends AbstractImageEvent {
         if (cardOptions.containsKey(CardCostType.Bite)) {
             biteGildedSpellOptions.add(CardCostType.Bite);
         }
+        if (cardOptions.containsKey(CardCostType.Jax)) {
+            biteGildedSpellOptions.add(CardCostType.Jax);
+        }
         if (cardOptions.containsKey(CardCostType.Gilded)) {
             biteGildedSpellOptions.add(CardCostType.Gilded);
         }
@@ -137,12 +149,14 @@ public class ElderBehemoth extends AbstractImageEvent {
         if (AbstractDungeon.ascensionLevel >= 15) {
             this.maxHealthCost = (int) ((float) AbstractDungeon.player.maxHealth * A15_MAX_HEALTH_LOSS_PERCENTAGE);
             this.biteMaxHealth = A15_BITE_MAX_HEALTH;
+            this.jaxMaxHealth = A15_JAX_MAX_HEALTH;
             this.apparitionBladeMaxHealth = A15_APPARITION_BLADE_MAX_HEALTH;
             this.gildedGold = A15_GILDED_GOLD;
         }
         else {
             this.maxHealthCost = (int) ((float) AbstractDungeon.player.maxHealth * MAX_HEALTH_LOSS_PERCENTAGE);
             this.biteMaxHealth = BITE_MAX_HEALTH;
+            this.jaxMaxHealth = JAX_MAX_HEALTH;
             this.apparitionBladeMaxHealth = APPARITION_BLADE_MAX_HEALTH;
             this.gildedGold = GILDED_GOLD;
         }
@@ -205,23 +219,26 @@ public class ElderBehemoth extends AbstractImageEvent {
             case Bite:
                 imageEventText.setDialogOption(MessageFormat.format(OPTIONS[4], this.biteMaxHealth, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
                 break;
+            case Jax:
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[5], this.jaxMaxHealth, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
+                break;
             case Apparition:
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[5], this.apparitionBladeMaxHealth, this.apparitionBladeRelic.name, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy(), this.apparitionBladeRelic);
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[6], this.apparitionBladeMaxHealth, this.apparitionBladeRelic.name, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy(), this.apparitionBladeRelic);
                 break;
             case Gilded:
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[6], this.gildedGold, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[7], this.gildedGold, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
                 break;
             case Blade:
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[7], this.apparitionBladeMaxHealth, this.apparitionBladeRelic.name, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy(), this.apparitionBladeRelic);
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[8], this.apparitionBladeMaxHealth, this.apparitionBladeRelic.name, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy(), this.apparitionBladeRelic);
                 break;
             case Spell:
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[8], this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[9], this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
                 break;
             case Rare:
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[9], this.rareRelic.name, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy(), this.rareRelic);
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[10], this.rareRelic.name, this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy(), this.rareRelic);
                 break;
             case Uncommon:
-                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[10], this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
+                imageEventText.setDialogOption(MessageFormat.format(OPTIONS[11], this.cardOptions.get(t).name), this.cardOptions.get(t).makeStatEquivalentCopy());
                 break;
             default: throw new RuntimeException("Unrecognized card cost type " + t.name());
         }
@@ -239,6 +256,10 @@ public class ElderBehemoth extends AbstractImageEvent {
             case Bite:
                 maxHp = this.biteMaxHealth;
                 choiceName = "Vampiric";
+                break;
+            case Jax:
+                maxHp = this.jaxMaxHealth;
+                choiceName = "Narcotic";
                 break;
             case Apparition:
                 maxHp = this.apparitionBladeMaxHealth;
@@ -350,6 +371,7 @@ public class ElderBehemoth extends AbstractImageEvent {
 
     private enum CardCostType {
         Bite,
+        Jax,
         Apparition,
         Gilded,
         Blade,
