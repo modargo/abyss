@@ -30,9 +30,9 @@ public class Hatchling extends CustomMonster {
     private static final int A2_NIBBLE_DAMAGE = 7;
     private static final int NIBBLE_HITS = 2;
     private static final int CORROSIVE_SPIT_ACID = 4;
-    private static final int A17_CORROSIVE_SPIT_ACID = 5;
-    private static final int HEADBUTT_DAMAGE = 8;
-    private static final int A2_HEADBUTT_DAMAGE = 9;
+    private static final int A17_CORROSIVE_SPIT_ACID = 6;
+    private static final int HEADBUTT_DAMAGE = 9;
+    private static final int A2_HEADBUTT_DAMAGE = 10;
     private static final int HEADBUTT_BLOCK = 10;
     private static final int A7_HEADBUTT_BLOCK = 12;
     private static final int HP_MIN = 60;
