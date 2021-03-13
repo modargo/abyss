@@ -34,10 +34,10 @@ public class EssenceThief extends CustomMonster {
     private static final int STEAL_ESSENCE_LIMIT = 5;
     private static final int ATTACKS_BEFORE_STEAL_ESSENCE = 2;
     private static final int A17_ATTACKS_BEFORE_STEAL_ESSENCE = 1;
-    private static final int HP_MIN = 70;
-    private static final int HP_MAX = 75;
-    private static final int A7_HP_MIN = 73;
-    private static final int A7_HP_MAX = 78;
+    private static final int HP_MIN = 73;
+    private static final int HP_MAX = 77;
+    private static final int A7_HP_MIN = 76;
+    private static final int A7_HP_MAX = 80;
     private int gooMissileDamage;
     private int stealEssenceAmount;
     private int attacksBeforeStealEssence;
