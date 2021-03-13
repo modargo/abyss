@@ -33,7 +33,7 @@ public class UnboundAbyssal extends CustomMonster {
     private static final int A2_SLUDGE_DAMAGE = 15;
     private static final int SLUDGE_SLIMES = 2;
     private static final int A17_SLUDGE_SLIMES = 2;
-    private static final int WONT_GO_BACK_DAMAGE = -1;
+    private static final int WONT_GO_BACK_DAMAGE = 10;
     private static final int A17_WONT_GO_BACK_DAMAGE = 12;
     private static final int WONT_GO_BACK_STRENGTH = 4;
     private static final int A17_WONT_GO_BACK_STRENGTH = 4;
