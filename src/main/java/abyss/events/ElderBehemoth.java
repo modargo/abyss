@@ -328,7 +328,7 @@ public class ElderBehemoth extends AbstractImageEvent {
                     AbstractDungeon.player.heal(this.healAmount);
                     logMetricHealAndLoseMaxHP(ID, "Appreciative", this.healAmount, this.maxHealthCost);
                     this.screenNum = 2;
-                    this.imageEventText.updateDialogOption(0, OPTIONS[11]);
+                    this.imageEventText.updateDialogOption(0, OPTIONS[12]);
                     this.imageEventText.clearRemainingOptions();
                 }
                 else if (buttonPressed == 1) {
@@ -345,7 +345,7 @@ public class ElderBehemoth extends AbstractImageEvent {
                     }
                     logMetric(ID, "Golden", null, null, null, upgradedCards, null, null, Collections.singletonList(this.relicCost.relicId), 0, 0, 0, 0, 0, 0);
                     this.screenNum = 2;
-                    this.imageEventText.updateDialogOption(0, OPTIONS[11]);
+                    this.imageEventText.updateDialogOption(0, OPTIONS[12]);
                     this.imageEventText.clearRemainingOptions();
                     break;
                 }
@@ -359,7 +359,7 @@ public class ElderBehemoth extends AbstractImageEvent {
                     }
                     this.offerCard(t);
                     this.screenNum = 2;
-                    this.imageEventText.updateDialogOption(0, OPTIONS[11]);
+                    this.imageEventText.updateDialogOption(0, OPTIONS[12]);
                     this.imageEventText.clearRemainingOptions();
                 }
                 break;
