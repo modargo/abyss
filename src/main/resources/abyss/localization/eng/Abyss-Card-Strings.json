@@ -33,7 +33,7 @@
   },
   "Abyss:Mineralized": {
     "NAME": "Mineralized",
-    "DESCRIPTION": "Ethereal. NL When this is Exhausted due to Ethereal, add a Dazed to your discard pile."
+    "DESCRIPTION": "Ethereal. NL At the end of your turn, add a Dazed to your discard pile."
   },
   "Abyss:Silenced": {
     "NAME": "Silenced",
