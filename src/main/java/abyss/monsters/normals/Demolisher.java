@@ -34,8 +34,8 @@ public class Demolisher extends CustomMonster {
     private static final int A17_BODY_TOXIN_VULNERABLE = 2;
     private static final int SAFEGUARD_BLOCK = 8;
     private static final int A7_SAFEGUARD_BLOCK = 10;
-    private static final int FRENZY_DAMAGE = 1;
-    private static final int A2_FRENZY_DAMAGE = 2;
+    private static final int FRENZY_DAMAGE = 3;
+    private static final int A2_FRENZY_DAMAGE = 4;
     private static final int FRENZY_HITS = 3;
     private static final int A17_FRENZY_HITS = 4;
     private static final int HP_MIN = 74;
