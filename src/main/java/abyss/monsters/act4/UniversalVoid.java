@@ -63,7 +63,7 @@ public class UniversalVoid extends CustomMonster
     private static final int A19_INVINCIBLE = 200;
     private static final int BEAT_OF_DEATH = 1;
     private static final int A19_BEAT_OF_DEATH = 2;
-    private static final int STARTING_STRENGTH = 4;
+    private static final int STARTING_STRENGTH = 0;
     private static final int HP = 650;
     private static final int A9_HP = 700;
     private int obliterateDamage;
@@ -127,7 +127,9 @@ public class UniversalVoid extends CustomMonster
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new InvinciblePower(this, this.invincible), this.invincible));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, this.beatOfDeath), this.beatOfDeath));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new EmptinessPower(this)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, STARTING_STRENGTH), STARTING_STRENGTH));
+        if (STARTING_STRENGTH > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, STARTING_STRENGTH), STARTING_STRENGTH));
+        }
     }
 
     @Override
