@@ -28,8 +28,8 @@ public class CorruptedStone extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     public static final String IMG = Abyss.eventImage(ID);
-    private static final float MAX_HEALTH_LOSS_PERCENT = 0.10F;
-    private static final float A15_MAX_HEALTH_LOSS_PERCENT = 0.14F;
+    private static final float MAX_HEALTH_LOSS_PERCENT = 0.08F;
+    private static final float A15_MAX_HEALTH_LOSS_PERCENT = 0.12F;
     private static final int MAX_HEALTH_LOSS_FLOOR = 4;
     private static final int A15_MAX_HEALTH_LOSS_FLOOR = 5;
 
