@@ -179,8 +179,10 @@ public class PrimevalQueen extends CustomMonster
     public void summonRoyalProtectors(int numberToSummon, boolean firstTurn, boolean endOfTurn) {
         for (int i = 0; i < numberToSummon; i++) {
             int slot = this.getFirstFreeMinionSlot();
-            float xPosition = this.slotToXPosition(slot);
-            AbstractDungeon.actionManager.addToBottom(new SummonRoyalProtectorAction(xPosition, 0.0F, firstTurn, endOfTurn, this.activeMinions, slot));
+            if (slot != -1) {
+                float xPosition = this.slotToXPosition(slot);
+                AbstractDungeon.actionManager.addToBottom(new SummonRoyalProtectorAction(xPosition, 0.0F, firstTurn, endOfTurn, this.activeMinions, slot));
+            }
         }
     }
 
