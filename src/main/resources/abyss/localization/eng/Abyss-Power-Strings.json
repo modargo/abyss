@@ -11,6 +11,10 @@
     "NAME": "Resummon",
     "DESCRIPTIONS": ["#pVoid #pHerald will resummon #pVoid #pSpawn one turn after it dies, with the same amount of positive #yStrength as #pVoid #pHerald."]
   },
+  "Abyss:DurableMinion": {
+    "NAME": "Durable Minion",
+    "DESCRIPTIONS": ["This minion will not abandon combat when its leader is defeated."]
+  },
   "Abyss:Abysstouched": {
     "NAME": "Abysstouched",
     "DESCRIPTIONS": ["Take #b{0}% more damage from #yAttacks. At the end of your turn, take #b{0} damage.", "Receive #b{0}% more damage from #yAttacks. At the start of its turn, takes #b{0} damage."]
