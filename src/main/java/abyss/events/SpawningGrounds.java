@@ -73,7 +73,7 @@ public class SpawningGrounds extends AbstractImageEvent {
                     case 0: // Familiar
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, this.damage));
-                        if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getUpgradableCards()).size() > 0) {
+                        if (AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0) {
                             AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getUpgradableCards(), 1, OPTIONS[3], true, false, false, false);
                         }
                         this.screenNum = 2;

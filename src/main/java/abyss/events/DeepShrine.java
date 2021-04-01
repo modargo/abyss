@@ -81,10 +81,10 @@ public class DeepShrine extends AbstractImageEvent {
                         this.screenNum = 1;
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
-                        if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() > 0) {
+                        if (AbstractDungeon.player.masterDeck.getUpgradableCards().size() > 0) {
                             this.pickCard = true;
                             this.remove = false;
-                            AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[4], true, false, false, false);
+                            AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getUpgradableCards(), 1, OPTIONS[4], true, false, false, false);
                         }
                         break;
                     case 1: // Pray
