@@ -24,11 +24,11 @@ public class GluttonousAbomination extends CustomMonster {
     private boolean firstMove = true;
     private static final byte GRASPING_CLAWS_ATTACK = 1;
     private static final byte UNHINGED_JAW_ATTACK = 2;
-    private static final int GRASPING_CLAWS_DAMAGE = 4;
-    private static final int A2_GRASPING_CLAWS_DAMAGE = 5;
+    private static final int GRASPING_CLAWS_DAMAGE = 5;
+    private static final int A2_GRASPING_CLAWS_DAMAGE = 6;
     private static final int GRASPING_CLAWS_HITS = 2;
-    private static final int UNHINGED_JAW_DAMAGE = 11;
-    private static final int A2_UNHINGED_JAW_DAMAGE = 13;
+    private static final int UNHINGED_JAW_DAMAGE = 12;
+    private static final int A2_UNHINGED_JAW_DAMAGE = 14;
     private static final int GLUTTONY = 8;
     private static final int A17_GLUTTONY = 8;
     private static final int HP_MIN = 225;
