@@ -20,8 +20,8 @@ public class BigGameHunter extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     public static final String IMG = Abyss.eventImage(ID);
-    private static final int MAX_HEALTH_LOSS = 3;
-    private static final int A15_MAX_HEALTH_LOSS = 4;
+    private static final int MAX_HEALTH_LOSS = 4;
+    private static final int A15_MAX_HEALTH_LOSS = 5;
     private static final int MAX_HEALTH_GAIN = 7;
     private static final int A15_MAX_HEALTH_GAIN = 5;
     private static final String HuntersKnifeId = "Menagerie:HuntersKnife";
