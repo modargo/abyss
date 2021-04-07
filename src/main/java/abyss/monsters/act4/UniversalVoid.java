@@ -57,21 +57,18 @@ public class UniversalVoid extends CustomMonster
     private static final int EMBRACE_THE_END_FINAL_STRENGTH = 60;
     private static final int ALL_IS_DUST_DAMAGE = 23;
     private static final int A4_ALL_IS_DUST_DAMAGE = 26;
-    private static final int ALL_IS_DUST_METALLICIZE = 5;
-    private static final int A9_ALL_IS_DUST_METALLICIZE = 10;
     private static final int INVINCIBLE = 300;
     private static final int A19_INVINCIBLE = 200;
     private static final int BEAT_OF_DEATH = 1;
     private static final int A19_BEAT_OF_DEATH = 2;
     private static final int STARTING_STRENGTH = 0;
-    private static final int HP = 650;
-    private static final int A9_HP = 700;
+    private static final int HP = 700;
+    private static final int A9_HP = 750;
     private int obliterateDamage;
     private int ravageDamage;
     private int ravageHits;
     private int damnationDamage;
     private int allIsDustDamage;
-    private int allIsDustMetallicize;
     private int beatOfDeath;
     private int invincible;
 
@@ -84,10 +81,8 @@ public class UniversalVoid extends CustomMonster
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);
-            this.allIsDustMetallicize = A9_ALL_IS_DUST_METALLICIZE;
         } else {
             this.setHp(HP);
-            this.allIsDustMetallicize = ALL_IS_DUST_METALLICIZE;
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
@@ -206,7 +201,7 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, 1), 1));
                 }
                 else {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MetallicizePower(this, this.allIsDustMetallicize), this.allIsDustMetallicize));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PainfulStabsPower(this)));
                 }
                 break;
             case RUIN_DEBUFF:
