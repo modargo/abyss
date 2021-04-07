@@ -146,32 +146,7 @@ public class UniversalVoid extends CustomMonster
                 break;
             case CALAMITY_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new CalamityDebuffEffect(), 1.0F));
-                boolean isUnknownClass = !Arrays.asList(AbstractPlayer.PlayerClass.IRONCLAD, AbstractPlayer.PlayerClass.THE_SILENT, AbstractPlayer.PlayerClass.DEFECT, AbstractPlayer.PlayerClass.WATCHER).contains(AbstractDungeon.player.chosenClass);
-                if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.IRONCLAD) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReducedCombatHealingPower(AbstractDungeon.player)));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
-                }
-                if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.THE_SILENT) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FeeblePoisonPower(AbstractDungeon.player)));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FlimsyDaggersPower(AbstractDungeon.player)));
-                }
-                if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.DEFECT) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakOrbsPower(AbstractDungeon.player)));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
-                }
-                if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.WATCHER) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DisturbedCalmPower(AbstractDungeon.player)));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SubduedSpiritPower(AbstractDungeon.player)));
-                }
-                if (isUnknownClass) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReducedCombatHealingPower(AbstractDungeon.player)));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
-                    if (!AbstractDungeon.player.orbs.isEmpty()) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakOrbsPower(AbstractDungeon.player)));
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
-                    }
-                }
-
+                this.applyCalamityDebuff();
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, CALAMITY_DEBUFF_AMOUNT, true), CALAMITY_DEBUFF_AMOUNT));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, CALAMITY_DEBUFF_AMOUNT, true), CALAMITY_DEBUFF_AMOUNT));
                 break;
@@ -241,6 +216,33 @@ public class UniversalVoid extends CustomMonster
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
+    }
+
+    private void applyCalamityDebuff() {
+        boolean isUnknownClass = !Arrays.asList(AbstractPlayer.PlayerClass.IRONCLAD, AbstractPlayer.PlayerClass.THE_SILENT, AbstractPlayer.PlayerClass.DEFECT, AbstractPlayer.PlayerClass.WATCHER).contains(AbstractDungeon.player.chosenClass);
+        if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.IRONCLAD) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReducedHealingPower(AbstractDungeon.player)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
+        }
+        if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.THE_SILENT) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FeeblePoisonPower(AbstractDungeon.player)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FlimsyDaggersPower(AbstractDungeon.player)));
+        }
+        if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.DEFECT) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new WeakOrbsPower(AbstractDungeon.player)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
+        }
+        if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.WATCHER) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DisturbedCalmPower(AbstractDungeon.player)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new SubduedSpiritPower(AbstractDungeon.player)));
+        }
+        if (isUnknownClass) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VoidEmbracePower(AbstractDungeon.player)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
+            if (!AbstractDungeon.player.orbs.isEmpty()) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
+            }
+        }
     }
 
     @Override

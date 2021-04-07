@@ -113,7 +113,7 @@
       "At the end of this enemy''s turn, gains #b{0} #yArtifact if it attacked and dealt #b{1} or less unblocked attack damage."
     ]
   },
-  "Abyss:ReducedCombatHealing": {
+  "Abyss:ReducedHealing": {
     "NAME": "Reduced Healing",
     "DESCRIPTIONS": ["#pUncleansable. Healing is #b{0}% less effective."]
   },
@@ -144,5 +144,9 @@
   "Abyss:SubduedSpirit": {
     "NAME": "Subdued Spirit",
     "DESCRIPTIONS": ["#pUncleansable. Deal a third less attack damage in Wrath and Divinity."]
+  },
+  "Abyss:VoidEmbrace": {
+    "NAME": "Void Embrace",
+    "DESCRIPTIONS": ["#pUncleansable. Each odd turn, draw one less card. Each even turn, lose [E] ."]
   }
 }

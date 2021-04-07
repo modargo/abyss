@@ -6,14 +6,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class ReducedCombatHealingPower extends AbstractPower {
-    public static final String POWER_ID = "Abyss:ReducedCombatHealing";
+public class ReducedHealingPower extends AbstractPower {
+    public static final String POWER_ID = "Abyss:ReducedHealing";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
     private static final int HEAL_MULTIPLIER = 30;
 
-    public ReducedCombatHealingPower(AbstractCreature owner) {
+    public ReducedHealingPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
