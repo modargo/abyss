@@ -95,9 +95,9 @@ public class Abyss implements
         BaseMod.addMonster(SquirmingHorror.ID, (BaseMod.GetMonster)SquirmingHorror::new);
         BaseMod.addMonster(Encounters.HATCHLINGS, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new Hatchling(-450.0F, 10.0F, true),
-                        new Hatchling(-150.0F, -30.0F, false),
-                        new Hatchling(150.0F, 20.0F, true)
+                        new Hatchling(-450.0F, 10.0F, false),
+                        new Hatchling(-150.0F, -30.0F, true),
+                        new Hatchling(150.0F, 20.0F, false)
                 }));
         BaseMod.addMonster(Encounters.DEMOLISHER_AND_HUNTERS, () -> new MonsterGroup(
                 new AbstractMonster[] {
@@ -110,7 +110,7 @@ public class Abyss implements
         BaseMod.addMonster(Encounters.HATCHLINGS_HARD, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new Hatchling(-450.0F, 10.0F, false),
-                        new Hatchling(-150.0F, -30.0F, true),
+                        new Hatchling(-150.0F, -30.0F, false),
                         new Hatchling(150.0F, 20.0F, false)
                 }));
         BaseMod.addMonster(Encounters.DEMOLISHER_HUNTER_AND_HATCHLING, () -> new MonsterGroup(
