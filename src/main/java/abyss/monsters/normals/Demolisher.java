@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.SporeCloudPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class Demolisher extends CustomMonster {
@@ -38,6 +39,7 @@ public class Demolisher extends CustomMonster {
     private static final int A2_FRENZY_DAMAGE = 4;
     private static final int FRENZY_HITS = 3;
     private static final int A17_FRENZY_HITS = 4;
+    private static final int SPORE_CLOUD_AMOUNT = 2;
     private static final int HP_MIN = 74;
     private static final int HP_MAX = 78;
     private static final int A7_HP_MIN = 76;
@@ -82,6 +84,11 @@ public class Demolisher extends CustomMonster {
             this.bodyToxinVulnerable = BODY_TOXIN_VULNERABLE;
             this.frenzyHits = FRENZY_HITS;
         }
+    }
+
+    @Override
+    public void usePreBattleAction() {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SporeCloudPower(this, SPORE_CLOUD_AMOUNT)));
     }
 
     @Override

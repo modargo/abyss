@@ -6,10 +6,7 @@ import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -94,7 +91,12 @@ public class SquirmingHorror extends CustomMonster {
             case EMBRACE_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DelayedAbysstouchedPower(AbstractDungeon.player, this.embraceAbysstouched), this.embraceAbysstouched));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Slimed(), this.embraceSlimes));
+                if (AbstractDungeon.ascensionLevel >= 17) {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Slimed(), this.embraceSlimes, true, true));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Slimed(), this.embraceSlimes));
+                }
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
