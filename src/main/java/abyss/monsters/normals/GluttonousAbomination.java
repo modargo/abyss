@@ -30,7 +30,7 @@ public class GluttonousAbomination extends CustomMonster {
     private static final int UNHINGED_JAW_DAMAGE = 12;
     private static final int A2_UNHINGED_JAW_DAMAGE = 14;
     private static final int GLUTTONY = 8;
-    private static final int A17_GLUTTONY = 8;
+    private static final int A17_GLUTTONY = 7;
     private static final int HP_MIN = 225;
     private static final int HP_MAX = 225;
     private static final int A7_HP_MIN = 250;
