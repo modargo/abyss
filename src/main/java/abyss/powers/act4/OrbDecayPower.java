@@ -2,8 +2,10 @@ package abyss.powers.act4;
 
 import abyss.Abyss;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -28,7 +30,7 @@ public class OrbDecayPower extends AbstractPower {
     @Override
     public void atStartOfTurn() {
         this.amount = (this.amount + 1) % TURNS;
-        if (this.amount == 0) {
+        if (this.amount == 0 && AbstractDungeon.player.orbs.size() > 1) {
             this.flash();
             this.addToTop(new DecreaseMaxOrbAction(1));
         }

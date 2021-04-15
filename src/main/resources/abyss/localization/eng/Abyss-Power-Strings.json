@@ -135,7 +135,7 @@
   },
   "Abyss:OrbDecay": {
     "NAME": "Orb Decay",
-    "DESCRIPTIONS": ["#pUncleansable. At the start of every third turn, lose an orb slot."]
+    "DESCRIPTIONS": ["#pUncleansable. At the start of every third turn, if you have more than one orb slot, lose an orb slot."]
   },
   "Abyss:DisturbedCalm": {
     "NAME": "Disturbed Calm",
