@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,11 +25,14 @@ import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.HeartBuffEffect;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Arrays;
 
 public class UniversalVoid extends CustomMonster
 {
+    private static final Logger logger = LogManager.getLogger(UniversalVoid.class.getName());
     public static final String ID = "Abyss:UniversalVoid";
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
@@ -214,6 +218,8 @@ public class UniversalVoid extends CustomMonster
     }
 
     private void applyCalamityDebuff() {
+        logger.info("Player class: " + AbstractDungeon.player.chosenClass.name());
+
         boolean isUnknownClass = !Arrays.asList(AbstractPlayer.PlayerClass.IRONCLAD, AbstractPlayer.PlayerClass.THE_SILENT, AbstractPlayer.PlayerClass.DEFECT, AbstractPlayer.PlayerClass.WATCHER).contains(AbstractDungeon.player.chosenClass);
         if (AbstractDungeon.player.chosenClass == AbstractPlayer.PlayerClass.IRONCLAD) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ReducedHealingPower(AbstractDungeon.player)));
@@ -234,9 +240,6 @@ public class UniversalVoid extends CustomMonster
         if (isUnknownClass) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VoidEmbracePower(AbstractDungeon.player)));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthDegenerationPower(AbstractDungeon.player)));
-            if (!AbstractDungeon.player.orbs.isEmpty()) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new OrbDecayPower(AbstractDungeon.player)));
-            }
         }
     }
 
