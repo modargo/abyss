@@ -23,7 +23,7 @@ public class Silenced extends CustomCard {
 
     @Override
     public boolean canPlay(AbstractCard card) {
-        if (card.cost >= 2 && !card.cardID.equals(ID)) {
+        if (card.costForTurn >= 2 && !card.cardID.equals(ID)) {
             card.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
             return false;
         } else {
