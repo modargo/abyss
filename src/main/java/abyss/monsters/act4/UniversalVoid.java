@@ -66,8 +66,8 @@ public class UniversalVoid extends CustomMonster
     private static final int BEAT_OF_DEATH = 1;
     private static final int A19_BEAT_OF_DEATH = 2;
     private static final int STARTING_STRENGTH = 0;
-    private static final int HP = 700;
-    private static final int A9_HP = 750;
+    private static final int HP = 650;
+    private static final int A9_HP = 700;
     private int obliterateDamage;
     private int ravageDamage;
     private int ravageHits;
