@@ -79,6 +79,7 @@ public class UnboundAbyssal extends CustomMonster {
             this.tendrilsDamage = TENDRILS_DAMAGE;
         }
         this.damage.add(new DamageInfo(this, this.sludgeDamage));
+        this.damage.add(new DamageInfo(this, this.wontGoBackDamage));
         this.damage.add(new DamageInfo(this, this.tendrilsDamage));
 
         if (AbstractDungeon.ascensionLevel >= 17) {
@@ -121,7 +122,7 @@ public class UnboundAbyssal extends CustomMonster {
                 }
                 if (AbstractDungeon.ascensionLevel >= 17) {
                     AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.POISON));
                 }
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, this.wontGoBackStrength), this.wontGoBackStrength));
                 break;
@@ -129,7 +130,7 @@ public class UnboundAbyssal extends CustomMonster {
                 //TODO Black sludge effect
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 for (int i=0; i < TENDRILS_HITS; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.POISON));
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.POISON));
                 }
                 break;
         }
