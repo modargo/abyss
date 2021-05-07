@@ -4,10 +4,7 @@ import abyss.act.AbyssAct;
 import abyss.act.Encounters;
 import abyss.act.VoidAct;
 import abyss.cards.*;
-import abyss.cards.act4.Doomed;
-import abyss.cards.act4.Overwhelmed;
-import abyss.cards.act4.Shadowed;
-import abyss.cards.act4.Silenced;
+import abyss.cards.act4.*;
 import abyss.events.*;
 import abyss.monsters.act4.AnnihilationMage;
 import abyss.monsters.act4.AnnihilationWarrior;
@@ -212,7 +209,9 @@ public class Abyss implements
 
         //Universal Void statuses
         BaseMod.addCard(new Doomed());
+        BaseMod.addCard(new Maimed());
         BaseMod.addCard(new Overwhelmed());
+        BaseMod.addCard(new Pressured());
         BaseMod.addCard(new Shadowed());
         BaseMod.addCard(new Silenced());
 

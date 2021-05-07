@@ -33,7 +33,7 @@
   },
   "Abyss:Mineralized": {
     "NAME": "Mineralized",
-    "DESCRIPTION": "Ethereal. NL At the end of your turn, add a Dazed to your discard pile."
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL At the end of your turn, add a Dazed to your discard pile."
   },
   "Abyss:Silenced": {
     "NAME": "Silenced",
@@ -42,12 +42,11 @@
   },
   "Abyss:Overwhelmed": {
     "NAME": "Overwhelmed",
-    "DESCRIPTION": "Exhaust.",
-    "EXTENDED_DESCRIPTION": ["I cannot play cards that cost 2 or more."]
+    "DESCRIPTION": "Exhaust."
   },
   "Abyss:Doomed": {
     "NAME": "Doomed",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this is Exhausted, shuffle a Regret into your draw pile."
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this is Exhausted, take !M! damage and put a Doomed on the bottom of your draw pile."
   },
   "Abyss:Shadowed": {
     "NAME": "Shadowed",
@@ -55,6 +54,10 @@
   },
   "Abyss:Pressured": {
     "NAME": "Pressured",
-    "DESCRIPTION": "Unplayable. NL Ethereal. NL Whenever this card is drawn, add a Dazed to your discard pile."
+    "DESCRIPTION": "Unplayable. NL Ethereal. NL When this card is drawn, add a Dazed to your discard pile."
+  },
+  "Abyss:Maimed": {
+    "NAME": "Maimed",
+    "DESCRIPTION": "Gain 2 Frail and 2 Weak. NL Exhaust."
   }
 }

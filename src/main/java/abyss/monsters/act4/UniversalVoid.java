@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -176,9 +175,14 @@ public class UniversalVoid extends CustomMonster
                 int fireballs = 3;
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamnationEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, fireballs), fireballs * DamnationEffect.TIME_PER_FIREBALL));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pressured(), 1, true, false, false, (float)Settings.WIDTH * 0.30F, (float)Settings.HEIGHT / 2.0F));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, false, false, (float)Settings.WIDTH * 0.5F, (float)Settings.HEIGHT / 2.0F));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, false, false, (float)Settings.WIDTH * 0.70F, (float)Settings.HEIGHT / 2.0F));
+                if (cycle == 0) {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pressured(), 1, true, false, false, (float) Settings.WIDTH * 0.30F, (float) Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, false, false, (float) Settings.WIDTH * 0.5F, (float) Settings.HEIGHT / 2.0F));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, false, false, (float) Settings.WIDTH * 0.70F, (float) Settings.HEIGHT / 2.0F));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
+                }
                 break;
             case EMBRACE_THE_END_BUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.NAVY.cpy())));
@@ -210,8 +214,13 @@ public class UniversalVoid extends CustomMonster
                 break;
             case RUIN_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.FIREBRICK.cpy())));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
+                if (cycle < 3) {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Maimed(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
+                }
+                else {
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
+                }
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
