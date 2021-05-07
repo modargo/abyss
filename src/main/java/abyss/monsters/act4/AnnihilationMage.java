@@ -1,7 +1,7 @@
 package abyss.monsters.act4;
 
 import abyss.Abyss;
-import abyss.cards.Tormented;
+import abyss.cards.Corrupted;
 import abyss.powers.AbysstouchedPower;
 import abyss.powers.AbysstouchedPulsePower;
 import abyss.powers.DelayedAbysstouchedPower;
@@ -159,7 +159,7 @@ public class AnnihilationMage extends CustomMonster
                     AbstractDungeon.effectsQueue.add(effect);
                 }
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Tormented(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Corrupted(), 1, true, true));
                 break;
             case LESSER_ANNIHILATION_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
