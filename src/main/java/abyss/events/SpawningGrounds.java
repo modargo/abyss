@@ -87,6 +87,7 @@ public class SpawningGrounds extends AbstractImageEvent {
                         this.screenNum = 2;
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
                         this.imageEventText.clearRemainingOptions();
+                        break;
                     case 2: // Turn Back
                         this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
                         logMetricIgnored(ID);
