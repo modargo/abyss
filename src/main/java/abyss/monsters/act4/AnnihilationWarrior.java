@@ -185,7 +185,7 @@ public class AnnihilationWarrior extends CustomMonster
             case 3:
                 moves.remove(this.moveHistory.get(this.moveHistory.size() - 1));
                 moves.remove(this.moveHistory.get(this.moveHistory.size() - 2));
-                move = moves.contains(TOUCH_OF_SUFFERING_DEBUFF) ? (num < 50 ? moves.get(0) : moves.get(1)) : TOUCH_OF_SUFFERING_DEBUFF;
+                move = moves.contains(TOUCH_OF_SUFFERING_DEBUFF) ? TOUCH_OF_SUFFERING_DEBUFF : (num < 50 ? moves.get(0) : moves.get(1));
                 break;
             case 4:
                 moves.remove(this.moveHistory.get(this.moveHistory.size() - 1));
