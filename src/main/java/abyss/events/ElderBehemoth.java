@@ -40,8 +40,8 @@ public class ElderBehemoth extends AbstractImageEvent {
     private static final int A15_BITE_MAX_HEALTH = 2;
     private static final int JAX_MAX_HEALTH = 2;
     private static final int A15_JAX_MAX_HEALTH = 1;
-    private static final int APPARITION_BLADE_MAX_HEALTH = 20;
-    private static final int A15_APPARITION_BLADE_MAX_HEALTH = 15;
+    private static final int APPARITION_BLADE_MAX_HEALTH = 18;
+    private static final int A15_APPARITION_BLADE_MAX_HEALTH = 12;
     private static final int GILDED_GOLD = 80;
     private static final int A15_GILDED_GOLD = 50;
 
