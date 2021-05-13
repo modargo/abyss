@@ -52,8 +52,8 @@ public class AnnihilationMage extends CustomMonster
     private static final int A18_STRENGTH_FROM_THE_VOID_STRENGTH = 2;
     private static final int STRENGTH_FROM_THE_VOID_ARTIFACT = 1;
     private static final int A18_STRENGTH_FROM_THE_VOID_ARTIFACT = 1;
-    private static final int BREATH_OF_DARKNESS_DAMAGE = 0;
-    private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 1;
+    private static final int BREATH_OF_DARKNESS_DAMAGE = 1;
+    private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 2;
     private static final int BREATH_OF_DARKNESS_HITS = 3;
     private static final int BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
     private static final int A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
