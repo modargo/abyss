@@ -48,8 +48,8 @@ public class AnnihilationWarrior extends CustomMonster
     private static final int A18_TOUCH_OF_SUFFERING_ABYSSTOUCHED = 5;
     private static final int CIRCLE_OF_PROTECTION_BLOCK = 50;
     private static final int A8_CIRCLE_OF_PROTECTION_BLOCK = 80;
-    private static final int POLEAXE_DAMAGE = 9;
-    private static final int A3_POLEAXE_DAMAGE = 10;
+    private static final int POLEAXE_DAMAGE = 10;
+    private static final int A3_POLEAXE_DAMAGE = 12;
     private static final int POLEAXE_BLOCK = 15;
     private static final int A8_POLEAXE_BLOCK = 25;
     private static final int HP_MIN = 130;
