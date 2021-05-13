@@ -30,13 +30,13 @@ public class DeepTyrant extends CustomMonster
     private static final byte THRASH_ATTACK = 3;
     private static final byte BODY_SLAM_ATTACK = 4;
     private static final byte CALL_THE_ABYSS_MOVE = 5;
-    private static final int BLAST_DAMAGE = 21;
-    private static final int A4_BLAST_DAMAGE = 23;
+    private static final int BLAST_DAMAGE = 22;
+    private static final int A4_BLAST_DAMAGE = 24;
     private static final int BLAST_WOUNDS = 2;
     private static final int ABYSSAL_GAZE_WEAK_FRAIL = 2;
     private static final int A19_ABYSSAL_GAZE_WEAK_FRAIL = 2;
-    private static final int ABYSSAL_GAZE_AMOUNT = 6;
-    private static final int A19_ABYSSAL_GAZE_AMOUNT = 9;
+    private static final int ABYSSAL_GAZE_AMOUNT = 7;
+    private static final int A19_ABYSSAL_GAZE_AMOUNT = 10;
     private static final int THRASH_DAMAGE = 12;
     private static final int A4_THRASH_DAMAGE = 14;
     private static final int THRASH_HITS = 2;
@@ -48,6 +48,8 @@ public class DeepTyrant extends CustomMonster
     private static final int A4_BODY_SLAM_DAMAGE = 30;
     private static final int CALL_THE_ABYSS_SUMMONS = 2;
     private static final int A19_CALL_THE_ABYSS_SUMMONS = 3;
+    private static final int STARTING_ARTIFACT = 1;
+    private static final int A19_STARTING_ARTIFACT = 2;
     private static final int HP = 475;
     private static final int A9_HP = 500;
     private int blastDamage;
@@ -58,6 +60,7 @@ public class DeepTyrant extends CustomMonster
     private int thrashArtifact;
     private int bodySlamDamage;
     private int callTheAbyssSummons;
+    private int startingArtifact;
 
     private boolean summoned;
 
@@ -94,6 +97,7 @@ public class DeepTyrant extends CustomMonster
             this.thrashStrength = A19_THRASH_STRENGTH;
             this.thrashArtifact = A19_THRASH_ARTIFACT;
             this.callTheAbyssSummons = A19_CALL_THE_ABYSS_SUMMONS;
+            this.startingArtifact = A19_STARTING_ARTIFACT;
         }
         else {
             this.terrifyingGazeWeakFrail = ABYSSAL_GAZE_WEAK_FRAIL;
@@ -101,6 +105,7 @@ public class DeepTyrant extends CustomMonster
             this.thrashStrength = THRASH_STRENGTH;
             this.thrashArtifact = THRASH_ARTIFACT;
             this.callTheAbyssSummons = CALL_THE_ABYSS_SUMMONS;
+            this.startingArtifact = STARTING_ARTIFACT;
         }
     }
 
@@ -109,6 +114,8 @@ public class DeepTyrant extends CustomMonster
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.startingArtifact)));
     }
 
     @Override
