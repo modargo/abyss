@@ -82,7 +82,7 @@ public class SpawningGrounds extends AbstractImageEvent {
                         break;
                     case 1: // Unfamiliar
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, this.damage));
+                        AbstractDungeon.player.damage(new DamageInfo(null, this.damage));
                         this.showCardReward(1);
                         this.screenNum = 2;
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);

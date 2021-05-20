@@ -75,7 +75,7 @@ public class HungryVoid extends AbstractImageEvent {
                             cards.add(c.cardID);
                             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F - (350.0F + 350.0F * i) * Settings.xScale, (float)Settings.HEIGHT / 2.0F));
                         }
-                        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, this.healthLoss));
+                        AbstractDungeon.player.damage(new DamageInfo(null, this.healthLoss));
                         logMetric(ID, "Accept", cards, null, null, null, null, null, null, this.healthLoss, 0, 0, 0, 0, 0);
                         this.screenNum = 1;
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
