@@ -51,10 +51,10 @@ public class GnawingCorruption extends CustomMonster
     private static final int ALL_EYES_DAMAGE = 10;
     private static final int A3_ALL_EYES_DAMAGE = 11;
     private static final int ALL_EYES_HITS = 5;
-    private static final int HP_MIN = 300;
-    private static final int HP_MAX = 300;
-    private static final int A8_HP_MIN = 340;
-    private static final int A8_HP_MAX = 340;
+    private static final int HP_MIN = 320;
+    private static final int HP_MAX = 320;
+    private static final int A8_HP_MIN = 350;
+    private static final int A8_HP_MAX = 350;
     private int gnawingCorruptionStatuses;
     private int tentacleSweepDamage;
     private int leftEyeDamage;
