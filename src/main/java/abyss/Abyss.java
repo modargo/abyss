@@ -74,7 +74,7 @@ public class Abyss implements
     @Override
     public void receivePostInitialize() {
         Texture badgeTexture = new Texture("abyss/images/AbyssBadge.png");
-        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", new ModPanel());
+        BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 and 4 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", new ModPanel());
 
         CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
         CustomDungeon.addAct(VoidAct.ACT_NUM, new VoidAct());
