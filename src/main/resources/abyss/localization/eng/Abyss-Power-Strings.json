@@ -119,7 +119,7 @@
   },
   "Abyss:StrengthDegeneration": {
     "NAME": "Strength Degeneration",
-    "DESCRIPTIONS": ["#pUncleansable. At the start of each turn, if your #yStrength is positive, lose {0}% of it."]
+    "DESCRIPTIONS": ["#pUncleansable. At the start of each turn, lose {0}% of any positive #yStrength."]
   },
   "Abyss:FlimsyDaggers": {
     "NAME": "Flimsy Daggers",
