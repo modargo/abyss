@@ -82,6 +82,7 @@ public class CorruptedStone extends AbstractImageEvent {
                 AbstractDungeon.player.decreaseMaxHealth(this.maxHealthLoss);
                 logMetricMaxHPLoss(ID, "Touch", this.maxHealthLoss);
                 this.showSpecialCardReward(1);
+                this.screenNum = 2;
                 this.imageEventText.updateDialogOption(0, OPTIONS[4]);
                 this.imageEventText.clearRemainingOptions();
                 break;
