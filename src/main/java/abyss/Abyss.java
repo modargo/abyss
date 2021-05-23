@@ -76,9 +76,7 @@ public class Abyss implements
         Texture badgeTexture = new Texture("abyss/images/AbyssBadge.png");
         BaseMod.registerModBadge(badgeTexture, "Abyss", "modargo", "An alternate act 3 and 4 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.", new ModPanel());
 
-        CustomDungeon.addAct(AbyssAct.ACT_NUM, new AbyssAct());
-        CustomDungeon.addAct(VoidAct.ACT_NUM, new VoidAct());
-        addMonsters();
+        addActAndMonsters();
         addEvents();
 
         BaseMod.subscribe(new TriggerGrayCrystalPowerPostPowerApplySubscriber());
@@ -87,7 +85,13 @@ public class Abyss implements
         BaseMod.subscribe(new TriggerRedCrystalPowerPostExhaustSubscriber());
     }
 
-    private static void addMonsters() {
+    private static void addActAndMonsters() {
+        CustomDungeon abyss = new AbyssAct();
+        CustomDungeon v = new VoidAct();
+
+        abyss.addAct(AbyssAct.ACT_NUM);
+        v.addAct(VoidAct.ACT_NUM);
+
         //Weak encounters
         BaseMod.addMonster(SquirmingHorror.ID, (BaseMod.GetMonster)SquirmingHorror::new);
         BaseMod.addMonster(Encounters.HATCHLINGS, () -> new MonsterGroup(
@@ -142,15 +146,13 @@ public class Abyss implements
         BaseMod.addMonster(PrimevalQueen.ID, () -> new PrimevalQueen(250.0F, 0.0F));
 
         //Bosses
-        BaseMod.addMonster(Encounters.VOID_HERALD_AND_VOID_SPAWN, () -> new MonsterGroup(
+        abyss.addBoss(DeepTyrant.ID, () -> new DeepTyrant(150F, -30.0F), "abyss/images/map/bosses/DeepTyrant.png", "abyss/images/map/bosses/DeepTyrantOutline.png");
+        abyss.addBoss(Encounters.VOID_HERALD_AND_VOID_SPAWN, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new VoidSpawn(-250.0F, 0.0F),
                         new VoidHerald(150.0F, 0.0F)
-                }));
-        BaseMod.addBoss(AbyssAct.ID, Encounters.VOID_HERALD_AND_VOID_SPAWN, "abyss/images/map/bosses/Void.png", "abyss/images/map/bosses/VoidOutline.png");
-        BaseMod.addMonster(DeepTyrant.ID, () -> new DeepTyrant(150F, -30.0F));
-        BaseMod.addBoss(AbyssAct.ID, DeepTyrant.ID, "abyss/images/map/bosses/DeepTyrant.png", "abyss/images/map/bosses/DeepTyrantOutline.png");
-        BaseMod.addMonster(Encounters.CRYSTALS, () -> new MonsterGroup(
+                }), "abyss/images/map/bosses/Void.png", "abyss/images/map/bosses/VoidOutline.png");
+        abyss.addBoss(Encounters.CRYSTALS, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new BlueCrystal(-350.0F, 400.0F),
                         new GoldenCrystal(250.0F, 400.0F),
@@ -159,8 +161,7 @@ public class Abyss implements
                         new PurpleCrystal(-350.0F, 0.0F),
                         new GrayCrystal(250.0F, 0.0F),
                         new TheCrystal(-50.0F, 50.0F)
-                }));
-        BaseMod.addBoss(AbyssAct.ID, Encounters.CRYSTALS, "abyss/images/map/bosses/Crystals.png", "abyss/images/map/bosses/CrystalsOutline.png");
+                }), "abyss/images/map/bosses/Crystals.png", "abyss/images/map/bosses/CrystalsOutline.png");
 
         //Special fights
         BaseMod.addMonster(Encounters.SQUIRMING_HORRORS_2, () -> new MonsterGroup(
