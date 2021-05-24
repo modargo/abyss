@@ -15,6 +15,9 @@
       "Plunge into the Void"
     ]
   },
+  "Abyss:VoidGetForkedConstructorPatch": {
+    "TEXT": ["[The Ending, The Void] Use the keys to continue on"]
+  },
   "Abyss:BehemothsWisdomAction": {
     "TEXT": ["Exhaust and replace (Behemoth's Wisdom)"]
   },
