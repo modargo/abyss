@@ -1,0 +1,1359 @@
+{
+	"monsters": [
+		{
+			"name": "Squirming Horror",
+			"id": "Abyss:SquirmingHorror",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hatchling",
+			"id": "Abyss:Hatchling",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hunter",
+			"id": "Abyss:Hunter",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Demolisher",
+			"id": "Abyss:Demolisher",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Essence Thief",
+			"id": "Abyss:EssenceThief",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Croaking Brute",
+			"id": "Abyss:CroakingBrute",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Croaking Pelter",
+			"id": "Abyss:CroakingPelter",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Croaking Seer",
+			"id": "Abyss:CroakingSeer",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Gluttonous Abomination",
+			"id": "Abyss:GluttonousAbomination",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bound Abyssal",
+			"id": "Abyss:BoundAbyssal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Unbound Abyssal",
+			"id": "Abyss:UnboundAbyssal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Behemoth",
+			"id": "Abyss:Behemoth",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Gnawing Corruption",
+			"id": "Abyss:GnawingCorruption",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Primeval Queen",
+			"id": "Abyss:PrimevalQUeen",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Deep Tyrant",
+			"id": "Abyss:DeepTyrant",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Void Spawn",
+			"id": "Abyss:VoidSpawn",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Void Herald",
+			"id": "Abyss:VoidHerald",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Blue Crystal",
+			"id": "Abyss:BlueCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "The Crystal",
+			"id": "Abyss:TheCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "TODO",
+					"hp": "(X - Y HP)",
+					"notes": "TODO.",
+					"moves": [
+						{
+							"name": "TODO",
+							"effects": [
+								{
+									"name": "X",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Annihilation Warrior",
+			"id": "Abyss:AnnihilationWarrior",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Follows a complex cycle in which it uses each of its five moves exactly once: NL (1) Uses #wWithering #wStrike. NL (2) 50-25-25 split between #wDark #wBarrier, #wTouch #wof #wSuffering, and #wCircle #wof #wProtection. NL (3) If the last move was #wDark #wBarrier or #wCircle #wof #wProtection, 50-50 split between #wTouch #wof #wSuffering and #wPoleaxe. Otherwise, 50-50 split between #wDark #wBarrier and #wCircle #wof #wProtection. NL (4) Uses #wTouch #wof #wSuffering if it has not been used yet this cycle, otherwise 50-50 split between the moves not yet used this cycle. NL (5) Uses the last remaining move.",
+					"hp": "(130 HP)",
+					"notes": "Innate #uArtifact 1, #uChains #uof #uDoom. Withering status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Withering Strike",
+							"effects": [
+								{
+									"name": "11x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Withering 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Barrier",
+							"effects": [
+								{
+									"name": "Block 30",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Touch of Suffering",
+							"effects": [
+								{
+									"name": "Abysstouched 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Circle of Protection",
+							"effects": [
+								{
+									"name": "Party Block 50",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Poleaxe",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "15",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 3,
+					"desc": "Follows a complex cycle in which it uses each of its five moves exactly once: NL (1) Uses #wWithering #wStrike. NL (2) 50-25-25 split between #wDark #wBarrier, #wTouch #wof #wSuffering, and #wCircle #wof #wProtection. NL (3) If the last move was #wDark #wBarrier or #wCircle #wof #wProtection, 50-50 split between #wTouch #wof #wSuffering and #wPoleaxe. Otherwise, 50-50 split between #wDark #wBarrier and #wCircle #wof #wProtection. NL (4) Uses #wTouch #wof #wSuffering if it has not been used yet this cycle, otherwise 50-50 split between the moves not yet used this cycle. NL (5) Uses the last remaining move.",
+					"hp": "(130 HP)",
+					"notes": "Innate #uArtifact 1, #uChains #uof #uDoom. Withering status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Withering Strike",
+							"effects": [
+								{
+									"name": "13x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Withering 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Barrier",
+							"effects": [
+								{
+									"name": "Block 30",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Touch of Suffering",
+							"effects": [
+								{
+									"name": "Abysstouched 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Circle of Protection",
+							"effects": [
+								{
+									"name": "Party Block 50",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Poleaxe",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "15",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 8,
+					"desc": "Follows a complex cycle in which it uses each of its five moves exactly once: NL (1) Uses #wWithering #wStrike. NL (2) 50-25-25 split between #wDark #wBarrier, #wTouch #wof #wSuffering, and #wCircle #wof #wProtection. NL (3) If the last move was #wDark #wBarrier or #wCircle #wof #wProtection, 50-50 split between #wTouch #wof #wSuffering and #wPoleaxe. Otherwise, 50-50 split between #wDark #wBarrier and #wCircle #wof #wProtection. NL (4) Uses #wTouch #wof #wSuffering if it has not been used yet this cycle, otherwise 50-50 split between the moves not yet used this cycle. NL (5) Uses the last remaining move.",
+					"hp": "(145 HP)",
+					"notes": "Innate #uArtifact 1, #uChains #uof #uDoom. Withering status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Withering Strike",
+							"effects": [
+								{
+									"name": "13x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Withering 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Barrier",
+							"effects": [
+								{
+									"name": "Block 50",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Touch of Suffering",
+							"effects": [
+								{
+									"name": "Abysstouched 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Circle of Protection",
+							"effects": [
+								{
+									"name": "Party Block 80",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Poleaxe",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "25",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 18,
+					"desc": "Follows a complex cycle in which it uses each of its five moves exactly once: NL (1) Uses #wWithering #wStrike. NL (2) 50-25-25 split between #wDark #wBarrier, #wTouch #wof #wSuffering, and #wCircle #wof #wProtection. NL (3) If the last move was #wDark #wBarrier or #wCircle #wof #wProtection, 50-50 split between #wTouch #wof #wSuffering and #wPoleaxe. Otherwise, 50-50 split between #wDark #wBarrier and #wCircle #wof #wProtection. NL (4) Uses #wTouch #wof #wSuffering if it has not been used yet this cycle, otherwise 50-50 split between the moves not yet used this cycle. NL (5) Uses the last remaining move.",
+					"hp": "(145 HP)",
+					"notes": "Innate #uArtifact 1, #uChains #uof #uDoom. Withering status cards go on top of the draw pile.",
+					"moves": [
+						{
+							"name": "Withering Strike",
+							"effects": [
+								{
+									"name": "13x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Withering 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Barrier",
+							"effects": [
+								{
+									"name": "Block 50",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Buffer 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Touch of Suffering",
+							"effects": [
+								{
+									"name": "Abysstouched 5",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Circle of Protection",
+							"effects": [
+								{
+									"name": "Party Block 80",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Poleaxe",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "25",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Annihilation Mage",
+			"id": "Abyss:AnnihilationMage",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wAnnihilation #wCurse. Afterwards, cycles #wChaos #wBolt -> #wStrength #wfrom #wthe #wVoid -> #wBreath #wof #wDarkness. If the player's #uAbysstouched is 5 or lower, uses #wLesser #wAnnihilation instead of #wStrength #wfrom #wthe #wVoid.",
+					"hp": "(180 HP)",
+					"notes": "Innate #uArtifact 1, #uAbysstouched #uPulse 1. Corrupted status cards go into the draw pile.",
+					"moves": [
+						{
+							"name": "Annihilation Curse",
+							"effects": [
+								{
+									"name": "Abysstouched 3x5",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Chaos Bolt",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Strength from the Void",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Lesser Annihilation",
+							"effects": [
+								{
+									"name": "Abysstouched 3x4",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Breath of Darkness",
+							"effects": [
+								{
+									"name": "1x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Abysstouched Pulse 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 3,
+					"desc": "Starts with #wAnnihilation #wCurse. Afterwards, cycles #wChaos #wBolt -> #wStrength #wfrom #wthe #wVoid -> #wBreath #wof #wDarkness. If the player's #uAbysstouched is 5 or lower, uses #wLesser #wAnnihilation instead of #wStrength #wfrom #wthe #wVoid.",
+					"hp": "(180 HP)",
+					"notes": "Innate #uArtifact 1, #uAbysstouched #uPulse 1. Corrupted status cards go into the draw pile.",
+					"moves": [
+						{
+							"name": "Annihilation Curse",
+							"effects": [
+								{
+									"name": "Abysstouched 3x5",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Chaos Bolt",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Strength from the Void",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Lesser Annihilation",
+							"effects": [
+								{
+									"name": "Abysstouched 3x4",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Breath of Darkness",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Abysstouched Pulse 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 8,
+					"desc": "Starts with #wAnnihilation #wCurse. Afterwards, cycles #wChaos #wBolt -> #wStrength #wfrom #wthe #wVoid -> #wBreath #wof #wDarkness. If the player's #uAbysstouched is 5 or lower, uses #wLesser #wAnnihilation instead of #wStrength #wfrom #wthe #wVoid.",
+					"hp": "(200 HP)",
+					"notes": "Innate #uArtifact 1, #uAbysstouched #uPulse 1. Corrupted status cards go into the draw pile.",
+					"moves": [
+						{
+							"name": "Annihilation Curse",
+							"effects": [
+								{
+									"name": "Abysstouched 3x5",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Chaos Bolt",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Strength from the Void",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Lesser Annihilation",
+							"effects": [
+								{
+									"name": "Abysstouched 3x4",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Breath of Darkness",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Abysstouched Pulse 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 18,
+					"desc": "Starts with #wAnnihilation #wCurse. Afterwards, cycles #wChaos #wBolt -> #wStrength #wfrom #wthe #wVoid -> #wBreath #wof #wDarkness. If the player's #uAbysstouched is 10 or lower, uses #wLesser #wAnnihilation instead of #wStrength #wfrom #wthe #wVoid.",
+					"hp": "(200 HP)",
+					"notes": "Innate #uArtifact 1, #uAbysstouched #uPulse 2. Corrupted status cards go into the draw pile.",
+					"moves": [
+						{
+							"name": "Annihilation Curse",
+							"effects": [
+								{
+									"name": "Abysstouched 3x6",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Chaos Bolt",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Strength from the Void",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Lesser Annihilation",
+							"effects": [
+								{
+									"name": "Abysstouched 3x5",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Breath of Darkness",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Abysstouched Pulse 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Universal Void",
+			"id": "Abyss:UniversalVoid",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "(1) #wObliterate -> (2) #wCalamity -> (3) #wRavage or #wDamnation -> (4) the other -> (5) #wEmbrace #wthe #wEnd -> (6) #wRavage or #wAll #wIs #wDust -> (7) the other -> (8) #wRuin -> (9) #wRavage or #wAll #wIs #wDust -> (10) the other -> (11) #wRuin -> (12) #wRavage or #wDamnation -> (13) the other -> (14) #wEmbrace #wthe #wEnd -> repeat 12-14. NL NL NL NL Innate #uBeat #uof #uDeath 1, #uEmptiness, #uInvincible 300. All status cards go into the draw pile. NL NL #wCalamity: the unique debuff applied varies by class. NL #wDamnation: On uses after the first, only gives Overwhelmed. NL #wEmbrace #wthe #wEnd: On uses after the first, only gives Strength (30 on second use, 60 after). NL #wAll #wIs #wDust: Gives Painful Stabs instead of Beat of Death on second use. NL #wRuin: On uses after the first, only gives Overwhelmed.",
+					"hp": "(650 HP)",
+					"moves": [
+						{
+							"name": "Oblierate",
+							"effects": [
+								{
+									"name": "40",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Calamity",
+							"effects": [
+								{
+									"name": "Unique debuff",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Ravage",
+							"effects": [
+								{
+									"name": "8x4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Damnation",
+							"effects": [
+								{
+									"name": "28",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Pressured, Shadowed, Silenced",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Embrace the End",
+							"effects": [
+								{
+									"name": "Cleanse Str Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Ritual 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "All Is Dust",
+							"effects": [
+								{
+									"name": "23",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Beat of Death 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Ruin",
+							"effects": [
+								{
+									"name": "Maimed, Doomed",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "(1) #wObliterate -> (2) #wCalamity -> (3) #wRavage or #wDamnation -> (4) the other -> (5) #wEmbrace #wthe #wEnd -> (6) #wRavage or #wAll #wIs #wDust -> (7) the other -> (8) #wRuin -> (9) #wRavage or #wAll #wIs #wDust -> (10) the other -> (11) #wRuin -> (12) #wRavage or #wDamnation -> (13) the other -> (14) #wEmbrace #wthe #wEnd -> repeat 12-14. NL NL NL NL Innate #uBeat #uof #uDeath 1, #uEmptiness, #uInvincible 300. All status cards go into the draw pile. NL NL #wCalamity: the unique debuff applied varies by class. NL #wDamnation: On uses after the first, only gives Overwhelmed. NL #wEmbrace #wthe #wEnd: On uses after the first, only gives Strength (30 on second use, 60 after). NL #wAll #wIs #wDust: Gives Painful Stabs instead of Beat of Death on second use. NL #wRuin: On uses after the first, only gives Overwhelmed.",
+					"hp": "(650 HP)",
+					"moves": [
+						{
+							"name": "Oblierate",
+							"effects": [
+								{
+									"name": "45",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Calamity",
+							"effects": [
+								{
+									"name": "Unique debuff",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Ravage",
+							"effects": [
+								{
+									"name": "8x5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Damnation",
+							"effects": [
+								{
+									"name": "32",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Pressured, Shadowed, Silenced",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Embrace the End",
+							"effects": [
+								{
+									"name": "Cleanse Str Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Ritual 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "All Is Dust",
+							"effects": [
+								{
+									"name": "26",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Beat of Death 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Ruin",
+							"effects": [
+								{
+									"name": "Maimed, Doomed",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "(1) #wObliterate -> (2) #wCalamity -> (3) #wRavage or #wDamnation -> (4) the other -> (5) #wEmbrace #wthe #wEnd -> (6) #wRavage or #wAll #wIs #wDust -> (7) the other -> (8) #wRuin -> (9) #wRavage or #wAll #wIs #wDust -> (10) the other -> (11) #wRuin -> (12) #wRavage or #wDamnation -> (13) the other -> (14) #wEmbrace #wthe #wEnd -> repeat 12-14. NL NL NL NL Innate #uBeat #uof #uDeath 1, #uEmptiness, #uInvincible 300. All status cards go into the draw pile. NL NL #wCalamity: the unique debuff applied varies by class. NL #wDamnation: On uses after the first, only gives Overwhelmed. NL #wEmbrace #wthe #wEnd: On uses after the first, only gives Strength (30 on second use, 60 after). NL #wAll #wIs #wDust: Gives Painful Stabs instead of Beat of Death on second use. NL #wRuin: On uses after the first, only gives Overwhelmed.",
+					"hp": "(700 HP)",
+					"moves": [
+						{
+							"name": "Oblierate",
+							"effects": [
+								{
+									"name": "45",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Calamity",
+							"effects": [
+								{
+									"name": "Unique debuff",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Ravage",
+							"effects": [
+								{
+									"name": "8x5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Damnation",
+							"effects": [
+								{
+									"name": "32",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Pressured, Shadowed, Silenced",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Embrace the End",
+							"effects": [
+								{
+									"name": "Cleanse Str Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Ritual 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "All Is Dust",
+							"effects": [
+								{
+									"name": "26",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Beat of Death 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Ruin",
+							"effects": [
+								{
+									"name": "Maimed, Doomed",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "(1) #wObliterate -> (2) #wCalamity -> (3) #wRavage or #wDamnation -> (4) the other -> (5) #wEmbrace #wthe #wEnd -> (6) #wRavage or #wAll #wIs #wDust -> (7) the other -> (8) #wRuin -> (9) #wRavage or #wAll #wIs #wDust -> (10) the other -> (11) #wRuin -> (12) #wRavage or #wDamnation -> (13) the other -> (14) #wEmbrace #wthe #wEnd -> repeat 12-14. NL NL NL NL Innate #uBeat #uof #uDeath 2, #uEmptiness, #uInvincible 200. All status cards go into the draw pile. NL NL #wCalamity: the unique debuff applied varies by class. NL #wDamnation: On uses after the first, only gives Overwhelmed. NL #wEmbrace #wthe #wEnd: On uses after the first, only gives Strength (30 on second use, 60 after). NL #wAll #wIs #wDust: Gives Painful Stabs instead of Beat of Death on second use. NL #wRuin: On uses after the first, only gives Overwhelmed.",
+					"hp": "(700 HP)",
+					"moves": [
+						{
+							"name": "Oblierate",
+							"effects": [
+								{
+									"name": "45",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Calamity",
+							"effects": [
+								{
+									"name": "Unique debuff",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Ravage",
+							"effects": [
+								{
+									"name": "8x5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Damnation",
+							"effects": [
+								{
+									"name": "32",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Pressured, Shadowed, Silenced",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Embrace the End",
+							"effects": [
+								{
+									"name": "Cleanse Str Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Ritual 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "All Is Dust",
+							"effects": [
+								{
+									"name": "26",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Beat of Death 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Ruin",
+							"effects": [
+								{
+									"name": "Maimed, Doomed",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
