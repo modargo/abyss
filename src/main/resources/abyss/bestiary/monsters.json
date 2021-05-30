@@ -328,16 +328,291 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Cycles #wBlast -> #wTerrifying #wGaze -> #wThrash -> #wBody #wSlam. On the first rotation, uses #wCall #wthe #wAbyss after #wBlast.",
+					"hp": "(475 HP)",
+					"notes": "Innate #uArtifact 1. Wound status cards go into the discard pile.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Blast",
 							"effects": [
 								{
-									"name": "X",
+									"name": "22",
 									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Terrifying Gaze",
+							"effects": [
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Abysstouched 7",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Thrash",
+							"effects": [
+								{
+									"name": "12x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Body Slam",
+							"effects": [
+								{
+									"name": "27",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Call the Abyss",
+							"effects": [
+								{
+									"name": "Summon 2 Manifestations",
+									"color": "SPECIAL"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wBlast -> #wTerrifying #wGaze -> #wThrash -> #wBody #wSlam. On the first rotation, uses #wCall #wthe #wAbyss after #wBlast.",
+					"hp": "(475 HP)",
+					"notes": "Innate #uArtifact 1. Wound status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Blast",
+							"effects": [
+								{
+									"name": "24",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Terrifying Gaze",
+							"effects": [
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Abysstouched 7",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Thrash",
+							"effects": [
+								{
+									"name": "14x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Body Slam",
+							"effects": [
+								{
+									"name": "30",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Call the Abyss",
+							"effects": [
+								{
+									"name": "Summon 2 Manifestations",
+									"color": "SPECIAL"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wBlast -> #wTerrifying #wGaze -> #wThrash -> #wBody #wSlam. On the first rotation, uses #wCall #wthe #wAbyss after #wBlast.",
+					"hp": "(500 HP)",
+					"notes": "Innate #uArtifact 1. Wound status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Blast",
+							"effects": [
+								{
+									"name": "24",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Terrifying Gaze",
+							"effects": [
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Abysstouched 7",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Thrash",
+							"effects": [
+								{
+									"name": "14x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Body Slam",
+							"effects": [
+								{
+									"name": "30",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Call the Abyss",
+							"effects": [
+								{
+									"name": "Summon 2 Manifestations",
+									"color": "SPECIAL"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Cycles #wBlast -> #wTerrifying #wGaze -> #wThrash -> #wBody #wSlam. On the first rotation, uses #wCall #wthe #wAbyss after #wBlast.",
+					"hp": "(500 HP)",
+					"notes": "Innate #uArtifact 2. Wound status cards go into the draw pile.",
+					"moves": [
+						{
+							"name": "Blast",
+							"effects": [
+								{
+									"name": "24",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Terrifying Gaze",
+							"effects": [
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Abysstouched 10",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Thrash",
+							"effects": [
+								{
+									"name": "14x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Body Slam",
+							"effects": [
+								{
+									"name": "30",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Call the Abyss",
+							"effects": [
+								{
+									"name": "Summon 3 Manifestations",
+									"color": "SPECIAL"
 								}
 							]
 						}
