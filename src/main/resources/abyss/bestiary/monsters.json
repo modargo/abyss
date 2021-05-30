@@ -351,16 +351,171 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Cycles #wClobber -> #wBeaked #wMaw -> #wTentacle #wBarrage.",
+					"hp": "(90 HP)",
+					"notes": "Innate #uBerserker 5, #uResummon.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Clobber",
 							"effects": [
 								{
-									"name": "X",
+									"name": "10",
 									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beaked Maw",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 10",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Tentacle Barrage",
+							"effects": [
+								{
+									"name": "4x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wClobber -> #wBeaked #wMaw -> #wTentacle #wBarrage.",
+					"hp": "(90 HP)",
+					"notes": "Innate #uBerserker 5, #uResummon.",
+					"moves": [
+						{
+							"name": "Clobber",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beaked Maw",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 10",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Tentacle Barrage",
+							"effects": [
+								{
+									"name": "5x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wClobber -> #wBeaked #wMaw -> #wTentacle #wBarrage.",
+					"hp": "(100 HP)",
+					"notes": "Innate #uBerserker 5, #uResummon.",
+					"moves": [
+						{
+							"name": "Clobber",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beaked Maw",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 15",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Tentacle Barrage",
+							"effects": [
+								{
+									"name": "5x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Cycles #wBeaked #wMaw -> #wTentacle #wBarrage -> #wClobber.",
+					"hp": "(100 HP)",
+					"notes": "Innate #uBerserker 5, #uResummon.",
+					"moves": [
+						{
+							"name": "Clobber",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beaked Maw",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 15",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Tentacle Barrage",
+							"effects": [
+								{
+									"name": "5x3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
 								}
 							]
 						}
@@ -374,15 +529,238 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Moves are based on the number of turns since #wDuress or #wHymn #wto #wthe #wVoid were used, with the first turn following the \"if 3\" logic: NL If 1, 40-60 split between #wOnslaught and #wCorrupting #wTouch. NL If 2, 12.5-12.5-35-40 split bewtween #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 3, 25-25-10-40 split between #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 4, 50-50 split between #wDuress and #wHymn #wto #wthe #wVoid.",
+					"hp": "(380 HP)",
+					"notes": "Innate #uThought #uStealer, #uResummon. Slimed status cards go into the discard pile.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Duress",
 							"effects": [
 								{
-									"name": "X",
+									"name": "Frail 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Hex 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hymn to the Void",
+							"effects": [
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Corrupting Touch",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Player Draw 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Onslaught",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Moves are based on the number of turns since #wDuress or #wHymn #wto #wthe #wVoid were used, with the first turn following the \"if 3\" logic: NL If 1, 40-60 split between #wOnslaught and #wCorrupting #wTouch. NL If 2, 12.5-12.5-35-40 split bewtween #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 3, 25-25-10-40 split between #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 4, 50-50 split between #wDuress and #wHymn #wto #wthe #wVoid.",
+					"hp": "(380 HP)",
+					"notes": "Innate #uThought #uStealer, #uResummon. Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Duress",
+							"effects": [
+								{
+									"name": "Frail 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Hex 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hymn to the Void",
+							"effects": [
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Corrupting Touch",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Player Draw 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Onslaught",
+							"effects": [
+								{
+									"name": "7x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Moves are based on the number of turns since #wDuress or #wHymn #wto #wthe #wVoid were used, with the first turn following the \"if 3\" logic: NL If 1, 40-60 split between #wOnslaught and #wCorrupting #wTouch. NL If 2, 12.5-12.5-35-40 split bewtween #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 3, 25-25-10-40 split between #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 4, 50-50 split between #wDuress and #wHymn #wto #wthe #wVoid.",
+					"hp": "(400 HP)",
+					"notes": "Innate #uThought #uStealer, #uResummon. Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Duress",
+							"effects": [
+								{
+									"name": "Frail 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Hex 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hymn to the Void",
+							"effects": [
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Corrupting Touch",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Player Draw 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Onslaught",
+							"effects": [
+								{
+									"name": "7x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Moves are based on the number of turns since #wDuress or #wHymn #wto #wthe #wVoid were used, with the first turn following the \"if 3\" logic: NL If 1, 40-60 split between #wOnslaught and #wCorrupting #wTouch. NL If 2, 12.5-12.5-35-40 split bewtween #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 3, 25-25-10-40 split between #wDuress, #wHymn #wto #wthe #wVoid, #wOnslaught, and #wCorrupting #wTouch. NL If 4, 50-50 split between #wDuress and #wHymn #wto #wthe #wVoid.",
+					"hp": "(400 HP)",
+					"notes": "Innate #uThought #uStealer, #uResummon. Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Duress",
+							"effects": [
+								{
+									"name": "Frail 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Hex 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hymn to the Void",
+							"effects": [
+								{
+									"name": "Vulnerable 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Corrupting Touch",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Player Draw 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Onslaught",
+							"effects": [
+								{
+									"name": "7x2",
 									"color": "DAMAGE"
 								}
 							]
