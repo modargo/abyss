@@ -397,16 +397,701 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uBlue #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Crystal Shard",
 							"effects": [
 								{
-									"name": "X",
+									"name": "4",
 									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uBlue #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uBlue #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uBlue #uCrystal. Gains #uResonance 50 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Green Crystal",
+			"id": "Abyss:GreenCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uGreen #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uGreen #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uGreen #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uGreen #uCrystal. Gains #uResonance 50 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Purple Crystal",
+			"id": "Abyss:PurpleCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uPurple #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uPurple #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uPurple #uCrystal. Gains #uResonance 30 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wCrystal #wShard. Afterwards, 75-25 split between #wCrystal #wShard and #wBeam, but cannot use #wCrystal #wShard three times in a row or #wBeam twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uPurple #uCrystal. Gains #uResonance 50 every other turn, starting with the second turn.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Beam",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Golden Crystal",
+			"id": "Abyss:GoldenCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uGolden #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uGolden #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uGolden #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uGolden #uCrystal. Gains #uResonance 50 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Red Crystal",
+			"id": "Abyss:RedCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uRed #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uRed #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uRed #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uRed #uCrystal. Gains #uResonance 50 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Gray Crystal",
+			"id": "Abyss:GrayCrystal",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uGray #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(63 HP)",
+					"notes": "Innate #uGray #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uGray #uCrystal. Gains #uResonance 30 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wMineralize. Afterwards, 75-25 split between #wCrystal #wShard and #wMineralize, but cannot use #wCrystal #wShard three times in a row or #wMineralize twice in a row.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uGray #uCrystal. Gains #uResonance 50 every other turn, starting with the first turn. Mineralized status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Crystal Shard",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mineralize",
+							"effects": [
+								{
+									"name": "Mineralized 1",
+									"color": "DEBUFF"
 								}
 							]
 						}
@@ -420,16 +1105,223 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Uses #w??? until 3 or fewer other crystals are left. After activating, cycles #wCrystal #wSpear -> #wCrystal #wBarrage or #wResonance -> the other. If #uStrength is 0 or below, always uses #wResonance then #wCrystal #wBarrage instead of the other way around.",
+					"hp": "(280 HP)",
+					"notes": "Innate #uInactive #uCrystal, #uCrystal #uLink 100, #uStrength -5. Mineralize status cards are split between going into the draw and discard piles.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "???",
 							"effects": [
 								{
-									"name": "X",
+									"name": "Skip Turn",
+									"color": "SKIP"
+								}
+							]
+						},
+						{
+							"name": "Crystal Spear",
+							"effects": [
+								{
+									"name": "9",
 									"color": "DAMAGE"
+								},
+								{
+									"name": "Mineralize 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Crystal Barrage",
+							"effects": [
+								{
+									"name": "0x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Resonance",
+							"effects": [
+								{
+									"name": "Cleanse Strength Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Heal 30",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Uses #w??? until 3 or fewer other crystals are left. After activating, cycles #wCrystal #wSpear -> #wCrystal #wBarrage or #wResonance -> the other. If #uStrength is 0 or below, always uses #wResonance then #wCrystal #wBarrage instead of the other way around.",
+					"hp": "(280 HP)",
+					"notes": "Innate #uInactive #uCrystal, #uCrystal #uLink 100, #uStrength -5. Mineralize status cards are split between going into the draw and discard piles.",
+					"moves": [
+						{
+							"name": "???",
+							"effects": [
+								{
+									"name": "Skip Turn",
+									"color": "SKIP"
+								}
+							]
+						},
+						{
+							"name": "Crystal Spear",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Mineralize 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Crystal Barrage",
+							"effects": [
+								{
+									"name": "1x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Resonance",
+							"effects": [
+								{
+									"name": "Cleanse Strength Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Heal 30",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Uses #w??? until 3 or fewer other crystals are left. After activating, cycles #wCrystal #wSpear -> #wCrystal #wBarrage or #wResonance -> the other. If #uStrength is 0 or below, always uses #wResonance then #wCrystal #wBarrage instead of the other way around.",
+					"hp": "(300 HP)",
+					"notes": "Innate #uInactive #uCrystal, #uCrystal #uLink 100, #uStrength -5. Mineralize status cards are split between going into the draw and discard piles.",
+					"moves": [
+						{
+							"name": "???",
+							"effects": [
+								{
+									"name": "Skip Turn",
+									"color": "SKIP"
+								}
+							]
+						},
+						{
+							"name": "Crystal Spear",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Mineralize 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Crystal Barrage",
+							"effects": [
+								{
+									"name": "1x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Resonance",
+							"effects": [
+								{
+									"name": "Cleanse Strength Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Heal 30",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Uses #w??? until 3 or fewer other crystals are left. After activating, cycles #wCrystal #wSpear -> #wCrystal #wBarrage or #wResonance -> the other. If #uStrength is 0 or below, always uses #wResonance then #wCrystal #wBarrage instead of the other way around.",
+					"hp": "(300 HP)",
+					"notes": "Innate #uInactive #uCrystal, #uCrystal #uLink 150, #uStrength -5. Mineralize status cards are split between going into the draw and discard piles.",
+					"moves": [
+						{
+							"name": "???",
+							"effects": [
+								{
+									"name": "Skip Turn",
+									"color": "SKIP"
+								}
+							]
+						},
+						{
+							"name": "Crystal Spear",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Mineralize 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Crystal Barrage",
+							"effects": [
+								{
+									"name": "1x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Resonance",
+							"effects": [
+								{
+									"name": "Cleanse Strength Down",
+									"color": "SPECIAL"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								},
+								{
+									"name": "Heal 40",
+									"color": "BLOCK"
 								}
 							]
 						}
