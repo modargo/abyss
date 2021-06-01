@@ -889,15 +889,102 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Cycles #wUnhinged #wJaw -> #wGrasping #wClaws.",
+					"hp": "(225 HP)",
+					"notes": "Innate #uGluttony 8.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Grasping Claws",
 							"effects": [
 								{
-									"name": "X",
+									"name": "5x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Unhinged Jaw",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wUnhinged #wJaw -> #wGrasping #wClaws.",
+					"hp": "(225 HP)",
+					"notes": "Innate #uGluttony 8.",
+					"moves": [
+						{
+							"name": "Grasping Claws",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Unhinged Jaw",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wUnhinged #wJaw -> #wGrasping #wClaws.",
+					"hp": "(250 HP)",
+					"notes": "Innate #uGluttony 8.",
+					"moves": [
+						{
+							"name": "Grasping Claws",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Unhinged Jaw",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wGrasping #wClaws -> #wUnhinged #wJaw.",
+					"hp": "(250 HP)",
+					"notes": "Innate #uGluttony 7.",
+					"moves": [
+						{
+							"name": "Grasping Claws",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Unhinged Jaw",
+							"effects": [
+								{
+									"name": "14",
 									"color": "DAMAGE"
 								}
 							]
@@ -912,16 +999,255 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Cycles #wObserve or #wGlare -> #wContemplate or #wScrutinize. The chance of using #wContemplate is 30% plus 3% for every missing stack of #uBuffer.",
+					"hp": "(45 HP)",
+					"notes": "Innate #uBuffer 15, #uArtifact 3. Corrupted status cards go into the discard pile.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Observe",
 							"effects": [
 								{
-									"name": "X",
+									"name": "16",
 									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Glare",
+							"effects": [
+								{
+									"name": "5x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Contemplate",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Buffer 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Scrutinize",
+							"effects": [
+								{
+									"name": "11",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wObserve or #wGlare -> #wContemplate or #wScrutinize. The chance of using #wContemplate is 30% plus 3% for every missing stack of #uBuffer.",
+					"hp": "(45 HP)",
+					"notes": "Innate #uBuffer 15, #uArtifact 3. Corrupted status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Observe",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Glare",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Contemplate",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Buffer 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Scrutinize",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wObserve or #wGlare -> #wContemplate or #wScrutinize. The chance of using #wContemplate is 30% plus 3% for every missing stack of #uBuffer.",
+					"hp": "(50 HP)",
+					"notes": "Innate #uBuffer 15, #uArtifact 3. Corrupted status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Observe",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Glare",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Contemplate",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Buffer 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Scrutinize",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wObserve or #wGlare -> #wContemplate or #wScrutinize. The chance of using #wContemplate is 30% plus 3% for every missing stack of #uBuffer.",
+					"hp": "(50 HP)",
+					"notes": "Innate #uBuffer 15, #uArtifact 3. Corrupted status cards go into the draw pile.",
+					"moves": [
+						{
+							"name": "Observe",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Glare",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Contemplate",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								},
+								{
+									"name": "Buffer 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "Artifact 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Scrutinize",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 3",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Corrupted 1",
+									"color": "DEBUFF"
 								}
 							]
 						}
@@ -935,15 +1261,158 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "TODO",
-					"hp": "(X - Y HP)",
-					"notes": "TODO.",
+					"desc": "Cycles #wSludge -> #wWon't #wGo #wBack -> #wTendrils.",
+					"hp": "(135 HP)",
+					"notes": "Innate #uRegenerate 45, #uBroken #uCrystal #uSeal 2. Slimed status cards go into the discard pile.",
 					"moves": [
 						{
-							"name": "TODO",
+							"name": "Sludge",
 							"effects": [
 								{
-									"name": "X",
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Slimed 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Won't Go Back",
+							"effects": [
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Tendrils",
+							"effects": [
+								{
+									"name": "4x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wSludge -> #wWon't #wGo #wBack -> #wTendrils.",
+					"hp": "(135 HP)",
+					"notes": "Innate #uRegenerate 45, #uBroken #uCrystal #uSeal 2. Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Sludge",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Slimed 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Won't Go Back",
+							"effects": [
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Tendrils",
+							"effects": [
+								{
+									"name": "5x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wSludge -> #wWon't #wGo #wBack -> #wTendrils.",
+					"hp": "(150 HP)",
+					"notes": "Innate #uRegenerate 45, #uBroken #uCrystal #uSeal 2. Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Sludge",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Slimed 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Won't Go Back",
+							"effects": [
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Tendrils",
+							"effects": [
+								{
+									"name": "5x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wSludge -> #wWon't #wGo #wBack -> #wTendrils.",
+					"hp": "(150 HP)",
+					"notes": "Innate #uRegenerate 60, #uBroken #uCrystal #uSeal 2. Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Sludge",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Slimed 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Won't Go Back",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Tendrils",
+							"effects": [
+								{
+									"name": "5x2",
 									"color": "DAMAGE"
 								}
 							]
