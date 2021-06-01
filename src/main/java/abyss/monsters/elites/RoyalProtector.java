@@ -26,7 +26,8 @@ public class RoyalProtector extends CustomMonster {
     private static final byte BURNING_SPIT_ATTACK = 2;
     private static final byte ACID_EXPLOSION_ATTACK = 3;
     private static final byte FOR_THE_QUEEN_ATTACK = 4;
-    private static final int CARAPACE_BLOCK_OR_PLATED_ARMOR = 5;
+    private static final int CARAPACE_BLOCK = 2;
+    private static final int A18_CARAPACE_BLOCK = 5;
     private static final int BURNING_SPIT_DAMAGE = 7;
     private static final int A3_BURNING_SPIT_DAMAGE = 8;
     private static final int BURNING_SPIT_BURNS = 1;
@@ -40,7 +41,7 @@ public class RoyalProtector extends CustomMonster {
     private static final int HP_MAX = 35;
     private static final int A8_HP_MIN = 33;
     private static final int A8_HP_MAX = 37;
-    private int carapaceBlockOrPlatedArmor;
+    private int carapaceBlock;
     private int burningSpitDamage;
     private int acidExplosionDamage;
     private int forTheQueenDamage;
@@ -53,7 +54,6 @@ public class RoyalProtector extends CustomMonster {
     public RoyalProtector(final float x, final float y) {
         super(RoyalProtector.NAME, ID, HP_MAX, -5.0F, 0, 135.0f, 135.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
-        this.carapaceBlockOrPlatedArmor = CARAPACE_BLOCK_OR_PLATED_ARMOR;
         if (AbstractDungeon.ascensionLevel >= 8) {
             this.setHp(A8_HP_MIN, A8_HP_MAX);
         } else {
@@ -74,8 +74,10 @@ public class RoyalProtector extends CustomMonster {
         this.damage.add(new DamageInfo(this, this.forTheQueenDamage));
 
         if (AbstractDungeon.ascensionLevel >= 18) {
+            this.carapaceBlock = A18_CARAPACE_BLOCK;
             this.forTheQueenAmount = A18_FOR_THE_QUEEN_AMOUNT;
         } else {
+            this.carapaceBlock = CARAPACE_BLOCK;
             this.forTheQueenAmount = FOR_THE_QUEEN_AMOUNT;
         }
     }
@@ -87,12 +89,7 @@ public class RoyalProtector extends CustomMonster {
         }
         switch (this.nextMove) {
             case CARAPACE_MOVE:
-                if (AbstractDungeon.ascensionLevel >= 18) {
-                    AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.carapaceBlockOrPlatedArmor));
-                }
-                else {
-                    this.addToBot(new ApplyPowerAction(this, this, new PlatedArmorPower(this, this.carapaceBlockOrPlatedArmor), this.carapaceBlockOrPlatedArmor));
-                }
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this.carapaceBlock));
                 break;
             case BURNING_SPIT_ATTACK:
                 //TODO animation -- adapt BloodShotEffect
