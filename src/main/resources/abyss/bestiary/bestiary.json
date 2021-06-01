@@ -897,7 +897,7 @@
 					]
 				},
 				{
-					"min_asc": 7,
+					"min_asc": 17,
 					"desc": "60-40 split between #wBull #wRush and #wLacerate. Can't use #wBull #wRush three times in a row or #wLacerate twice in a row.",
 					"hp": "(53 - 58 HP)",
 					"notes": "Innate #uWary 2.",

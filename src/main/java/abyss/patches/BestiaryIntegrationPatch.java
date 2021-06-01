@@ -20,7 +20,7 @@ import java.io.InputStreamReader;
         optional = true
 )
 public class BestiaryIntegrationPatch {
-    private static final String MONSTERS_FILE = "abyss/bestiary/monsters.json";
+    private static final String MONSTERS_FILE = "abyss/bestiary/bestiary.json";
     public static final Logger logger = LogManager.getLogger(BestiaryIntegrationPatch.class.getName());
 
     @SpireInsertPatch(locator = BestiaryIntegrationPatch.Locator.class, localvars = {"arr"})
@@ -29,7 +29,7 @@ public class BestiaryIntegrationPatch {
         InputStream in = BestiaryIntegrationPatch.class.getClassLoader().getResourceAsStream(MONSTERS_FILE);
 
         if (in == null) {
-            logger.error("Failed to load monsters.json (not found?)");
+            logger.error("Failed to load bestiary.json (not found?)");
             return;
         }
 
