@@ -140,10 +140,10 @@ public class BoundAbyssal extends CustomMonster {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(3), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.scrutinizeVulnerable, true), this.scrutinizeVulnerable));
                 if (AbstractDungeon.ascensionLevel >= 17) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Corrupted(), 1));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Corrupted(), 1, true, true));
                 }
                 else {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Corrupted(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Corrupted(), 1));
                 }
                 break;
         }
