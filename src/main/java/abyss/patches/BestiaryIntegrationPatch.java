@@ -37,7 +37,6 @@ public class BestiaryIntegrationPatch {
             String content = resourceStreamToString(in);
 
             JsonObject o = new JsonParser().parse(content).getAsJsonObject();
-            Gson gson = new Gson();
 
             if (o.has("monsters") && o.get("monsters").isJsonArray()) {
                 JsonArray additionalMonsters = o.getAsJsonArray("monsters");
