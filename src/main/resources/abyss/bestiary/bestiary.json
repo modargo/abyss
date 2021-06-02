@@ -2776,6 +2776,112 @@
 			]
 		},
 		{
+			"name": "Manifestation",
+			"id": "Abyss:Manifestation",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wGrasp #wthe #wAbyss -> #wGrasp #wthe #wAbyss -> #wMadness.",
+					"hp": "(44 - 47 HP)",
+					"moves": [
+						{
+							"name": "Grasp the Abyss",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Madness",
+							"effects": [
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wGrasp #wthe #wAbyss -> #wGrasp #wthe #wAbyss -> #wMadness.",
+					"hp": "(44 - 47 HP)",
+					"moves": [
+						{
+							"name": "Grasp the Abyss",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Madness",
+							"effects": [
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wGrasp #wthe #wAbyss -> #wGrasp #wthe #wAbyss -> #wMadness.",
+					"hp": "(46 - 49 HP)",
+					"moves": [
+						{
+							"name": "Grasp the Abyss",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Madness",
+							"effects": [
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Cycles #wGrasp #wthe #wAbyss -> #wGrasp #wthe #wAbyss -> #wMadness.",
+					"hp": "(46 - 49 HP)",
+					"moves": [
+						{
+							"name": "Grasp the Abyss",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Madness",
+							"effects": [
+								{
+									"name": "Strength 4",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Void Spawn",
 			"id": "Abyss:VoidSpawn",
 			"ai": [
