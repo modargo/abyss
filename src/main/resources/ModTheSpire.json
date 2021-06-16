@@ -3,7 +3,7 @@
   "name": "Abyss",
   "author_list": ["modargo"],
   "description": "An alternate act 3 and 4 themed around horrors and aberrations. Once where eldritch and primeval beings were sealed away, the Abyss is now at the heart of their reawakening.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "sts_version": "12-22-2020",
   "mts_version": "3.15.0",
   "dependencies": ["basemod", "actlikeit", "stslib"]
