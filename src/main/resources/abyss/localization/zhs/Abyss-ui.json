@@ -1,0 +1,50 @@
+{
+  "Abyss:Abyss": {
+    "TEXT": [
+      "深渊",
+      "第三幕",
+      "#b另一个方向，一条路引向枯萎之地，充满古老险恶的被封印之物。",
+      "冒险进入深渊"
+    ]
+  },
+  "Abyss:Void": {
+    "TEXT": [
+      "虚空",
+      "终幕",
+      "#b虚空在你的上方展开，呼唤着你，述说着创造与毁灭，承诺给予你最终的答案。",
+      "投入虚空"
+    ]
+  },
+  "Abyss:VoidGetForkedConstructorPatch": {
+    "TEXT": ["[终局，虚空] 用此继续"]
+  },
+  "Abyss:BehemothsWisdomAction": {
+    "TEXT": ["消耗并替换 (巨兽的智慧)"]
+  },
+  "Abyss:ExhaustCardInDiscardPileAction": {
+    "TEXT": [
+      "选择1张牌消耗",
+      "选择 ",
+      " 张牌消耗"
+    ]
+  },
+  "Abyss:Evolving": {
+    "TEXT": ["巨兽进化了..."],
+    "EXTRA_TEXT": ["灼伤于抽牌堆", "最大生命值"],
+    "TEXT_DICT": {
+      "Anger": "abyss:暴怒 {0}",
+      "BeatOfDeath": "abyss:死亡搏动 {0}",
+      "Metallicize": "abyss:金属化 {0}",
+      "Buffer": "abyss:缓冲 {0}",
+      "Abyss:FrailPulse": "abyss:脆弱搏动",
+      "Abyss:DazedPulse": "abyss:眩晕搏动",
+      "Abyss:AbysstouchedPulse": "abyss:深渊之触搏动 {0}",
+      "Abyss:SlimyBody": "abyss:黏体",
+      "Invincible": "abyss:无敌 {0}"
+    }
+  },
+  "Abyss:ModSettingsPanel": {
+    "TEXT": [
+    ]
+  }
+}

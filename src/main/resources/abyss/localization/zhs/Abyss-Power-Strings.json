@@ -1,0 +1,152 @@
+{
+  "Abyss:ThoughtStealer": {
+    "NAME": "思维窃取",
+    "DESCRIPTIONS": ["在你每回合的首 #b{0} 张抽牌后，每再抽1张，其获得1层充能。当达到 #b{1} 层充能，所有敌人获得 #b{2} 力量"]
+  },
+  "Abyss:Berserker": {
+    "NAME": "狂战士",
+    "DESCRIPTIONS": ["每场战斗限1次。若此敌人是场上唯一存活的敌人，其在回合结束获得 #b{0} 力量"]
+  },
+  "Abyss:Resummon": {
+    "NAME": "重唤",
+    "DESCRIPTIONS": ["#p虚空先驱 会在 #p虚空之卵 死亡的一回合后重新召唤之，并使之获得与 #p虚空先驱 等量的正数 力量 。"]
+  },
+  "Abyss:DurableMinion": {
+    "NAME": "坚忠的爪牙",
+    "DESCRIPTIONS": ["这名爪牙在头领死后仍会继续战斗。"]
+  },
+  "Abyss:Abysstouched": {
+    "NAME": "深渊之触",
+    "DESCRIPTIONS": ["遭受额外 #b{0}% 的攻击伤害。每回合结束，遭受 #b{0} 点伤害。", "遭受额外 #b{0}% 的攻击伤害。每回合开始，遭受 #b{0} 点伤害。"]
+  },
+  "Abyss:DelayedAbysstouched": {
+    "NAME": "深渊之触",
+    "DESCRIPTIONS": ["遭受额外 #b{0}% 的攻击伤害。你的每回合结束，遭受 #b{0} 点伤害。"]
+  },
+  "Abyss:Evolving": {
+    "NAME": "进化",
+    "DESCRIPTIONS": ["每回合结束时，进化。"]
+  },
+  "Abyss:FrailPulse": {
+    "NAME": "脆弱搏动",
+    "DESCRIPTIONS": ["每轮结束时，施加 #b{0} #y脆弱"]
+  },
+  "Abyss:DazedPulse": {
+    "NAME": "眩晕搏动",
+    "DESCRIPTIONS": ["每轮结束时，将 #b{0} 张 #y眩晕 洗入抽牌堆。"]
+  },
+  "Abyss:AbysstouchedPulse": {
+    "NAME": "深渊之触搏动",
+    "DESCRIPTIONS": ["每轮结束时，施加 #b{0} #y深渊之触"]
+  },
+  "Abyss:SlimyBody": {
+    "NAME": "黏体",
+    "DESCRIPTIONS": ["当此敌人遭受攻击伤害，向弃牌堆加入1张 #y黏液 。"]
+  },
+  "Abyss:Gluttony": {
+    "NAME": "暴食",
+    "DESCRIPTIONS": ["每场战斗开始，你每有 #b{0} 点生命，获得 #b1 力量。"]
+  },
+  "Abyss:Wary": {
+    "NAME": "警觉",
+    "DESCRIPTIONS": ["每当你打出一张攻击 获得 #b{0} 力量."]
+  },
+  "Abyss:PrimevalCall": {
+    "NAME": "初始者的呼唤",
+    "DESCRIPTIONS": ["每回合召唤1只 #p皇家护卫"]
+  },
+  "Abyss:HandOfTheAbyss": {
+    "NAME": "深渊之手",
+    "DESCRIPTIONS": ["每当你造成未经格挡的攻击伤害，施加 #b{0} #y深渊之触"]
+  },
+  "Abyss:BrokenCrystalSeal": {
+    "NAME": "损坏的结晶封印",
+    "DESCRIPTIONS": ["每回合往抽牌堆添加 #b2 张 #y破碎结晶 。 NL 破碎结晶可用于减弱敌人的再生能力。"]
+  },
+  "Abyss:GoldenCrystal": {
+    "NAME": "金色结晶",
+    "DESCRIPTIONS": ["每当你打出稀有牌，其获得 #b{0} 力量"]
+  },
+  "Abyss:BlueCrystal": {
+    "NAME": "蓝色结晶",
+    "DESCRIPTIONS": ["每当你打出罕见牌，其获得 #b{0} 力量"]
+  },
+  "Abyss:GreenCrystal": {
+    "NAME": "绿色结晶",
+    "DESCRIPTIONS": ["每当你打出耗费大于1的牌，其获得 #b{0} 力量."]
+  },
+  "Abyss:RedCrystal": {
+    "NAME": "红色结晶",
+    "DESCRIPTIONS": ["每当你消耗非状态牌，其获得 #b{0} 力量."]
+  },
+  "Abyss:PurpleCrystal": {
+    "NAME": "紫色结晶",
+    "DESCRIPTIONS": ["每当你在你的回合获得能量，其获得 #b{0} 力量."]
+  },
+  "Abyss:GrayCrystal": {
+    "NAME": "灰色结晶",
+    "DESCRIPTIONS": ["每当你获得力量、敏捷或专注，其获得 #b{0} 力量"]
+  },
+  "Abyss:CrystalLink": {
+    "NAME": "晶体联结",
+    "DESCRIPTIONS": ["每当1个结晶死亡，此敌人在其下回合后获得 #b{0}% 正数力量。"]
+  },
+  "Abyss:InactiveCrystal": {
+    "NAME": "未激活",
+    "DESCRIPTIONS": ["此敌人未被激活。它不会攻击也不会受到伤害。 NL 将会在场上剩下不到 #b{0} 只其它结晶时激活。"]
+  },
+  "Abyss:EssenceThief": {
+    "NAME": "精华窃贼",
+    "DESCRIPTIONS": ["若此敌人存活，会 #r永久地 减少你的 #r最大生命值 ，尽快击杀他。"]
+  },
+  "Abyss:Resonance": {
+    "NAME": "共振",
+    "DESCRIPTIONS": ["遭受的攻击伤害减少 #b{0}% 。 #y共振 会在每个其它角色的回合里被重复施加。"]
+  },
+  "Abyss:ChainsOfDoom": {
+    "NAME": "厄运之链",
+    "DESCRIPTIONS": ["你无法在此敌人存活时脱离战斗。"]
+  },
+  "Abyss:Emptiness": {
+    "NAME": "空无",
+    "DESCRIPTIONS": [
+      "若此敌人在回合内造成的未被格挡的攻击伤害不高于 #b{1} 点，则其在回合结束时获得 #b{0} #y人造制品"
+    ]
+  },
+  "Abyss:ReducedHealing": {
+    "NAME": "治疗弱化",
+    "DESCRIPTIONS": ["#p无法被清除。治疗减少 #b{0}% "]
+  },
+  "Abyss:力量Degeneration": {
+    "NAME": "力量退变",
+    "DESCRIPTIONS": ["#p无法被清除。每回合开始，失去 {0}% 的正数 力量"]
+  },
+  "Abyss:FlimsyDaggers": {
+    "NAME": "易损的匕首",
+    "DESCRIPTIONS": ["#p无法被清除。 #b0 耗费的攻击牌造成的伤害降低 #b{0}% "]
+  },
+  "Abyss:FeeblePoison": {
+    "NAME": "虚弱的毒性",
+    "DESCRIPTIONS": ["#p无法被清除。降低施加的 #y中毒  #b{0}% (不低于 #b1)."]
+  },
+  "Abyss:WeakOrbs": {
+    "NAME": "虚弱的能量球",
+    "DESCRIPTIONS": ["#p无法被清除。黑暗和闪电能量球造成的伤害减少 #b{0}% "]
+  },
+  "Abyss:OrbDecay": {
+    "NAME": "衰败的能量球",
+    "DESCRIPTIONS": ["#p无法被清除。每隔3个回合，如果你有多于1个能量球槽位，则失去1个槽位。"]
+  },
+  "Abyss:DisturbedCalm": {
+    "NAME": "被扰乱的平静",
+    "DESCRIPTIONS": ["#p无法被清除。每当离开平静形态或进入神性形态，少获得1点能量。"]
+  },
+  "Abyss:SubduedSpirit": {
+    "NAME": "屈服的精神",
+    "DESCRIPTIONS": ["#p无法被清除。在愤怒和神性形态中，造成的攻击伤害减少3点。"]
+  },
+  "Abyss:VoidEmbrace": {
+    "NAME": "虚空的拥抱",
+    "DESCRIPTIONS": ["#p无法被清除。 每个奇数回合，少抽1张牌。每个偶数会输，失去 [E] "]
+  }
+}

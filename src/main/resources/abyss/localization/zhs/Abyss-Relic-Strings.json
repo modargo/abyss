@@ -1,0 +1,22 @@
+{
+  "Abyss:BehemothsWisdom": {
+    "NAME": "巨兽的智慧",
+    "FLAVOR": "贝哈蒙特的可怕不在于力量，更在于其上百年的经验和智慧。",
+    "DESCRIPTIONS": ["每场战斗开始，最多 #y消耗 {0} 张牌，抽等量牌。"]
+  },
+  "Abyss:BehemothsCourage": {
+    "NAME": "巨兽的勇气",
+    "FLAVOR": "贝哈蒙特身体大，胆子固然也大。",
+    "DESCRIPTIONS": ["每场战斗开始，获得 {0} #y金属化 和 {1} #y模糊"]
+  },
+  "Abyss:CrystalEnergy": {
+    "NAME": "晶体能量",
+    "FLAVOR": "这些光不是折射和反射，是它自己发出来的。",
+    "DESCRIPTIONS": ["每当你在一回合内遭受 {0} 或更多伤害，治疗 {1} 生命"]
+  },
+  "Abyss:HuntersRespect": {
+    "NAME": "猎人的敬重",
+    "FLAVOR": "从一个皇牌猎人赠与另一个。",
+    "DESCRIPTIONS": ["第2个回合开始时，额外抽1张牌。"]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "Abyss:BrokenCrystal": {
+    "NAME": "破碎结晶",
+    "DESCRIPTION": "每当抽到此牌，随机化耗费并抽1张牌。 NL 减少所有敌人的再生 !M! 层。 NL 消耗"
+  },
+  "Abyss:Drained": {
+    "NAME": "枯竭",
+    "DESCRIPTION": "无法被打出。 NL 当在手上， 每消耗1张牌，你遭受 !M! 伤害."
+  },
+  "Abyss:Staggered": {
+    "NAME": "蹒跚",
+    "DESCRIPTION": "无法被打出。 NL 当在手上， 每当打出1张攻击牌，添加1张伤口到弃牌堆。"
+  },
+  "Abyss:Withering": {
+    "NAME": "枯萎",
+    "DESCRIPTION": "无法被打出。 NL 每回合结束时， 向抽牌堆洗入1张灼伤。"
+  },
+  "Abyss:Panic": {
+    "NAME": "恐慌",
+    "DESCRIPTION": "无法被打出。 NL 每回合结束时， 失去 !M! 敏捷."
+  },
+  "Abyss:Corrupted": {
+    "NAME": "腐蚀",
+    "DESCRIPTION": "无法被打出。 NL 每回合结束时， 获得 !M! abyss:深渊之触"
+  },
+  "Abyss:Tormented": {
+    "NAME": "折磨",
+    "DESCRIPTION": "无法被打出。 NL 每回合结束时， 获得 !M! abyss:深渊之触"
+  },
+  "Abyss:HandOfTheAbyss": {
+    "NAME": "深渊之手",
+    "DESCRIPTION": "每当攻击牌造成了未被格挡的伤害，施加 !M! abyss:深渊之触"
+  },
+  "Abyss:Mineralized": {
+    "NAME": "矿物化",
+    "DESCRIPTION": "无法被打出。 NL 虚无 NL 每回合结束时，添加1张眩晕到弃牌堆。"
+  },
+  "Abyss:Silenced": {
+    "NAME": "沉默",
+    "DESCRIPTION": "你无法打出耗费高于1点的牌。 NL 消耗",
+    "EXTENDED_DESCRIPTION": ["无法打出耗费高于1点的牌"]
+  },
+  "Abyss:Overwhelmed": {
+    "NAME": "全面受压",
+    "DESCRIPTION": "消耗"
+  },
+  "Abyss:Doomed": {
+    "NAME": "厄运",
+    "DESCRIPTION": "无法被打出。 NL 虚无 NL 当此牌被消耗，遭受 !M! 伤害并放置1张厄运到抽牌堆顶。"
+  },
+  "Abyss:Shadowed": {
+    "NAME": "遮蔽",
+    "DESCRIPTION": "无法被打出。 NL 你的回合结束时、弃牌或消耗牌时，遭受 !M! 伤害。"
+  },
+  "Abyss:Pressured": {
+    "NAME": "压迫",
+    "DESCRIPTION": "无法被打出。 NL 虚无 NL 抽到此牌时，添加1张眩晕到弃牌堆。"
+  },
+  "Abyss:Maimed": {
+    "NAME": "残废",
+    "DESCRIPTION": "获得 2 脆弱和虚弱。 NL 消耗 。"
+  }
+}

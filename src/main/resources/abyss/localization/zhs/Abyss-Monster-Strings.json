@@ -1,0 +1,227 @@
+{
+  "Abyss:SquirmingHorror": {
+    "MOVES": [
+      "触手抽打",
+      "拥抱"
+    ],
+    "NAME": "蠕动的恐惧"
+  },
+  "Abyss:Hatchling": {
+    "MOVES": [
+      "孵化",
+      "啃",
+      "腐蚀酸液",
+      "头撞"
+    ],
+    "NAME": "初孵者"
+  },
+  "Abyss:VoidHerald": {
+    "MOVES": [
+      "监禁",
+      "赞美虚空",
+      "猛攻",
+      "腐化之触"
+    ],
+    "NAME": "虚空先驱",
+    "DIALOG": ["我只是预示着吾主的揭幕。", "我对伟大者的侍奉远胜于你!"]
+  },
+  "Abyss:VoidSpawn": {
+    "MOVES": [
+      "击倒",
+      "胃齿",
+      "触手阻击"
+    ],
+    "NAME": "虚空之卵"
+  },
+  "Abyss:DeepTyrant": {
+    "MOVES": [
+      "冲击",
+      "惊骇凝视",
+      "交替摆击",
+      "全身撞击",
+      "呼唤深渊"
+    ],
+    "NAME": "深潜暴君"
+  },
+  "Abyss:Manifestation": {
+    "MOVES": [
+      "领会深渊",
+      "疯狂"
+    ],
+    "NAME": "深渊呈现者"
+  },
+  "Abyss:Behemoth": {
+    "MOVES": [
+      "等待",
+      "进化",
+      "挥爪"
+    ],
+    "NAME": "贝哈蒙特巨兽"
+  },
+  "Abyss:GluttonousAbomination": {
+    "MOVES": [
+      "紧握之爪",
+      "错乱之颌"
+    ],
+    "NAME": "饕餮憎恶"
+  },
+  "Abyss:BoundAbyssal": {
+    "MOVES": [
+      "观察",
+      "怒视",
+      "注视",
+      "彻查"
+    ],
+    "NAME": "受缚的深渊行者"
+  },
+  "Abyss:CroakingBrute": {
+    "MOVES": [
+      "割划",
+      "野蛮冲撞"
+    ],
+    "NAME": "蛙人残虐者",
+    "DIALOG": ["*呱呱*"]
+  },
+  "Abyss:CroakingPelter": {
+    "MOVES": [
+      "割划",
+      "投石"
+    ],
+    "NAME": "蛙人投掷者",
+    "DIALOG": ["*呱呱*"]
+  },
+  "Abyss:CroakingSeer": {
+    "MOVES": [
+      "割划",
+      "守护"
+    ],
+    "NAME": "蛙人先知者",
+    "DIALOG": ["*呱呱*"]
+  },
+  "Abyss:GnawingCorruption": {
+    "MOVES": [
+      "侵蚀的堕落",
+      "触手抽击",
+      "张开左眼",
+      "张开右眼",
+      "邪眼全开"
+    ],
+    "NAME": "侵蚀之堕"
+  },
+  "Abyss:PrimevalQueen": {
+    "MOVES": [
+      "镰割",
+      "强化甲壳",
+      "呼唤护卫"
+    ],
+    "NAME": "原初女皇"
+  },
+  "Abyss:RoyalProtector": {
+    "MOVES": [
+      "甲壳",
+      "燃烧喷吐",
+      "酸液爆炸",
+      "为了女皇"
+    ],
+    "NAME": "皇家护卫"
+  },
+  "Abyss:UnboundAbyssal": {
+    "MOVES": [
+      "烂泥",
+      "永不复归",
+      "卷须"
+    ],
+    "NAME": "解放的深渊行者",
+    "DIALOG": ["永不复归！"]
+  },
+  "Abyss:AbstractCrystal": {
+    "MOVES": [
+      "晶体碎屑",
+      "射线",
+      "矿物化"
+    ]
+  },
+  "Abyss:GoldenCrystal": {
+    "NAME": "金色结晶"
+  },
+  "Abyss:BlueCrystal": {
+    "NAME": "蓝色结晶"
+  },
+  "Abyss:GreenCrystal": {
+    "NAME": "绿色结晶"
+  },
+  "Abyss:RedCrystal": {
+    "NAME": "红色结晶"
+  },
+  "Abyss:PurpleCrystal": {
+    "NAME": "紫色结晶"
+  },
+  "Abyss:GrayCrystal": {
+    "NAME": "灰色结晶"
+  },
+  "Abyss:TheCrystal": {
+    "MOVES": [
+      "未激活",
+      "结晶弹幕",
+      "结晶长矛",
+      "共振"
+    ],
+    "NAME": "结晶者"
+  },
+  "Abyss:Hunter": {
+    "MOVES": [
+      "刀锋之脊",
+      "潜伏",
+      "强化"
+    ],
+    "NAME": "猎手"
+  },
+  "Abyss:Demolisher": {
+    "MOVES": [
+      "头部毒素",
+      "身体毒素",
+      "保护",
+      "疯狂"
+    ],
+    "NAME": "破坏者"
+  },
+  "Abyss:EssenceThief": {
+    "MOVES": [
+      "粘性飞弹",
+      "窃取精华"
+    ],
+    "NAME": "精华窃贼"
+  },
+  "Abyss:AnnihilationMage": {
+    "MOVES": [
+      "湮灭之咒",
+      "混沌闪射",
+      "轻度湮灭",
+      "虚空之力",
+      "黑暗吐息"
+    ],
+    "NAME": "湮灭术士"
+  },
+  "Abyss:AnnihilationWarrior": {
+    "MOVES": [
+      "凋零打击",
+      "黑暗屏障",
+      "苦难之触",
+      "保护之环",
+      "长斧劈砍"
+    ],
+    "NAME": "湮灭勇士"
+  },
+  "Abyss:UniversalVoid": {
+    "MOVES": [
+      "抹除",
+      "灾难",
+      "破坏",
+      "天谴",
+      "拥抱终结",
+      "终归尘土",
+      "灭亡"
+    ],
+    "NAME": "宇宙的虚空"
+  }
+}
