@@ -78,9 +78,6 @@ public class UnboundAbyssal extends CustomMonster {
             this.sludgeDamage = SLUDGE_DAMAGE;
             this.tendrilsDamage = TENDRILS_DAMAGE;
         }
-        this.damage.add(new DamageInfo(this, this.sludgeDamage));
-        this.damage.add(new DamageInfo(this, this.wontGoBackDamage));
-        this.damage.add(new DamageInfo(this, this.tendrilsDamage));
 
         if (AbstractDungeon.ascensionLevel >= 17) {
             this.sludgeSlimes = A17_SLUDGE_SLIMES;
@@ -93,6 +90,10 @@ public class UnboundAbyssal extends CustomMonster {
             this.wontGoBackStrength = WONT_GO_BACK_STRENGTH;
             this.regen = REGEN;
         }
+
+        this.damage.add(new DamageInfo(this, this.sludgeDamage));
+        this.damage.add(new DamageInfo(this, this.wontGoBackDamage));
+        this.damage.add(new DamageInfo(this, this.tendrilsDamage));
 
         this.usedDialog = false;
     }
