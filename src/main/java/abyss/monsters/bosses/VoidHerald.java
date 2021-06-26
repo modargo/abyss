@@ -204,7 +204,7 @@ public class VoidHerald extends CustomMonster
         boolean hasCard = false;
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             for (AbstractCard.CardTags tag : c.tags) {
-                hasCard = hasCard || tag.name().equals(tagName);
+                hasCard = hasCard || (tag != null && tag.name().equals(tagName));
             }
         }
 

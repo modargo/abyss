@@ -168,7 +168,7 @@ public class ElderBehemoth extends AbstractImageEvent {
         ArrayList<AbstractCard> list = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             for (AbstractCard.CardTags tag : c.tags) {
-                if (tag.name().equals(tagName)) {
+                if (tag != null && tag.name().equals(tagName)) {
                     list.add(c);
                 }
             }
