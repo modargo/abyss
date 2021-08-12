@@ -132,7 +132,7 @@
       "Tendrils"
     ],
     "NAME": "Unbound Abyssal",
-    "DIALOG": ["Wont... go... back...!"]
+    "DIALOG": ["Won't... go... back...!"]
   },
   "Abyss:AbstractCrystal": {
     "MOVES": [
