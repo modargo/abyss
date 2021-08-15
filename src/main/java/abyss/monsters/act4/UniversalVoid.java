@@ -177,9 +177,17 @@ public class UniversalVoid extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new DamnationEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, fireballs), fireballs * DamnationEffect.TIME_PER_FIREBALL));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
                 if (cycle == 0) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pressured(), 1, true, false, false, (float) Settings.WIDTH * 0.30F, (float) Settings.HEIGHT / 2.0F));
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, false, false, (float) Settings.WIDTH * 0.5F, (float) Settings.HEIGHT / 2.0F));
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, false, false, (float) Settings.WIDTH * 0.70F, (float) Settings.HEIGHT / 2.0F));
+                    if (AbstractDungeon.ascensionLevel >= 19) {
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pressured(), 1, true, false, false, (float) Settings.WIDTH * 0.20F, (float) Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, false, false, (float) Settings.WIDTH * 0.4F, (float) Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, false, false, (float) Settings.WIDTH * 0.60F, (float) Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, false, false, (float) Settings.WIDTH * 0.80F, (float) Settings.HEIGHT / 2.0F));
+                    }
+                    else {
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Pressured(), 1, true, false, false, (float) Settings.WIDTH * 0.30F, (float) Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Shadowed(), 1, true, false, false, (float) Settings.WIDTH * 0.5F, (float) Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Silenced(), 1, true, false, false, (float) Settings.WIDTH * 0.70F, (float) Settings.HEIGHT / 2.0F));
+                    }
                 }
                 else {
                     AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
