@@ -60,6 +60,7 @@ public class UniversalVoid extends CustomMonster
     private static final int EMBRACE_THE_END_FINAL_STRENGTH = 60;
     private static final int ALL_IS_DUST_DAMAGE = 23;
     private static final int A4_ALL_IS_DUST_DAMAGE = 26;
+    private static final int PAINFUL_STABS_AMOUNT = 2;
     private static final int INVINCIBLE = 300;
     private static final int A19_INVINCIBLE = 200;
     private static final int BEAT_OF_DEATH = 1;
@@ -209,7 +210,7 @@ public class UniversalVoid extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, 1), 1));
                 }
                 else {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PainfulStabsPower(this)));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new PainfulStabsWithAmountPower(this, PAINFUL_STABS_AMOUNT)));
                 }
                 break;
             case RUIN_DEBUFF:

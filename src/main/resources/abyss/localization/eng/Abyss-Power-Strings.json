@@ -148,5 +148,9 @@
   "Abyss:VoidEmbrace": {
     "NAME": "Void Embrace",
     "DESCRIPTIONS": ["#pUncleansable. Each odd turn, draw one less card. Each even turn, lose [E] ."]
+  },
+  "Abyss:PainfulStabsWithAmount": {
+    "NAME": "Painful Stabs",
+    "DESCRIPTIONS": ["Whenever you receive attack damage from this enemy, add #b{0} #yWounds into your discard pile."]
   }
 }
