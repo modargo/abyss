@@ -2,7 +2,6 @@ package abyss.powers.act4;
 
 import abyss.Abyss;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

@@ -73,6 +73,6 @@ public class AbysstouchedPower extends AbstractPower implements HealthBarRenderP
 
     @Override
     public Color getColor() {
-        return Color.PURPLE.cpy();
+        return new Color(-1608453889);
     }
 }
