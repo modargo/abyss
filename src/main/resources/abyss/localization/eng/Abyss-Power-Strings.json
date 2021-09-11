@@ -33,7 +33,7 @@
   },
   "Abyss:DazedPulse": {
     "NAME": "Dazed Pulse",
-    "DESCRIPTIONS": ["At the end of each round, shuffle #b{0} #yDazed into your deck."]
+    "DESCRIPTIONS": ["At the end of each round, shuffle #b{0} #yDazed into your draw pile."]
   },
   "Abyss:AbysstouchedPulse": {
     "NAME": "Abysstouched Pulse",
@@ -61,7 +61,7 @@
   },
   "Abyss:BrokenCrystalSeal": {
     "NAME": "Broken Crystal Seal",
-    "DESCRIPTIONS": ["Add #b2 #yBroken #yCrystals to your deck each turn. NL Fragments of the crystal once used to seal this enemy litter the ground. Use them to weaken its regeneration!"]
+    "DESCRIPTIONS": ["Add #b2 #yBroken #yCrystals to your draw pile each turn. NL Fragments of the crystal once used to seal this enemy litter the ground. Use them to weaken its regeneration!"]
   },
   "Abyss:GoldenCrystal": {
     "NAME": "Golden Crystal",
