@@ -2,21 +2,21 @@
   "Abyss:BehemothsWisdom": {
     "NAME": "Behemoth's Wisdom",
     "FLAVOR": "Don't fight elder behemoths.",
-    "DESCRIPTIONS": ["At the start of each combat, #yExhaust up to {0} cards then draw that many."]
+    "DESCRIPTIONS": ["At the start of each combat, #yExhaust up to #b{0} cards then draw that many."]
   },
   "Abyss:BehemothsCourage": {
     "NAME": "Behemoth's Courage",
     "FLAVOR": "It's easy to be courageous when you have skin of iron.",
-    "DESCRIPTIONS": ["At the start of each combat, gain {0} #yMetallicize and {1} #yBlur."]
+    "DESCRIPTIONS": ["At the start of each combat, gain #b{0} #yMetallicize and #b{1} #yBlur."]
   },
   "Abyss:CrystalEnergy": {
     "NAME": "Crystal Energy",
     "FLAVOR": "It's easy to be courageous when you have skin of iron.",
-    "DESCRIPTIONS": ["When you take {0} or more damage in a turn, heal {1} HP."]
+    "DESCRIPTIONS": ["When you take #b{0} or more damage in a turn, heal #b{1} HP."]
   },
   "Abyss:HuntersRespect": {
     "NAME": "Hunter's Respect",
     "FLAVOR": "From one big game hunter to another.",
-    "DESCRIPTIONS": ["At the start of your second turn, draw 1 additional card."]
+    "DESCRIPTIONS": ["At the start of your second turn, draw #b1 additional card."]
   }
 }
