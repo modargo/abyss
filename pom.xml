@@ -11,7 +11,8 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		</properties>
+        <Steam.path>C:/Program Files (x86)/Steam/steamapps</Steam.path>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -73,6 +74,7 @@
                         <configuration>
                             <target>
                                 <copy file="target/Abyss.jar" tofile="../lib/Abyss.jar"/>
+                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
                             </target>
                         </configuration>
                         <goals>
