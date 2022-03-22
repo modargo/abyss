@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.text.MessageFormat;
@@ -68,7 +69,7 @@ public class AbysstouchedPower extends AbstractPower implements HealthBarRenderP
 
     @Override
     public int getHealthBarAmount() {
-        return this.owner.isPlayer ? 0 : this.amount;
+        return this.owner.isPlayer ? 0 : this.owner.hasPower(BarricadePower.POWER_ID) ? Math.max(0, this.amount - this.owner.currentBlock) : this.amount;
     }
 
     @Override
