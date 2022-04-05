@@ -55,8 +55,8 @@ public class AnnihilationMage extends CustomMonster
     private static final int BREATH_OF_DARKNESS_DAMAGE = 1;
     private static final int A3_BREATH_OF_DARKNESS_DAMAGE = 2;
     private static final int BREATH_OF_DARKNESS_HITS = 3;
-    private static final int BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
-    private static final int A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 1;
+    private static final int BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 3;
+    private static final int A18_BREATH_OF_DARKNESS_ABYSSTOUCHED_PULSE = 3;
     private static final int ABYSSTOUCHED_PULSE_AMOUNT = 1;
     private static final int A18_ABYSSTOUCHED_PULSE_AMOUNT = 2;
     private static final int ARTIFACT_AMOUNT = 1;
@@ -191,8 +191,8 @@ public class AnnihilationMage extends CustomMonster
                 AbstractDungeon.effectsQueue.add(effect);
                 for (int i=0; i < BREATH_OF_DARKNESS_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AbysstouchedPulsePower(this, this.breathOfDarknessAbysstouchedPulse), this.breathOfDarknessAbysstouchedPulse));
                 }
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new AbysstouchedPulsePower(this, this.breathOfDarknessAbysstouchedPulse), this.breathOfDarknessAbysstouchedPulse));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
