@@ -4925,7 +4925,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Pressured, Shadowed, Silenced, Overwhelmed",
+									"name": "Pressured, Shadowed, Silenced",
 									"color": "DEBUFF"
 								}
 							]
@@ -5113,7 +5113,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Pressured, Shadowed, Silenced",
+									"name": "Pressured, Shadowed, Silenced, Overwhelmed",
 									"color": "DEBUFF"
 								}
 							]
