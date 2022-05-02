@@ -9,10 +9,7 @@ import basemod.helpers.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -224,11 +221,11 @@ public class UniversalVoid extends CustomMonster
             case RUIN_DEBUFF:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new BorderFlashEffect(Color.FIREBRICK.cpy())));
                 if (cycle < 3) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Maimed(), 1, true, true));
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Doomed(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Maimed(), 1));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Doomed(), 1));
                 }
                 else {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Overwhelmed(), 1, true, true));
+                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Overwhelmed(), 1));
                 }
                 break;
         }
