@@ -115,11 +115,11 @@
   },
   "Abyss:ReducedHealing": {
     "NAME": "治疗弱化",
-    "DESCRIPTIONS": ["#p无法被清除。治疗减少 #b{0}% "]
+    "DESCRIPTIONS": ["#p无法被清除。 治疗减少 #b{0}% "]
   },
   "Abyss:StrengthDegeneration": {
     "NAME": "力量退变",
-    "DESCRIPTIONS": ["#p无法被清除。每回合开始，失去 #b{0}% 的正数 力量"]
+    "DESCRIPTIONS": ["#p无法被清除。 每回合开始，失去 #b{0}% 的正数 力量"]
   },
   "Abyss:FlimsyDaggers": {
     "NAME": "易损的匕首",
@@ -127,23 +127,23 @@
   },
   "Abyss:FeeblePoison": {
     "NAME": "虚弱的毒性",
-    "DESCRIPTIONS": ["#p无法被清除。降低施加的 #y中毒  #b{0}% (不低于 #b1)."]
+    "DESCRIPTIONS": ["#p无法被清除。 降低施加的 #y中毒  #b{0}% (不低于 #b1)."]
   },
   "Abyss:WeakOrbs": {
     "NAME": "虚弱的能量球",
-    "DESCRIPTIONS": ["#p无法被清除。黑暗和闪电能量球造成的伤害减少 #b{0}% "]
+    "DESCRIPTIONS": ["#p无法被清除。 黑暗和闪电能量球造成的伤害减少 #b{0}% "]
   },
   "Abyss:OrbDecay": {
     "NAME": "衰败的能量球",
-    "DESCRIPTIONS": ["#p无法被清除。每隔3个回合，如果你有多于1个能量球槽位，则失去1个槽位。"]
+    "DESCRIPTIONS": ["#p无法被清除。 每隔3个回合，如果你有多于1个能量球槽位，则失去1个槽位。"]
   },
   "Abyss:DisturbedCalm": {
     "NAME": "被扰乱的平静",
-    "DESCRIPTIONS": ["#p无法被清除。每当离开平静形态或进入神性形态，少获得1点能量。"]
+    "DESCRIPTIONS": ["#p无法被清除。 每当离开平静形态或进入神性形态，少获得1点能量。"]
   },
   "Abyss:SubduedSpirit": {
     "NAME": "屈服的精神",
-    "DESCRIPTIONS": ["#p无法被清除。在愤怒和神性形态中，造成的攻击伤害减少3点。"]
+    "DESCRIPTIONS": ["#p无法被清除。 在愤怒和神性形态中，造成的攻击伤害减少3点。"]
   },
   "Abyss:VoidEmbrace": {
     "NAME": "虚空的拥抱",
