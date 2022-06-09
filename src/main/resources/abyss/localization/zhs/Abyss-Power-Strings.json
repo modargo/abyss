@@ -117,9 +117,9 @@
     "NAME": "治疗弱化",
     "DESCRIPTIONS": ["#p无法被清除。治疗减少 #b{0}% "]
   },
-  "Abyss:力量Degeneration": {
+  "Abyss:StrengthDegeneration": {
     "NAME": "力量退变",
-    "DESCRIPTIONS": ["#p无法被清除。每回合开始，失去 {0}% 的正数 力量"]
+    "DESCRIPTIONS": ["#p无法被清除。每回合开始，失去 #b{0}% 的正数 力量"]
   },
   "Abyss:FlimsyDaggers": {
     "NAME": "易损的匕首",
