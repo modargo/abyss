@@ -1,0 +1,50 @@
+{
+  "Abyss:Abyss": {
+    "TEXT": [
+      "심연",
+      "3 막",
+      "다른 방향을 쳐다보니, 황폐한 땅으로 통하는 길이 있습니다. 저 땅은 고대의 생물과 흉측한 생물들이 가득 차있어, 한때는 봉인되어 있었다고 합니다.",
+      "심연을 탐험한다"
+    ]
+  },
+  "Abyss:Void": {
+    "TEXT": [
+      "공허",
+      "종막",
+      "전방에 #p공허가 보입니다. 그 곳의 군주가 #y당신을 #p부르며, 창조와 파괴를 말하면서, 마침내 당신의 답을 #y약속하고 #y있습니다.",
+      "공허 속으로 뛰어든다"
+    ]
+  },
+  "Abyss:VoidGetForkedConstructorPatch": {
+    "TEXT": ["[종막, 공허] 열쇠를 써야 입장할 수 있습니다"]
+  },
+  "Abyss:BehemothsWisdomAction": {
+    "TEXT": ["소멸시키고 대체합니다 (베히모스의 지혜)"]
+  },
+  "Abyss:ExhaustCardInDiscardPileAction": {
+    "TEXT": [
+      "소멸시킬 카드를 선택하세요.",
+      "소멸시킬 카드 ",
+      " 장을 선택하세요."
+    ]
+  },
+  "Abyss:Evolving": {
+    "TEXT": ["베히모스가 진화합니다..."],
+    "EXTRA_TEXT": [" 뽑을 카드 더미에 화상 투입:", "최대 체력 증가:"],
+    "TEXT_DICT": {
+      "Anger": "abyss:격노 {0}",
+      "BeatOfDeath": "abyss:죽음의\u00a0고동 {0}",
+      "Metallicize": "abyss:금속화 {0}",
+      "Buffer": "abyss:버퍼 {0}",
+      "Abyss:FrailPulse": "abyss:손상의\u00a0고동",
+      "Abyss:DazedPulse": "abyss:어지러움의\u00a0고동",
+      "Abyss:AbysstouchedPulse": "abyss:심연의\u00a0고통 {0}",
+      "Abyss:SlimyBody": "abyss:끈적한\u00a0육체",
+      "Invincible": "abyss:천하무적 {0}"
+    }
+  },
+  "Abyss:ModSettingsPanel": {
+    "TEXT": [
+    ]
+  }
+}

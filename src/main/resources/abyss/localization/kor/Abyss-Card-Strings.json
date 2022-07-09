@@ -1,0 +1,63 @@
+{
+  "Abyss:BrokenCrystal": {
+    "NAME": "파괴된 수정",
+    "DESCRIPTION": "이 카드를 뽑으면, 비용이 무작위로 결정되고 카드 1장을 뽑습니다. NL 모든 적의 재생을 !M! 감소시킵니다. NL 소멸."
+  },
+  "Abyss:Drained": {
+    "NAME": "탈진",
+    "DESCRIPTION": "사용불가. NL 이 카드가 손에 있을때, 카드가 소멸할 때마다, 피해를 !M! 받습니다."
+  },
+  "Abyss:Staggered": {
+    "NAME": "충격받음",
+    "DESCRIPTION": "사용불가. NL 이 카드가 손에 있을때, 공격 카드를 사용할 때마다, 부상 1장을 버린 카드 더미에 넣습니다."
+  },
+  "Abyss:Withering": {
+    "NAME": "위축",
+    "DESCRIPTION": "사용불가. NL 턴 종료시, 뽑을 카드 더미에 부상을 넣습니다."
+  },
+  "Abyss:Panic": {
+    "NAME": "패닉",
+    "DESCRIPTION": "사용불가. NL 턴 종료시, 민첩을 !M! 잃습니다."
+  },
+  "Abyss:Corrupted": {
+    "NAME": "오염됨",
+    "DESCRIPTION": "사용불가. NL 턴 종료시, 심연의 표식을 !M! 받습니다."
+  },
+  "Abyss:Tormented": {
+    "NAME": "괴로움",
+    "DESCRIPTION": "사용불가. NL 턴 종료시, 심연의 표식을 !M! 받습니다."
+  },
+  "Abyss:HandOfTheAbyss": {
+    "NAME": "공허의 손",
+    "DESCRIPTION": "공격으로 막히지 않은 피해를 주면, 심연의 표식을 !M! 부여합니다."
+  },
+  "Abyss:Mineralized": {
+    "NAME": "광물화",
+    "DESCRIPTION": "사용불가. NL 휘발성. NL 턴 종료시, 버린 카드 더미에 어지러움을 넣습니다."
+  },
+  "Abyss:Silenced": {
+    "NAME": "침묵",
+    "DESCRIPTION": "비용 2 이상의 카드를 사용할 수 없습니다. NL 소멸.",
+    "EXTENDED_DESCRIPTION": ["지금은 비용 2 이상의 카드를 사용할 수 없어!"]
+  },
+  "Abyss:Overwhelmed": {
+    "NAME": "압도",
+    "DESCRIPTION": "소멸."
+  },
+  "Abyss:Doomed": {
+    "NAME": "파멸",
+    "DESCRIPTION": "사용불가. NL 휘발성. NL 이 카드가 소멸되면, 피해를 !M! 받고 파멸 1장을 복사하여 뽑을 카드 더미 맨 밑에 넣습니다."
+  },
+  "Abyss:Shadowed": {
+    "NAME": "우울함",
+    "DESCRIPTION": "사용불가. NL 턴 종료시 또는 이 카드가 버려지거나 소멸하면, 피해를 !M! 받습니다."
+  },
+  "Abyss:Pressured": {
+    "NAME": "압박감",
+    "DESCRIPTION": "사용불가. NL 휘발성. NL 이 카드가 뽑히면, 버린 카드 더미에 어지러움을 넣습니다."
+  },
+  "Abyss:Maimed": {
+    "NAME": "신체 장애",
+    "DESCRIPTION": "약화와 손상을 2 받습니다. NL 소멸."
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "Abyss:SquirmingHorror": {
+    "MOVES": [
+      "촉수 채찍",
+      "포옹"
+    ],
+    "NAME": "꼬불대는 공포"
+  },
+  "Abyss:Hatchling": {
+    "MOVES": [
+      "깨어남",
+      "베어물기",
+      "부식성 산",
+      "박치기"
+    ],
+    "NAME": "저글링"
+  },
+  "Abyss:VoidHerald": {
+    "MOVES": [
+      "압력",
+      "공허 찬가",
+      "맹공격",
+      "부패의 손길"
+    ],
+    "NAME": "공허 전령관",
+    "DIALOG": ["나는 그저 내 군주의 제막 소식을 전할 뿐이다.", "난 너따위보다 훨씬 더 위대한 분을 섬기고 있다!"]
+  },
+  "Abyss:VoidSpawn": {
+    "MOVES": [
+      "두들겨패기",
+      "찢겨진 입",
+      "촉수 폭격"
+    ],
+    "NAME": "공허 유체"
+  },
+  "Abyss:DeepTyrant": {
+    "MOVES": [
+      "폭파",
+      "끔찍한 눈빛",
+      "몸부림",
+      "몸통 박치기",
+      "심연의 부름"
+    ],
+    "NAME": "심연의 폭군"
+  },
+  "Abyss:Manifestation": {
+    "MOVES": [
+      "심연의 구속",
+      "광기"
+    ],
+    "NAME": "발현된 생명체"
+  },
+  "Abyss:Behemoth": {
+    "MOVES": [
+      "기다림",
+      "진화",
+      "발톱 휘두르기"
+    ],
+    "NAME": "베히모스"
+  },
+  "Abyss:GluttonousAbomination": {
+    "MOVES": [
+      "조여오는 집게발",
+      "정신나간 입질"
+    ],
+    "NAME": "탐욕의 흉물"
+  },
+  "Abyss:BoundAbyssal": {
+    "MOVES": [
+      "관찰",
+      "노려보기",
+      "심사숙고",
+      "탐색"
+    ],
+    "NAME": "엉켜진 심연"
+  },
+  "Abyss:CroakingBrute": {
+    "MOVES": [
+      "찢기",
+      "난폭한 돌진"
+    ],
+    "NAME": "개골 투사",
+    "DIALOG": ["*개굴!!*"]
+  },
+  "Abyss:CroakingPelter": {
+    "MOVES": [
+      "찢기",
+      "돌 던지기"
+    ],
+    "NAME": "개골 투척병",
+    "DIALOG": ["개굴?"]
+  },
+  "Abyss:CroakingSeer": {
+    "MOVES": [
+      "찢기",
+      "보호형 토템"
+    ],
+    "NAME": "개골 예언자",
+    "DIALOG": ["*개굴*"]
+  },
+  "Abyss:GnawingCorruption": {
+    "MOVES": [
+      "갉아먹힌 부패",
+      "촉수 채찍",
+      "왼쪽 눈 뜨기",
+      "오른쪽 눈 뜨기",
+      "모든 눈 뜨기"
+    ],
+    "NAME": "갉아먹힌 부패"
+  },
+  "Abyss:PrimevalQueen": {
+    "MOVES": [
+      "낫",
+      "갑각 강화",
+      "호위충 호출"
+    ],
+    "NAME": "원시 여왕"
+  },
+  "Abyss:RoyalProtector": {
+    "MOVES": [
+      "갑각",
+      "불타오르는 타액",
+      "산성 폭발",
+      "여왕을 위하여"
+    ],
+    "NAME": "정예 호위충"
+  },
+  "Abyss:UnboundAbyssal": {
+    "MOVES": [
+      "진흙더미",
+      "돌아가지 않는다",
+      "줄기"
+    ],
+    "NAME": "해방된 심해의 생명체",
+    "DIALOG": ["절대로... 돌아가지... 않으리라...!"]
+  },
+  "Abyss:AbstractCrystal": {
+    "MOVES": [
+      "크리스탈 조각",
+      "빔",
+      "광물회"
+    ]
+  },
+  "Abyss:GoldenCrystal": {
+    "NAME": "황금 크리스탈"
+  },
+  "Abyss:BlueCrystal": {
+    "NAME": "블루 크리스탈"
+  },
+  "Abyss:GreenCrystal": {
+    "NAME": "그린 크리스탈"
+  },
+  "Abyss:RedCrystal": {
+    "NAME": "레드 크리스탈"
+  },
+  "Abyss:PurpleCrystal": {
+    "NAME": "퍼플 크리스탈"
+  },
+  "Abyss:GrayCrystal": {
+    "NAME": "그레이 크리스탈"
+  },
+  "Abyss:TheCrystal": {
+    "MOVES": [
+      "작동 정지",
+      "수정 폭격",
+      "수정 장창",
+      "공명"
+    ],
+    "NAME": "수정탑"
+  },
+  "Abyss:Hunter": {
+    "MOVES": [
+      "바늘 가시뼈",
+      "잠복",
+      "충전"
+    ],
+    "NAME": "추적 도살자"
+  },
+  "Abyss:Demolisher": {
+    "MOVES": [
+      "머리 겨냥",
+      "신체 겨냥",
+      "보호",
+      "광란"
+    ],
+    "NAME": "파괴수"
+  },
+  "Abyss:EssenceThief": {
+    "MOVES": [
+      "쐐기벌레",
+      "정수 강탈"
+    ],
+    "NAME": "정수 강탈자"
+  },
+  "Abyss:AnnihilationMage": {
+    "MOVES": [
+      "섬멸의 저주",
+      "카오스 볼트",
+      "소멸의 의식",
+      "공허 속의 힘",
+      "어둠의 브레스"
+    ],
+    "NAME": "섬멸도사"
+  },
+  "Abyss:AnnihilationWarrior": {
+    "MOVES": [
+      "부패의 일격",
+      "어둠의 장벽",
+      "고통의 손길",
+      "보호의 원형",
+      "때려눕히기"
+    ],
+    "NAME": "섬멸전사"
+  },
+  "Abyss:UniversalVoid": {
+    "MOVES": [
+      "존재 소멸",
+      "재앙",
+      "피폐함",
+      "지옥살이",
+      "끝을 목격하라",
+      "모든 것은 재가 되리라",
+      "파멸"
+    ],
+    "NAME": "천상의 공허"
+  }
+}

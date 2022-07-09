@@ -1,0 +1,22 @@
+{
+  "Abyss:BehemothsWisdom": {
+    "NAME": "베히모스의 지혜",
+    "FLAVOR": "솔직히 장로 베히모스랑 어떻게 싸우겠습니까.",
+    "DESCRIPTIONS": ["전투 시작시, {0} 장의 카드를 선택해 #y소멸시키고, 그만큼 카드를 뽑습니다."]
+  },
+  "Abyss:BehemothsCourage": {
+    "NAME": "베히모스의 용기",
+    "FLAVOR": "철 같은 피부를 가졌을 때 용기를 내는 것은 훨씬 쉽죠.",
+    "DESCRIPTIONS": ["전투 시작시, #y금속화를 {0} 얻고 #y흐릿함을 {1} 얻습니다."]
+  },
+  "Abyss:CrystalEnergy": {
+    "NAME": "수정의 에너지",
+    "FLAVOR": "철 같은 피부를 가졌을 때 용기를 내는 것은 훨씬 쉽죠.",
+    "DESCRIPTIONS": ["매 턴마다 {0} 또는 그 이상의 피해를 주면, 체력을 {1} 회복합니다."]
+  },
+  "Abyss:HuntersRespect": {
+    "NAME": "사냥꾼의 존경심",
+    "FLAVOR": "거물 사냥꾼에게서 더 큰 명성을.",
+    "DESCRIPTIONS": ["2번째 턴 시작시, 카드 1장을 추가로 더 뽑습니다."]
+  }
+}

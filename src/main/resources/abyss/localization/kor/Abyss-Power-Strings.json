@@ -1,0 +1,156 @@
+{
+  "Abyss:ThoughtStealer": {
+    "NAME": "사색 강탈자",
+    "DESCRIPTIONS": ["매 턴마다 처음으로 뽑는 카드 #b{0} 장을 제외한 카드를 추가로 뽑을때마다, 충전을 1 얻습니다. 충전이 #b{1} 이상일시, 충전을 소모하고 모든 적이 #y힘을 #b{2} 얻습니다."]
+  },
+  "Abyss:Berserker": {
+    "NAME": "버서커",
+    "DESCRIPTIONS": ["전투에서 한 번만, 턴 종료시 전장이 이 적이 혼자 남아있다면 #y힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:Resummon": {
+    "NAME": "재소환",
+    "DESCRIPTIONS": ["#p공허 #p유체가 사망하면 1턴 후 #p공허 #p전령관이 다시 소환합니다. 소환된 유체는 #p공허 #p전령관의 힘과 동일한 힘을 가진채로 소환됩니다."]
+  },
+  "Abyss:DurableMinion": {
+    "NAME": "지속형 하수인",
+    "DESCRIPTIONS": ["이 하수인은 보스가 처치되어도 전투에서 도주하지 않습니다."]
+  },
+  "Abyss:Abysstouched": {
+    "NAME": "심연의 표식",
+    "DESCRIPTIONS": ["#y공격으로 받는 피해가 #b{0}% 증가합니다. 턴 종료시, 피해를 #b{0} 받습니다.", "#y공격으로 받는 피해가 #b{0}% 증가합니다. 턴 종료시, 피해를 #b{0} 받습니다."]
+  },
+  "Abyss:DelayedAbysstouched": {
+    "NAME": "심연의 표식",
+    "DESCRIPTIONS": ["#y공격으로 받는 피해가 #b{0}% 증가합니다. 턴 종료시, 피해를 #b{0} 받습니다."]
+  },
+  "Abyss:Evolving": {
+    "NAME": "진화중",
+    "DESCRIPTIONS": ["이 적은 매 턴마다 진화합니다."]
+  },
+  "Abyss:FrailPulse": {
+    "NAME": "손상의 고동",
+    "DESCRIPTIONS": ["턴 종료시, #y손상을 #b{0} 부여합니다."]
+  },
+  "Abyss:DazedPulse": {
+    "NAME": "어지러움의 고동",
+    "DESCRIPTIONS": ["턴 종료시, #y어지러움 #b{0} 장을 뽑을 카드 더미에 넣습니다."]
+  },
+  "Abyss:AbysstouchedPulse": {
+    "NAME": "심연의 고통",
+    "DESCRIPTIONS": ["턴 종료시, #y심연의 #y표식을 #b{0} 부여합니다."]
+  },
+  "Abyss:SlimyBody": {
+    "NAME": "끈적한 육체",
+    "DESCRIPTIONS": ["이 적에게 막히지 않은 피해를 입히면, #y점액덩어리 1장을 버린 카드 더미에 넣습니다."]
+  },
+  "Abyss:Gluttony": {
+    "NAME": "폭식",
+    "DESCRIPTIONS": ["전투 시작시, 플레이어가 보유한 현재 체력 #b{0} 마다 힘을 1 얻습니다."]
+  },
+  "Abyss:Wary": {
+    "NAME": "경계",
+    "DESCRIPTIONS": ["#y공격 카드를 사용할 때마다, 힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:PrimevalCall": {
+    "NAME": "원시의 메아리",
+    "DESCRIPTIONS": ["매 턴마다 #p정예 #p호위충을 소환합니다."]
+  },
+  "Abyss:HandOfTheAbyss": {
+    "NAME": "공허의 손",
+    "DESCRIPTIONS": ["적에게 막히지 않은 피해를 입히면, #y심연의 #y표식을 #b{0} 부여합니다."]
+  },
+  "Abyss:BrokenCrystalSeal": {
+    "NAME": "부서진 수정의 봉인",
+    "DESCRIPTIONS": ["매 턴마다 #y부서진 수정 #b2 장을 뽑을 카드 더미에 넣습니다. NL 해당 카드를 사용하여 이 적의 재생을 감소시키십시오!"]
+  },
+  "Abyss:GoldenCrystal": {
+    "NAME": "황금 크리스탈",
+    "DESCRIPTIONS": ["희귀 등급 카드를 사용할 때마다, #y힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:BlueCrystal": {
+    "NAME": "블루 크리스탈",
+    "DESCRIPTIONS": ["특별 등급 카드를 사용할 때마다, #y힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:GreenCrystal": {
+    "NAME": "그린 크리스탈",
+    "DESCRIPTIONS": ["비용이 #b2 또는 그 이상의 카드를 사용할 때마다, #y힘을 #b{0} 얻습니다"]
+  },
+  "Abyss:RedCrystal": {
+    "NAME": "레드 크리스탈",
+    "DESCRIPTIONS": ["#y상태이상이 아닌 카드를 #y소멸시킬때마다, #y힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:PurpleCrystal": {
+    "NAME": "퍼플 크리스탈",
+    "DESCRIPTIONS": ["플레이어 턴 동안 에너지를 얻을때마다, #y힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:GrayCrystal": {
+    "NAME": "그레이 크리스탈",
+    "DESCRIPTIONS": ["#y힘, #y민첩, #y밀집을 얻을때마다, #y힘을 #b{0} 얻습니다."]
+  },
+  "Abyss:CrystalLink": {
+    "NAME": "수정 연결선",
+    "DESCRIPTIONS": ["다른 크리스탈이 처치될 때마다, 다음 턴에 #y힘을 #b{0}% 만큼 얻습니다."]
+  },
+  "Abyss:InactiveCrystal": {
+    "NAME": "가동 준비중",
+    "DESCRIPTIONS": ["이 적은 #g활동을 #g정지한 #g상태입니다. 이 상태에선 공격받지 않고 공격하지 않습니다. NL 다른 크리스탈이 #b{0} 이하가 남으면 활동을 시작합니다."]
+  },
+  "Abyss:EssenceThief": {
+    "NAME": "정수 강탈자",
+    "DESCRIPTIONS": ["이 적은 다음 턴부터 당신의 #r최대 #r체력을 #r감소시킬 #r것입니다! 어서 처치하십시오!"]
+  },
+  "Abyss:Resonance": {
+    "NAME": "공명",
+    "DESCRIPTIONS": ["공격으로 받는 피해가 #b{0}% 감소합니다. 일정 턴마다 #y공명 버프를 다시 받습니다."]
+  },
+  "Abyss:ChainsOfDoom": {
+    "NAME": "파멸의 사슬",
+    "DESCRIPTIONS": ["이 적이 살아있으면, 당신은 이 전투에서 도주할 수 없습니다."]
+  },
+  "Abyss:Emptiness": {
+    "NAME": "허무함",
+    "DESCRIPTIONS": [
+      "이 적의 턴 종료시, 이 적이 공격받았다면 #y인공물을 #b{0} 얻고 막히지 않은 피해를 #b{1} 또는 그 이하만큼 받으면 인공물을 얻습니다."
+    ]
+  },
+  "Abyss:ReducedHealing": {
+    "NAME": "회복량 저하",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 회복 효과가 #b{0}% 만큼 감소합니다."]
+  },
+  "Abyss:StrengthDegeneration": {
+    "NAME": "퇴보하는 힘",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 턴 시작시, 양수 수치의 #y힘이 #b{0}% 만큼 감소합니다."]
+  },
+  "Abyss:FlimsyDaggers": {
+    "NAME": "조잡한 단도",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 비용이 #b0 인 카드의 피해량이 #b{0}% 만큼 감소합니다."]
+  },
+  "Abyss:FeeblePoison": {
+    "NAME": "약해진 독",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 적에게 부여하는 중독 수치가 #b{0}% 만큼 감소합니다. (최소 #b1)"]
+  },
+  "Abyss:WeakOrbs": {
+    "NAME": "약화된 구체",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 어둠과 전기 구체의 피해량이 #b{0}% 만큼 감소합니다."]
+  },
+  "Abyss:OrbDecay": {
+    "NAME": "구체 부패",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 매 3턴마다, 구체 슬롯이 1칸 이상 존재할 경우, 구체 슬롯이 1칸 제거됩니다."]
+  },
+  "Abyss:DisturbedCalm": {
+    "NAME": "흐트러진 명상",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 명상을 벗어나거나 강림 상태에 진입시 얻는 에너지가 [E] 감소합니다."]
+  },
+  "Abyss:SubduedSpirit": {
+    "NAME": "억눌린 정신",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 진노와 강림 상태에서 적에게 입히는 피해량이 3분의 1만큼 감소합니다."]
+  },
+  "Abyss:VoidEmbrace": {
+    "NAME": "공허의 포옹",
+    "DESCRIPTIONS": ["#p이 #p효과는 #p제거될 #p수 #p없습니다. 홀수 턴 시작시, 카드를 1장 적게 뽑습니다. 짝수 턴 시작시, [E] 를 잃습니다."]
+  },
+  "Abyss:PainfulStabsWithAmount": {
+    "NAME": "고통스러운 자상",
+    "DESCRIPTIONS": ["이 적에게 막히지 않은 피해를 받으면, #y부상 #b{0} 장을 버린 카드 더미에 넣습니다."]
+  }
+}
