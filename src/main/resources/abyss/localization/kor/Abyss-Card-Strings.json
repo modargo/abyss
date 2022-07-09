@@ -21,15 +21,15 @@
   },
   "Abyss:Corrupted": {
     "NAME": "오염됨",
-    "DESCRIPTION": "사용불가. NL 턴 종료시, 심연의 표식을 !M! 받습니다."
+    "DESCRIPTION": "사용불가. NL 턴 종료시, abyss:심연의_표식을 !M! 받습니다."
   },
   "Abyss:Tormented": {
     "NAME": "괴로움",
-    "DESCRIPTION": "사용불가. NL 턴 종료시, 심연의 표식을 !M! 받습니다."
+    "DESCRIPTION": "사용불가. NL 턴 종료시, abyss:심연의_표식을 !M! 받습니다."
   },
   "Abyss:HandOfTheAbyss": {
     "NAME": "공허의 손",
-    "DESCRIPTION": "공격으로 막히지 않은 피해를 주면, 심연의 표식을 !M! 부여합니다."
+    "DESCRIPTION": "공격으로 막히지 않은 피해를 주면, abyss:심연의_표식을 !M! 부여합니다."
   },
   "Abyss:Mineralized": {
     "NAME": "광물화",
