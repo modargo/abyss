@@ -10,12 +10,11 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Burn;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -52,7 +51,7 @@ public class VoidHerald extends CustomMonster
     private static final int CORRUPTING_TOUCH_WEAK = 1;
     private static final int A19_CORRUPTING_TOUCH_WEAK = 1;
     private static final int CORRUPTING_TOUCH_DRAW = 1;
-    private static final int A19_CORRUPTING_TOUCH_DRAW = 1;
+    private static final int A19_CORRUPTING_TOUCH_DRAW = 2;
     private static final int ONSLAUGHT_DAMAGE = 6;
     private static final int A4_ONSLAUGHT_DAMAGE = 7;
     private static final int ONSLAUGHT_HITS = 2;
@@ -144,6 +143,7 @@ public class VoidHerald extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.corruptingTouchWeak, true), this.corruptingTouchWeak));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DrawCardNextTurnPower(AbstractDungeon.player, this.corruptingTouchDraw), this.corruptingTouchDraw));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Dazed(), this.corruptingTouchDraw, false, true));
                 break;
             case ONSLAUGHT_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
