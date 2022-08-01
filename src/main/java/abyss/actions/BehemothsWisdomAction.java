@@ -1,5 +1,6 @@
 package abyss.actions;
 
+import abyss.relics.BehemothsWisdom;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -27,6 +28,7 @@ public class BehemothsWisdomAction extends AbstractGameAction {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
                     this.addToTop(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.handCardSelectScreen.selectedCards.group.size()));
+                    BehemothsWisdom.incrementExhaustStat(AbstractDungeon.handCardSelectScreen.selectedCards.group.size());
                     for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                         AbstractDungeon.player.hand.moveToExhaustPile(c);
                     }

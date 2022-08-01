@@ -2,7 +2,10 @@
   "Abyss:BehemothsWisdom": {
     "NAME": "Behemoth's Wisdom",
     "FLAVOR": "Don't fight elder behemoths.",
-    "DESCRIPTIONS": ["At the start of each combat, #yExhaust up to #b{0} cards then draw that many."]
+    "DESCRIPTIONS": [
+      "At the start of each combat, #yExhaust up to #b{0} cards then draw that many.",
+      "Cards exhausted: #b{0}",
+      " NL Per combat: #b{0}"]
   },
   "Abyss:BehemothsCourage": {
     "NAME": "Behemoth's Courage",
