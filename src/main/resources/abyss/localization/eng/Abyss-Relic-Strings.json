@@ -14,7 +14,7 @@
   },
   "Abyss:CrystalEnergy": {
     "NAME": "Crystal Energy",
-    "FLAVOR": "It's easy to be courageous when you have skin of iron.",
+    "FLAVOR": "Suffused with the power of an ancient civilization.",
     "DESCRIPTIONS": [
       "When you take #b{0} or more damage in a turn, heal #b{1} HP.",
       "HP healed: #b{0}."
