@@ -62,7 +62,6 @@ public class UniversalVoid extends CustomMonster
     private static final int A19_INVINCIBLE = 200;
     private static final int BEAT_OF_DEATH = 1;
     private static final int A19_BEAT_OF_DEATH = 2;
-    private static final int STARTING_STRENGTH = 0;
     private static final int HP = 650;
     private static final int A9_HP = 700;
     private int obliterateDamage;
@@ -87,17 +86,17 @@ public class UniversalVoid extends CustomMonster
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.obliterateDamage = A4_OBLITERATE_DAMAGE - STARTING_STRENGTH;
-            this.ravageDamage = A4_RAVAGE_DAMAGE - STARTING_STRENGTH;
+            this.obliterateDamage = A4_OBLITERATE_DAMAGE;
+            this.ravageDamage = A4_RAVAGE_DAMAGE;
             this.ravageHits = A4_RAVAGE_HITS;
-            this.damnationDamage = A4_DAMNATION_DAMAGE - STARTING_STRENGTH;
-            this.allIsDustDamage = A4_ALL_IS_DUST_DAMAGE - STARTING_STRENGTH;
+            this.damnationDamage = A4_DAMNATION_DAMAGE;
+            this.allIsDustDamage = A4_ALL_IS_DUST_DAMAGE;
         } else {
-            this.obliterateDamage = OBLITERATE_DAMAGE - STARTING_STRENGTH;
-            this.ravageDamage = RAVAGE_DAMAGE - STARTING_STRENGTH;
+            this.obliterateDamage = OBLITERATE_DAMAGE;
+            this.ravageDamage = RAVAGE_DAMAGE;
             this.ravageHits = RAVAGE_HITS;
-            this.damnationDamage = DAMNATION_DAMAGE - STARTING_STRENGTH;
-            this.allIsDustDamage = ALL_IS_DUST_DAMAGE - STARTING_STRENGTH;
+            this.damnationDamage = DAMNATION_DAMAGE;
+            this.allIsDustDamage = ALL_IS_DUST_DAMAGE;
         }
         this.damage.add(new DamageInfo(this, this.obliterateDamage));
         this.damage.add(new DamageInfo(this, this.ravageDamage));
@@ -123,9 +122,6 @@ public class UniversalVoid extends CustomMonster
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new InvinciblePower(this, this.invincible), this.invincible));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BeatOfDeathPower(this, this.beatOfDeath), this.beatOfDeath));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new EmptinessPower(this)));
-        if (STARTING_STRENGTH > 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, STARTING_STRENGTH), STARTING_STRENGTH));
-        }
     }
 
     @Override
