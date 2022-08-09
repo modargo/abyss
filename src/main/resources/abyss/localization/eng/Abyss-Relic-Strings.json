@@ -4,8 +4,8 @@
     "FLAVOR": "Don't fight elder behemoths.",
     "DESCRIPTIONS": [
       "At the start of each combat, #yExhaust up to #b{0} cards then draw that many.",
-      "Cards exhausted: #b{0}",
-      " NL Per combat: #b{0}"]
+      "Cards exhausted: {0}",
+      " NL Per combat: {0}"]
   },
   "Abyss:BehemothsCourage": {
     "NAME": "Behemoth's Courage",
@@ -17,7 +17,7 @@
     "FLAVOR": "Suffused with the power of an ancient civilization.",
     "DESCRIPTIONS": [
       "When you take #b{0} or more damage in a turn, heal #b{1} HP.",
-      "HP healed: #b{0}."
+      "HP healed: {0}"
     ]
   },
   "Abyss:HuntersRespect": {
