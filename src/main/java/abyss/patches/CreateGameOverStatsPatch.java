@@ -38,7 +38,7 @@ public class CreateGameOverStatsPatch {
     )
     public static class VictoryScreenPatch {
         @SpirePostfixPatch
-        public static void VictoryScreenPatch(VictoryScreen __instance) {
+        public static void victoryScreenPatch(VictoryScreen __instance) {
             ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             RemoveScoreEntries(stats);
         }
@@ -50,7 +50,7 @@ public class CreateGameOverStatsPatch {
     )
     public static class DeathScreenPatch {
         @SpirePostfixPatch
-        public static void DeathScreenPatch(DeathScreen __instance) {
+        public static void deathScreenPatch(DeathScreen __instance) {
             ArrayList<GameOverStat> stats = ReflectionHacks.getPrivate(__instance, GameOverScreen.class, "stats");
             RemoveScoreEntries(stats);
         }

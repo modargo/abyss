@@ -36,10 +36,10 @@ public class CardUtil {
 
     public static AbstractCard getOtherColorCard(AbstractCard.CardRarity rarity, List<AbstractCard.CardColor> excludedColors) {
         CardGroup anyCard = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        Iterator var2 = CardLibrary.cards.entrySet().iterator();
+        Iterator<Map.Entry<String, AbstractCard>> var2 = CardLibrary.cards.entrySet().iterator();
 
         while(true) {
-            Map.Entry c;
+            Map.Entry<String, AbstractCard> c;
             do {
                 do {
                     do {
@@ -49,13 +49,13 @@ public class CardUtil {
                                 return anyCard.getRandomCard(true, rarity).makeCopy();
                             }
 
-                            c = (Map.Entry)var2.next();
-                        } while(((AbstractCard)c.getValue()).rarity != rarity || excludedColors.contains(((AbstractCard)c.getValue()).color));
-                    } while(((AbstractCard)c.getValue()).type == AbstractCard.CardType.CURSE);
-                } while(((AbstractCard)c.getValue()).type == AbstractCard.CardType.STATUS);
-            } while(UnlockTracker.isCardLocked((String)c.getKey()) && !Settings.treatEverythingAsUnlocked());
+                            c = var2.next();
+                        } while(c.getValue().rarity != rarity || excludedColors.contains(c.getValue().color));
+                    } while(c.getValue().type == AbstractCard.CardType.CURSE);
+                } while(c.getValue().type == AbstractCard.CardType.STATUS);
+            } while(UnlockTracker.isCardLocked(c.getKey()) && !Settings.treatEverythingAsUnlocked());
 
-            anyCard.addToBottom((AbstractCard)c.getValue());
+            anyCard.addToBottom(c.getValue());
         }
     }
 }

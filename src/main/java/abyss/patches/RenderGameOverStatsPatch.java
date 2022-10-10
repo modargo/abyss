@@ -25,7 +25,7 @@ public class RenderGameOverStatsPatch {
     }
 
     @SpireInstrumentPatch
-    public static ExprEditor RenderGameOverStatsPatch() {
+    public static ExprEditor renderGameOverStatsPatch() {
         return new RenderGameOverStatsPatchExprEditor();
     }
 }
