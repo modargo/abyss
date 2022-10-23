@@ -4,6 +4,7 @@ import abyss.Abyss;
 import abyss.actions.SummonRoyalProtectorAction;
 import abyss.monsters.MonsterUtil;
 import abyss.powers.PrimevalCallPower;
+import abyss.util.CollectionsUtil;
 import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
@@ -18,7 +19,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -144,7 +144,7 @@ public class PrimevalQueen extends CustomMonster
 
         byte move;
         if (moveOptions.size() > 1) {
-            Collections.shuffle(moveOptions, AbstractDungeon.aiRng.random);
+            CollectionsUtil.shuffle(moveOptions, AbstractDungeon.aiRng);
             move = moveOptions.get(0);
         }
         else if (moveOptions.size() == 1) {

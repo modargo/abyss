@@ -4,6 +4,7 @@ import abyss.Abyss;
 import abyss.cards.CardUtil;
 import abyss.relics.BehemothsCourage;
 import abyss.relics.BehemothsWisdom;
+import abyss.util.CollectionsUtil;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Apparition;
 import com.megacrit.cardcrawl.cards.colorless.Bite;
@@ -135,7 +136,7 @@ public class ElderBehemoth extends AbstractImageEvent {
             biteGildedSpellOptions.add(CardCostType.Spell);
         }
         if (biteGildedSpellOptions.size() > 1) {
-            Collections.shuffle(biteGildedSpellOptions, AbstractDungeon.miscRng.random);
+            CollectionsUtil.shuffle(biteGildedSpellOptions, AbstractDungeon.miscRng);
             // Remove all but the first option
             for (int i = 1; i < biteGildedSpellOptions.size(); i++) {
                 cardOptionsList.remove(biteGildedSpellOptions.get(i));
@@ -177,7 +178,7 @@ public class ElderBehemoth extends AbstractImageEvent {
         if (list.isEmpty()) {
             return null;
         } else {
-            Collections.shuffle(list, AbstractDungeon.miscRng.random);
+            CollectionsUtil.shuffle(list, AbstractDungeon.miscRng);
             return list.get(0);
         }
     }
@@ -193,7 +194,7 @@ public class ElderBehemoth extends AbstractImageEvent {
         if (list.isEmpty()) {
             return null;
         } else {
-            Collections.shuffle(list, AbstractDungeon.miscRng.random);
+            CollectionsUtil.shuffle(list, AbstractDungeon.miscRng);
             return list.get(0);
         }
     }
@@ -209,7 +210,7 @@ public class ElderBehemoth extends AbstractImageEvent {
         if (list.isEmpty()) {
             return null;
         } else {
-            Collections.shuffle(list, AbstractDungeon.miscRng.random);
+            CollectionsUtil.shuffle(list, AbstractDungeon.miscRng);
             return list.get(0);
         }
     }

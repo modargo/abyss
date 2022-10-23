@@ -3,6 +3,7 @@ package abyss.monsters.elites;
 import abyss.Abyss;
 import abyss.cards.*;
 import abyss.effects.SmallColorLaserEffect;
+import abyss.util.CollectionsUtil;
 import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,7 +21,6 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 
 import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class GnawingCorruption extends CustomMonster
@@ -155,7 +155,7 @@ public class GnawingCorruption extends CustomMonster
         statuses.add(new Staggered());
         statuses.add(new Corrupted());
         statuses.add(new Withering());
-        Collections.shuffle(statuses, AbstractDungeon.aiRng.random);
+        CollectionsUtil.shuffle(statuses, AbstractDungeon.aiRng);
         return statuses.subList(0, amount);
     }
 
@@ -211,7 +211,7 @@ public class GnawingCorruption extends CustomMonster
                 break;
             }
         }
-        Collections.shuffle(variableAttackOptions, AbstractDungeon.aiRng.random);
+        CollectionsUtil.shuffle(variableAttackOptions, AbstractDungeon.aiRng);
         return variableAttackOptions.get(0);
     }
 
