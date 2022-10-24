@@ -58,7 +58,7 @@ public class AbysstouchedPower extends AbstractPower implements HealthBarRenderP
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(this.owner.isPlayer ? DESCRIPTIONS[0] : DESCRIPTIONS[1], this.amount);
+        this.description = MessageFormat.format(this.owner != null && this.owner.isPlayer ? DESCRIPTIONS[0] : DESCRIPTIONS[1], this.amount);
     }
 
     static {
