@@ -50,7 +50,7 @@ public class VoidHerald extends CustomMonster
     private static final int CORRUPTING_TOUCH_WEAK = 1;
     private static final int A19_CORRUPTING_TOUCH_WEAK = 1;
     private static final int CORRUPTING_TOUCH_DRAW = 1;
-    private static final int A19_CORRUPTING_TOUCH_DRAW = 2;
+    private static final int A19_CORRUPTING_TOUCH_DRAW = 1;
     private static final int ONSLAUGHT_DAMAGE = 6;
     private static final int A4_ONSLAUGHT_DAMAGE = 7;
     private static final int ONSLAUGHT_HITS = 2;
