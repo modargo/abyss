@@ -35,7 +35,9 @@ public class Doomed extends CustomCard {
     @Override
     public void triggerOnExhaust() {
         this.addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new MakeTempCardInDrawPileAction(new Doomed(), 1, false, true, true));
+        if (!AbstractDungeon.player.hasPower("anniv5:FirewallPower")) {
+            this.addToBot(new MakeTempCardInDrawPileAction(new Doomed(), 1, false, true, true));
+        }
     }
 
     @Override
